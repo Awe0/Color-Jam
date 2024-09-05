@@ -18,13 +18,15 @@ var color_scenes = [
 	preload("res://Scenes/Yellow.tscn"),
 	preload("res://Scenes/Green.tscn"),
 	preload("res://Scenes/Brown.tscn"),
-	preload("res://Scenes/Blue.tscn")
+	preload("res://Scenes/Blue.tscn"),
+	preload("res://Scenes/Red.tscn")
 ]
 var color_previews = {
 	"yellow": preload("res://Assets/yellow_preview.png"),
 	"green": preload("res://Assets/green_preview.png"),
 	"brown": preload("res://Assets/brown_preview.png"),
-	"blue": preload("res://Assets/blue_preview.png")
+	"blue": preload("res://Assets/blue_preview.png"),
+	"red": preload("res://Assets/red.png")
 }
 
 func _ready():
