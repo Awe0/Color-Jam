@@ -7,7 +7,7 @@ extends Control
 @onready var change_piece_button: Button = $ChangePiece
 
 const GRID_SIZE = 10
-const BLANK_CELL = preload("res://Assets/blank.png") 
+const BLANK_CELL = preload("res://Assets/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/gray.png")
 
 var score: int = 0
@@ -34,11 +34,13 @@ func _ready():
 	assign_random_color()
 
 func create_grid():
+	var grid_theme_button = load("res://Themes/GridButton.theme")
 	for i in range(GRID_SIZE):
 		var row = []
 		for j in range(GRID_SIZE):
 			var cell_button = Button.new()
-			cell_button.icon = load("res://Assets/blank.png")
+			#cell_button.set_theme(grid_theme_button)
+			cell_button.icon = BLANK_CELL
 			cell_button.pressed.connect(func() -> void:
 				_button_pressed(i, j)
 			)

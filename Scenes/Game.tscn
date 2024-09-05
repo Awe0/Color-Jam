@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=6 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
 [ext_resource type="Texture2D" uid="uid://cebq6iqy5ou8b" path="res://Assets/yellow_preview.png" id="3_oduoj"]
+[ext_resource type="Theme" uid="uid://dr8bdqll3hmjs" path="res://Themes/GridButton.theme" id="5_7nr1b"]
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
 
 [node name="Game" type="Control"]
@@ -21,7 +22,7 @@ offset_right = 720.0
 offset_bottom = 1280.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.629407, 0.693909, 1)
+color = Color(0.879677, 0.824513, 0.911644, 1)
 
 [node name="Restart" type="Button" parent="."]
 layout_mode = 0
@@ -52,9 +53,12 @@ theme = ExtResource("2_1nh3o")
 text = "Rotate"
 
 [node name="GridContainer" type="GridContainer" parent="."]
+clip_contents = true
 layout_mode = 1
-offset_top = 149.0
-offset_bottom = 149.0
+offset_left = 50.0
+offset_top = 163.0
+offset_right = 670.0
+offset_bottom = 783.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
@@ -78,6 +82,14 @@ offset_right = 427.0
 offset_bottom = 111.0
 theme = ExtResource("6_6oucx")
 text = "Score: 0"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 978.0
+offset_right = 664.0
+offset_bottom = 1052.0
+theme = ExtResource("5_7nr1b")
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ChangePiece" to="." method="_on_change_piece_pressed"]
