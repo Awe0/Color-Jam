@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1jresnfalogt"]
+
+[ext_resource type="Script" path="res://Scripts/color.gd" id="1_bwcy1"]
+
+[node name="Brown" type="Node2D"]
+script = ExtResource("1_bwcy1")
+size = 4
+score = 4
+color_name = "brown"
