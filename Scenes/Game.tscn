@@ -103,7 +103,6 @@ theme = ExtResource("6_6oucx")
 text = "Score: 0"
 
 [node name="Upgrade" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 578.0
 offset_top = 978.0

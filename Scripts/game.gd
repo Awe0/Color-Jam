@@ -18,7 +18,6 @@ var cells = []
 var selected_color = null 
 var piece_queue = []
 var attempt = 2
-#var arraytest = [0,]
 var color_scenes = [
 	preload("res://Scenes/Colors/Red.tscn"),
 	preload("res://Scenes/Colors/Green.tscn"),
@@ -37,28 +36,22 @@ var color_previews = {
 func _ready():
 	initialize_piece_queue()
 	create_grid()
-	assign_random_color()
+	update_previews()
+	#update_piece_queue()
 
 func initialize_piece_queue():
 	for i in range(3):
 		var random_index = randi() % color_scenes.size()
-		#print("color_scene array : ")
-		#print(color_scenes)
-		#print("\nrandom index : ")
-		#print(random_index)
 		var new_piece = color_scenes[random_index]
-		#print("\n new piece : ")
-		#print(new_piece)
 		piece_queue.append(new_piece)
-		#print("\n piece queue : ")
-		#print(piece_queue)
+		selected_color = piece_queue[0].instantiate()
 
 func update_piece_queue():
 	piece_queue.pop_front()
 	var random_index = randi() % color_scenes.size()
-	var new_piece = color_scenes[random_index].instantiate()
+	var new_piece = color_scenes[random_index]
 	piece_queue.append(new_piece)
-	selected_color = piece_queue[0]
+	selected_color = piece_queue[0].instantiate()
 	update_previews()
 	
 func create_grid():
@@ -82,6 +75,7 @@ func _button_pressed(i: int, j: int) -> void:
 			if attempt <= 0:
 				game_over.visible = true
 				hide_all_buttons()
+		print(piece_queue) #ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 	else:
 		return
 
@@ -93,7 +87,7 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
 		score_count()
-		assign_random_color()
+		update_piece_queue()
 	else:
 		return
 
@@ -106,14 +100,6 @@ func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 		if cells[x][y].icon != BLANK_CELL:
 			return false
 	return true
-
-func assign_random_color():
-	preview.rotation = 0
-	var random_index = randi() % color_scenes.size()
-	#if piece_order.size() < 3:
-		#piece_order.append(color_scenes[random_index])
-	selected_color = color_scenes[random_index].instantiate()
-	update_previews()
 
 func update_previews():
 	var color_name = selected_color.color_name
@@ -153,6 +139,7 @@ func reset_grid():
 				cell.icon = BLANK_CELL
 
 func upgrade_grid():
+	
 	var probability_of_impossible = 0.2
 	for row in cells:
 		for cell in row:
@@ -184,14 +171,17 @@ func _on_restart_pressed() -> void:
 func _on_change_piece_pressed() -> void:
 	var disable_theme_button = load("res://Themes/Disable_Button.theme")
 	if attempt == 2:
-		assign_random_color()
+		update_piece_queue()
 		change_piece_button.text = "\nChange\nPiece 1x\n\n"
 		attempt = 1
 	elif attempt == 1:
-		assign_random_color()
+		update_piece_queue()
 		change_piece_button.text = "\n\nNo attempt!\n\n"
 		attempt = 0
 		change_piece_button.set_theme(disable_theme_button)
+		if not check_grid(selected_color):
+			game_over.visible = true
+			hide_all_buttons()
 	else:
 		pass
 
