@@ -14,16 +14,12 @@ A **fun and challenging** grid-based puzzle game where players strategically pla
 3. **Scoring**: Each placed piece earns you points. Keep playing and accumulate the highest score possible.
 4. **Grid Reset**: When the grid is completely filled, it resets with new blocked cells, making the game progressively harder.
 
-## 🛠 Installation
+## 🛠 Download and Installation
 
-To run the game locally:
+You can download the latest version of the APK for the game from the link below:
 
-1. Clone this repository:
-	```bash
-	git clone git@github.com:Awe0/Color-Jam.git
-	```
-2. Open the project in your Godot Engine editor (VERSION 4.3).
-3. Run the project from the Godot editor to start playing!
+[Download APK](https://github.com/Awe0/Color-Jam/raw/main/Releases/latest-0.8.1/ColorJam!.apk)
+
 
 ## 🤝 Contributions
 
