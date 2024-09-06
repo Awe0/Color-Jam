@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dio8fr454bi7j"]
+
+[ext_resource type="Texture2D" uid="uid://dx18xngiacfya" path="res://Assets/red_preview.png" id="1_mhlce"]
+
+[node name="Red_Preview" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+pivot_offset = Vector2(23, 25)
+texture = ExtResource("1_mhlce")

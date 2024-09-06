@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://oo2amlmcg10w"]
+
+[ext_resource type="Texture2D" uid="uid://u8pehboveaqq" path="res://Assets/blue_preview.png" id="1_ehscu"]
+[ext_resource type="Script" path="res://Scripts/preview.gd" id="1_f8haj"]
+
+[node name="Blue_Preview" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f8haj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 128.0
+pivot_offset = Vector2(30, 64)
+texture = ExtResource("1_ehscu")

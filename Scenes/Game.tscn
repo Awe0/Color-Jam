@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=5 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
-[ext_resource type="Texture2D" uid="uid://cebq6iqy5ou8b" path="res://Assets/yellow_preview.png" id="3_oduoj"]
 [ext_resource type="Theme" uid="uid://dr8bdqll3hmjs" path="res://Themes/GridButton.theme" id="5_7nr1b"]
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
 
@@ -10,8 +9,8 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_y1bmt")
-metadata/_edit_horizontal_guides_ = [1063.0, 1220.0]
-metadata/_edit_vertical_guides_ = [50.0, 670.0]
+metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0]
+metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -63,27 +62,16 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
 
-[node name="Preview" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 328.0
-offset_top = 887.0
-offset_right = 392.0
-offset_bottom = 1207.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(30, 163)
-texture = ExtResource("3_oduoj")
-
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
 offset_left = 289.0
-offset_top = 26.0
-offset_right = 427.0
-offset_bottom = 111.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 115.0
 theme = ExtResource("6_6oucx")
 text = "Score: 0"
 
-[node name="Button" type="Button" parent="."]
+[node name="Upgrade" type="Button" parent="."]
 layout_mode = 0
 offset_left = 578.0
 offset_top = 978.0
@@ -91,6 +79,35 @@ offset_right = 664.0
 offset_bottom = 1052.0
 theme = ExtResource("5_7nr1b")
 
+[node name="Preview" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 833.0
+offset_right = 462.0
+offset_bottom = 1064.0
+pivot_offset = Vector2(149, 169)
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 245.0
+offset_top = 417.0
+offset_right = 476.0
+offset_bottom = 482.0
+theme = ExtResource("6_6oucx")
+text = "Game over!"
+
+[node name="Restart2" type="Button" parent="GameOver"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 70.0
+offset_right = 192.0
+offset_bottom = 137.0
+theme = ExtResource("2_1nh3o")
+text = "Restart"
+
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ChangePiece" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="Rotate" to="." method="_on_rotate_pressed"]
+[connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="GameOver/Restart2" to="." method="_on_restart_pressed"]
