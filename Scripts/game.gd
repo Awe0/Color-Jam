@@ -54,8 +54,9 @@ func _button_pressed(i: int, j: int) -> void:
 	if selected_color:
 		place_color(i, j)
 		if not check_grid(selected_color):
-			game_over.visible = true
-			hide_all_buttons()
+			if attempt <= 0:
+				game_over.visible = true
+				hide_all_buttons()
 	else:
 		return
 
