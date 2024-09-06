@@ -2,31 +2,34 @@ extends Control
 
 @onready var grid_container: GridContainer = $GridContainer
 @onready var score_label: Label = $Score
-@onready var texture_rect_preview: TextureRect = $Preview
+@onready var preview: CenterContainer = $Preview
 @onready var restart_button: Button = $Restart
 @onready var change_piece_button: Button = $ChangePiece
+@onready var game_over: Label = $GameOver
+@onready var rotate_button: Button = $Rotate
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/gray.png")
+const GRID_THEME_BUTTON = preload("res://Themes/GridButton.theme")
 
 var score: int = 0
 var cells = []
 var selected_color = null 
 var attempt = 2
 var color_scenes = [
-	preload("res://Scenes/Yellow.tscn"),
-	preload("res://Scenes/Green.tscn"),
-	preload("res://Scenes/Brown.tscn"),
-	preload("res://Scenes/Blue.tscn"),
-	preload("res://Scenes/Red.tscn")
+	preload("res://Scenes/Colors/Yellow.tscn"),
+	preload("res://Scenes/Colors/Green.tscn"),
+	preload("res://Scenes/Colors/Brown.tscn"),
+	preload("res://Scenes/Colors/Blue.tscn"),
+	preload("res://Scenes/Colors/Red.tscn")
 ]
 var color_previews = {
-	"yellow": preload("res://Assets/yellow_preview.png"),
-	"green": preload("res://Assets/green_preview.png"),
-	"brown": preload("res://Assets/brown_preview.png"),
-	"blue": preload("res://Assets/blue_preview.png"),
-	"red": preload("res://Assets/red.png")
+	"yellow": preload("res://Scenes/Colors/Previews/Yellow_Preview.tscn"),
+	"green": preload("res://Scenes/Colors/Previews/Green_Preview.tscn"),
+	"brown": preload("res://Scenes/Colors/Previews/Brown_Preview.tscn"),
+	"blue": preload("res://Scenes/Colors/Previews/Blue_Preview.tscn"),
+	"red": preload("res://Scenes/Colors/Previews/Red_Preview.tscn")
 }
 
 func _ready():
@@ -34,12 +37,11 @@ func _ready():
 	assign_random_color()
 
 func create_grid():
-	var grid_theme_button = load("res://Themes/GridButton.theme")
 	for i in range(GRID_SIZE):
 		var row = []
 		for j in range(GRID_SIZE):
 			var cell_button = Button.new()
-			#cell_button.set_theme(grid_theme_button)
+			cell_button.set_theme(GRID_THEME_BUTTON)
 			cell_button.icon = BLANK_CELL
 			cell_button.pressed.connect(func() -> void:
 				_button_pressed(i, j)
@@ -52,7 +54,8 @@ func _button_pressed(i: int, j: int) -> void:
 	if selected_color:
 		place_color(i, j)
 		if not check_grid(selected_color):
-			print("Aucune place disponible pour la pièce actuelle")
+			game_over.visible = true
+			hide_all_buttons()
 	else:
 		return
 
@@ -79,13 +82,17 @@ func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	return true
 
 func assign_random_color():
-	texture_rect_preview.rotation = 0
+	preview.rotation = 0
 	var random_index = randi() % color_scenes.size()
 	selected_color = color_scenes[random_index].instantiate()
 	var color_name = selected_color.color_name
 	if color_previews.has(color_name):
-		texture_rect_preview.texture = color_previews[color_name]
-		texture_rect_preview.scale = Vector2(0.8,0.8)
+		var preview_instance = color_previews[color_name].instantiate()
+		if preview.get_child_count() > 0:
+			var last_preview = preview.get_child(0)
+			last_preview.queue_free()
+		preview.add_child(preview_instance)
+		preview.scale = Vector2(0.8,0.8)
 
 func check_grid(piece) -> bool:
 	var has_blank_cell = false
@@ -112,7 +119,7 @@ func reset_grid():
 	for row in cells:
 		for cell in row:
 			if cell.icon != BLANK_CELL:
-				cell.icon = load("res://Assets/blank.png")
+				cell.icon = BLANK_CELL
 
 func upgrade_grid():
 	var probability_of_impossible = 0.2
@@ -127,12 +134,14 @@ func _on_rotate_pressed() -> void:
 	if selected_color != null:
 		if selected_color.is_vertical == true:
 			selected_color.is_vertical = false
-			texture_rect_preview.rotation = -1.57079994678497
+			SignalBus.rotate.emit()
 		else:
 			selected_color.is_vertical = true
-			texture_rect_preview.rotation = 0
+			SignalBus.rotate.emit()
 
 func _on_restart_pressed() -> void:
+	game_over.visible = false
+	display_all_buttons()
 	reset_grid()
 	var enable_theme_button = load("res://Themes/Buttons.tres")
 	score = 0
@@ -154,3 +163,16 @@ func _on_change_piece_pressed() -> void:
 		change_piece_button.set_theme(disable_theme_button)
 	else:
 		pass
+
+func _on_upgrade_pressed() -> void:
+	upgrade_grid()
+
+func hide_all_buttons():
+	restart_button.visible = false
+	change_piece_button.visible = false
+	rotate_button.visible = false
+
+func display_all_buttons():
+	restart_button.visible = true
+	change_piece_button.visible = true
+	rotate_button.visible = true
