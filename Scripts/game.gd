@@ -3,8 +3,8 @@ extends Control
 @onready var grid_container: GridContainer = $GridContainer
 @onready var score_label: Label = $Score
 @onready var preview: CenterContainer = $Preview
-@onready var restart_button: Button = $Restart
-@onready var change_piece_button: Button = $ChangePiece
+@onready var restart_button: Button = $VBoxContainer/Label/MarginContainer/Restart
+@onready var change_piece_button: Button = $VBoxContainer/Label2/MarginContainer/ChangePiece
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $Rotate
 
@@ -16,13 +16,15 @@ const GRID_THEME_BUTTON = preload("res://Themes/GridButton.theme")
 var score: int = 0
 var cells = []
 var selected_color = null 
+var piece_queue = []
 var attempt = 2
+#var arraytest = [0,]
 var color_scenes = [
-	preload("res://Scenes/Colors/Yellow.tscn"),
+	preload("res://Scenes/Colors/Red.tscn"),
 	preload("res://Scenes/Colors/Green.tscn"),
 	preload("res://Scenes/Colors/Brown.tscn"),
 	preload("res://Scenes/Colors/Blue.tscn"),
-	preload("res://Scenes/Colors/Red.tscn")
+	preload("res://Scenes/Colors/Yellow.tscn"),
 ]
 var color_previews = {
 	"yellow": preload("res://Scenes/Colors/Previews/Yellow_Preview.tscn"),
@@ -33,9 +35,32 @@ var color_previews = {
 }
 
 func _ready():
+	initialize_piece_queue()
 	create_grid()
 	assign_random_color()
 
+func initialize_piece_queue():
+	for i in range(3):
+		var random_index = randi() % color_scenes.size()
+		#print("color_scene array : ")
+		#print(color_scenes)
+		#print("\nrandom index : ")
+		#print(random_index)
+		var new_piece = color_scenes[random_index]
+		#print("\n new piece : ")
+		#print(new_piece)
+		piece_queue.append(new_piece)
+		#print("\n piece queue : ")
+		#print(piece_queue)
+
+func update_piece_queue():
+	piece_queue.pop_front()
+	var random_index = randi() % color_scenes.size()
+	var new_piece = color_scenes[random_index].instantiate()
+	piece_queue.append(new_piece)
+	selected_color = piece_queue[0]
+	update_previews()
+	
 func create_grid():
 	for i in range(GRID_SIZE):
 		var row = []
@@ -85,7 +110,12 @@ func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 func assign_random_color():
 	preview.rotation = 0
 	var random_index = randi() % color_scenes.size()
+	#if piece_order.size() < 3:
+		#piece_order.append(color_scenes[random_index])
 	selected_color = color_scenes[random_index].instantiate()
+	update_previews()
+
+func update_previews():
 	var color_name = selected_color.color_name
 	if color_previews.has(color_name):
 		var preview_instance = color_previews[color_name].instantiate()
@@ -147,7 +177,7 @@ func _on_restart_pressed() -> void:
 	var enable_theme_button = load("res://Themes/Buttons.tres")
 	score = 0
 	score_label.text = "Score: 0"
-	change_piece_button.text = "Change\nPiece 2x"
+	change_piece_button.text = "\nChange\nPiece 2x\n\n"
 	attempt = 2
 	change_piece_button.set_theme(enable_theme_button)
 
@@ -155,11 +185,11 @@ func _on_change_piece_pressed() -> void:
 	var disable_theme_button = load("res://Themes/Disable_Button.theme")
 	if attempt == 2:
 		assign_random_color()
-		change_piece_button.text = "Change\nPiece 1x"
+		change_piece_button.text = "\nChange\nPiece 1x\n\n"
 		attempt = 1
 	elif attempt == 1:
 		assign_random_color()
-		change_piece_button.text = "No attempt!"
+		change_piece_button.text = "\n\nNo attempt!\n\n"
 		attempt = 0
 		change_piece_button.set_theme(disable_theme_button)
 	else:

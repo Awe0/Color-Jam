@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y1bmt")
 metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0]
-metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0]
+metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0, 207.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,24 +25,53 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.879677, 0.824513, 0.911644, 1)
 
-[node name="Restart" type="Button" parent="."]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 1062.0
-offset_right = 204.0
-offset_bottom = 1129.0
-theme = ExtResource("2_1nh3o")
-text = "Restart"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -61.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 105
 
-[node name="ChangePiece" type="Button" parent="."]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 1139.0
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label2"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 1081.0
 offset_right = 207.0
-offset_bottom = 1218.0
+offset_bottom = 1137.0
+
+[node name="ChangePiece" type="Button" parent="VBoxContainer/Label2/MarginContainer"]
+layout_mode = 2
 theme = ExtResource("2_1nh3o")
-text = "Change
-Piece 2x"
+text = "
+Change
+Piece 2x
+
+"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 1063.0
+offset_right = 207.0
+offset_bottom = 1142.0
+
+[node name="Restart" type="Button" parent="VBoxContainer/Label/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_1nh3o")
+text = "
+Restart
+
+"
 
 [node name="Rotate" type="Button" parent="."]
 layout_mode = 0
@@ -109,8 +138,8 @@ offset_bottom = 137.0
 theme = ExtResource("2_1nh3o")
 text = "Restart"
 
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="ChangePiece" to="." method="_on_change_piece_pressed"]
+[connection signal="pressed" from="VBoxContainer/Label2/MarginContainer/ChangePiece" to="." method="_on_change_piece_pressed"]
+[connection signal="pressed" from="VBoxContainer/Label/MarginContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="GameOver/Restart2" to="." method="_on_restart_pressed"]
