@@ -12,12 +12,14 @@ const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/GridButton.theme")
+const DISABLE_THEME_BUTTON = preload("res://Themes/Disable_Button.theme")
+const ENABLE_THEME_BUTTON = preload("res://Themes/Buttons.tres")
 
 var score: int = 0
 var cells = []
 var selected_color = null 
 var piece_queue = []
-var attempt = 2
+var reroll = 2
 var color_scenes = [
 	preload("res://Scenes/Colors/Red.tscn"),
 	preload("res://Scenes/Colors/Green.tscn"),
@@ -72,7 +74,7 @@ func _button_pressed(i: int, j: int) -> void:
 	if selected_color:
 		place_color(i, j)
 		if not check_grid(selected_color):
-			if attempt <= 0:
+			if reroll <= 0:
 				game_over.visible = true
 				hide_all_buttons()
 		print(piece_queue) #ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
@@ -139,7 +141,8 @@ func reset_grid():
 				cell.icon = BLANK_CELL
 
 func upgrade_grid():
-	
+	reroll += 2
+	update_rerolls()
 	var probability_of_impossible = 0.2
 	for row in cells:
 		for cell in row:
@@ -164,26 +167,29 @@ func _on_restart_pressed() -> void:
 	var enable_theme_button = load("res://Themes/Buttons.tres")
 	score = 0
 	score_label.text = "Score: 0"
-	change_piece_button.text = "\nChange\nPiece 2x\n\n"
-	attempt = 2
+	change_piece_button.text = "\nReroll\nPiece 2x\n\n"
+	reroll = 2
 	change_piece_button.set_theme(enable_theme_button)
 
+func update_rerolls():
+		if reroll > 0:
+			change_piece_button.set_theme(ENABLE_THEME_BUTTON)
+			change_piece_button.text = "\nReroll\nPiece "+str(reroll)+"x\n\n"
+			update_piece_queue()
+		elif reroll <= 0:
+			reroll = 0
+			change_piece_button.set_theme(DISABLE_THEME_BUTTON)
+			change_piece_button.text = "\nNo\nReroll!\n\n"
+			if not check_grid(selected_color):
+				game_over.visible = true
+				hide_all_buttons()
+
 func _on_change_piece_pressed() -> void:
-	var disable_theme_button = load("res://Themes/Disable_Button.theme")
-	if attempt == 2:
-		update_piece_queue()
-		change_piece_button.text = "\nChange\nPiece 1x\n\n"
-		attempt = 1
-	elif attempt == 1:
-		update_piece_queue()
-		change_piece_button.text = "\n\nNo attempt!\n\n"
-		attempt = 0
-		change_piece_button.set_theme(disable_theme_button)
-		if not check_grid(selected_color):
-			game_over.visible = true
-			hide_all_buttons()
-	else:
-		pass
+	reroll -= 1
+	if reroll >= 0:
+		update_rerolls()
+	elif reroll <= 0:
+		reroll = 0
 
 func _on_upgrade_pressed() -> void:
 	upgrade_grid()
