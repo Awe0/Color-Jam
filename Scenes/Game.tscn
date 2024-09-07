@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=6 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
+[ext_resource type="Texture2D" uid="uid://dqctacb5orfln" path="res://Assets/rotate.png" id="3_3svw0"]
 [ext_resource type="Theme" uid="uid://dr8bdqll3hmjs" path="res://Themes/GridButton.theme" id="5_7nr1b"]
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
 
@@ -13,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y1bmt")
-metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0]
+metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0, 1249.0, 786.0]
 metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0, 207.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -30,8 +31,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -61.0
-offset_bottom = -61.0
+offset_top = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 105
@@ -42,9 +42,9 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label2"]
 layout_mode = 2
 offset_left = 50.0
-offset_top = 1081.0
+offset_top = 1061.0
 offset_right = 207.0
-offset_bottom = 1137.0
+offset_bottom = 1163.0
 
 [node name="ChangePiece" type="Button" parent="VBoxContainer/Label2/MarginContainer"]
 layout_mode = 2
@@ -61,9 +61,9 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label"]
 layout_mode = 2
 offset_left = 50.0
-offset_top = 1063.0
+offset_top = 1038.0
 offset_right = 207.0
-offset_bottom = 1142.0
+offset_bottom = 1117.0
 
 [node name="Restart" type="Button" parent="VBoxContainer/Label/MarginContainer"]
 layout_mode = 2
@@ -73,14 +73,28 @@ Restart
 
 "
 
-[node name="Rotate" type="Button" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 1062.0
-offset_right = 670.0
-offset_bottom = 1218.0
+offset_left = 2.0
+offset_top = 30.0
+offset_right = 42.0
+offset_bottom = 70.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/Label"]
+layout_mode = 2
+offset_left = 473.0
+offset_top = 1064.0
+offset_right = 668.0
+offset_bottom = 1219.0
+
+[node name="Rotate" type="Button" parent="VBoxContainer2/Label/MarginContainer"]
+layout_mode = 2
 theme = ExtResource("2_1nh3o")
-text = "Rotate"
+icon = ExtResource("3_3svw0")
+icon_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="."]
 clip_contents = true
@@ -105,9 +119,9 @@ text = "Score: 0"
 [node name="Upgrade" type="Button" parent="."]
 layout_mode = 0
 offset_left = 578.0
-offset_top = 978.0
+offset_top = 951.0
 offset_right = 664.0
-offset_bottom = 1052.0
+offset_bottom = 1025.0
 theme = ExtResource("5_7nr1b")
 
 [node name="Preview" type="CenterContainer" parent="."]
@@ -116,6 +130,22 @@ offset_left = 201.0
 offset_top = 833.0
 offset_right = 462.0
 offset_bottom = 1064.0
+pivot_offset = Vector2(149, 169)
+
+[node name="Preview2" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 656.0
+offset_right = 507.0
+offset_bottom = 887.0
+pivot_offset = Vector2(149, 169)
+
+[node name="Preview3" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 652.0
+offset_right = 327.0
+offset_bottom = 883.0
 pivot_offset = Vector2(149, 169)
 
 [node name="GameOver" type="Label" parent="."]
@@ -139,6 +169,6 @@ text = "Restart"
 
 [connection signal="pressed" from="VBoxContainer/Label2/MarginContainer/ChangePiece" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label/MarginContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Rotate" to="." method="_on_rotate_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="GameOver/Restart2" to="." method="_on_restart_pressed"]

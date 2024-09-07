@@ -3,10 +3,12 @@ extends Control
 @onready var grid_container: GridContainer = $GridContainer
 @onready var score_label: Label = $Score
 @onready var preview: CenterContainer = $Preview
+@onready var preview_2: CenterContainer = $Preview2
+@onready var preview_3: CenterContainer = $Preview3
 @onready var restart_button: Button = $VBoxContainer/Label/MarginContainer/Restart
 @onready var change_piece_button: Button = $VBoxContainer/Label2/MarginContainer/ChangePiece
 @onready var game_over: Label = $GameOver
-@onready var rotate_button: Button = $Rotate
+@onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
@@ -39,7 +41,6 @@ func _ready():
 	initialize_piece_queue()
 	create_grid()
 	update_previews()
-	#update_piece_queue()
 
 func initialize_piece_queue():
 	for i in range(3):
@@ -54,6 +55,7 @@ func update_piece_queue():
 	var new_piece = color_scenes[random_index]
 	piece_queue.append(new_piece)
 	selected_color = piece_queue[0].instantiate()
+	print(selected_color.color_name)
 	update_previews()
 	
 func create_grid():
@@ -77,7 +79,6 @@ func _button_pressed(i: int, j: int) -> void:
 			if reroll <= 0:
 				game_over.visible = true
 				hide_all_buttons()
-		print(piece_queue) #ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 	else:
 		return
 
@@ -104,6 +105,7 @@ func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	return true
 
 func update_previews():
+	# Met à jour la première pièce (celle sélectionnée actuellement)
 	var color_name = selected_color.color_name
 	if color_previews.has(color_name):
 		var preview_instance = color_previews[color_name].instantiate()
@@ -111,7 +113,32 @@ func update_previews():
 			var last_preview = preview.get_child(0)
 			last_preview.queue_free()
 		preview.add_child(preview_instance)
-		preview.scale = Vector2(0.8,0.8)
+		preview.scale = Vector2(0.8, 0.8)
+
+	# Met à jour la deuxième pièce dans preview_2 (celle à venir)
+	if piece_queue.size() > 1:
+		var next_piece = piece_queue[1]
+		color_name = next_piece.instantiate().color_name
+		if color_previews.has(color_name):
+			var preview_instance_2 = color_previews[color_name].instantiate()
+			if preview_2.get_child_count() > 0:
+				var last_preview_2 = preview_2.get_child(0)
+				last_preview_2.queue_free()
+			preview_2.add_child(preview_instance_2)
+			preview_2.scale = Vector2(0.4, 0.4)
+
+	# Met à jour la troisième pièce dans preview_3 (celle après la suivante)
+	if piece_queue.size() > 2:
+		var third_piece = piece_queue[2]
+		color_name = third_piece.instantiate().color_name
+		if color_previews.has(color_name):
+			var preview_instance_3 = color_previews[color_name].instantiate()
+			if preview_3.get_child_count() > 0:
+				var last_preview_3 = preview_3.get_child(0)
+				last_preview_3.queue_free()
+			preview_3.add_child(preview_instance_3)
+			preview_3.scale = Vector2(0.4, 0.4)
+
 
 func check_grid(piece) -> bool:
 	var has_blank_cell = false
