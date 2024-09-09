@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://c536d8lhiresn"]
+[gd_scene load_steps=6 format=3 uid="uid://c536d8lhiresn"]
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_m7kqs"]
 [ext_resource type="Script" path="res://Scripts/login.gd" id="2_nvumy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugbw0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw7qr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_ocebe"]
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/font_sizes/font_size = 40
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ugbw0")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/font_sizes/font_size = 40
+TextEdit/styles/normal = SubResource("StyleBoxFlat_vw7qr")
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -22,20 +54,27 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.878431, 0.823529, 0.909804, 1)
 
-[node name="ButtonContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="UsernameContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 605.0
-offset_right = 720.0
-offset_bottom = 674.0
 theme_override_constants/separation = 210
 alignment = 1
 
-[node name="Back" type="Label" parent="ButtonContainer"]
+[node name="Usename" type="Label" parent="VBoxContainer/UsernameContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/Back"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/UsernameContainer/Usename"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -49,17 +88,104 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="back_button" type="Button" parent="ButtonContainer/Back/MarginContainer"]
+[node name="Username" type="Label" parent="VBoxContainer/UsernameContainer/Usename/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Username :"
+
+[node name="Label" type="Label" parent="VBoxContainer/UsernameContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/UsernameContainer/Label"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -24.0
+offset_right = 160.0
+offset_bottom = 49.0
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/UsernameContainer/Label/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ocebe")
+
+[node name="PasswordContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 210
+alignment = 1
+
+[node name="Password" type="Label" parent="VBoxContainer/PasswordContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PasswordContainer/Password"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Password" type="Label" parent="VBoxContainer/PasswordContainer/Password/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Password :"
+
+[node name="Label" type="Label" parent="VBoxContainer/PasswordContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PasswordContainer/Label"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -24.0
+offset_right = 160.0
+offset_bottom = 49.0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/PasswordContainer/Label/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ocebe")
+secret = true
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 210
+alignment = 1
+
+[node name="Back" type="Label" parent="VBoxContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/Back"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back_button" type="Button" parent="VBoxContainer/ButtonContainer/Back/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
-[node name="Register" type="Label" parent="ButtonContainer"]
+[node name="Submit" type="Label" parent="VBoxContainer/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/Register"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/Submit"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -73,17 +199,17 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="register_button" type="Button" parent="ButtonContainer/Register/MarginContainer"]
+[node name="submit_button" type="Button" parent="VBoxContainer/ButtonContainer/Submit/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Register"
+text = "Submit"
 
-[node name="Sign in" type="Label" parent="ButtonContainer"]
+[node name="Sign in" type="Label" parent="VBoxContainer/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/Sign in"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/Sign in"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,7 +223,11 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="signin_button" type="Button" parent="ButtonContainer/Sign in/MarginContainer"]
+[node name="signin_button" type="Button" parent="VBoxContainer/ButtonContainer/Sign in/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Sign in"
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Back/MarginContainer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Submit/MarginContainer/submit_button" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Sign in/MarginContainer/signin_button" to="." method="_on_signin_button_pressed"]
