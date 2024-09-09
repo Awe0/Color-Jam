@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://c536d8lhiresn"]
+
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_m7kqs"]
+[ext_resource type="Script" path="res://Scripts/login.gd" id="2_nvumy"]
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m7kqs")
+script = ExtResource("2_nvumy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.878431, 0.823529, 0.909804, 1)
+
+[node name="ButtonContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 605.0
+offset_right = 720.0
+offset_bottom = 674.0
+theme_override_constants/separation = 210
+alignment = 1
+
+[node name="Back" type="Label" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/Back"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back_button" type="Button" parent="ButtonContainer/Back/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="Register" type="Label" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/Register"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="register_button" type="Button" parent="ButtonContainer/Register/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Register"
+
+[node name="Sign in" type="Label" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/Sign in"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="signin_button" type="Button" parent="ButtonContainer/Sign in/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Sign in"
