@@ -59,12 +59,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="Multi" type="Label" parent="VBoxContainer"]
+[node name="Login" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Multi"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Login"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,7 +78,7 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="login_button" type="Button" parent="VBoxContainer/Multi/MarginContainer"]
+[node name="login_button" type="Button" parent="VBoxContainer/Login/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Login in"
@@ -108,5 +108,5 @@ theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Play/MarginContainer/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Multi/MarginContainer/login_button" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Login/MarginContainer/login_button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit/MarginContainer/quit_button" to="." method="_on_quit_button_pressed"]
