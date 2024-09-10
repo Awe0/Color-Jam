@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SignalBus="*res://Scripts/signalbus.gd"
-SqlController="*res://Scripts/SQLController.gd"
+SignalBus="*res://Scripts/Singletons/signalbus.gd"
+SqlController="*res://Scripts/Singletons/SQLController.gd"
+UserSession="*res://Scripts/Singletons/UserSession.gd"
 
 [display]
 
