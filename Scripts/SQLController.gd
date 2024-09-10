@@ -1,4 +1,4 @@
-extends RefCounted
+extends Node
 
 var database: SQLite
 
