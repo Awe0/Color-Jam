@@ -4,6 +4,7 @@ extends Control
 @onready var login: Label = $VBoxContainer/Login
 
 func _ready() -> void:
+	#UserSession.check_session()
 	display_buttons()
 
 func _on_play_button_pressed() -> void:

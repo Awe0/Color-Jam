@@ -106,7 +106,6 @@ func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	return true
 
 func update_previews():
-	print(preview.scale)
 	# Met à jour la première pièce (celle sélectionnée actuellement)
 	var color_name = selected_color.color_name
 	if color_previews.has(color_name):
@@ -115,7 +114,6 @@ func update_previews():
 			var last_preview = preview.get_child(0)
 			last_preview.queue_free()
 		preview.add_child(preview_instance)
-		#preview.scale = Vector2(0.5, 0.5)
 
 	# Met à jour la deuxième pièce dans preview_2 (celle à venir)
 	if piece_queue.size() > 1:
@@ -126,7 +124,6 @@ func update_previews():
 			if preview_2.get_child_count() > 0:
 				var last_preview_2 = preview_2.get_child(0)
 				last_preview_2.queue_free()
-			#preview_2.scale = Vector2(0.5, 0.5)
 			preview_2.add_child(preview_instance_2)
 
 	# Met à jour la troisième pièce dans preview_3 (celle après la suivante)
@@ -138,7 +135,6 @@ func update_previews():
 			if preview_3.get_child_count() > 0:
 				var last_preview_3 = preview_3.get_child(0)
 				last_preview_3.queue_free()
-			#preview_3.scale = Vector2(0.5, 0.5)
 			preview_3.add_child(preview_instance_3)
 
 
