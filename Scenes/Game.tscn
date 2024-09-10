@@ -1,10 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=8 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
 [ext_resource type="Texture2D" uid="uid://dqctacb5orfln" path="res://Assets/rotate.png" id="3_3svw0"]
-[ext_resource type="Theme" uid="uid://dr8bdqll3hmjs" path="res://Themes/GridButton.theme" id="5_7nr1b"]
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
+
+[sub_resource type="Theme" id="Theme_mwabh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6usu"]
+bg_color = Color(0.768196, 0.66999, 0.822832, 0.858824)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_75vxk"]
+Button/styles/disabled = SubResource("StyleBoxFlat_o6usu")
+Button/styles/focus = SubResource("StyleBoxFlat_o6usu")
+Button/styles/hover = SubResource("StyleBoxFlat_o6usu")
+Button/styles/normal = SubResource("StyleBoxFlat_o6usu")
+Button/styles/pressed = SubResource("StyleBoxFlat_o6usu")
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -25,17 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.879677, 0.824513, 0.911644, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 786.0
-offset_bottom = -333.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.617292, 0.486146, 0.688768, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -127,38 +135,6 @@ offset_bottom = 115.0
 theme = ExtResource("6_6oucx")
 text = "Score: 0"
 
-[node name="Upgrade" type="Button" parent="."]
-layout_mode = 0
-offset_left = 578.0
-offset_top = 787.0
-offset_right = 664.0
-offset_bottom = 946.0
-theme = ExtResource("5_7nr1b")
-
-[node name="Preview" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_left = 201.0
-offset_top = 833.0
-offset_right = 462.0
-offset_bottom = 1064.0
-pivot_offset = Vector2(149, 169)
-
-[node name="Preview2" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_left = 246.0
-offset_top = 656.0
-offset_right = 507.0
-offset_bottom = 887.0
-pivot_offset = Vector2(149, 169)
-
-[node name="Preview3" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 652.0
-offset_right = 327.0
-offset_bottom = 883.0
-pivot_offset = Vector2(149, 169)
-
 [node name="GameOver" type="Label" parent="."]
 visible = false
 layout_mode = 0
@@ -171,15 +147,61 @@ text = "Game over!"
 
 [node name="Restart2" type="Button" parent="GameOver"]
 layout_mode = 0
-offset_left = 38.0
+offset_left = 19.0
 offset_top = 70.0
-offset_right = 192.0
+offset_right = 131.0
 offset_bottom = 137.0
 theme = ExtResource("2_1nh3o")
 text = "Restart"
 
+[node name="Menu" type="Button" parent="GameOver"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 70.0
+offset_right = 213.0
+offset_bottom = 137.0
+theme = ExtResource("2_1nh3o")
+text = "Menu"
+
+[node name="Next" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 1011.0
+offset_right = 602.0
+offset_bottom = 1034.0
+theme = SubResource("Theme_mwabh")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "NEXT !"
+
+[node name="PreviewContainer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 799.0
+offset_right = 670.0
+offset_bottom = 1007.0
+theme = SubResource("Theme_75vxk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 785.0
+offset_right = 1288.0
+offset_bottom = 943.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="Preview3" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Preview2" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Preview" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/Label2/MarginContainer/ChangePiece" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label/MarginContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
-[connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="GameOver/Restart2" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="GameOver/Menu" to="." method="_on_menu_pressed"]
