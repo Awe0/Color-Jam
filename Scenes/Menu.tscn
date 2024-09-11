@@ -133,5 +133,6 @@ theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Play/MarginContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Scoreboard/MarginContainer/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Login/MarginContainer/login_button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit/MarginContainer/quit_button" to="." method="_on_quit_button_pressed"]
