@@ -61,18 +61,15 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label2"]
 layout_mode = 2
 offset_left = 50.0
-offset_top = 1061.0
+offset_top = 1122.0
 offset_right = 207.0
-offset_bottom = 1163.0
+offset_bottom = 1182.0
 
 [node name="ChangePiece" type="Button" parent="VBoxContainer/Label2/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("2_1nh3o")
-text = "
-Reroll
-Piece 2x
-
-"
+text = "Reroll
+Piece 2x"
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -80,17 +77,30 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label"]
 layout_mode = 2
 offset_left = 50.0
-offset_top = 1038.0
+offset_top = 1064.0
 offset_right = 207.0
 offset_bottom = 1117.0
 
 [node name="Restart" type="Button" parent="VBoxContainer/Label/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("2_1nh3o")
-text = "
-Restart
+text = "Restart"
 
-"
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Label3"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 805.0
+offset_right = 207.0
+offset_bottom = 858.0
+
+[node name="Delete" type="Button" parent="VBoxContainer/Label3/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_1nh3o")
+text = "Delete 
+Piece 2x"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -202,6 +212,7 @@ layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/Label2/MarginContainer/ChangePiece" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label/MarginContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Label3/MarginContainer/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="pressed" from="GameOver/Restart2" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOver/Menu" to="." method="_on_menu_pressed"]
