@@ -7,6 +7,7 @@ extends Control
 @onready var preview_3: CenterContainer = $HBoxContainer/Preview3
 @onready var restart_button: Button = $VBoxContainer/Label/MarginContainer/Restart
 @onready var change_piece_button: Button = $VBoxContainer/Label2/MarginContainer/ChangePiece
+@onready var delete_button: Button = $VBoxContainer/Label3/MarginContainer/Delete
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
 
@@ -21,6 +22,7 @@ var score: int = 0
 var cells = []
 var selected_color = null 
 var piece_queue = []
+var delete = 2
 var reroll = 2
 var color_scenes = [
 	preload("res://Scenes/Colors/Red.tscn"),
@@ -38,7 +40,6 @@ var color_previews = {
 }
 
 func _ready():
-	#preview.scale = Vector2(0.5,0.5)
 	initialize_piece_queue()
 	create_grid()
 	update_previews()
@@ -56,9 +57,15 @@ func update_piece_queue():
 	var new_piece = color_scenes[random_index]
 	piece_queue.append(new_piece)
 	selected_color = piece_queue[0].instantiate()
-	print(selected_color.color_name)
 	update_previews()
-	
+
+func reroll_piece():
+	var random_index = randi() % color_scenes.size()
+	var new_piece = color_scenes[random_index]
+	piece_queue[0] = new_piece
+	selected_color = piece_queue[0].instantiate()
+	update_previews()
+
 func create_grid():
 	for i in range(GRID_SIZE):
 		var row = []
@@ -67,13 +74,13 @@ func create_grid():
 			cell_button.set_theme(GRID_THEME_BUTTON)
 			cell_button.icon = BLANK_CELL
 			cell_button.pressed.connect(func() -> void:
-				_button_pressed(i, j)
+				place_on_grid(i, j)
 			)
 			grid_container.add_child(cell_button)
 			row.append(cell_button)
 		cells.append(row)
 
-func _button_pressed(i: int, j: int) -> void:
+func place_on_grid(i: int, j: int) -> void:
 	if selected_color:
 		place_color(i, j)
 		if not check_grid(selected_color):
@@ -82,6 +89,8 @@ func _button_pressed(i: int, j: int) -> void:
 				hide_all_buttons()
 	else:
 		return
+
+
 
 func place_color(i: int, j: int):
 	if can_place_color(i, j, selected_color.size, selected_color.is_vertical):
@@ -137,7 +146,6 @@ func update_previews():
 				last_preview_3.queue_free()
 			preview_3.add_child(preview_instance_3)
 
-
 func check_grid(piece) -> bool:
 	var has_blank_cell = false
 	for row in cells:
@@ -167,7 +175,9 @@ func reset_grid():
 
 func upgrade_grid():
 	reroll += 2
+	delete += 2
 	update_rerolls()
+	update_delete()
 	var probability_of_impossible = 0.2
 	for row in cells:
 		for cell in row:
@@ -199,12 +209,10 @@ func _on_restart_pressed() -> void:
 func update_rerolls():
 		if reroll > 0:
 			change_piece_button.set_theme(ENABLE_THEME_BUTTON)
-			change_piece_button.text = "\nReroll\nPiece "+str(reroll)+"x\n\n"
-			update_piece_queue()
+			change_piece_button.text = "Reroll\nPiece "+str(reroll)+"x"
 		elif reroll <= 0:
-			reroll = 0
 			change_piece_button.set_theme(DISABLE_THEME_BUTTON)
-			change_piece_button.text = "\nNo\nReroll!\n\n"
+			change_piece_button.text = "No\nReroll!"
 			if not check_grid(selected_color):
 				game_over.visible = true
 				hide_all_buttons()
@@ -212,6 +220,7 @@ func update_rerolls():
 func _on_change_piece_pressed() -> void:
 	reroll -= 1
 	if reroll >= 0:
+		reroll_piece()
 		update_rerolls()
 	elif reroll <= 0:
 		reroll = 0
@@ -226,6 +235,24 @@ func display_all_buttons():
 	change_piece_button.visible = true
 	rotate_button.visible = true
 
-
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+
+func _on_delete_pressed() -> void:
+	delete -= 1
+	if delete >= 0:
+		update_piece_queue()
+		update_delete()
+	elif delete <= 0:
+		delete = 0
+
+func update_delete():
+		if delete > 0:
+			delete_button.set_theme(ENABLE_THEME_BUTTON)
+			delete_button.text = "Delete\nPiece "+str(delete)+"x"
+		elif delete <= 0:
+			delete_button.set_theme(DISABLE_THEME_BUTTON)
+			delete_button.text = "No\nDelete!"
+			if not check_grid(selected_color):
+				game_over.visible = true
+				hide_all_buttons()
