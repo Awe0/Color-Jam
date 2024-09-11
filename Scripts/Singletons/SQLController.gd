@@ -16,6 +16,7 @@ var scores_table = {
 func _ready() -> void:
 	copy_database_to_user()
 	open_database()
+	create_table()
 
 func create_table():
 	database.create_table("users",users_table)
