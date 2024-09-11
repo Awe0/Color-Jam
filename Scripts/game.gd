@@ -84,8 +84,7 @@ func create_grid():
 func place_on_grid(i: int, j: int) -> void:
 	if selected_color:
 		place_color(i, j)
-		if reroll <= 0 && delete <= 0:
-			game_over_statement()
+		game_over_statement()
 	else:
 		return
 
@@ -106,6 +105,7 @@ func place_color(i: int, j: int):
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
 		score_count()
 		update_piece_queue()
+		game_over_statement()
 	else:
 		return
 
@@ -266,8 +266,9 @@ func update_delete():
 
 func game_over_statement():
 	if not check_grid(selected_color):
-		game_over.visible = true
-		store_score()
-		hide_all_buttons()
-		SignalBus.Game_is_over.emit()
-		print("Signal 'Game_is_over' is emit")
+		if reroll <= 0 && delete <= 0:
+			game_over.visible = true
+			store_score()
+			hide_all_buttons()
+			SignalBus.Game_is_over.emit()
+			print("Signal 'Game_is_over' is emit")
