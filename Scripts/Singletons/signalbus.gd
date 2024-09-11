@@ -1,3 +1,4 @@
 extends Node
 
-signal rotate()
+signal Rotate()
+signal Game_is_over()

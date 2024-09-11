@@ -34,4 +34,11 @@ func get_user_from_db(username: String):
 
 func get_scores_from_db(user_id: int):
 	var query = database.query("SELECT * FROM scores WHERE user_id = '"+str(user_id)+"'")
-	
+	if database.query_result.size() > 0:
+		var result = database.query_result[0]
+		return {
+			"id": result["id"],
+			"score": result["score"],
+			"user_id": result["user_id"]
+		}
+	return null
