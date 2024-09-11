@@ -83,15 +83,18 @@ func create_grid():
 func place_on_grid(i: int, j: int) -> void:
 	if selected_color:
 		place_color(i, j)
-		if not check_grid(selected_color):
-			if reroll <= 0:
-				game_over.visible = true
-				hide_all_buttons()
+		if reroll <= 0 && delete <= 0:
+			game_over_statement()
 	else:
 		return
 
 func store_score():
-	pass
+	print(UserSession.session_config.get_value("user","user_id"))
+	#var data = {
+		#"score": score,
+		#"user_id": connection_password.text,
+	#}
+	#SqlController.database.insert_row("users",data)
 
 func place_color(i: int, j: int):
 	if can_place_color(i, j, selected_color.size, selected_color.is_vertical):
@@ -203,8 +206,10 @@ func _on_restart_pressed() -> void:
 	var enable_theme_button = load("res://Themes/Buttons.tres")
 	score = 0
 	score_label.text = "Score: 0"
-	change_piece_button.text = "\nReroll\nPiece 2x\n\n"
 	reroll = 2
+	update_rerolls()
+	delete = 2
+	update_delete()
 	change_piece_button.set_theme(enable_theme_button)
 
 func update_rerolls():
@@ -214,9 +219,8 @@ func update_rerolls():
 		elif reroll <= 0:
 			change_piece_button.set_theme(DISABLE_THEME_BUTTON)
 			change_piece_button.text = "No\nReroll!"
-			if not check_grid(selected_color):
-				game_over.visible = true
-				hide_all_buttons()
+			if delete <= 0:
+				game_over_statement()
 
 func _on_change_piece_pressed() -> void:
 	reroll -= 1
@@ -230,11 +234,13 @@ func hide_all_buttons():
 	restart_button.visible = false
 	change_piece_button.visible = false
 	rotate_button.visible = false
+	delete_button.visible = false
 
 func display_all_buttons():
 	restart_button.visible = true
 	change_piece_button.visible = true
 	rotate_button.visible = true
+	delete_button.visible = true
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
@@ -254,6 +260,11 @@ func update_delete():
 		elif delete <= 0:
 			delete_button.set_theme(DISABLE_THEME_BUTTON)
 			delete_button.text = "No\nDelete!"
-			if not check_grid(selected_color):
-				game_over.visible = true
-				hide_all_buttons()
+			if reroll <= 0:
+				game_over_statement()
+
+func game_over_statement():
+	if not check_grid(selected_color):
+		game_over.visible = true
+		store_score()
+		hide_all_buttons()
