@@ -2,9 +2,10 @@ extends Control
 
 @onready var play: Label = $VBoxContainer/Play
 @onready var login: Label = $VBoxContainer/Login
+@onready var scoreboard: Label = $VBoxContainer/Scoreboard
 
 func _ready() -> void:
-	#UserSession.check_session()
+	UserSession.check_session()
 	display_buttons()
 
 func _on_play_button_pressed() -> void:
@@ -19,7 +20,9 @@ func _on_login_button_pressed() -> void:
 func display_buttons():
 	if UserSession.is_login == true:
 		play.visible = true
+		scoreboard.visible = true
 		login.visible = false
 	else:
 		play.visible = false
+		scoreboard.visible = false
 		login.visible = true
