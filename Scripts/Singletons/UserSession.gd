@@ -17,7 +17,10 @@ func save_session(user_id: int, user_name: String):
 func check_session():
 	var session_user_id = session_config.get_value("user","user_id")
 	var session_user_name = session_config.get_value("user","user_name")
-	var query = SqlController.get_user_from_db(session_user_name)
-	if session_user_id == query["id"]:
-		if session_user_name == ["name"]:
-			is_login = true
+	if session_user_name != null:
+		var query = SqlController.get_user_from_db(session_user_name)
+		if session_user_id == query["id"]:
+			if session_user_name == query["name"]:
+				is_login = true
+	else:
+		print("ERROR : session_user_name is <null> ")
