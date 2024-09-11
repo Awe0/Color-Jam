@@ -18,6 +18,9 @@ func _ready() -> void:
 	database.path = "res://data.db"
 	database.foreign_keys = true
 	database.open_db()
+	var db_in_user = database.duplicate()
+	print(database)
+	print(db_in_user)
 	database.create_table("users",users_table)
 	database.create_table("scores",scores_table)
 
