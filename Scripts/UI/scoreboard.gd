@@ -1,6 +1,6 @@
 extends Control
 
-@onready var scoreboard: Control = $"."
+@onready var h_box_container: HBoxContainer = $VBoxContainer/HBoxContainer
 
 func _ready():
 	pass

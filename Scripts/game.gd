@@ -89,12 +89,12 @@ func place_on_grid(i: int, j: int) -> void:
 		return
 
 func store_score():
-	print(UserSession.session_config.get_value("user","user_id"))
-	#var data = {
-		#"score": score,
-		#"user_id": connection_password.text,
-	#}
-	#SqlController.database.insert_row("users",data)
+	var user_id = UserSession.session_config.get_value("user","user_id")
+	var data = {
+		"score": score,
+		"user_id": user_id,
+	}
+	SqlController.database.insert_row("scores",data)
 
 func place_color(i: int, j: int):
 	if can_place_color(i, j, selected_color.size, selected_color.is_vertical):
