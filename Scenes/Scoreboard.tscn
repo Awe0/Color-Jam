@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5ybefthwi2a0"]
+[gd_scene load_steps=4 format=3 uid="uid://b5ybefthwi2a0"]
+
+[ext_resource type="Script" path="res://Scripts/UI/scoreboard.gd" id="1_qn1ia"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nq4hf"]
 bg_color = Color(0.815686, 0.737255, 0.862745, 1)
@@ -10,14 +12,15 @@ corner_radius_bottom_left = 50
 [sub_resource type="Theme" id="Theme_cr8xr"]
 Panel/styles/panel = SubResource("StyleBoxFlat_nq4hf")
 
-[node name="Control" type="Control"]
+[node name="Scoreboard" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_horizontal_guides_ = [50.0, 1230.0]
+script = ExtResource("1_qn1ia")
+metadata/_edit_horizontal_guides_ = [50.0, 1230.0, 180.0]
 metadata/_edit_vertical_guides_ = [50.0, 670.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -42,11 +45,71 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cr8xr")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+offset_bottom = -1174.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Scoreboard"
+horizontal_alignment = 1
+
+[node name="rank" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 79.0
+offset_top = 172.0
+offset_right = -605.0
+offset_bottom = -1085.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "rank"
+
+[node name="username" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 172.0
+offset_right = -50.0
+offset_bottom = -1085.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "username"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 562.0
+offset_top = 172.0
+offset_right = -116.0
+offset_bottom = -1085.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "score"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 231.0
+offset_right = -50.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
 alignment = 1
