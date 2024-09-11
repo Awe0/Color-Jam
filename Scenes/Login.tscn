@@ -1,7 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c536d8lhiresn"]
+[gd_scene load_steps=8 format=3 uid="uid://c536d8lhiresn"]
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_m7kqs"]
 [ext_resource type="Script" path="res://Scripts/UI/login.gd" id="2_nvumy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ost12"]
+bg_color = Color(0.815686, 0.737255, 0.862745, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_qkch3"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ost12")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugbw0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -44,6 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_m7kqs")
 script = ExtResource("2_nvumy")
+metadata/_edit_vertical_guides_ = [51.0, 670.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -53,6 +64,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.878431, 0.823529, 0.909804, 1)
+
+[node name="Panel_BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 438.0
+offset_right = -50.0
+offset_bottom = -423.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qkch3")
 
 [node name="Messages" type="VBoxContainer" parent="."]
 layout_mode = 1
