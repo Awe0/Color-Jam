@@ -1,5 +1,6 @@
 extends Control
 
+
 @onready var grid_container: GridContainer = $GridContainer
 @onready var score_label: Label = $Score
 @onready var preview: CenterContainer = $HBoxContainer/Preview
@@ -194,10 +195,10 @@ func _on_rotate_pressed() -> void:
 	if selected_color != null:
 		if selected_color.is_vertical == true:
 			selected_color.is_vertical = false
-			SignalBus.rotate.emit()
+			SignalBus.Rotate.emit()
 		else:
 			selected_color.is_vertical = true
-			SignalBus.rotate.emit()
+			SignalBus.Rotate.emit()
 
 func _on_restart_pressed() -> void:
 	game_over.visible = false
@@ -268,3 +269,5 @@ func game_over_statement():
 		game_over.visible = true
 		store_score()
 		hide_all_buttons()
+		SignalBus.Game_is_over.emit()
+		print("Signal 'Game_is_over' is emit")
