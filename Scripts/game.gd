@@ -90,7 +90,8 @@ func place_on_grid(i: int, j: int) -> void:
 	else:
 		return
 
-
+func store_score():
+	pass
 
 func place_color(i: int, j: int):
 	if can_place_color(i, j, selected_color.size, selected_color.is_vertical):
