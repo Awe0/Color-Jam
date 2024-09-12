@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://crcflvmtlbp5n"]
+
+[ext_resource type="Script" path="res://Scripts/UI/leaderboard.gd" id="1_jbfn0"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_f0c2v"]
+[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="4_7rwi2"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jbfn0")
+metadata/_edit_horizontal_guides_ = [50.0, 1230.0, 180.0]
+metadata/_edit_vertical_guides_ = [50.0, 670.0]
+
+[node name="LeaderboardUI" parent="." instance=ExtResource("4_7rwi2")]
+layout_mode = 1
+leaderboard_id = "color-jam-color-jam-JJaQ"
+
+[node name="Button_Container" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_constants/separation = 525
+alignment = 1
+
+[node name="Menu" type="Button" parent="Button_Container"]
+layout_mode = 2
+theme = ExtResource("2_f0c2v")
+text = "   Menu    "
+
+[node name="Local" type="Button" parent="Button_Container"]
+layout_mode = 2
+theme = ExtResource("2_f0c2v")
+text = "   Local   "
+
+[connection signal="pressed" from="Button_Container/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Button_Container/Local" to="." method="_on_local_pressed"]
