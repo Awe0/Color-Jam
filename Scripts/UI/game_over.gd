@@ -6,9 +6,6 @@ signal Send_Pressed(username: String)
 
 @onready var text_edit: TextEdit = $TextEdit
 
-func _ready() -> void:
-	pass # Replace with function body.
-
 func _on_restart_pressed() -> void:
 	Restart_Pressed.emit()
 
