@@ -18,7 +18,7 @@ A **fun and challenging** grid-based puzzle game where players strategically pla
 
 You can download the latest version of the APK for the game from the link below:
 
-[Download APK](https://github.com/Awe0/Color-Jam/blob/main/Releases/0.8.2-stable/ColorJam!.apk)
+[Download APK](https://github.com/Awe0/Color-Jam/blob/main/Releases/0.8.4-stable/ColorJam!.apk)
 
 
 ## 🤝 Contributions
