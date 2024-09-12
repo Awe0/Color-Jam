@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5ybefthwi2a0"]
+[gd_scene load_steps=6 format=3 uid="uid://b5ybefthwi2a0"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scoreboard.gd" id="1_qn1ia"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_7vvir"]
+[ext_resource type="Theme" uid="uid://cthpno0wk1nrx" path="res://Themes/label_on_scoreboard.theme" id="2_xqla1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nq4hf"]
 bg_color = Color(0.815686, 0.737255, 0.862745, 1)
@@ -45,6 +47,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cr8xr")
 
+[node name="Menu" type="Button" parent="."]
+offset_left = 57.0
+offset_top = 69.0
+offset_right = 140.0
+offset_bottom = 136.0
+theme = ExtResource("2_7vvir")
+text = "Menu"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -54,6 +64,7 @@ offset_top = 80.0
 offset_bottom = -1174.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 80
 text = "Scoreboard"
 horizontal_alignment = 1
 
@@ -70,22 +81,91 @@ alignment = 1
 
 [node name="rank_column" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="rank" type="Label" parent="HBoxContainer/rank_column"]
 layout_mode = 2
-text = "rank"
+theme_override_font_sizes/font_size = 30
+text = "RANK"
+
+[node name="rank1" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme = ExtResource("2_xqla1")
+text = "1"
+horizontal_alignment = 1
+
+[node name="rank2" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme = ExtResource("2_xqla1")
+theme_override_font_sizes/font_size = 30
+text = "2"
+horizontal_alignment = 1
+
+[node name="rank3" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "3"
+horizontal_alignment = 1
+
+[node name="rank4" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "4"
+horizontal_alignment = 1
+
+[node name="rank5" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "5"
+horizontal_alignment = 1
+
+[node name="rank6" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "6"
+horizontal_alignment = 1
+
+[node name="rank7" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "7"
+horizontal_alignment = 1
+
+[node name="rank8" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "8"
+horizontal_alignment = 1
+
+[node name="rank9" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "9"
+horizontal_alignment = 1
+
+[node name="rank10" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+horizontal_alignment = 1
 
 [node name="username_column" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="username" type="Label" parent="HBoxContainer/username_column"]
 layout_mode = 2
-text = "username"
+theme_override_font_sizes/font_size = 30
+text = "USERNAME"
 horizontal_alignment = 1
 
 [node name="score_column" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="score" type="Label" parent="HBoxContainer/score_column"]
 layout_mode = 2
-text = "score"
+theme_override_font_sizes/font_size = 30
+text = "SCORE"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
