@@ -271,4 +271,6 @@ func game_over_statement():
 			store_score()
 			hide_all_buttons()
 			SignalBus.Game_is_over.emit()
-			print("Signal 'Game_is_over' is emit")
+
+func _on_game_over_send_pressed(username: String) -> void:
+	pass # Replace with function body.
