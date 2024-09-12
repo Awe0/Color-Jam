@@ -10,7 +10,8 @@ var users_table = {
 var scores_table = {
 	"id" : {"data_type": "int", "primary_key": true, "not_null": true, "auto_increment": true},
 	"score" : {"data_type": "int"},
-	"user_id" : {"data_type": "int", "foreign_key": "users.id"}
+	"username" : {"data_type": "text"}
+	#"user_id" : {"data_type": "int", "foreign_key": "users.id"} #PENSER A REMETTRE LORSQUE LE LOGIN EST REACTIVE
 }
 
 func _ready() -> void:
@@ -24,10 +25,10 @@ func create_table():
 
 func open_database():
 	database = SQLite.new()
-	database.path = "user://data.db"
+	database.path = "res://data.db" ##### DEBUG AVEC 'res://' ET PROD AVEC 'user://' #####
 	database.foreign_keys = true
-	var db_result = database.open_db()
-	if db_result:
+	database.open_db()
+	if database:
 		print("Database opened successfully")
 	else:
 		print("Failed to open the database")
@@ -63,13 +64,14 @@ func get_user_from_db(username: String):
 		}
 	return null
 
-func get_scores_from_db(user_id: int):
-	var query = database.query("SELECT * FROM scores WHERE user_id = '"+str(user_id)+"'")
+func get_scores_from_db():
+	var query = database.query("SELECT * FROM scores")
+	print(database.query_result)
 	if database.query_result.size() > 0:
 		var result = database.query_result[0]
 		return {
 			"id": result["id"],
 			"score": result["score"],
-			"user_id": result["user_id"]
+			"username": result["username"]
 		}
 	return null

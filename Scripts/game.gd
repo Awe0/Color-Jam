@@ -1,6 +1,5 @@
 extends Control
 
-
 @onready var grid_container: GridContainer = $GridContainer
 @onready var score_label: Label = $Score
 @onready var preview: CenterContainer = $HBoxContainer/Preview
@@ -41,6 +40,7 @@ var color_previews = {
 }
 
 func _ready():
+	SignalBus.Username_sended.connect(store_score)
 	initialize_piece_queue()
 	create_grid()
 	update_previews()
@@ -87,14 +87,6 @@ func place_on_grid(i: int, j: int) -> void:
 		game_over_statement()
 	else:
 		return
-
-func store_score():
-	var user_id = UserSession.session_config.get_value("user","user_id")
-	var data = {
-		"score": score,
-		"user_id": user_id,
-	}
-	SqlController.database.insert_row("scores",data)
 
 func place_color(i: int, j: int):
 	if can_place_color(i, j, selected_color.size, selected_color.is_vertical):
@@ -268,9 +260,12 @@ func game_over_statement():
 	if not check_grid(selected_color):
 		if reroll <= 0 && delete <= 0:
 			game_over.visible = true
-			store_score()
+			SignalBus.Game_is_over.emit(score)
 			hide_all_buttons()
-			SignalBus.Game_is_over.emit()
 
-func _on_game_over_send_pressed(username: String) -> void:
-	pass # Replace with function body.
+func store_score(username: String):
+	var data = {
+		"score": score,
+		"username": username,
+	}
+	SqlController.database.insert_row("scores",data)
