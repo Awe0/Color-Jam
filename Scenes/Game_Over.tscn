@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgpjbpq0305dx"]
+
+[ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_uggji"]
+[ext_resource type="Script" path="res://Scripts/UI/game_over.gd" id="2_ooolw"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_skpmk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vkgj"]
+bg_color = Color(0.76662, 0.76662, 0.766619, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0, 0.756863, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_iot05"]
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+TextEdit/font_sizes/font_size = 35
+TextEdit/styles/normal = SubResource("StyleBoxFlat_4vkgj")
+
+[node name="GameOver" type="Label"]
+visible = false
+offset_left = 245.0
+offset_top = 339.0
+offset_right = 476.0
+offset_bottom = 482.0
+theme = ExtResource("1_uggji")
+text = "Game over!"
+script = ExtResource("2_ooolw")
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 135.0
+offset_right = 131.0
+offset_bottom = 202.0
+theme = ExtResource("2_skpmk")
+text = "Restart"
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 135.0
+offset_right = 213.0
+offset_bottom = 202.0
+theme = ExtResource("2_skpmk")
+text = "Menu"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 69.0
+offset_right = 226.0
+offset_bottom = 128.0
+theme = SubResource("Theme_iot05")
+placeholder_text = "USERNAME"
+
+[node name="Send" type="Button" parent="."]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 76.0
+offset_right = 267.0
+offset_bottom = 122.0
+theme = ExtResource("2_skpmk")
+text = "Send"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
