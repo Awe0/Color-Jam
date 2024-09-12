@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgpjbpq0305dx"]
+[gd_scene load_steps=8 format=3 uid="uid://dgpjbpq0305dx"]
 
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_uggji"]
 [ext_resource type="Script" path="res://Scripts/UI/game_over.gd" id="2_ooolw"]
@@ -22,8 +22,14 @@ TextEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 TextEdit/font_sizes/font_size = 35
 TextEdit/styles/normal = SubResource("StyleBoxFlat_4vkgj")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjuq0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_ecp53"]
+Label/font_sizes/font_size = 16
+Label/styles/normal = SubResource("StyleBoxFlat_qjuq0")
+
 [node name="GameOver" type="Label"]
-visible = false
 offset_left = 245.0
 offset_top = 339.0
 offset_right = 476.0
@@ -61,13 +67,46 @@ placeholder_text = "USERNAME"
 
 [node name="Send" type="Button" parent="."]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 76.0
-offset_right = 267.0
-offset_bottom = 122.0
+offset_left = 19.0
+offset_top = 134.0
+offset_right = 213.0
+offset_bottom = 203.0
 theme = ExtResource("2_skpmk")
 text = "Send"
+
+[node name="Failed" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = 236.0
+offset_bottom = 22.0
+theme = SubResource("Theme_ecp53")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.447059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Please, enter a username"
+horizontal_alignment = 1
+
+[node name="Succes" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = 236.0
+offset_bottom = 22.0
+theme = SubResource("Theme_ecp53")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.447059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Succes!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

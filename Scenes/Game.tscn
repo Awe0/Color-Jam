@@ -147,6 +147,7 @@ theme = ExtResource("6_6oucx")
 text = "Score: 0"
 
 [node name="GameOver" parent="." instance=ExtResource("5_b0imn")]
+visible = false
 layout_mode = 0
 offset_left = 246.0
 offset_top = 432.0
@@ -196,4 +197,3 @@ layout_mode = 2
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="Menu_Pressed" from="GameOver" to="." method="_on_menu_pressed"]
 [connection signal="Restart_Pressed" from="GameOver" to="." method="_on_restart_pressed"]
-[connection signal="Send_Pressed" from="GameOver" to="." method="_on_game_over_send_pressed"]
