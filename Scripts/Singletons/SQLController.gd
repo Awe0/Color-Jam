@@ -66,12 +66,15 @@ func get_user_from_db(username: String):
 
 func get_scores_from_db():
 	var query = database.query("SELECT * FROM scores")
-	print(database.query_result)
+	var all_datas: Array = []
 	if database.query_result.size() > 0:
-		var result = database.query_result[0]
-		return {
-			"id": result["id"],
-			"score": result["score"],
-			"username": result["username"]
-		}
+		for i in database.query_result.size():
+			var result = database.query_result[i]
+			var one_raw = {
+				"id": result["id"],
+				"score": result["score"],
+				"username": result["username"]
+			}
+			all_datas.append(one_raw)
+		return all_datas
 	return null

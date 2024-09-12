@@ -10,9 +10,9 @@ func _ready():
 
 func add_score_on_board():
 	#var query = SqlController.get_scores_from_db(UserSession.session_config.get_value("user","user_id"))
-	var query = SqlController.get_scores_from_db()
+	var all_score: Array = SqlController.get_scores_from_db()
 	var label = Label.new()
-	label.text = str(query)
+	label.text = str(all_score)
 	score_container.add_child(label)
 	#print(SqlController.database.query_result)
 
