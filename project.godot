@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 SignalBus="*res://Scripts/Singletons/signalbus.gd"
 SqlController="*res://Scripts/Singletons/SQLController.gd"
 UserSession="*res://Scripts/Singletons/UserSession.gd"
+Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
+PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
 
 [display]
 
@@ -32,6 +34,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg", "res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
+
 [input]
 
 rotate={
@@ -39,6 +45,10 @@ rotate={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":82,"physical_keycode":0,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
 ]
 }
+
+[quiver]
+
+general/auth_token="ozuHpxqfs09fhHO01hC6u63D8CepApNkZA58BvvK"
 
 [rendering]
 
