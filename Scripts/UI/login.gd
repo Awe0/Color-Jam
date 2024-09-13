@@ -6,7 +6,7 @@ signal create_user(username: String, password: String)
 @onready var connection_password : LineEdit = $VBoxContainer/PasswordContainer/Label/MarginContainer/LineEdit
 @onready var message_timer: Timer = $Messages/Timer
 @onready var failed: Label = $Messages/Failed
-@onready var succes: Label = $Messages/Succes
+@onready var success: Label = $Messages/Success
 @onready var no_account: Label = $"Messages/No account"
 
 func _on_back_button_pressed() -> void:
@@ -37,7 +37,7 @@ func _on_submit_button_pressed() -> void:
 		if failed.visible == true:
 			failed.visible == false
 		create_user.emit(connection_username.text,connection_password.text)
-		display_label_and_start_timer(succes)
+		display_label_and_start_timer(success)
 	else:
 		display_label_and_start_timer(failed)
 

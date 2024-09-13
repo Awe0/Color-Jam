@@ -87,14 +87,14 @@ offset_top = 365.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Succes" type="Label" parent="Messages"]
+[node name="Success" type="Label" parent="Messages"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.447059)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Succes!"
+text = "Success!"
 horizontal_alignment = 1
 
 [node name="Failed" type="Label" parent="Messages"]
