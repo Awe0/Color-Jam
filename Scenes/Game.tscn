@@ -200,6 +200,29 @@ offset_bottom = 120.0
 theme = ExtResource("2_1nh3o")
 text = "Menu"
 
+[node name="Success" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 122.0
+offset_right = 700.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 126
+text = "SUCCESS !!!"
+
+[node name="Fail" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 314.0
+offset_right = 700.0
+offset_bottom = 486.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 126
+text = "FAIL !!!"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="VBoxContainer/Label2/MarginContainer/ChangePiece" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label/MarginContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label3/MarginContainer/Delete" to="." method="_on_delete_pressed"]
