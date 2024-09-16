@@ -25,7 +25,7 @@ func create_table():
 
 func open_database():
 	database = SQLite.new()
-	database.path = "user://data.db" ##### DEBUG AVEC 'res://' ET PROD AVEC 'user://' #####
+	database.path = "res://data.db" ##### DEBUG AVEC 'res://' ET PROD AVEC 'user://' #####
 	database.foreign_keys = true
 	database.open_db()
 	if database:
