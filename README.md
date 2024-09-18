@@ -14,11 +14,11 @@ A **fun and challenging** grid-based puzzle game where players strategically pla
 3. **Scoring**: Each placed piece earns you points. Keep playing and accumulate the highest score possible.
 4. **Grid Reset**: When the grid is completely filled, it resets with new blocked cells, making the game progressively harder.
 
-## 🛠 Download and Installation
+## 🛠 Download
 
-You can download the latest version of the APK for the game from the link below:
+You can download the latest version of the internal test from the link below:
 
-[Download APK](https://github.com/Awe0/Color-Jam/raw/main/Releases/0.8.5-stable/ColorJam!.apk)
+[Test interne](https://play.google.com/apps/internaltest/4701526388875010264)
 
 
 ## 🤝 Contributions
