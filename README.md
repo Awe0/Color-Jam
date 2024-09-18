@@ -18,7 +18,7 @@ A **fun and challenging** grid-based puzzle game where players strategically pla
 
 You can download the latest version of the internal test from the link below:
 
-[Test interne](https://play.google.com/apps/internaltest/4701526388875010264)
+[Internal test](https://play.google.com/apps/internaltest/4701526388875010264)
 
 
 ## 🤝 Contributions
