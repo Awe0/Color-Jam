@@ -1,6 +1,6 @@
 extends Node
 
-var is_login = true ############################### FALSE POUR ACTIVER LE LOGIN #######################################
+var is_login = false ############################### FALSE POUR ACTIVER LE LOGIN #######################################
 @onready var session_config = ConfigFile.new()
 
 func log_in_log_out():

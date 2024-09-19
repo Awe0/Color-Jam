@@ -10,8 +10,8 @@ var users_table = {
 var scores_table = {
 	"id" : {"data_type": "int", "primary_key": true, "not_null": true, "auto_increment": true},
 	"score" : {"data_type": "int"},
-	"username" : {"data_type": "text"}
-	#"user_id" : {"data_type": "int", "foreign_key": "users.id"} #PENSER A REMETTRE LORSQUE LE LOGIN EST REACTIVE
+	"username" : {"data_type": "text"},
+	"user_id" : {"data_type": "int", "foreign_key": "users.id"} #PENSER A REMETTRE LORSQUE LE LOGIN EST ACTIF
 }
 
 func _ready() -> void:
