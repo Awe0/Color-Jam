@@ -268,5 +268,4 @@ func store_score(username: String):
 		"score": score,
 		"username": username,
 	}
-	SqlController.database.insert_row("scores",data)
 	await Leaderboards.post_guest_score("color-jam-color-jam-JJaQ",score,username)

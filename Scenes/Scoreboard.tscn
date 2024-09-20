@@ -1,8 +1,55 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5ybefthwi2a0"]
+[gd_scene load_steps=6 format=3 uid="uid://dugc57b3t3o27"]
 
-[ext_resource type="Script" path="res://Scripts/UI/scoreboard.gd" id="1_qn1ia"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_7vvir"]
 [ext_resource type="Theme" uid="uid://cthpno0wk1nrx" path="res://Themes/label_on_scoreboard.theme" id="2_xqla1"]
+
+[sub_resource type="GDScript" id="GDScript_ms7v7"]
+script/source = "extends Control
+
+@onready var rank_column: VBoxContainer = $HBoxContainer/rank_column
+@onready var username_column: VBoxContainer = $HBoxContainer/username_column
+@onready var score_column: VBoxContainer = $HBoxContainer/score_column
+@onready var all_datas: Array = SqlController.get_scores_from_db()
+
+const LABEL_ON_SCOREBOARD = preload(\"res://Themes/label_on_scoreboard.theme\")
+
+var score: int
+var username: String
+
+func _ready():
+	all_datas.sort_custom(compare_scores_desc)
+	add_score_on_board()
+
+func add_score_on_board():
+	create_score_label()
+	create_username_label()
+
+func compare_scores_desc(a: Dictionary, b: Dictionary) -> bool:
+	return a[\"score\"] > b[\"score\"]
+
+func create_score_label():
+	for score in all_datas:
+		var label = Label.new()
+		label.set_theme(LABEL_ON_SCOREBOARD)
+		label.text = str(score[\"score\"])
+		label.horizontal_alignment = 1
+		score_column.add_child(label)
+
+func create_username_label():
+	for score in all_datas:
+		var label = Label.new()
+		label.set_theme(LABEL_ON_SCOREBOARD)
+		label.text = str(score[\"username\"])
+		label.horizontal_alignment = 1
+		username_column.add_child(label)
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/Menu.tscn\")
+
+
+func _on_online_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/Leaderboard.tscn\")
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nq4hf"]
 bg_color = Color(0.815686, 0.737255, 0.862745, 1)
@@ -21,7 +68,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qn1ia")
+script = SubResource("GDScript_ms7v7")
 metadata/_edit_horizontal_guides_ = [50.0, 1230.0, 180.0]
 metadata/_edit_vertical_guides_ = [50.0, 670.0]
 

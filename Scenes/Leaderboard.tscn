@@ -23,21 +23,16 @@ leaderboard_id = "color-jam-color-jam-JJaQ"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 50.0
 offset_top = 10.0
-offset_bottom = 62.0
+offset_right = 4.0
+offset_bottom = 75.0
 grow_horizontal = 2
 theme_override_constants/separation = 525
-alignment = 1
 
 [node name="Menu" type="Button" parent="Button_Container"]
 layout_mode = 2
 theme = ExtResource("2_f0c2v")
 text = "   Menu    "
 
-[node name="Local" type="Button" parent="Button_Container"]
-layout_mode = 2
-theme = ExtResource("2_f0c2v")
-text = "   Local   "
-
 [connection signal="pressed" from="Button_Container/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="Button_Container/Local" to="." method="_on_local_pressed"]

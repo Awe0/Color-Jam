@@ -20,8 +20,6 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 SignalBus="*res://Scripts/Singletons/signalbus.gd"
-SqlController="*res://Scripts/Singletons/SQLController.gd"
-UserSession="*res://Scripts/Singletons/UserSession.gd"
 Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
 PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
 
