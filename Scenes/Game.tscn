@@ -200,6 +200,15 @@ offset_bottom = 120.0
 theme = ExtResource("2_1nh3o")
 text = "Menu"
 
+[node name="Help" type="Button" parent="."]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 53.0
+offset_right = 669.0
+offset_bottom = 120.0
+theme = ExtResource("2_1nh3o")
+text = "?"
+
 [node name="Success" type="Label" parent="."]
 visible = false
 layout_mode = 0
