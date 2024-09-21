@@ -34,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y1bmt")
-metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0, 1249.0, 786.0]
+metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0, 1249.0, 786.0, 53.0, 133.0]
 metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0, 207.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -195,18 +195,20 @@ layout_mode = 2
 layout_mode = 0
 offset_left = 50.0
 offset_top = 53.0
-offset_right = 133.0
-offset_bottom = 120.0
+offset_right = 242.0
+offset_bottom = 133.0
 theme = ExtResource("2_1nh3o")
-text = "Menu"
+theme_override_font_sizes/font_size = 50
+text = "  Menu  "
 
-[node name="Help" type="Button" parent="."]
+[node name="HelpButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 586.0
 offset_top = 53.0
 offset_right = 669.0
-offset_bottom = 120.0
+offset_bottom = 133.0
 theme = ExtResource("2_1nh3o")
+theme_override_font_sizes/font_size = 50
 text = "?"
 
 [node name="Success" type="Label" parent="."]
@@ -239,3 +241,4 @@ horizontal_alignment = 1
 [connection signal="Menu_Pressed" from="GameOver" to="." method="_on_menu_pressed"]
 [connection signal="Restart_Pressed" from="GameOver" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]

@@ -19,10 +19,6 @@ metadata/_edit_vertical_guides_ = [50.0, 670.0]
 layout_mode = 1
 leaderboard_id = "color-jam-color-jam-JJaQ"
 
-[node name="LeaderboardUI2" parent="." instance=ExtResource("4_7rwi2")]
-layout_mode = 1
-leaderboard_id = "color-jam-color-jam-JJaQ"
-
 [node name="Button_Container" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10

@@ -10,6 +10,7 @@ extends Control
 @onready var delete_button: Button = $VBoxContainer/Label3/MarginContainer/Delete
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
+@onready var help: Label = $Help
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
@@ -269,3 +270,7 @@ func store_score(username: String):
 		"username": username,
 	}
 	await Leaderboards.post_guest_score("color-jam-color-jam-JJaQ",score,username)
+
+
+func _on_help_button_pressed() -> void:
+	help.visible = true

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyv8j4tlre125"]
+
+[ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_cgslp"]
+[ext_resource type="Script" path="res://Scripts/UI/help.gd" id="2_u76ka"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="3_3cb0q"]
+
+[node name="Help" type="Label"]
+offset_right = 634.0
+offset_bottom = 367.0
+theme = ExtResource("1_cgslp")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+script = ExtResource("2_u76ka")
+
+[node name="ButtonBox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -71.0
+offset_top = 375.0
+offset_right = 649.0
+offset_bottom = 454.0
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Quit" type="Button" parent="ButtonBox"]
+layout_mode = 2
+theme = ExtResource("3_3cb0q")
+theme_override_font_sizes/font_size = 50
+text = "    Quit    "
+
+[node name="Next" type="Button" parent="ButtonBox"]
+layout_mode = 2
+theme = ExtResource("3_3cb0q")
+theme_override_font_sizes/font_size = 50
+text = "    Next   "
+
+[connection signal="pressed" from="ButtonBox/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonBox/Next" to="." method="_on_next_pressed"]
