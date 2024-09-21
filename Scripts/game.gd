@@ -10,7 +10,7 @@ extends Control
 @onready var delete_button: Button = $VBoxContainer/Label3/MarginContainer/Delete
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
-@onready var help: Label = $Help
+@onready var help: Control = $Help
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=10 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
 [ext_resource type="Texture2D" uid="uid://dqctacb5orfln" path="res://Assets/rotate.png" id="3_3svw0"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game_Over.tscn" id="5_b0imn"]
+[ext_resource type="PackedScene" uid="uid://dyv8j4tlre125" path="res://Scenes/Help.tscn" id="6_1bbwq"]
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
 
 [sub_resource type="Theme" id="Theme_mwabh"]
@@ -210,6 +211,9 @@ offset_bottom = 133.0
 theme = ExtResource("2_1nh3o")
 theme_override_font_sizes/font_size = 50
 text = "?"
+
+[node name="Help" parent="." instance=ExtResource("6_1bbwq")]
+layout_mode = 1
 
 [node name="Success" type="Label" parent="."]
 visible = false

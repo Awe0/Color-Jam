@@ -4,34 +4,83 @@
 [ext_resource type="Script" path="res://Scripts/UI/help.gd" id="2_u76ka"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="3_3cb0q"]
 
-[node name="Help" type="Label"]
-offset_right = 634.0
-offset_bottom = 367.0
-theme = ExtResource("1_cgslp")
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_u76ka")
 
-[node name="ButtonBox" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = -71.0
-offset_top = 375.0
-offset_right = 649.0
-offset_bottom = 454.0
-theme_override_constants/separation = 75
-alignment = 1
+[node name="Step1" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 92.0
+offset_top = 253.0
+offset_right = 622.0
+offset_bottom = 564.0
+theme = ExtResource("1_cgslp")
+theme_override_font_sizes/font_size = 25
+text = "Bienvenue dans Color Jam!
+	Le but est simple : 
+	il vous suffit de remplir 
+	une grille de 10x10 cases 
+	en plaçant des pièces de différentes tailles, 
+	allant de 1 à 5 cases. 
+	Les pièces apparaissent de façon aléatoire, 
+	alors à vous de bien réfléchir où les placer !"
+horizontal_alignment = 1
 
-[node name="Quit" type="Button" parent="ButtonBox"]
+[node name="Step2" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 92.0
+offset_top = 253.0
+offset_right = 622.0
+offset_bottom = 564.0
+theme = ExtResource("1_cgslp")
+theme_override_font_sizes/font_size = 25
+text = "À partir du niveau 2, les choses se compliquent.
+	La grille sera déjà partiellement
+	remplie par des blocs gris.
+	 Cela signifie que vous devrez faire
+	preuve d’encore plus de stratégie pour
+	caser les nouvelles pièces dans les espaces restants.\"
+	,
+	\"Pour vous aider, vous disposez de
+	deux types de bonus dès le début :
+
+	Delete : Si la pièce à venir ne vous convient pas,
+			utilisez ce bonus pour la supprimer.
+
+	Reroll : Ce bonus vous permet de changer la pièce 
+	à venir de manière aléatoire.
+
+	Vous commencez avec 2 utilisations de chaque.
+	À chaque nouveau niveau franchi,
+	vous gagnez 2 utilisations supplémentaires 
+	pour chaque bonus !"
+horizontal_alignment = 1
+
+[node name="BoxButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 570.0
+offset_right = 568.0
+offset_bottom = 649.0
+
+[node name="Quit" type="Button" parent="BoxButton"]
 layout_mode = 2
 theme = ExtResource("3_3cb0q")
 theme_override_font_sizes/font_size = 50
 text = "    Quit    "
 
-[node name="Next" type="Button" parent="ButtonBox"]
+[node name="Next" type="Button" parent="BoxButton"]
 layout_mode = 2
 theme = ExtResource("3_3cb0q")
 theme_override_font_sizes/font_size = 50
 text = "    Next   "
 
-[connection signal="pressed" from="ButtonBox/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="ButtonBox/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="BoxButton/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BoxButton/Next" to="." method="_on_next_pressed"]
