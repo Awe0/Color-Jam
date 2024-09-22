@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://c24orgatcbbtm"]
+
+[ext_resource type="Script" path="res://Scripts/UI/steps.gd" id="1_08dkh"]
+[ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="2_ymh68"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="3_ohuir"]
+
+[node name="Step4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08dkh")
+
+[node name="Step4" type="Label" parent="."]
+layout_mode = 1
+offset_left = 92.0
+offset_top = 253.0
+offset_right = 622.0
+offset_bottom = 564.0
+theme = ExtResource("2_ymh68")
+theme_override_font_sizes/font_size = 25
+text = "Le jeu se termine lorsque vous ne pouvez plus 
+	placer de pièces sur la grille. 
+	Lorsque cela se produit, vous pourrez entrer 
+	votre nom afin qu'il soit enregistré dans le
+	tableau des scores général et rivaliser 
+	avec les joueuses et joueurs du monde entier.
+
+	Bonne chance !"
+horizontal_alignment = 1
+
+[node name="BoxButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 572.0
+offset_right = 580.0
+offset_bottom = 651.0
+
+[node name="Quit" type="Button" parent="BoxButton"]
+layout_mode = 2
+theme = ExtResource("3_ohuir")
+theme_override_font_sizes/font_size = 50
+text = "    Quit    "
+
+[node name="Back" type="Button" parent="BoxButton"]
+layout_mode = 2
+theme = ExtResource("3_ohuir")
+theme_override_font_sizes/font_size = 50
+text = "    Back   "
+
+[connection signal="pressed" from="BoxButton/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BoxButton/Back" to="." method="_on_back_pressed"]

@@ -271,6 +271,8 @@ func store_score(username: String):
 	}
 	await Leaderboards.post_guest_score("color-jam-color-jam-JJaQ",score,username)
 
-
 func _on_help_button_pressed() -> void:
 	help.visible = true
+
+func _on_help_quit_pressed() -> void:
+	help.visible = false

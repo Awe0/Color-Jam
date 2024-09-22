@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://owfqij8bllfs"]
+
+[ext_resource type="Script" path="res://Scripts/UI/steps.gd" id="1_35qkk"]
+[ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="2_ebb7x"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="3_4tl1y"]
+
+[node name="Step3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_35qkk")
+
+[node name="Step3" type="Label" parent="."]
+layout_mode = 1
+offset_left = 59.0
+offset_top = 197.0
+offset_right = 668.0
+offset_bottom = 698.0
+theme = ExtResource("2_ebb7x")
+theme_override_font_sizes/font_size = 25
+text = "Pour vous aider, vous disposez de
+	deux types de bonus dès le début :
+
+	Delete : Si la pièce à venir ne vous convient pas,
+			utilisez ce bonus pour la supprimer.
+
+	Reroll : Ce bonus vous permet de changer la pièce 
+	à venir de manière aléatoire.
+
+	Vous commencez avec 2 utilisations de chaque.
+	À chaque nouveau niveau franchi,
+	vous gagnez 2 utilisations supplémentaires 
+	pour chaque bonus !"
+horizontal_alignment = 1
+
+[node name="BoxButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 715.0
+offset_right = 682.0
+offset_bottom = 794.0
+
+[node name="Quit" type="Button" parent="BoxButton"]
+layout_mode = 2
+theme = ExtResource("3_4tl1y")
+theme_override_font_sizes/font_size = 50
+text = "    Quit    "
+
+[node name="Back" type="Button" parent="BoxButton"]
+layout_mode = 2
+theme = ExtResource("3_4tl1y")
+theme_override_font_sizes/font_size = 50
+text = "    Back   "
+
+[node name="Next" type="Button" parent="BoxButton"]
+layout_mode = 2
+theme = ExtResource("3_4tl1y")
+theme_override_font_sizes/font_size = 50
+text = "    Next   "
+
+[connection signal="pressed" from="BoxButton/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BoxButton/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BoxButton/Next" to="." method="_on_next_pressed"]

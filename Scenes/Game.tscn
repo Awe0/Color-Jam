@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
 [ext_resource type="Texture2D" uid="uid://dqctacb5orfln" path="res://Assets/rotate.png" id="3_3svw0"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game_Over.tscn" id="5_b0imn"]
-[ext_resource type="PackedScene" uid="uid://dyv8j4tlre125" path="res://Scenes/Help.tscn" id="6_1bbwq"]
+[ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="6_1bbwq"]
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
 
 [sub_resource type="Theme" id="Theme_mwabh"]
@@ -212,9 +212,6 @@ theme = ExtResource("2_1nh3o")
 theme_override_font_sizes/font_size = 50
 text = "?"
 
-[node name="Help" parent="." instance=ExtResource("6_1bbwq")]
-layout_mode = 1
-
 [node name="Success" type="Label" parent="."]
 visible = false
 layout_mode = 0
@@ -238,6 +235,9 @@ theme_override_font_sizes/font_size = 126
 text = "FAIL !!!"
 horizontal_alignment = 1
 
+[node name="Help" parent="." instance=ExtResource("6_1bbwq")]
+visible = false
+
 [connection signal="pressed" from="VBoxContainer/Label2/MarginContainer/ChangePiece" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label/MarginContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Label3/MarginContainer/Delete" to="." method="_on_delete_pressed"]
@@ -246,3 +246,4 @@ horizontal_alignment = 1
 [connection signal="Restart_Pressed" from="GameOver" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="Quit_Pressed" from="Help" to="." method="_on_help_quit_pressed"]
