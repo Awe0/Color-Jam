@@ -1,0 +1,764 @@
+Signature-Version: 1.0
+Created-By: Signflinger
+SHA-256-Digest-Manifest: wpOfTBgZS4MqfB4a58P2gXojg35WpQvseLFPV+8kFPg=
+
+Name: BUNDLE-METADATA/com.android.tools.build.gradle/app-metadata.prop
+ erties
+SHA-256-Digest: 90qTvddzw4Io7664eCihTYLkQLZsliovNpSGDV3mBzs=
+
+Name: BUNDLE-METADATA/com.android.tools.build.libraries/dependencies.p
+ b
+SHA-256-Digest: 67cnqVHsCjxNZPOVK9f6t/tOR1LhGHHSqxxNWhQeMyY=
+
+Name: BUNDLE-METADATA/com.android.tools.build.profiles/baseline.prof
+SHA-256-Digest: DdHrqKHNttNtPWTfcwUCocLTicXTtBQ3g3CoFCvE1YY=
+
+Name: BUNDLE-METADATA/com.android.tools.build.profiles/baseline.profm
+SHA-256-Digest: wQASnh4dt1u0Do2iRta3NvXC/BmYGzulcw6eslD8Syw=
+
+Name: BundleConfig.pb
+SHA-256-Digest: ekCPIHEAQYWZlvHQ9ZCe2bvZqs83HovGnPpiyMPI1Po=
+
+Name: base/dex/classes.dex
+SHA-256-Digest: KNHk1t+yObTNDJtnWsfRdf8iFPxs5whNEzd1nNePeF0=
+
+Name: base/lib/arm64-v8a/libc++_shared.so
+SHA-256-Digest: sTJ3XYTx0aCgkxEo2jZ07U/Ze2jgF4hDYSahSA1NgCI=
+
+Name: base/lib/arm64-v8a/libgodot_android.so
+SHA-256-Digest: pjaBIWSjYtCA4lZ41kgEwVeYpv5H53riWC/KPFKQIOs=
+
+Name: base/lib/armeabi-v7a/libc++_shared.so
+SHA-256-Digest: U7hBJ+shklSGYUXJWgR596a5K7IYajcEI4KAsISG/UE=
+
+Name: base/lib/armeabi-v7a/libgodot_android.so
+SHA-256-Digest: tYqHgyUI04HBWPSkFVVbtRXh6BIS07a0aZ8u2Tb5O6k=
+
+Name: base/manifest/AndroidManifest.xml
+SHA-256-Digest: PTbC5QY7RWOu7Ar8e7WDAHRM5qiDM2CKYs7YSDPJvM4=
+
+Name: base/native.pb
+SHA-256-Digest: 53ekBCuwMSku3UxKAFSISiGoJ5fj/aapxo3D8s7M56M=
+
+Name: base/res/anim-v21/fragment_fast_out_extra_slow_in.xml
+SHA-256-Digest: jS4uyqNlbcrZhNtn8U31F2m/lpBVY3ruQE7hUwExG/U=
+
+Name: base/res/animator/fragment_close_enter.xml
+SHA-256-Digest: YlaE0RuW+twloTXmRLiYYpCKNFml7IGLYt2hLhLx98c=
+
+Name: base/res/animator/fragment_close_exit.xml
+SHA-256-Digest: 1mciTPr2rdwemGtTL8lguzdAPneYFPJVmU75lo4jDGg=
+
+Name: base/res/animator/fragment_fade_enter.xml
+SHA-256-Digest: qD/fGWbc/JybrTxOJfwlrJmAJERTBno7ABRUuRbTvwg=
+
+Name: base/res/animator/fragment_fade_exit.xml
+SHA-256-Digest: oWCQqJSXAPcXEUKs96i7OD0YG1FlYUGnw/taChYFNTI=
+
+Name: base/res/animator/fragment_open_enter.xml
+SHA-256-Digest: 3AGyBoNc/zY62xnpX9+J+7gjPu2gX9/5Z6JTZ4ZJTEY=
+
+Name: base/res/animator/fragment_open_exit.xml
+SHA-256-Digest: 4paWjNbpKgNATeSduwqhZPdfLT+WZ0QjTCN5Wykm4ss=
+
+Name: base/res/drawable-hdpi-v4/notification_bg_low_normal.9.png
+SHA-256-Digest: Noakbtohs+Fi7A4XOofDI0GD6wC0MvnH+MMwjCXN6xM=
+
+Name: base/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png
+SHA-256-Digest: 13/jLIZ+Gb9fGvWIPxMXIsJhgx0YqRvJInHgx4WuMPU=
+
+Name: base/res/drawable-hdpi-v4/notification_bg_normal.9.png
+SHA-256-Digest: bToSSQKQKeKHjojlLbFcE9XYE7sewTJBfg74R3+7iPg=
+
+Name: base/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png
+SHA-256-Digest: mMf/V6VWjcYBtV5OMEk27watUKaAQIVqGRC6O5hxEkE=
+
+Name: base/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png
+SHA-256-Digest: EGVQRZR/Q8qitLYjhpFFoJKjbU5CYgR89PFz/R2N98Y=
+
+Name: base/res/drawable-mdpi-v4/notification_bg_low_normal.9.png
+SHA-256-Digest: xnUaV/sOuJboRB16eWDFD+RoGjsDlxSz/XXssw/jgd4=
+
+Name: base/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png
+SHA-256-Digest: 7z0xhE/BU5+uyPoWKCq+QFgYdvOBoI1nJpTlWdV3XIs=
+
+Name: base/res/drawable-mdpi-v4/notification_bg_normal.9.png
+SHA-256-Digest: S0dqWAWwBezrlv+xrcLGbGGcV/rQRHXq8Bp/JaMEpwk=
+
+Name: base/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png
+SHA-256-Digest: fF4BPMCZZROCLQSbJL548YqUQi+/EeAe+nMaNeAHMNI=
+
+Name: base/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png
+SHA-256-Digest: RdwAT/zXVRLabcyk3wq2EjQoOqQpoDiRFEfHeG83RFM=
+
+Name: base/res/drawable-v21/notification_action_background.xml
+SHA-256-Digest: SeeqTM2PUqKhfw5UrbP1IOTwDhER1eHASQAEyBK48hs=
+
+Name: base/res/drawable-v23/compat_splash_screen.xml
+SHA-256-Digest: 97l8LdKskwqhKDGW44+4gVF07Y9NSmUz0rxVwOn0FbQ=
+
+Name: base/res/drawable-v23/compat_splash_screen_no_icon_background.xm
+ l
+SHA-256-Digest: /y+PQCwbSk4qYXu6HUFbFeM2gAG+ImyDyG7aLVUn0nE=
+
+Name: base/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png
+SHA-256-Digest: YOhtVUjFvz9gaxAYElLYnfwGdH83L2WnYyFJb9HOlCU=
+
+Name: base/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png
+SHA-256-Digest: detjeNJHLBrLj4e8I6R+7kdkbPTPOfJcct0uZjwR/LM=
+
+Name: base/res/drawable-xhdpi-v4/notification_bg_normal.9.png
+SHA-256-Digest: zxer4yL/CjLId66s6K1ZhYRugW5adimdJESYKJrHIMU=
+
+Name: base/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png
+SHA-256-Digest: QEM2ivMFnxme56jtnofMKTIvUk7WvYEih5grHrVvlxw=
+
+Name: base/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png
+SHA-256-Digest: geqJcv4wO6ETHdNBUmQfAM4vLJGZhGIsWhxy90Vr2To=
+
+Name: base/res/drawable/icon_background.xml
+SHA-256-Digest: 6Pll05LVGvU8c4kZxgYBjUkOt2r7liVK4OaI+DVWwN4=
+
+Name: base/res/drawable/notification_bg.xml
+SHA-256-Digest: THM3/jvjKG6sqrMyau5dclM2KdnQD9Vs+GWCgGvV8oI=
+
+Name: base/res/drawable/notification_bg_low.xml
+SHA-256-Digest: +QAFKrMDeVASHIU7uE/tqXEc0Ihz3pFOnUuEW6lGNno=
+
+Name: base/res/drawable/notification_icon_background.xml
+SHA-256-Digest: 7PXIzd0vP1shDSCLglVRlpTBFa4xEwgl0Vd+VaelSTU=
+
+Name: base/res/drawable/notification_tile_bg.xml
+SHA-256-Digest: isF/0HQ/fXvFQsnjqwY29yTIjJRb0J66/L0bIGElfmU=
+
+Name: base/res/layout-v21/notification_action.xml
+SHA-256-Digest: 6RTjY9FuS9Y2/JquDH/s9TnaGW9fuUrtrYSpUE3JJ+I=
+
+Name: base/res/layout-v21/notification_action_tombstone.xml
+SHA-256-Digest: UR98w1ItQc/Qh07kEEbrsPaWr0S4EO3c8JOgBmcETsA=
+
+Name: base/res/layout-v21/notification_template_custom_big.xml
+SHA-256-Digest: Ob6b8fO7gbZvLWoR3YRZRVKWZZn2+YH39l2fhohspjc=
+
+Name: base/res/layout-v21/notification_template_icon_group.xml
+SHA-256-Digest: 0AHULI0cJxfsYKoEATGCe7ZxMHoJ9UzEV2OIqSJtR6Q=
+
+Name: base/res/layout/custom_dialog.xml
+SHA-256-Digest: 6mEkSKzN0JD/rDe4ZGiWZSoEzfbW7RPgtPdjT4NuFyM=
+
+Name: base/res/layout/downloading_expansion.xml
+SHA-256-Digest: X6B4rhXIALn8xw7bX3QaHIxEZdxa4qLDoRTKZh8qPgM=
+
+Name: base/res/layout/godot_app_layout.xml
+SHA-256-Digest: Ez6sAIfEarx8pVjhfD8dNRZQuJEqye44aO/aWIz4oXc=
+
+Name: base/res/layout/notification_template_part_chronometer.xml
+SHA-256-Digest: U0/FlNq0efQmMa+wnxTRJ9mXwJXpqHveWLFCizeNFa4=
+
+Name: base/res/layout/notification_template_part_time.xml
+SHA-256-Digest: SrXAoEy2VLtrDCK9eqDkEUJFhxVosKqF7hg7+8M0Ghw=
+
+Name: base/res/layout/splash_screen_view.xml
+SHA-256-Digest: nxwzHu6ZiXUa0u/Z7LVtUXdYQpB6ddgduUg8uVB91HU=
+
+Name: base/res/layout/status_bar_ongoing_event_progress_bar.xml
+SHA-256-Digest: R1NqokPIWL17fk44V3fAL2RWcOmVJGhr9V6dL3Y7fjY=
+
+Name: base/res/mipmap-anydpi-v26/icon.xml
+SHA-256-Digest: hiGX8Mb4qaQbvDOFg198K2sl8HnlHMyskT26AIq1dDw=
+
+Name: base/res/mipmap-hdpi-v4/icon.png
+SHA-256-Digest: rHF3j9iTeQxVG4lTRpLMKjnahAnxm7uGenmK4T/io54=
+
+Name: base/res/mipmap-hdpi-v4/icon_background.png
+SHA-256-Digest: l8ubAkmYK0whCklPalqYGpmb+Ssqaz+I9kP08l1wFuA=
+
+Name: base/res/mipmap-hdpi-v4/icon_foreground.png
+SHA-256-Digest: qxbZjI5TEY2u9F7U8FaQm8CO7jVPVxBy/2n80/VkUAw=
+
+Name: base/res/mipmap-mdpi-v4/icon.png
+SHA-256-Digest: Y+aRSB1je2lAdIMBMm6SDaf5eZfsl8nc/vTzQLKOOmM=
+
+Name: base/res/mipmap-mdpi-v4/icon_background.png
+SHA-256-Digest: s0Kwal/WTq0hMq/lOELdJMrn11tzngcNZHhvhc6Jzzc=
+
+Name: base/res/mipmap-mdpi-v4/icon_foreground.png
+SHA-256-Digest: xB4D3qEWPN0UUcd56XrzGPiS1HJK+b5ZHloWSWBwMX0=
+
+Name: base/res/mipmap-xhdpi-v4/icon.png
+SHA-256-Digest: t48Hx9DiRhgbJ1iWYobVx8WY79M25oDhBT8cYywyQaI=
+
+Name: base/res/mipmap-xhdpi-v4/icon_background.png
+SHA-256-Digest: DCEzmf+lWI4QFJQSR7CbCMunUg5yN7RWa+q38MNtVdA=
+
+Name: base/res/mipmap-xhdpi-v4/icon_foreground.png
+SHA-256-Digest: moWVmcxqTa2mv9v3SgeGCt+3tTW0BeDGuOl7D1M444s=
+
+Name: base/res/mipmap-xxhdpi-v4/icon.png
+SHA-256-Digest: 0RGnots8vCQ2PisZif1G430oCDp2h75VgJbNZhAICvs=
+
+Name: base/res/mipmap-xxhdpi-v4/icon_background.png
+SHA-256-Digest: nRA4xFE8ErXCg2SaJo3pK4gVtvPsnS9xviCRhKDTgvU=
+
+Name: base/res/mipmap-xxhdpi-v4/icon_foreground.png
+SHA-256-Digest: f69lviLH9hJXnyCtPmzZJr5M/HlFnZSGnsVjzBIgKC4=
+
+Name: base/res/mipmap-xxxhdpi-v4/icon.png
+SHA-256-Digest: IiwyvbW8fHCPtHhk+4qoPSAVM76syx2hwKDZmIf0rIk=
+
+Name: base/res/mipmap-xxxhdpi-v4/icon_background.png
+SHA-256-Digest: ZHyuTcZGSLUP8KqS2ssBgGuMFldRtc13xW2r2rvDg44=
+
+Name: base/res/mipmap-xxxhdpi-v4/icon_foreground.png
+SHA-256-Digest: lp1wEtyJEguKjFlMn0WVL/SlPGddVCf8sqYX+CNhjtQ=
+
+Name: base/res/mipmap/icon.png
+SHA-256-Digest: hVh06SF7FFRn0bDBaIYXIMU0ioJjr7PP5vGS7SxoWP4=
+
+Name: base/res/mipmap/icon_background.png
+SHA-256-Digest: yOvZwChRKdOOB9jka80OvnJjToRjgP448hQpaOOS72U=
+
+Name: base/res/mipmap/icon_foreground.png
+SHA-256-Digest: K1kXZWToFgraVUoMIYGco7LaliQJ6iVSD9XWiPDmRxQ=
+
+Name: base/res/xml/godot_provider_paths.xml
+SHA-256-Digest: ob9TDEGEV0a5Mo9wVvEtslfQJ5AGtMZefNoJKOpzqrA=
+
+Name: base/resources.pb
+SHA-256-Digest: AYIuTQBd2WpdzbvUEEnmz0pUcF4qaVg8pLtQplSmR+I=
+
+Name: base/root/DebugProbesKt.bin
+SHA-256-Digest: WS53rQveHBXSLFRUnbqfmBTb0RtXSDxbRfUhktEKNwE=
+
+Name: base/root/META-INF/androidx.activity_activity.version
+SHA-256-Digest: iBLnOw7t66PIwjfbBVVpfqtlsHmEtp5cto55PBrbhr8=
+
+Name: base/root/META-INF/androidx.annotation_annotation-experimental.v
+ ersion
+SHA-256-Digest: J6r1311ZdNe0jkMkkaxdSQoCd27/ksy39SmxkjjYp7M=
+
+Name: base/root/META-INF/androidx.arch.core_core-runtime.version
+SHA-256-Digest: XNw+uBHL4V7/NrC/hyxRCFuV9zavAoyIwHQv8g7Xr20=
+
+Name: base/root/META-INF/androidx.core_core-ktx.version
+SHA-256-Digest: T5z9GQ2IIsw0QX29tyAX9PDeGJ/HRPPdbsNxbIrNnyU=
+
+Name: base/root/META-INF/androidx.core_core-splashscreen.version
+SHA-256-Digest: lxcAjUzSmdKBGbyL4thi+qn7Bm3IEdiYSBfeTyDAETg=
+
+Name: base/root/META-INF/androidx.core_core.version
+SHA-256-Digest: LKKtnUkERcuvClNMFYCCeeBLtK5cyt2jCbW8BHLqOfA=
+
+Name: base/root/META-INF/androidx.customview_customview.version
+SHA-256-Digest: rPhdf+FIj53FOKXLlsU5aVjDPH5qEVN2F2NmIhh10nk=
+
+Name: base/root/META-INF/androidx.fragment_fragment.version
+SHA-256-Digest: +VM0rWcvfFrCW0KNvnNkSkVPlxrqxCyYHWu8l1viEgA=
+
+Name: base/root/META-INF/androidx.lifecycle_lifecycle-livedata-core.ve
+ rsion
+SHA-256-Digest: v88ejKKw46nSCp7tqMqSLADq0jcSJVySiyc9TQFgCgk=
+
+Name: base/root/META-INF/androidx.lifecycle_lifecycle-livedata.version
+SHA-256-Digest: 2q0rDzwF3LfI7Q+TQw1gelTTvrN/mOWwCwQ4LBiaGGk=
+
+Name: base/root/META-INF/androidx.lifecycle_lifecycle-runtime.version
+SHA-256-Digest: x7Rm3fMfuCCkWpudzMx7txr4106/Y8PecMWo/sGE9ho=
+
+Name: base/root/META-INF/androidx.lifecycle_lifecycle-viewmodel-saveds
+ tate.version
+SHA-256-Digest: cPdM7R7P0tH8i8ZDhez2i7WU15CksQ8zT4O05Ffunck=
+
+Name: base/root/META-INF/androidx.lifecycle_lifecycle-viewmodel.versio
+ n
+SHA-256-Digest: zcgUouz5BwuXv4fi2vbfNu8KoGg/IDNLqzn1S/gsRJ0=
+
+Name: base/root/META-INF/androidx.loader_loader.version
+SHA-256-Digest: +I5qNWud+ihN8c7YvvcVT2Q0/VPft8nCYzkSglBSJFY=
+
+Name: base/root/META-INF/androidx.profileinstaller_profileinstaller.ve
+ rsion
+SHA-256-Digest: VUHHbzhvLdzgorOTOKqSQaZh2q9fgL4pjXcHLy4cXfw=
+
+Name: base/root/META-INF/androidx.savedstate_savedstate.version
+SHA-256-Digest: otHDLv3gA0NjuvWfhWgxgI3vChL5/O52rAJvEYvpiek=
+
+Name: base/root/META-INF/androidx.startup_startup-runtime.version
+SHA-256-Digest: aMapnSOt4bYsTDBcmi5XVTnI3oJrMZIQ16QPFbxRinE=
+
+Name: base/root/META-INF/androidx.tracing_tracing.version
+SHA-256-Digest: ZzXFQmMTiLDJ9HCHY14jlTtHDwenpr0CsZ9xwVZ6ySo=
+
+Name: base/root/META-INF/androidx.versionedparcelable_versionedparcela
+ ble.version
+SHA-256-Digest: TYlfzNV/RcaUvIS4vix6YhRMYThxUKAFuEkU+wNqOb0=
+
+Name: base/root/META-INF/androidx.viewpager_viewpager.version
+SHA-256-Digest: Xf1LVDVgPlWX6deEx4trTMzDdH1rO6sp+W4ru50qM4M=
+
+Name: base/root/META-INF/com/android/build/gradle/app-metadata.propert
+ ies
+SHA-256-Digest: kXYqAexurcuoXv6zhNQkpUr9JHL9V4x+S5oQrjXOtgw=
+
+Name: base/root/META-INF/kotlinx_coroutines_android.version
+SHA-256-Digest: YRDSeb6GMZKETTbtfSNWzaR2hbmJX1VaS/MgK7Zr7Ho=
+
+Name: base/root/META-INF/kotlinx_coroutines_core.version
+SHA-256-Digest: 16I9GodAOhNYJYdlxFFhwAdeOm2Bqz8ewcbAvQnfydg=
+
+Name: base/root/META-INF/services/kotlinx.coroutines.CoroutineExceptio
+ nHandler
+SHA-256-Digest: gEIQQc4Bl+ATk1qvoDuPIijXG0R4QXYF+NaSlY6Eems=
+
+Name: base/root/META-INF/services/kotlinx.coroutines.internal.MainDisp
+ atcherFactory
+SHA-256-Digest: c2XawPIZW8/CQqOa3kePO9D32XjpIm5CTUsgetWsq0Q=
+
+Name: base/root/kotlin-tooling-metadata.json
+SHA-256-Digest: KLLJd/uOfJ+OOHRbIICqUCGX9WuR9vtnycZbn2PLe/c=
+
+Name: base/root/kotlin/annotation/annotation.kotlin_builtins
+SHA-256-Digest: O0SaKe1E5KBwmjikTXz6xyt8TG6jk6hEwAZvmQ5UqNs=
+
+Name: base/root/kotlin/collections/collections.kotlin_builtins
+SHA-256-Digest: g4i+PINKY3SkDHZuRJXiRxeyLyV2OIZkYpX74G9FKDI=
+
+Name: base/root/kotlin/coroutines/coroutines.kotlin_builtins
+SHA-256-Digest: KNx1CeeGzLJFQCfQrG9DDucLd6yx0c8iA6D/fce+Q8Q=
+
+Name: base/root/kotlin/internal/internal.kotlin_builtins
+SHA-256-Digest: Aov7lyAWtbnXsnbuh+8O6fvGoemyUxT4TrQl8W/3vEs=
+
+Name: base/root/kotlin/kotlin.kotlin_builtins
+SHA-256-Digest: KClDuhFK76jVtup4dIz+uGi50tLBo1iZ9Xu7XQmt1Q0=
+
+Name: base/root/kotlin/ranges/ranges.kotlin_builtins
+SHA-256-Digest: lY/MddU4pTiN/8A+/zDqMub93wIVUvtm7Hv6N27hCo8=
+
+Name: base/root/kotlin/reflect/reflect.kotlin_builtins
+SHA-256-Digest: 52npPDjrO3+JVGyO9NX7+nCxGQonnRPF6ypmLfs/67o=
+
+Name: installTime/assets.pb
+SHA-256-Digest: u1yo+1wBDkW531FDJB7OtiJ7+V1SQLaQLT8lrHx9Oek=
+
+Name: installTime/assets/.godot/exported/133200997/export-0205117c8f7a
+ bb75bc0ce7b1a3126ad2-Login.scn
+SHA-256-Digest: vlGGXu1rf6oLzKXqXV4eSxf0U9sZ3GMGWhuKCZVJtlo=
+
+Name: installTime/assets/.godot/exported/133200997/export-0532581f5e91
+ 99ba4066ea3cfcd4386b-leaderboard_ui.scn
+SHA-256-Digest: L9CXdPAHJUdLmNoO+SItAKPiT+3YTuLHSPLh2+zBS5g=
+
+Name: installTime/assets/.godot/exported/133200997/export-0bee5b91a8ce
+ 824c6417e1db3623c1de-Brown_Preview.scn
+SHA-256-Digest: y9mmjEneOYDxX40+nlX4f3nPlJfGZeJUqWbxlYZ7w+Y=
+
+Name: installTime/assets/.godot/exported/133200997/export-15cdbc9fd8d7
+ aead3d953619cadf9bbc-Scoreboard.scn
+SHA-256-Digest: 3W+YV/pTN8GLfoLwMMTRbYgxM2AhTeAfQHsXivMF9AY=
+
+Name: installTime/assets/.godot/exported/133200997/export-25a43da6cb04
+ 671e7b1625b476dbf252-Leaderboard.scn
+SHA-256-Digest: cEAFe9gxQGQt8ZRJhA/GGEZqjPGlNRk7/9aNv2+c+8I=
+
+Name: installTime/assets/.godot/exported/133200997/export-25d73dbb2d55
+ 7fa735f470dedcc3cb4b-Blue.scn
+SHA-256-Digest: t86z93MEwcVANsE6mq2DE7JahjThPkX2Ft+cT0Zu6sM=
+
+Name: installTime/assets/.godot/exported/133200997/export-38747a471670
+ 9b94b155e0b29cab69a1-Red_Preview.scn
+SHA-256-Digest: MjEsZ10tXDvgZlC83tgpWgY/2DKAPRnQf2ZoJqU8+mo=
+
+Name: installTime/assets/.godot/exported/133200997/export-4db43d26c0b0
+ 4fff97fc76ede06057f8-Warning_Button.res
+SHA-256-Digest: vjW9n7ahRa5jiY7WeAjpnhzsLR6Z4syci90zTSsURvM=
+
+Name: installTime/assets/.godot/exported/133200997/export-68845c2701a0
+ ca6f7775e268f9c682c9-leaderboards.scn
+SHA-256-Digest: SHcl4rKYnvV7jXtzKhVojQ8Wj2tVD6JRBK9dRvbNug4=
+
+Name: installTime/assets/.godot/exported/133200997/export-6999a9cd268a
+ bc6c5c728d38a9f29b08-player_accounts.scn
+SHA-256-Digest: ZAeKdbq8OwABwG5tesvPpEmVRZ7K19Z4BVYurnmKdiQ=
+
+Name: installTime/assets/.godot/exported/133200997/export-8ec1ce439455
+ 0eef6b399142f35b815f-Game.scn
+SHA-256-Digest: NgqJV7rGW8hWYfrfXe1J5PmtqoK6PpZeADNY6KU+4qk=
+
+Name: installTime/assets/.godot/exported/133200997/export-9313d2fcd63c
+ 26791db771448a9910cd-Buttons.res
+SHA-256-Digest: FJC3aVPHFOENMGAALznzEzzWf4+ZJncB8sDgVIBhh1E=
+
+Name: installTime/assets/.godot/exported/133200997/export-9e923a7afcec
+ ccfd666295ae14cb3eab-Brown.scn
+SHA-256-Digest: Jg52Zjl7TEEGEYJQepeGoAIBS+g3F2Mp0oPDYi6n0Ps=
+
+Name: installTime/assets/.godot/exported/133200997/export-ac2768b3933c
+ 00d91e68e812cc3b9252-Red.scn
+SHA-256-Digest: laRVxtlpmjmfAOCFRJwsHylmeM8674ZiYbScdq5HvMI=
+
+Name: installTime/assets/.godot/exported/133200997/export-c513bcf13e74
+ e7c2c38afea4513703cd-Game_Over.scn
+SHA-256-Digest: YlN3yIogw5ggDCwYRmd1kgIADfXvf78HiMsWH54iKeg=
+
+Name: installTime/assets/.godot/exported/133200997/export-c66ca9adccb5
+ 75bddabad42984d7fed5-Menu.scn
+SHA-256-Digest: Rj57uYFJn1C9n/scdEyj2LATXDDPMDILT3iJvpGW6co=
+
+Name: installTime/assets/.godot/exported/133200997/export-c8a75e212157
+ 05e4256a0bae17a4777d-Yellow_Preview.scn
+SHA-256-Digest: pYYC3+9T9i1oDPSJwb4EOFnH3zliOzuko6G9n8VBoqw=
+
+Name: installTime/assets/.godot/exported/133200997/export-c97dd7360226
+ c8fffade8f02ce18126e-Green_Preview.scn
+SHA-256-Digest: RMkkT41568D4VsTr+bMWqALH1NJlod9UwztDbC4o/Ao=
+
+Name: installTime/assets/.godot/exported/133200997/export-ca8e0d088ffd
+ 8a65075b15c36aeebbbf-Yellow.scn
+SHA-256-Digest: x51ZRssmV4wsvObV8pFidWw3s/MObwjkncZDrHAqhac=
+
+Name: installTime/assets/.godot/exported/133200997/export-d86dc3dd4e32
+ e92995772e0609523cac-Green.scn
+SHA-256-Digest: 33uTillgNrf71DZ/OVFWF5e4bCGOx60IHuzrtpp3sQc=
+
+Name: installTime/assets/.godot/exported/133200997/export-f226e6ad99d5
+ 771044f987557c84e5e7-Blue_Preview.scn
+SHA-256-Digest: lhcMM1iBh1RcO8CCX4zgk40L1L7So1QQ+NGs/xIUC9k=
+
+Name: installTime/assets/.godot/extension_list.cfg
+SHA-256-Digest: Otb9f+0DBlaIZwhIA5ym37yvuI+SD+7IApMH2Y280ok=
+
+Name: installTime/assets/.godot/global_script_class_cache.cfg
+SHA-256-Digest: Lr0zvnoxbdIv0sn6jZ69SyCwtj+gT8sbxaz/VDqRouA=
+
+Name: installTime/assets/.godot/imported/LogoAwe.png-fd48e70189e0eb9a2
+ a8a45d5cb40e22e.ctex
+SHA-256-Digest: iQTKskn4YQzOEWceWqZwg2jLX/sntE+kf9fYMBnXu3A=
+
+Name: installTime/assets/.godot/imported/blank.png-74c80d902d1ac65a9b2
+ d1a8ca772265c.ctex
+SHA-256-Digest: Iv9Yxn4/nzKxP7Z1nCELBx7K+9UqwktXWOu1GRvHs5E=
+
+Name: installTime/assets/.godot/imported/blue.png-0fb6959e49f7975842f8
+ 556fafcc4001.ctex
+SHA-256-Digest: ZdrT5tpYxSS0Go0VfV1004JkeEMB3ymyNduKwRfz7Ao=
+
+Name: installTime/assets/.godot/imported/blue_preview.png-8e43e9e18922
+ d7445b367d687f02b1cd.ctex
+SHA-256-Digest: YFQfwnEB2xDDZ3rSsqWkptkLehk5GSwb2DZOy7rDhY8=
+
+Name: installTime/assets/.godot/imported/brown.png-ddde728fa772f18c356
+ 4c0a70f5ec730.ctex
+SHA-256-Digest: aajhbXAq2brJ9P1TCWi0hp9p9SmYTxtFexH2s/83d8w=
+
+Name: installTime/assets/.godot/imported/brown_preview.png-e493b3b3a97
+ e47eaddd8a153f3f81ce2.ctex
+SHA-256-Digest: oH8MwHD6zw/3uHCPbtMGnyS7Trd1J1K+rMENtz57tdc=
+
+Name: installTime/assets/.godot/imported/cell54x54.png-62be6ed3d0a4094
+ 35ba97b86619b86fc.ctex
+SHA-256-Digest: macd4+jiH+GviMVmGomgHXU/BskW8/ktEAtdW5z5xNE=
+
+Name: installTime/assets/.godot/imported/gray.png-0ab7a3ab577099efab91
+ 6b4347f7b837.ctex
+SHA-256-Digest: 0j6NCUgH/gNnO1v9SXAR4N3VQa6RP+iCEcSIzhyaeiY=
+
+Name: installTime/assets/.godot/imported/green.png-5e6f88dff2074ce005f
+ 3a236ccef298e.ctex
+SHA-256-Digest: AoyuXjsaflG7+kRU967cpMeVFrIeiqnwU7S2qa4qjXs=
+
+Name: installTime/assets/.godot/imported/green_preview.png-4b77879162f
+ b31aaf2117ba3edf96977.ctex
+SHA-256-Digest: EbqdPgp46JcF3nruAvJP8rAh37XSSmxL1TnAy0izRxY=
+
+Name: installTime/assets/.godot/imported/icon.png-ec880de02d5dab0aa154
+ 58af9d6c53ed.ctex
+SHA-256-Digest: ShgkerT1Lu8DNy9zGIAThm2i/vV52LzJUscoDuci7fU=
+
+Name: installTime/assets/.godot/imported/icon.svg-218a8f2b3041327d8a57
+ 56f3a245f83b.ctex
+SHA-256-Digest: JIBjNClFX1FF/XKh4JetFwiXGKiKDHvYdXVlCtEfGW8=
+
+Name: installTime/assets/.godot/imported/red.png-a603707615bc7aa9bf729
+ 994c18f65b9.ctex
+SHA-256-Digest: sPYgVkkgG4InvrFC8A+DtZHnaIpH8mlk3MiI4shSIgE=
+
+Name: installTime/assets/.godot/imported/red_preview.png-956b661a3ef25
+ c513cd6e3b7a4c75b12.ctex
+SHA-256-Digest: FZnI8Cj0xX6QfSFqgK/Oso0SAeSeqvn+dDtFAgBsK74=
+
+Name: installTime/assets/.godot/imported/rotate.png-0cc5fa04364f9515ba
+ 3c8801a2dd1eaf.ctex
+SHA-256-Digest: VAtdw04LUAgQ+pnGsblxGpMOfF/ECZaCxk1vewfAuog=
+
+Name: installTime/assets/.godot/imported/yellow.png-98152c2c2b54c11dd4
+ 3d9efe45a3f042.ctex
+SHA-256-Digest: /cGey7ufK18n3fkFtQFE8hDmhT+67TjRkaYIfdYTojA=
+
+Name: installTime/assets/.godot/imported/yellow_preview.png-27ec983cc9
+ 08600e1740c51f997834b8.ctex
+SHA-256-Digest: wIpReKFYiCikeFZF6JiclUTb8sI2pkpKA2yK+U0rifY=
+
+Name: installTime/assets/.godot/uid_cache.bin
+SHA-256-Digest: /I8Rp6C2b86jJ+/Prvtrw9nvowlaG8N1NIkZ1iPN7/M=
+
+Name: installTime/assets/Assets/LogoAwe.png
+SHA-256-Digest: lHWZGD9SImKG9uJYbgHRfhs/BHVt7f2IdQ54GXR7/LE=
+
+Name: installTime/assets/Assets/LogoAwe.png.import
+SHA-256-Digest: hF5BqDJ41ryO8mX/BZpAPb9lFW5R328MuQ8pP8CMfr4=
+
+Name: installTime/assets/Assets/blank.png.import
+SHA-256-Digest: qOIM1PixZr3cEzU1eyZXJwmb9QEeQ/YOxgGxa0ISxCE=
+
+Name: installTime/assets/Assets/blue.png.import
+SHA-256-Digest: i+kKLuIODnXOfjXfuBwWB2zFoqhyAcFGowXarLevQ54=
+
+Name: installTime/assets/Assets/blue_preview.png.import
+SHA-256-Digest: hlr0WXTrR8Jhbf4N0FX3452o1pnIid3sEYT9eUw3PoU=
+
+Name: installTime/assets/Assets/brown.png.import
+SHA-256-Digest: dQOtNWjDIOw12tkqtvmA85VPTMAm+OnO4gxW1BZ0Bn4=
+
+Name: installTime/assets/Assets/brown_preview.png.import
+SHA-256-Digest: qxTBNNWRTQEy/+nweSLhDjOEaDWSiyaIuW+z77X1fHk=
+
+Name: installTime/assets/Assets/cell54x54.png.import
+SHA-256-Digest: kNySSyAfHBICyhR0ujxu0BwmTIvxcWzXcDuL+L3RRJA=
+
+Name: installTime/assets/Assets/gray.png.import
+SHA-256-Digest: RfxTcok/MM04HHHzFJdASw7VKBuQIMo7lSgs/JgCJeM=
+
+Name: installTime/assets/Assets/green.png.import
+SHA-256-Digest: Uc1WjZ9wlEADV2Q1K+U34VP1c7tVCQOM6qbM+weTwd8=
+
+Name: installTime/assets/Assets/green_preview.png.import
+SHA-256-Digest: 3mH4fl3l+FdKGf2oUOEaJodU0xiyFwd4vka/BNlZ4QM=
+
+Name: installTime/assets/Assets/icon.png
+SHA-256-Digest: TePyVaL8+bu9RxHpQCNFWd1QqSTejZcM/WsPDHmVc7M=
+
+Name: installTime/assets/Assets/icon.png.import
+SHA-256-Digest: gGAeDuCplj3PSD8OgvpAN2nm684Z7IyMmAh1nlzL4SY=
+
+Name: installTime/assets/Assets/red.png.import
+SHA-256-Digest: p84EkU4uZUCHaMz7hIPdj+O3pjHNXB6KB6tCV74aYtw=
+
+Name: installTime/assets/Assets/red_preview.png.import
+SHA-256-Digest: IFDBqLoDYgX4/f+I4u6Dq/SbwFFP2yytaRsat9UBlZg=
+
+Name: installTime/assets/Assets/rotate.png.import
+SHA-256-Digest: mdmu/sMS5Dwrl5QWSeV2jucvTxh/KQYb5+vFLsE8Yis=
+
+Name: installTime/assets/Assets/yellow.png.import
+SHA-256-Digest: 8ZTCJZZxAgXkLferP5GVxO9SV8QTpL2wAXc/dDz4joY=
+
+Name: installTime/assets/Assets/yellow_preview.png.import
+SHA-256-Digest: OryWPjpxFDKwLHCtN9D29UEXpjetxrdADC0NJNw+wj0=
+
+Name: installTime/assets/Scenes/Colors/Blue.tscn.remap
+SHA-256-Digest: 04TmRRgMdatJJq8pqif41e9hTZdoJzQVmGho16ZvD3I=
+
+Name: installTime/assets/Scenes/Colors/Brown.tscn.remap
+SHA-256-Digest: hAY9nQbf+NT+MP/DG1p4IpHVHiohiHqebn+Gx2BCfIE=
+
+Name: installTime/assets/Scenes/Colors/Green.tscn.remap
+SHA-256-Digest: 25QAoGAY1bQCuPH0mlBygZI591PMwPcY7Aojb12smuw=
+
+Name: installTime/assets/Scenes/Colors/Previews/Blue_Preview.tscn.rema
+ p
+SHA-256-Digest: 3jcx/oqYXnB86okDTbCy/aUY4va/MCPZfQ6DthaVMW8=
+
+Name: installTime/assets/Scenes/Colors/Previews/Brown_Preview.tscn.rem
+ ap
+SHA-256-Digest: gnlXQVi11Y4ww97UlxJR0h0KsZbOk6hCBFzN1dJEOtE=
+
+Name: installTime/assets/Scenes/Colors/Previews/Green_Preview.tscn.rem
+ ap
+SHA-256-Digest: v4MA7dOAx5Efnd3NHxbdRVquhXPxmnemk060UteK8jA=
+
+Name: installTime/assets/Scenes/Colors/Previews/Red_Preview.tscn.remap
+SHA-256-Digest: 3GhIC76IG3PYafU2/HRPXwliOnvR1mxRzLl7wMjCVCg=
+
+Name: installTime/assets/Scenes/Colors/Previews/Yellow_Preview.tscn.re
+ map
+SHA-256-Digest: g53DDyie/9QdnDVufQz0AJpx1D4oAGZuBPTvFbIDlu4=
+
+Name: installTime/assets/Scenes/Colors/Red.tscn.remap
+SHA-256-Digest: 97vyyN0dz3ljkOPNlACVRCfcfTTrRuut+utqNqj7ijg=
+
+Name: installTime/assets/Scenes/Colors/Yellow.tscn.remap
+SHA-256-Digest: AHD09Rb/1RRTcr+2GipUf9qWeqotQYgjnT/CFWp7OsM=
+
+Name: installTime/assets/Scenes/Game.tscn.remap
+SHA-256-Digest: Jcg36i23BN4N72zoI97vVSu4bbRVjYc6UsYq4oot0Og=
+
+Name: installTime/assets/Scenes/Game_Over.tscn.remap
+SHA-256-Digest: BptF1RINVBSqDa3YESMoWgjPe0gQLnaJ3GhNwTcyJso=
+
+Name: installTime/assets/Scenes/Leaderboard.tscn.remap
+SHA-256-Digest: qDpRbp74ep1r8SkY15I8UFNnJXsbXsbni7IYyWsN0M8=
+
+Name: installTime/assets/Scenes/Login.tscn.remap
+SHA-256-Digest: Cv000tBU4ykR/ZjYLSb0tsUxUtps4dEmSVggKqGqAko=
+
+Name: installTime/assets/Scenes/Menu.tscn.remap
+SHA-256-Digest: /5wW18iNryVqfUne2mD5StC0ajYmCSTARAwlZR/7f14=
+
+Name: installTime/assets/Scenes/Scoreboard.tscn.remap
+SHA-256-Digest: FMwWojMtgejFmp0h5KsND9USqPq0SJn+Xb3ueSBFayA=
+
+Name: installTime/assets/Scripts/Pieces/color.gd.remap
+SHA-256-Digest: +6E/hlU1IKpNN1OL8it1bgTUBRmEWrvGkNbvSYPPWU0=
+
+Name: installTime/assets/Scripts/Pieces/color.gdc
+SHA-256-Digest: Wmhcff0E8FmKteoDugRpUg6Pq/u9NB4XXJglPd1rO8E=
+
+Name: installTime/assets/Scripts/Pieces/preview.gd.remap
+SHA-256-Digest: 3L7G2DBBDU4bAxk9YKx4g9B/o82bQsapigHus8H9dVw=
+
+Name: installTime/assets/Scripts/Pieces/preview.gdc
+SHA-256-Digest: b1saGet+QZV1zD/wYnUgnGd0uL5HFwKTNrjcurwf41c=
+
+Name: installTime/assets/Scripts/Singletons/SQLController.gd.remap
+SHA-256-Digest: GfitLCnLrMpvhi8ZfyNAzPDC8BKN5DQS+EDyPRvkoHk=
+
+Name: installTime/assets/Scripts/Singletons/SQLController.gdc
+SHA-256-Digest: pLOr+qfks0xo9C0lvy/n5pIMzr1ZbcGf7z1QMUGhsTY=
+
+Name: installTime/assets/Scripts/Singletons/UserSession.gd.remap
+SHA-256-Digest: t8nGjs+fE5G20aJzxUpr9yKcvq8znIIjVEjMpRgNUlQ=
+
+Name: installTime/assets/Scripts/Singletons/UserSession.gdc
+SHA-256-Digest: dWb14w5YK86IxPhTcyeHVHW7gMiEM2lL+1w+ibyLbRo=
+
+Name: installTime/assets/Scripts/Singletons/signalbus.gd.remap
+SHA-256-Digest: cqnJ1dKOgTXpCWNt84DeujV0rHP1CkprzY9ZbqsFIP4=
+
+Name: installTime/assets/Scripts/Singletons/signalbus.gdc
+SHA-256-Digest: 6kjjCiGoa/ls7shwVHHPT2s6UjsO1PqfDgPzq45LhxI=
+
+Name: installTime/assets/Scripts/UI/game_over.gd.remap
+SHA-256-Digest: o7ZemZ2lawZLVAyIxKmbpBdvbvQz6vtGAmN8D/lzdtk=
+
+Name: installTime/assets/Scripts/UI/game_over.gdc
+SHA-256-Digest: 2MF7ExhJRC9a8ot3rq5tLCaMqUoFztfqfRd6MPQAxnA=
+
+Name: installTime/assets/Scripts/UI/leaderboard.gd.remap
+SHA-256-Digest: nujgYnH4wGRkXfFk96Nu24jnVGsXt/ie+BnDmnRwl20=
+
+Name: installTime/assets/Scripts/UI/leaderboard.gdc
+SHA-256-Digest: dwSZrrZbSYtWuS9pOUPXz0eUYGYM7eTntIs88hFCqME=
+
+Name: installTime/assets/Scripts/UI/login.gd.remap
+SHA-256-Digest: jRbeO2kpp7+Ibz3zPeF/b8jzuvuRcxtE4V6gzAFcTwM=
+
+Name: installTime/assets/Scripts/UI/login.gdc
+SHA-256-Digest: 9rkWVtoLjVNcu6SSeXN5Jnt3InNY39I5nIrUZlEmqtc=
+
+Name: installTime/assets/Scripts/UI/menu.gd.remap
+SHA-256-Digest: 7ryCJlzuA3GScngO2t3EgbQisUrZHujpBa34iVX7CZg=
+
+Name: installTime/assets/Scripts/UI/menu.gdc
+SHA-256-Digest: 4UolrfLPxJKXeQdcLroyVoNeFO6Ud8OC/l2RdTpDRxs=
+
+Name: installTime/assets/Scripts/UI/scoreboard.gd.remap
+SHA-256-Digest: cc6QzLNPmi6yrSun49eg5OagsBKhR5tr4VoE0tabpG4=
+
+Name: installTime/assets/Scripts/UI/scoreboard.gdc
+SHA-256-Digest: OV4k7LHcMfkvtQfkDHYQfknXC9dKppWe7wiILe2BbRU=
+
+Name: installTime/assets/Scripts/game.gd.remap
+SHA-256-Digest: GXuTX2xqsFX5CN5egE5ZVUXkIxJQ4m/BUP4IqlPlBSE=
+
+Name: installTime/assets/Scripts/game.gdc
+SHA-256-Digest: S+T4EWplow3GPnUmS75vYxDgomU0d1cHsmyakhO5PhQ=
+
+Name: installTime/assets/Themes/Buttons.tres.remap
+SHA-256-Digest: yj+C7VYO22Utl6kUtRuAhTZhR2IGxfBxS3kA6mrxOcw=
+
+Name: installTime/assets/Themes/Disable_Button.theme
+SHA-256-Digest: 18Avp1IGvGLqC8tk3Ll3F9QbnT5Fq63/Vyrz+RQZLmc=
+
+Name: installTime/assets/Themes/GridButton.theme
+SHA-256-Digest: 1yDennNltegz4n2nmIoP6d9OwC2noqPLRRb0TX6Z8vY=
+
+Name: installTime/assets/Themes/Warning_Button.theme
+SHA-256-Digest: 9KSY6s3iz8NWcxD97Ctt3JqA6i4jR+oiuvLwXUH2Bi0=
+
+Name: installTime/assets/Themes/Warning_Button.tres.remap
+SHA-256-Digest: MlS1yjCZ2I4z87heKIDlfSe9yEhxqWiJ6eozx9Z7jcM=
+
+Name: installTime/assets/Themes/Warning_Label.theme
+SHA-256-Digest: ZuGdI6gLvNwOxyi2iZ3M8zQm/W+KwqVYqrfRgraZ36M=
+
+Name: installTime/assets/Themes/label_on_scoreboard.theme
+SHA-256-Digest: 76qYAWibh2Hanjhwv9ZBQdZWgeAl8L9Wb5LVhThIkx4=
+
+Name: installTime/assets/_cl_
+SHA-256-Digest: +gsRTMCniM5dKRvglvayc7wRGVmh/q/5dJTLx438qiw=
+
+Name: installTime/assets/addons/godot-sqlite/gdsqlite.gdextension
+SHA-256-Digest: iFN1nG9ebVZZoqmewZGXOl6AOdaTrWU170s9r+TmITk=
+
+Name: installTime/assets/addons/godot-sqlite/godot-sqlite.gd.remap
+SHA-256-Digest: Pq41QCKzJrQLhCm9wUeNr6uzqGb1vKHGfOQPJlAbbTk=
+
+Name: installTime/assets/addons/godot-sqlite/godot-sqlite.gdc
+SHA-256-Digest: SLXXdfKiOB9u+tPkIxZeagkhF4YuZvFXWWbdErz8lhg=
+
+Name: installTime/assets/addons/quiver_leaderboards/leaderboard_ui.gd.
+ remap
+SHA-256-Digest: +Hvf4TPyKiKCm2eQbnoYkFohMUdYkDWO4/URaRaWJqQ=
+
+Name: installTime/assets/addons/quiver_leaderboards/leaderboard_ui.gdc
+SHA-256-Digest: nTtvL4jGpiROZxdmtei5inXJ5Yk4X1gqaLNmoq+YA1k=
+
+Name: installTime/assets/addons/quiver_leaderboards/leaderboard_ui.tsc
+ n.remap
+SHA-256-Digest: QYQjylCmYlrTKfCGng6md1ib9qI+HIUtDIuf4U/mX60=
+
+Name: installTime/assets/addons/quiver_leaderboards/leaderboards.gd.re
+ map
+SHA-256-Digest: CB+F+EjVaLD2n/O6exxq/HIy02FytA9BOEjF5k8qPvI=
+
+Name: installTime/assets/addons/quiver_leaderboards/leaderboards.gdc
+SHA-256-Digest: zGuHmTpWUxW5d+mfHLz446d/2VKvCy2XeP9KWxAO/og=
+
+Name: installTime/assets/addons/quiver_leaderboards/leaderboards.tscn.
+ remap
+SHA-256-Digest: cOydKiwGngmk+UVatrSaZZnnI8G36DQ4LHtzWx+0I0A=
+
+Name: installTime/assets/addons/quiver_leaderboards/plugin.gd.remap
+SHA-256-Digest: n3PFjbXXvebodQZ2jcxTW1DHcGOUr3VnrDoXLC2LtqY=
+
+Name: installTime/assets/addons/quiver_leaderboards/plugin.gdc
+SHA-256-Digest: boKFYg3h8uNVfKqVwni5wmtBXGC5OpS2HAsSG18RWbg=
+
+Name: installTime/assets/addons/quiver_player_accounts/player_accounts
+ .gd.remap
+SHA-256-Digest: r5xJ11JTLkoOirTsxI9kU9a8UZgQePi4XBxLstDA+ls=
+
+Name: installTime/assets/addons/quiver_player_accounts/player_accounts
+ .gdc
+SHA-256-Digest: YTGYtlRp6w9RMqASak+3PDW2xzbaNwWRqlH+791JX/0=
+
+Name: installTime/assets/addons/quiver_player_accounts/player_accounts
+ .tscn.remap
+SHA-256-Digest: GBwIehwKV6OolBTGruHMIY/WmO7j3w8GSbyGNysXJX0=
+
+Name: installTime/assets/addons/quiver_player_accounts/plugin.gd.remap
+SHA-256-Digest: gzb0KfLrsj/JFkDm2ein7iVZhMThno5ilIZ9S1+Bj9A=
+
+Name: installTime/assets/addons/quiver_player_accounts/plugin.gdc
+SHA-256-Digest: KkIm1yIzaDs4J4uSXOHT2D/cvboldinATEcnC9zwZpM=
+
+Name: installTime/assets/icon.svg.import
+SHA-256-Digest: o7rqz0Bap1bIrbqzJnrgdwCIAtxrVvN/k6DljcwAsqs=
+
+Name: installTime/assets/project.binary
+SHA-256-Digest: HUQ7eHGBvRILbWa1H7cw8+5XzlpNjN2TpAzQKF58vGo=
+
+Name: installTime/manifest/AndroidManifest.xml
+SHA-256-Digest: ERQCyAuTDtAsxSi4HTkB6LMThMM/qbNZRdgrEO8XhdI=
+
