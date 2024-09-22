@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Assets/LogoAwe.png"
-config/icon="res://Assets/icon.png"
+config/icon="res://Assets/icon192x192.png"
 
 [autoload]
 
