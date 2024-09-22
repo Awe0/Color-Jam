@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://df1j1s2aa4kir"]
 
 [ext_resource type="PackedScene" uid="uid://dyv8j4tlre125" path="res://Scenes/Help/Step1.tscn" id="1_j0i3j"]
-[ext_resource type="Script" path="res://Scripts/UI/help*.gd" id="1_qmdcc"]
+[ext_resource type="Script" path="res://Scripts/UI/help.gd" id="1_qmdcc"]
 [ext_resource type="PackedScene" uid="uid://rl1vfbytci6b" path="res://Scenes/Help/Step2.tscn" id="2_tfw0d"]
 [ext_resource type="PackedScene" uid="uid://owfqij8bllfs" path="res://Scenes/Help/Step3.tscn" id="3_1q6qk"]
 [ext_resource type="PackedScene" uid="uid://c24orgatcbbtm" path="res://Scenes/Help/Step4.tscn" id="5_w5dqx"]
