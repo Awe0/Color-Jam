@@ -1,16 +1,18 @@
 extends Control
 
 @onready var grid_container: GridContainer = $GridContainer
-@onready var score_label: Label = $Score
-@onready var preview: TextureRect = $Preview
-@onready var preview_2: TextureRect = $Preview2
-@onready var preview_3: TextureRect = $Preview3
+@onready var score_label: Label = $HeadApp/Score
+@onready var preview: TextureRect = $PreviewZone/Preview
+@onready var preview_2: TextureRect = $PreviewZone/Preview2
+@onready var preview_3: TextureRect = $PreviewZone/Preview3
 @onready var restart_button: Button = $VBoxContainer/Restart
 @onready var delete_button: Button = $VBoxContainer/Delete
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
 @onready var change_piece_button: Button = $VBoxContainer/ChangePiece
 @onready var help: Control = $Help
+@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var level_label: Label = $Level
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
@@ -22,6 +24,7 @@ const ENABLE_DELETE_BUTTON = preload("res://Assets/Game_buttons/bouton_poub_on.p
 const ENABLE_REROLL_BUTTON = preload("res://Assets/Game_buttons/bouton_reroal_on.png")
 
 var score: int = 0
+var level: int = 1
 var cells = []
 var selected_color = null 
 var piece_queue = []
@@ -100,11 +103,26 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
 		preview.rotation = 0
+		update_progress_bar()
 		score_count()
 		update_piece_queue()
 		game_over_statement()
 	else:
 		return
+
+func update_progress_bar():
+	progress_bar.value = score
+	print("max value = " + str(progress_bar.max_value))
+	print("actual value = " + str(progress_bar.value))
+	if progress_bar.value >= progress_bar.max_value:
+		if level == 1:
+			progress_bar.max_value = 100 
+			progress_bar.value = 0
+			level += 1
+			level_label.text = "Level " + str(level)
+		else:
+			progress_bar.max_value = 80
+	
 
 func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	for n in range(size):
@@ -192,12 +210,16 @@ func _on_rotate_pressed() -> void:
 	if selected_color != null:
 		if selected_color.is_vertical == true:
 			selected_color.is_vertical = false
-			if preview.rotation == 0:
-				preview.rotation = -1.57079994678497
-			elif preview.rotation != 0:
-				preview.rotation = 0
+			rotating_preview()
 		else:
 			selected_color.is_vertical = true
+			rotating_preview()
+
+func rotating_preview():
+	if preview.rotation == 0:
+		preview.rotation = -1.57079994678497
+	elif preview.rotation != 0:
+		preview.rotation = 0
 
 func _on_restart_pressed() -> void:
 	game_over.visible = false

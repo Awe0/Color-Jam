@@ -6,15 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bfu8qykgd24kc" path="res://Assets/Game_buttons/bouton_poub_on.png" id="5_3omj5"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game_Over.tscn" id="5_b0imn"]
 [ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="6_1bbwq"]
-[ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="6_6oucx"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="6_7oot7"]
 [ext_resource type="Texture2D" uid="uid://cby472y3q6onl" path="res://Assets/Game_buttons/bouton_restart_on.png" id="6_7utxl"]
 [ext_resource type="Texture2D" uid="uid://bu73cv4mo5057" path="res://Assets/Game_buttons/bouton_turn_on.png" id="6_gagw3"]
 [ext_resource type="Texture2D" uid="uid://tmb11eejum37" path="res://Assets/Game_buttons/bouton_back_on.png" id="7_aixt7"]
 [ext_resource type="Texture2D" uid="uid://dtf1twbiby8cx" path="res://Assets/Game_buttons/bouton_param_on.png" id="7_nl3qk"]
 [ext_resource type="Texture2D" uid="uid://c4h0n7fliykqb" path="res://Assets/Game_buttons/bouton_tuto_on.png" id="8_im52w"]
-
-[sub_resource type="Theme" id="Theme_mwabh"]
+[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="8_jx51j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6usu"]
 bg_color = Color(0.596078, 0.760784, 0.643137, 0.858824)
@@ -88,6 +86,8 @@ Button/styles/hover = SubResource("StyleBoxFlat_0j1uf")
 Button/styles/normal = SubResource("StyleBoxFlat_5022k")
 Button/styles/pressed = SubResource("StyleBoxFlat_o6usu")
 
+[sub_resource type="Theme" id="Theme_mwabh"]
+
 [node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -107,6 +107,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_vhpsh")
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 140.0
+offset_right = 441.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("8_jx51j")
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 176.0
+offset_right = 670.0
+offset_bottom = 203.0
+show_percentage = false
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -165,15 +185,6 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
 
-[node name="Score" type="Label" parent="."]
-layout_mode = 0
-offset_left = 289.0
-offset_top = 50.0
-offset_right = 450.0
-offset_bottom = 115.0
-theme = ExtResource("6_6oucx")
-text = "Score: 0"
-
 [node name="GameOver" parent="." instance=ExtResource("5_b0imn")]
 visible = false
 layout_mode = 0
@@ -182,109 +193,110 @@ offset_top = 432.0
 offset_right = 477.0
 offset_bottom = 575.0
 
-[node name="Next" type="Label" parent="."]
-layout_mode = 0
-offset_left = 552.0
-offset_top = 1093.0
-offset_right = 602.0
-offset_bottom = 1116.0
-theme = SubResource("Theme_mwabh")
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "NEXT !"
-
-[node name="PreviewContainer" type="Button" parent="."]
-layout_mode = 0
+[node name="PreviewZone" type="Control" parent="."]
+anchors_preset = 0
 offset_left = 50.0
 offset_top = 881.0
-offset_right = 474.0
-offset_bottom = 1089.0
+offset_right = 90.0
+offset_bottom = 921.0
+
+[node name="PreviewContainer" type="Button" parent="PreviewZone"]
+layout_mode = 0
+offset_right = 424.0
+offset_bottom = 208.0
 theme = SubResource("Theme_75vxk")
 
-[node name="PreviewNextPiece" type="Button" parent="."]
+[node name="PreviewNextPiece" type="Button" parent="PreviewZone"]
 layout_mode = 0
-offset_left = 481.0
-offset_top = 879.0
-offset_right = 670.0
-offset_bottom = 1089.0
+offset_left = 431.0
+offset_top = -2.0
+offset_right = 620.0
+offset_bottom = 208.0
 theme = SubResource("Theme_q2mkg")
 
-[node name="Preview" type="TextureRect" parent="."]
+[node name="Preview" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
-offset_left = 574.0
-offset_top = 981.0
-offset_right = 574.0
-offset_bottom = 981.0
+offset_left = 524.0
+offset_top = 100.0
+offset_right = 524.0
+offset_bottom = 100.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, 1)
 
-[node name="Preview2" type="TextureRect" parent="."]
+[node name="Preview2" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
-offset_left = 360.0
-offset_top = 982.0
-offset_right = 360.0
-offset_bottom = 982.0
+offset_left = 310.0
+offset_top = 101.0
+offset_right = 310.0
+offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 
-[node name="Preview3" type="TextureRect" parent="."]
+[node name="Preview3" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
-offset_left = 162.0
-offset_top = 982.0
-offset_right = 162.0
-offset_bottom = 982.0
+offset_left = 112.0
+offset_top = 101.0
+offset_right = 112.0
+offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 
-[node name="Menu" type="Button" parent="."]
+[node name="Next" type="Label" parent="PreviewZone"]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 53.0
-offset_right = 113.0
-offset_bottom = 116.0
+offset_left = 502.0
+offset_top = 212.0
+offset_right = 552.0
+offset_bottom = 235.0
+theme = SubResource("Theme_mwabh")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_jx51j")
+text = "NEXT !"
+
+[node name="HeadApp" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 289.0
+offset_top = 50.0
+offset_right = 329.0
+offset_bottom = 90.0
+
+[node name="Score" type="Label" parent="HeadApp"]
+layout_mode = 0
+offset_left = -9.0
+offset_right = 152.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("8_jx51j")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+
+[node name="Menu" type="Button" parent="HeadApp"]
+layout_mode = 0
+offset_left = -239.0
+offset_top = 3.0
+offset_right = -176.0
+offset_bottom = 66.0
 theme = ExtResource("6_7oot7")
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("7_aixt7")
 
-[node name="HelpButton" type="Button" parent="."]
+[node name="HelpButton" type="Button" parent="HeadApp"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 53.0
-offset_right = 207.0
-offset_bottom = 116.0
+offset_left = -145.0
+offset_top = 3.0
+offset_right = -82.0
+offset_bottom = 66.0
 theme = ExtResource("6_7oot7")
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("8_im52w")
 
-[node name="ParamButton" type="Button" parent="."]
+[node name="ParamButton" type="Button" parent="HeadApp"]
 layout_mode = 0
-offset_left = 607.0
-offset_top = 53.0
-offset_right = 670.0
-offset_bottom = 116.0
+offset_left = 318.0
+offset_top = 3.0
+offset_right = 381.0
+offset_bottom = 66.0
 theme = ExtResource("6_7oot7")
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("7_nl3qk")
-
-[node name="Success" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 32.0
-offset_top = 122.0
-offset_right = 700.0
-offset_bottom = 294.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 126
-text = "SUCCESS !!!"
-
-[node name="Fail" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 32.0
-offset_top = 314.0
-offset_right = 700.0
-offset_bottom = 486.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 126
-text = "FAIL !!!"
-horizontal_alignment = 1
 
 [node name="Help" parent="." instance=ExtResource("6_1bbwq")]
 visible = false
@@ -295,6 +307,6 @@ visible = false
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="Menu_Pressed" from="GameOver" to="." method="_on_menu_pressed"]
 [connection signal="Restart_Pressed" from="GameOver" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="HeadApp/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HeadApp/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="Quit_Pressed" from="Help" to="." method="_on_help_quit_pressed"]
