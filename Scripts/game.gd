@@ -50,6 +50,10 @@ func _ready():
 	initialize_piece_queue()
 	create_grid()
 	update_previews()
+	progress_bar.max_value = 100
+
+#func _process(delta: float) -> void:
+	#update_progress_bar()
 
 func initialize_piece_queue():
 	for i in range(3):
@@ -67,11 +71,14 @@ func update_piece_queue():
 	update_previews()
 
 func reroll_piece():
+	var previous_selected_scene = piece_queue[0] if piece_queue.size() > 0 else null
 	for i in range(3):
-		var random_index = randi() % color_scenes.size()
-		var new_piece = color_scenes[random_index]
+		var new_piece = null
+		while new_piece == null or new_piece == previous_selected_scene: # Compare les PackedScenes
+			var random_index = randi() % color_scenes.size()
+			new_piece = color_scenes[random_index]
 		piece_queue[i] = new_piece
-		selected_color = piece_queue[i].instantiate()
+	selected_color = piece_queue[0].instantiate()
 	update_previews()
 
 func create_grid():
@@ -103,7 +110,6 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
 		preview.rotation = 0
-		update_progress_bar()
 		score_count()
 		update_piece_queue()
 		game_over_statement()
@@ -112,17 +118,17 @@ func place_color(i: int, j: int):
 
 func update_progress_bar():
 	progress_bar.value = score
-	print("max value = " + str(progress_bar.max_value))
-	print("actual value = " + str(progress_bar.value))
-	if progress_bar.value >= progress_bar.max_value:
-		if level == 1:
-			progress_bar.max_value = 100 
-			progress_bar.value = 0
-			level += 1
-			level_label.text = "Level " + str(level)
-		else:
-			progress_bar.max_value = 80
-	
+	#print("max value = " + str(progress_bar.max_value))
+	#print("actual value = " + str(progress_bar.value))
+	if progress_bar.value == progress_bar.max_value:
+		progress_bar.value = 0
+		#if level != 1:
+			#progress_bar.max_value = 80 
+			#level += 1
+			#level_label.text = "Level " + str(level)
+		#else:
+			#level += 1
+
 
 func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	for n in range(size):
@@ -194,6 +200,8 @@ func reset_grid():
 				cell.icon = BLANK_CELL
 
 func upgrade_grid():
+	level += 1
+	level_label.text = "Level " + str(level)
 	reroll += 2
 	delete += 2
 	update_rerolls()
@@ -232,12 +240,13 @@ func _on_restart_pressed() -> void:
 	update_delete()
 
 func update_rerolls():
-		if reroll > 0:
-			change_piece_button.icon = ENABLE_REROLL_BUTTON
-		elif reroll <= 0:
-			change_piece_button.icon = DISABLE_REROLL_BUTTON
-			if delete <= 0:
-				game_over_statement()
+	$AmountOfReroll.text = "x" + str(reroll)
+	if reroll > 0:
+		change_piece_button.icon = ENABLE_REROLL_BUTTON
+	elif reroll <= 0:
+		change_piece_button.icon = DISABLE_REROLL_BUTTON
+		if delete <= 0:
+			game_over_statement()
 
 func _on_change_piece_pressed() -> void:
 	reroll -= 1
@@ -271,6 +280,7 @@ func _on_delete_pressed() -> void:
 		delete = 0
 
 func update_delete():
+		$AmountOfDelete.text = "x" + str(delete)
 		if delete > 0:
 			delete_button.icon = ENABLE_DELETE_BUTTON
 		elif delete <= 0:
@@ -279,6 +289,7 @@ func update_delete():
 				game_over_statement()
 
 func game_over_statement():
+	update_progress_bar()
 	if not check_grid(selected_color):
 		if reroll <= 0 && delete <= 0:
 			game_over.visible = true
