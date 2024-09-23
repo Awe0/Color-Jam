@@ -111,9 +111,9 @@ texture = ExtResource("2_vhpsh")
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 50.0
-offset_top = 906.0
+offset_top = 988.0
 offset_right = 468.0
-offset_bottom = 1324.0
+offset_bottom = 1406.0
 theme_override_constants/separation = 25
 
 [node name="Delete" type="Button" parent="VBoxContainer"]
@@ -134,9 +134,9 @@ icon = ExtResource("6_7utxl")
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 30.0
+offset_top = 112.0
 offset_right = 42.0
-offset_bottom = 70.0
+offset_bottom = 152.0
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -158,9 +158,9 @@ icon_alignment = 1
 clip_contents = true
 layout_mode = 1
 offset_left = 50.0
-offset_top = 163.0
+offset_top = 245.0
 offset_right = 670.0
-offset_bottom = 783.0
+offset_bottom = 865.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
@@ -185,9 +185,9 @@ offset_bottom = 575.0
 [node name="Next" type="Label" parent="."]
 layout_mode = 0
 offset_left = 552.0
-offset_top = 1011.0
+offset_top = 1093.0
 offset_right = 602.0
-offset_bottom = 1034.0
+offset_bottom = 1116.0
 theme = SubResource("Theme_mwabh")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "NEXT !"
@@ -195,42 +195,42 @@ text = "NEXT !"
 [node name="PreviewContainer" type="Button" parent="."]
 layout_mode = 0
 offset_left = 50.0
-offset_top = 799.0
+offset_top = 881.0
 offset_right = 474.0
-offset_bottom = 1007.0
+offset_bottom = 1089.0
 theme = SubResource("Theme_75vxk")
 
 [node name="PreviewNextPiece" type="Button" parent="."]
 layout_mode = 0
 offset_left = 481.0
-offset_top = 797.0
+offset_top = 879.0
 offset_right = 670.0
-offset_bottom = 1007.0
+offset_bottom = 1089.0
 theme = SubResource("Theme_q2mkg")
 
 [node name="Preview" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 574.0
-offset_top = 899.0
+offset_top = 981.0
 offset_right = 574.0
-offset_bottom = 899.0
+offset_bottom = 981.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, 1)
 
 [node name="Preview2" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 360.0
-offset_top = 900.0
+offset_top = 982.0
 offset_right = 360.0
-offset_bottom = 900.0
+offset_bottom = 982.0
 scale = Vector2(0.5, 0.5)
 
 [node name="Preview3" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 162.0
-offset_top = 900.0
+offset_top = 982.0
 offset_right = 162.0
-offset_bottom = 900.0
+offset_bottom = 982.0
 scale = Vector2(0.5, 0.5)
 
 [node name="Menu" type="Button" parent="."]
