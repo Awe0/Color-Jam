@@ -99,6 +99,7 @@ func place_color(i: int, j: int):
 			var x = i + n if selected_color.is_vertical else i
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
+		preview.rotation = 0
 		score_count()
 		update_piece_queue()
 		game_over_statement()
@@ -166,7 +167,7 @@ func check_grid(piece) -> bool:
 
 func score_count():
 	score += selected_color.score
-	score_label.text = "Score: " + str(score)
+	score_label.text = str(score)
 
 func reset_grid():
 	for row in cells:
@@ -188,25 +189,21 @@ func upgrade_grid():
 				cell.icon = BLANK_CELL
 
 func _on_rotate_pressed() -> void:
-	print(preview.position)
-	if preview.rotation == 0:
-		preview.rotation = -1.57079994678497
-	elif preview.rotation != 0:
-		preview.rotation = 0
-	#if selected_color != null:
-		#if selected_color.is_vertical == true:
-			#selected_color.is_vertical = false
-			#SignalBus.Rotate.emit()
-		#else:
-			#selected_color.is_vertical = true
-			#SignalBus.Rotate.emit()
+	if selected_color != null:
+		if selected_color.is_vertical == true:
+			selected_color.is_vertical = false
+			if preview.rotation == 0:
+				preview.rotation = -1.57079994678497
+			elif preview.rotation != 0:
+				preview.rotation = 0
+		else:
+			selected_color.is_vertical = true
 
 func _on_restart_pressed() -> void:
 	game_over.visible = false
 	display_all_buttons()
 	reset_grid()
 	score = 0
-	score_label.text = "Score: 0"
 	reroll = 2
 	update_rerolls()
 	delete = 2
