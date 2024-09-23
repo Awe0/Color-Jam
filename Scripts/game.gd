@@ -5,19 +5,21 @@ extends Control
 @onready var preview: CenterContainer = $HBoxContainer/Preview
 @onready var preview_2: CenterContainer = $HBoxContainer/Preview2
 @onready var preview_3: CenterContainer = $HBoxContainer/Preview3
-@onready var restart_button: Button = $VBoxContainer/Label/MarginContainer/Restart
-@onready var change_piece_button: Button = $VBoxContainer/Label2/MarginContainer/ChangePiece
-@onready var delete_button: Button = $VBoxContainer/Label3/MarginContainer/Delete
+@onready var restart_button: Button = $VBoxContainer/Restart
+@onready var delete_button: Button = $VBoxContainer/Delete
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
+@onready var change_piece_button: Button = $VBoxContainer/ChangePiece
 @onready var help: Control = $Help
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/GridButton.theme")
-const DISABLE_THEME_BUTTON = preload("res://Themes/Disable_Button.theme")
-const ENABLE_THEME_BUTTON = preload("res://Themes/Buttons.tres")
+const DISABLE_DELETE_BUTTON = preload("res://Assets/Game_buttons/bouton_poub_off.png")
+const DISABLE_REROLL_BUTTON = preload("res://Assets/Game_buttons/bouton_reroal_off.png")
+const ENABLE_DELETE_BUTTON = preload("res://Assets/Game_buttons/bouton_poub_on.png")
+const ENABLE_REROLL_BUTTON = preload("res://Assets/Game_buttons/bouton_reroal_on.png")
 
 var score: int = 0
 var cells = []
@@ -209,10 +211,10 @@ func _on_restart_pressed() -> void:
 
 func update_rerolls():
 		if reroll > 0:
-			change_piece_button.set_theme(ENABLE_THEME_BUTTON)
+			change_piece_button.icon = ENABLE_REROLL_BUTTON
 			change_piece_button.text = "Reroll\nPiece "+str(reroll)+"x"
 		elif reroll <= 0:
-			change_piece_button.set_theme(DISABLE_THEME_BUTTON)
+			change_piece_button.icon = DISABLE_REROLL_BUTTON
 			change_piece_button.text = "No\nReroll!"
 			if delete <= 0:
 				game_over_statement()
@@ -250,11 +252,9 @@ func _on_delete_pressed() -> void:
 
 func update_delete():
 		if delete > 0:
-			delete_button.set_theme(ENABLE_THEME_BUTTON)
-			delete_button.text = "Delete\nPiece "+str(delete)+"x"
+			delete_button.icon = ENABLE_DELETE_BUTTON
 		elif delete <= 0:
-			delete_button.set_theme(DISABLE_THEME_BUTTON)
-			delete_button.text = "No\nDelete!"
+			delete_button.icon = DISABLE_DELETE_BUTTON
 			if reroll <= 0:
 				game_over_statement()
 
