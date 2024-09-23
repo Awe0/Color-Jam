@@ -200,22 +200,18 @@ func _on_restart_pressed() -> void:
 	game_over.visible = false
 	display_all_buttons()
 	reset_grid()
-	var enable_theme_button = load("res://Themes/Buttons.tres")
 	score = 0
 	score_label.text = "Score: 0"
 	reroll = 2
 	update_rerolls()
 	delete = 2
 	update_delete()
-	change_piece_button.set_theme(enable_theme_button)
 
 func update_rerolls():
 		if reroll > 0:
 			change_piece_button.icon = ENABLE_REROLL_BUTTON
-			change_piece_button.text = "Reroll\nPiece "+str(reroll)+"x"
 		elif reroll <= 0:
 			change_piece_button.icon = DISABLE_REROLL_BUTTON
-			change_piece_button.text = "No\nReroll!"
 			if delete <= 0:
 				game_over_statement()
 
