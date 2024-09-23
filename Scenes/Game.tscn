@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=11 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_1nh3o"]
@@ -20,11 +20,22 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nufk"]
+bg_color = Color(0.768196, 0.66999, 0.822832, 0.858824)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="Theme" id="Theme_75vxk"]
 Button/styles/disabled = SubResource("StyleBoxFlat_o6usu")
 Button/styles/focus = SubResource("StyleBoxFlat_o6usu")
 Button/styles/hover = SubResource("StyleBoxFlat_o6usu")
-Button/styles/normal = SubResource("StyleBoxFlat_o6usu")
+Button/styles/normal = SubResource("StyleBoxFlat_5nufk")
 Button/styles/pressed = SubResource("StyleBoxFlat_o6usu")
 
 [node name="Game" type="Control"]
@@ -169,8 +180,15 @@ text = "NEXT !"
 layout_mode = 0
 offset_left = 50.0
 offset_top = 799.0
-offset_right = 670.0
+offset_right = 474.0
 offset_bottom = 1007.0
+theme = SubResource("Theme_75vxk")
+
+[node name="PreviewNextPiece" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 797.0
+offset_right = 670.0
+offset_bottom = 1005.0
 theme = SubResource("Theme_75vxk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
