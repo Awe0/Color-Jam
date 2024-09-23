@@ -62,10 +62,11 @@ func update_piece_queue():
 	update_previews()
 
 func reroll_piece():
-	var random_index = randi() % color_scenes.size()
-	var new_piece = color_scenes[random_index]
-	piece_queue[0] = new_piece
-	selected_color = piece_queue[0].instantiate()
+	for i in range(3):
+		var random_index = randi() % color_scenes.size()
+		var new_piece = color_scenes[random_index]
+		piece_queue[i] = new_piece
+		selected_color = piece_queue[i].instantiate()
 	update_previews()
 
 func create_grid():
