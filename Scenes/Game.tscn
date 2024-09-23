@@ -96,7 +96,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y1bmt")
-metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0, 1249.0, 786.0, 53.0, 133.0, 1007.0]
+metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0, 1249.0, 786.0, 53.0, 133.0, 1007.0, 799.0, 900.0]
 metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0, 207.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -208,24 +208,30 @@ offset_right = 670.0
 offset_bottom = 1007.0
 theme = SubResource("Theme_q2mkg")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 785.0
-offset_right = 1288.0
-offset_bottom = 943.0
+[node name="Preview" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 574.0
+offset_top = 899.0
+offset_right = 574.0
+offset_bottom = 899.0
 scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 400
-alignment = 1
+pivot_offset = Vector2(0, 1)
 
-[node name="Preview3" type="CenterContainer" parent="HBoxContainer"]
+[node name="Preview2" type="TextureRect" parent="."]
 layout_mode = 2
+offset_left = 360.0
+offset_top = 900.0
+offset_right = 360.0
+offset_bottom = 900.0
+scale = Vector2(0.5, 0.5)
 
-[node name="Preview2" type="CenterContainer" parent="HBoxContainer"]
+[node name="Preview3" type="TextureRect" parent="."]
 layout_mode = 2
-
-[node name="Preview" type="CenterContainer" parent="HBoxContainer"]
-layout_mode = 2
+offset_left = 162.0
+offset_top = 900.0
+offset_right = 162.0
+offset_bottom = 900.0
+scale = Vector2(0.5, 0.5)
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 0

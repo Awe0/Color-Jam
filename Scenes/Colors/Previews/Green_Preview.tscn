@@ -10,7 +10,9 @@ script = ExtResource("1_v8gcw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 192.0
+offset_left = -29.0
+offset_top = -93.0
+offset_right = 35.0
+offset_bottom = 99.0
 pivot_offset = Vector2(29, 93)
 texture = ExtResource("1_6ighy")

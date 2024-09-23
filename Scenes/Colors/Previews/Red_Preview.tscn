@@ -8,7 +8,9 @@ anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 54.0
-offset_bottom = 54.0
+offset_left = -23.0
+offset_top = -25.0
+offset_right = 31.0
+offset_bottom = 29.0
 pivot_offset = Vector2(23, 25)
 texture = ExtResource("1_mhlce")

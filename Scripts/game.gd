@@ -2,9 +2,9 @@ extends Control
 
 @onready var grid_container: GridContainer = $GridContainer
 @onready var score_label: Label = $Score
-@onready var preview: CenterContainer = $HBoxContainer/Preview
-@onready var preview_2: CenterContainer = $HBoxContainer/Preview2
-@onready var preview_3: CenterContainer = $HBoxContainer/Preview3
+@onready var preview: TextureRect = $Preview
+@onready var preview_2: TextureRect = $Preview2
+@onready var preview_3: TextureRect = $Preview3
 @onready var restart_button: Button = $VBoxContainer/Restart
 @onready var delete_button: Button = $VBoxContainer/Delete
 @onready var game_over: Label = $GameOver
@@ -188,13 +188,18 @@ func upgrade_grid():
 				cell.icon = BLANK_CELL
 
 func _on_rotate_pressed() -> void:
-	if selected_color != null:
-		if selected_color.is_vertical == true:
-			selected_color.is_vertical = false
-			SignalBus.Rotate.emit()
-		else:
-			selected_color.is_vertical = true
-			SignalBus.Rotate.emit()
+	print(preview.position)
+	if preview.rotation == 0:
+		preview.rotation = -1.57079994678497
+	elif preview.rotation != 0:
+		preview.rotation = 0
+	#if selected_color != null:
+		#if selected_color.is_vertical == true:
+			#selected_color.is_vertical = false
+			#SignalBus.Rotate.emit()
+		#else:
+			#selected_color.is_vertical = true
+			#SignalBus.Rotate.emit()
 
 func _on_restart_pressed() -> void:
 	game_over.visible = false
