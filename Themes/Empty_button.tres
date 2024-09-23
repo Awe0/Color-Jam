@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bo63kkmto5g8t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uy5ha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fqsrv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5es8w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmrj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h8nc"]
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxEmpty_uy5ha")
+Button/styles/focus = SubResource("StyleBoxEmpty_fqsrv")
+Button/styles/hover = SubResource("StyleBoxEmpty_5es8w")
+Button/styles/normal = SubResource("StyleBoxEmpty_fmrj2")
+Button/styles/pressed = SubResource("StyleBoxEmpty_2h8nc")
