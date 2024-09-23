@@ -35,7 +35,6 @@ theme = ExtResource("1_sc6jh")
 script = ExtResource("2_d1cuo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
