@@ -123,9 +123,9 @@ horizontal_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 50.0
-offset_top = 176.0
+offset_top = 189.0
 offset_right = 670.0
-offset_bottom = 203.0
+offset_bottom = 216.0
 show_percentage = false
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
@@ -239,16 +239,29 @@ offset_right = 112.0
 offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 
-[node name="Next" type="Label" parent="PreviewZone"]
+[node name="AmountOfDelete" type="Label" parent="."]
 layout_mode = 0
-offset_left = 502.0
-offset_top = 212.0
-offset_right = 552.0
-offset_bottom = 235.0
+offset_left = 85.0
+offset_top = 1249.0
+offset_right = 113.0
+offset_bottom = 1287.0
 theme = SubResource("Theme_mwabh")
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
 theme_override_fonts/font = ExtResource("8_jx51j")
-text = "NEXT !"
+theme_override_font_sizes/font_size = 30
+text = "x2"
+
+[node name="AmountOfReroll" type="Label" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 1249.0
+offset_right = 242.0
+offset_bottom = 1287.0
+theme = SubResource("Theme_mwabh")
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("8_jx51j")
+theme_override_font_sizes/font_size = 30
+text = "x2"
 
 [node name="HeadApp" type="Control" parent="."]
 anchors_preset = 0
