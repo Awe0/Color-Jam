@@ -8,6 +8,16 @@
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="6_5b465"]
 [ext_resource type="Theme" uid="uid://cthpno0wk1nrx" path="res://Themes/label_on_scoreboard.theme" id="7_mkg2v"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsivq"]
+bg_color = Color(0.983981, 0.717652, 0.168808, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_2ty33"]
+Panel/styles/panel = SubResource("StyleBoxFlat_wsivq")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2ahj"]
 corner_radius_top_left = 50
 corner_radius_top_right = 50
@@ -20,16 +30,6 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsivq"]
-bg_color = Color(0.983981, 0.717652, 0.168808, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_2ty33"]
-Panel/styles/panel = SubResource("StyleBoxFlat_wsivq")
 
 [node name="Local_Scoreboard" type="Control"]
 layout_mode = 3
@@ -47,52 +47,32 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = -5.0
-offset_right = 12.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qolea")
 
-[node name="silver" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 50.0
-offset_top = 340.0
-offset_right = -50.0
-offset_bottom = -868.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 249.0
+offset_right = 670.0
+offset_bottom = 496.0
+theme_override_constants/separation = 20
+
+[node name="gold" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_2ty33")
+
+[node name="silver" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_m2ahj")
 
-[node name="bronze" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 427.0
-offset_right = -50.0
-offset_bottom = -781.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="bronze" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_cgfmx")
-
-[node name="gold" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 252.0
-offset_right = -50.0
-offset_bottom = -956.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_2ty33")
 
 [node name="Scoreboard" type="Label" parent="."]
 layout_mode = 1

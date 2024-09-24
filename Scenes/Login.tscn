@@ -1,49 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://qs2co4eyjrv2"]
+[gd_scene load_steps=4 format=3 uid="uid://qs2co4eyjrv2"]
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_m7kqs"]
 [ext_resource type="Script" path="res://Scripts/UI/login.gd" id="2_ffxov"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ost12"]
-bg_color = Color(0.815686, 0.737255, 0.862745, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_qkch3"]
-Panel/styles/panel = SubResource("StyleBoxFlat_ost12")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugbw0"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw7qr"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="Theme" id="Theme_ocebe"]
-LineEdit/colors/font_color = Color(0, 0, 0, 1)
-LineEdit/font_sizes/font_size = 40
-LineEdit/styles/normal = SubResource("StyleBoxFlat_ugbw0")
-TextEdit/colors/font_color = Color(0, 0, 0, 1)
-TextEdit/font_sizes/font_size = 40
-TextEdit/styles/normal = SubResource("StyleBoxFlat_vw7qr")
+[ext_resource type="Texture2D" uid="uid://8oil82k6al2w" path="res://Assets/BG_Menu.png" id="3_g6l46"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -56,27 +15,14 @@ theme = ExtResource("1_m7kqs")
 script = ExtResource("2_ffxov")
 metadata/_edit_vertical_guides_ = [51.0, 670.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.878431, 0.823529, 0.909804, 1)
-
-[node name="Panel_BG" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 51.0
-offset_top = 438.0
-offset_right = -50.0
-offset_bottom = -423.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_qkch3")
+texture = ExtResource("3_g6l46")
 
 [node name="Messages" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -107,192 +53,4 @@ theme_override_font_sizes/font_size = 50
 text = "Failed!"
 horizontal_alignment = 1
 
-[node name="No account" type="Label" parent="Messages"]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.447059)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "No account, please register before."
-horizontal_alignment = 1
-
 [node name="Timer" type="Timer" parent="Messages"]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 60
-alignment = 1
-
-[node name="UsernameContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 210
-alignment = 1
-
-[node name="Usename" type="Label" parent="VBoxContainer/UsernameContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/UsernameContainer/Usename"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Username" type="Label" parent="VBoxContainer/UsernameContainer/Usename/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Username :"
-
-[node name="Label" type="Label" parent="VBoxContainer/UsernameContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/UsernameContainer/Label"]
-layout_mode = 0
-offset_left = -60.0
-offset_top = -24.0
-offset_right = 160.0
-offset_bottom = 49.0
-
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/UsernameContainer/Label/MarginContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ocebe")
-
-[node name="PasswordContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 210
-alignment = 1
-
-[node name="Password" type="Label" parent="VBoxContainer/PasswordContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PasswordContainer/Password"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Password" type="Label" parent="VBoxContainer/PasswordContainer/Password/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Password :"
-
-[node name="Label" type="Label" parent="VBoxContainer/PasswordContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PasswordContainer/Label"]
-layout_mode = 0
-offset_left = -60.0
-offset_top = -24.0
-offset_right = 160.0
-offset_bottom = 49.0
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/PasswordContainer/Label/MarginContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ocebe")
-secret = true
-
-[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 210
-alignment = 1
-
-[node name="Back" type="Label" parent="VBoxContainer/ButtonContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/Back"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="back_button" type="Button" parent="VBoxContainer/ButtonContainer/Back/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Back"
-
-[node name="Submit" type="Label" parent="VBoxContainer/ButtonContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/Submit"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="submit_button" type="Button" parent="VBoxContainer/ButtonContainer/Submit/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Submit"
-
-[node name="Sign in" type="Label" parent="VBoxContainer/ButtonContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/Sign in"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="signin_button" type="Button" parent="VBoxContainer/ButtonContainer/Sign in/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Sign in"
-
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/Back/MarginContainer/back_button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/Submit/MarginContainer/submit_button" to="." method="_on_submit_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/Sign in/MarginContainer/signin_button" to="." method="_on_signin_button_pressed"]
