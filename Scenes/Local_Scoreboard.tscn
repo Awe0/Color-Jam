@@ -1,0 +1,263 @@
+[gd_scene load_steps=12 format=3 uid="uid://36c0s058quys"]
+
+[ext_resource type="Script" path="res://Scripts/UI/local_scoreboard.gd" id="1_j7her"]
+[ext_resource type="Texture2D" uid="uid://c8sibm0qa84gp" path="res://Assets/BG_Game.png" id="2_qolea"]
+[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_ndwpu"]
+[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_jncrm"]
+[ext_resource type="Texture2D" uid="uid://tmb11eejum37" path="res://Assets/Game_buttons/bouton_back_on.png" id="5_2j0d2"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="6_5b465"]
+[ext_resource type="Theme" uid="uid://cthpno0wk1nrx" path="res://Themes/label_on_scoreboard.theme" id="7_mkg2v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2ahj"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgfmx"]
+bg_color = Color(0.752941, 0.309804, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsivq"]
+bg_color = Color(0.983981, 0.717652, 0.168808, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_2ty33"]
+Panel/styles/panel = SubResource("StyleBoxFlat_wsivq")
+
+[node name="Local_Scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7her")
+metadata/_edit_horizontal_guides_ = [50.0, 1230.0, 180.0]
+metadata/_edit_vertical_guides_ = [50.0, 670.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 12.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qolea")
+
+[node name="silver" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 340.0
+offset_right = -50.0
+offset_bottom = -868.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2ahj")
+
+[node name="bronze" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 427.0
+offset_right = -50.0
+offset_bottom = -781.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgfmx")
+
+[node name="gold" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 252.0
+offset_right = -50.0
+offset_bottom = -956.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2ty33")
+
+[node name="Scoreboard" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+offset_bottom = -1174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 60
+text = "Scoreboard"
+horizontal_alignment = 1
+
+[node name="Button_container" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 74.0
+offset_right = 12.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_constants/separation = 465
+alignment = 1
+
+[node name="Menu" type="Button" parent="Button_container"]
+layout_mode = 2
+theme = ExtResource("4_jncrm")
+icon = ExtResource("5_2j0d2")
+
+[node name="Online" type="Button" parent="Button_container"]
+layout_mode = 2
+theme = ExtResource("6_5b465")
+text = "Online"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 180.0
+offset_right = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="rank_column" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="rank" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "RANK"
+
+[node name="rank1" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme = ExtResource("7_mkg2v")
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+text = "1"
+horizontal_alignment = 1
+
+[node name="rank2" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme = ExtResource("7_mkg2v")
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "2"
+horizontal_alignment = 1
+
+[node name="rank3" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "3"
+horizontal_alignment = 1
+
+[node name="rank4" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "4"
+horizontal_alignment = 1
+
+[node name="rank5" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "5"
+horizontal_alignment = 1
+
+[node name="rank6" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "6"
+horizontal_alignment = 1
+
+[node name="rank7" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "7"
+horizontal_alignment = 1
+
+[node name="rank8" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "8"
+horizontal_alignment = 1
+
+[node name="rank9" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "9"
+horizontal_alignment = 1
+
+[node name="rank10" type="Label" parent="HBoxContainer/rank_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "10"
+horizontal_alignment = 1
+
+[node name="username_column" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="username" type="Label" parent="HBoxContainer/username_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "USERNAME"
+horizontal_alignment = 1
+
+[node name="score_column" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="score" type="Label" parent="HBoxContainer/score_column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_fonts/font = ExtResource("3_ndwpu")
+theme_override_font_sizes/font_size = 30
+text = "SCORE"
+
+[connection signal="pressed" from="Button_container/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Button_container/Online" to="." method="_on_online_pressed"]
