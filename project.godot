@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Color Jam!"
-run/main_scene="res://Scenes/Menu.tscn"
+run/main_scene="res://Scenes/Login.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Assets/LogoAwe.png"
@@ -22,6 +22,13 @@ config/icon="res://Assets/icon192x192.png"
 SignalBus="*res://Scripts/Singletons/signalbus.gd"
 Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
 PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
+GodotPlayGameServices="*res://addons/GodotPlayGameServices/autoloads/godot_play_game_services.gd"
+SignInClient="*res://addons/GodotPlayGameServices/autoloads/sign_in_client.gd"
+PlayersClient="*res://addons/GodotPlayGameServices/autoloads/players_client.gd"
+AchievementsClient="*res://addons/GodotPlayGameServices/autoloads/achievements_client.gd"
+LeaderboardsClient="*res://addons/GodotPlayGameServices/autoloads/leaderboards_client.gd"
+SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.gd"
+EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
 
 [display]
 
@@ -34,7 +41,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
 
 [input]
 
