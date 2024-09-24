@@ -2,3 +2,6 @@
 ColorJam!.keystore
 .godot/
 android/
+addons/
+.idea
+
