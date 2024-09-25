@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8sibm0qa84gp" path="res://Assets/BG_Game.png" id="2_vhpsh"]
 [ext_resource type="Texture2D" uid="uid://dhki3w4xoe8ek" path="res://Assets/Game_buttons/bouton_reroal_on.png" id="4_6xdhv"]
 [ext_resource type="Texture2D" uid="uid://bfu8qykgd24kc" path="res://Assets/Game_buttons/bouton_poub_on.png" id="5_3omj5"]
-[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game_Over.tscn" id="5_b0imn"]
+[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/Game_Over.tscn" id="5_b0imn"]
 [ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="6_1bbwq"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="6_7oot7"]
 [ext_resource type="Texture2D" uid="uid://cby472y3q6onl" path="res://Assets/Game_buttons/bouton_restart_on.png" id="6_7utxl"]
