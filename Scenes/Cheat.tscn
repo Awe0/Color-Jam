@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnjcaav0m31gr"]
+
+[ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_jxnms"]
+[ext_resource type="Script" path="res://Scripts/cheat.gd" id="2_jcot5"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="3_4kcf2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vkgj"]
+bg_color = Color(0.76662, 0.76662, 0.766619, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0, 0.756863, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_iot05"]
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+TextEdit/font_sizes/font_size = 35
+TextEdit/styles/normal = SubResource("StyleBoxFlat_4vkgj")
+
+[node name="Cheat" type="Label"]
+offset_left = 246.0
+offset_top = 432.0
+offset_right = 477.0
+offset_bottom = 575.0
+theme = ExtResource("1_jxnms")
+script = ExtResource("2_jcot5")
+
+[node name="Name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 69.0
+offset_right = 226.0
+offset_bottom = 128.0
+theme = SubResource("Theme_iot05")
+placeholder_text = "Name
+"
+
+[node name="Score" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -1.0
+offset_right = 226.0
+offset_bottom = 58.0
+theme = SubResource("Theme_iot05")
+max_value = 5000.0
+
+[node name="Send" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 134.0
+offset_right = 213.0
+offset_bottom = 203.0
+theme = ExtResource("3_4kcf2")
+text = "Send"
+
+[node name="score+1000" type="Button" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 133.0
+offset_right = 418.0
+offset_bottom = 202.0
+theme = ExtResource("3_4kcf2")
+text = "Score +1000"
+
+[node name="score+1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 210.0
+offset_right = 420.0
+offset_bottom = 279.0
+theme = ExtResource("3_4kcf2")
+text = "Score +1"
+
+[connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
+[connection signal="pressed" from="score+1000" to="." method="_on_score_1000_pressed"]
+[connection signal="pressed" from="score+1" to="." method="_on_score_1_pressed"]
