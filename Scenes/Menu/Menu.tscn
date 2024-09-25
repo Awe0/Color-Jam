@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bghr8dfxro6pk"]
+[gd_scene load_steps=14 format=3 uid="uid://bghr8dfxro6pk"]
 
-[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_sc6jh"]
-[ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="2_d1cuo"]
-[ext_resource type="Texture2D" uid="uid://8oil82k6al2w" path="res://Assets/BG_Menu.png" id="3_lhwn6"]
-[ext_resource type="Texture2D" uid="uid://d2sym3wm53teq" path="res://Assets/Menu_buttons/bouton_play_menu_on.png" id="3_q6cd4"]
-[ext_resource type="Texture2D" uid="uid://mxsurijjg2n2" path="res://Assets/Menu_buttons/bouton_scorebord_menu_on.png" id="4_q7mk6"]
-[ext_resource type="Texture2D" uid="uid://v5ua5t6ctsox" path="res://Assets/Menu_buttons/bouton_quit_menu_on.png" id="5_1pdst"]
+[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_xop0u"]
+[ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="2_o4jl7"]
+[ext_resource type="Texture2D" uid="uid://8oil82k6al2w" path="res://Assets/BG_Menu.png" id="3_4i5s5"]
+[ext_resource type="Texture2D" uid="uid://d2sym3wm53teq" path="res://Assets/Menu_buttons/bouton_play_menu_on.png" id="4_fr7ab"]
+[ext_resource type="Texture2D" uid="uid://cnlgm7smtq0fu" path="res://Assets/Menu_buttons/bouton_play_menu_off.png" id="5_uk5sj"]
+[ext_resource type="Texture2D" uid="uid://mxsurijjg2n2" path="res://Assets/Menu_buttons/bouton_scorebord_menu_on.png" id="6_jkqjs"]
+[ext_resource type="Texture2D" uid="uid://v5ua5t6ctsox" path="res://Assets/Menu_buttons/bouton_quit_menu_on.png" id="7_t4p06"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn3th"]
 
@@ -31,8 +32,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_sc6jh")
-script = ExtResource("2_d1cuo")
+theme = ExtResource("1_xop0u")
+script = ExtResource("2_o4jl7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -41,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_lhwn6")
+texture = ExtResource("3_4i5s5")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -56,20 +57,21 @@ grow_vertical = 2
 theme_override_constants/separation = 34
 alignment = 1
 
-[node name="play_button" type="Button" parent="VBoxContainer2"]
+[node name="play_button" type="TextureButton" parent="VBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
-icon = ExtResource("3_q6cd4")
+texture_normal = ExtResource("4_fr7ab")
+texture_pressed = ExtResource("5_uk5sj")
 
 [node name="scoreboard_button" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
-icon = ExtResource("4_q7mk6")
+icon = ExtResource("6_jkqjs")
 
 [node name="quit_button" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
-icon = ExtResource("5_1pdst")
+icon = ExtResource("7_t4p06")
 
 [connection signal="pressed" from="VBoxContainer2/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]
