@@ -52,9 +52,6 @@ func _ready():
 	update_previews()
 	progress_bar.max_value = 100
 
-#func _process(delta: float) -> void:
-	#update_progress_bar()
-
 func initialize_piece_queue():
 	for i in range(3):
 		var random_index = randi() % color_scenes.size()
@@ -269,7 +266,7 @@ func display_all_buttons():
 	delete_button.visible = true
 
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
 
 func _on_delete_pressed() -> void:
 	delete -= 1
