@@ -20,7 +20,7 @@ func _ready() -> void:
 			print("Sign in attemps expired!")
 		
 		if is_authenticated:
-			get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
 	)
 
 func _on_timer_timeout(label: Label) -> void:
