@@ -73,3 +73,4 @@ offset_right = 274.0
 offset_bottom = 341.0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

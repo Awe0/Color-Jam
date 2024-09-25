@@ -7,12 +7,14 @@ extends Control
 @onready var preview_3: TextureRect = $PreviewZone/Preview3
 @onready var restart_button: Button = $VBoxContainer/Restart
 @onready var delete_button: Button = $VBoxContainer/Delete
+@onready var param_button: TextureButton = $HeadApp/ParamButton
 @onready var game_over: Label = $GameOver
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
 @onready var change_piece_button: Button = $VBoxContainer/ChangePiece
 @onready var help: Control = $Help
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var level_label: Label = $Level
+@onready var options: Control = $Options
 
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
@@ -47,6 +49,7 @@ var color_previews = {
 
 func _ready():
 	SignalBus.Username_sended.connect(store_score)
+	SignalBus.Restart_Game.connect(on_restart_pressed)
 	initialize_piece_queue()
 	create_grid()
 	update_previews()
@@ -107,8 +110,12 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
 		preview.rotation = 0
+		print(selected_color.is_vertical)
 		score_count()
 		update_piece_queue()
+		#if not Config.rotation_mode:
+			#selected_color.is_vertical = false
+			#preview.rotation = 0
 		game_over_statement()
 	else:
 		return
@@ -216,9 +223,9 @@ func _on_rotate_pressed() -> void:
 		if selected_color.is_vertical == true:
 			selected_color.is_vertical = false
 			rotating_preview()
-		else:
-			selected_color.is_vertical = true
-			rotating_preview()
+	else:
+		selected_color.is_vertical = true
+		rotating_preview()
 
 func rotating_preview():
 	if preview.rotation == 0:
@@ -226,7 +233,7 @@ func rotating_preview():
 	elif preview.rotation != 0:
 		preview.rotation = 0
 
-func _on_restart_pressed() -> void:
+func on_restart_pressed() -> void:
 	game_over.visible = false
 	display_all_buttons()
 	reset_grid()
@@ -254,13 +261,11 @@ func _on_change_piece_pressed() -> void:
 		reroll = 0
 
 func hide_all_buttons():
-	restart_button.visible = false
 	change_piece_button.visible = false
 	rotate_button.visible = false
 	delete_button.visible = false
 
 func display_all_buttons():
-	restart_button.visible = true
 	change_piece_button.visible = true
 	rotate_button.visible = true
 	delete_button.visible = true
@@ -305,3 +310,9 @@ func _on_help_button_pressed() -> void:
 
 func _on_help_quit_pressed() -> void:
 	help.visible = false
+
+func _on_param_button_pressed() -> void:
+	if options.visible == false:
+		options.visible = true
+	else:
+		options.visible = false
