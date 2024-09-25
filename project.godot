@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Color Jam!"
-run/main_scene="res://Scenes/Login.tscn"
+run/main_scene="res://Scenes/Menu/Login.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Assets/LogoAwe.png"
@@ -29,6 +29,7 @@ AchievementsClient="*res://addons/GodotPlayGameServices/autoloads/achievements_c
 LeaderboardsClient="*res://addons/GodotPlayGameServices/autoloads/leaderboards_client.gd"
 SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.gd"
 EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
+SaveSystem="*res://Scripts/Singletons/SaveSystem.gd"
 
 [display]
 

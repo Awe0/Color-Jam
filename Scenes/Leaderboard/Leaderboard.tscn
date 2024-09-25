@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://crcflvmtlbp5n"]
 
-[ext_resource type="Script" path="res://Scripts/UI/leaderboard.gd" id="1_jbfn0"]
-[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="3_yehs1"]
-[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="4_7rwi2"]
-[ext_resource type="Texture2D" uid="uid://tmb11eejum37" path="res://Assets/Game_buttons/bouton_back_on.png" id="4_uq0i4"]
+[ext_resource type="Script" path="res://Scripts/UI/leaderboard.gd" id="1_bjj3b"]
+[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="2_53lxv"]
+[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="3_ebnvg"]
+[ext_resource type="Texture2D" uid="uid://tmb11eejum37" path="res://Assets/Game_buttons/bouton_back_on.png" id="4_0ln67"]
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -12,11 +12,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jbfn0")
+script = ExtResource("1_bjj3b")
 metadata/_edit_horizontal_guides_ = [50.0, 1230.0, 180.0]
 metadata/_edit_vertical_guides_ = [50.0, 670.0]
 
-[node name="LeaderboardUI" parent="." instance=ExtResource("4_7rwi2")]
+[node name="LeaderboardUI" parent="." instance=ExtResource("2_53lxv")]
 layout_mode = 1
 leaderboard_id = "color-jam-color-jam-JJaQ"
 
@@ -33,7 +33,7 @@ theme_override_constants/separation = 525
 
 [node name="Menu" type="Button" parent="Button_Container"]
 layout_mode = 2
-theme = ExtResource("3_yehs1")
-icon = ExtResource("4_uq0i4")
+theme = ExtResource("3_ebnvg")
+icon = ExtResource("4_0ln67")
 
 [connection signal="pressed" from="Button_Container/Menu" to="." method="_on_menu_pressed"]

@@ -6,6 +6,7 @@ extends Control
 #@onready var all_datas: Array = SqlController.get_scores_from_db()
 
 const LABEL_ON_SCOREBOARD = preload("res://Themes/label_on_scoreboard.theme")
+const LEADERBOARD_ID = "local_leaderboard"
 
 var score: int
 var username: String
