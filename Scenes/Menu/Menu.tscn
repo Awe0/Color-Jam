@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4i5s5")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -57,22 +57,22 @@ grow_vertical = 2
 theme_override_constants/separation = 34
 alignment = 1
 
-[node name="play_button" type="TextureButton" parent="VBoxContainer2"]
+[node name="play_button" type="TextureButton" parent="ButtonContainer"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
 texture_normal = ExtResource("4_fr7ab")
 texture_pressed = ExtResource("5_uk5sj")
 
-[node name="scoreboard_button" type="Button" parent="VBoxContainer2"]
+[node name="scoreboard_button" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
 icon = ExtResource("6_jkqjs")
 
-[node name="quit_button" type="Button" parent="VBoxContainer2"]
+[node name="quit_button" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
 icon = ExtResource("7_t4p06")
 
-[connection signal="pressed" from="VBoxContainer2/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/quit_button" to="." method="_on_quit_button_pressed"]
