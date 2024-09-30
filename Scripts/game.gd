@@ -19,7 +19,7 @@ extends Control
 const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/gray.png")
-const GRID_THEME_BUTTON = preload("res://Themes/GridButton.theme")
+const GRID_THEME_BUTTON = preload("res://Themes/BLANK_GRID.theme")
 const DISABLE_DELETE_BUTTON = preload("res://Assets/Game_buttons/bouton_poub_off.png")
 const DISABLE_REROLL_BUTTON = preload("res://Assets/Game_buttons/bouton_reroal_off.png")
 const ENABLE_DELETE_BUTTON = preload("res://Assets/Game_buttons/bouton_poub_on.png")
@@ -48,7 +48,6 @@ var color_previews = {
 }
 
 func _ready():
-	SignalBus.Username_sended.connect(store_score)
 	SignalBus.Restart_Game.connect(on_restart_pressed)
 	initialize_piece_queue()
 	create_grid()
@@ -110,12 +109,8 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/"+ selected_color.color_name +".png")
 		preview.rotation = 0
-		print(selected_color.is_vertical)
 		score_count()
 		update_piece_queue()
-		#if not Config.rotation_mode:
-			#selected_color.is_vertical = false
-			#preview.rotation = 0
 		game_over_statement()
 	else:
 		return
@@ -223,9 +218,9 @@ func _on_rotate_pressed() -> void:
 		if selected_color.is_vertical == true:
 			selected_color.is_vertical = false
 			rotating_preview()
-	else:
-		selected_color.is_vertical = true
-		rotating_preview()
+		else:
+			selected_color.is_vertical = true
+			rotating_preview()
 
 func rotating_preview():
 	if preview.rotation == 0:
@@ -296,14 +291,8 @@ func game_over_statement():
 		if reroll <= 0 && delete <= 0:
 			game_over.visible = true
 			SignalBus.Game_is_over.emit(score)
+			LeaderboardsClient.submit_score("CgkIw9eFzccREAIQAg", score)
 			hide_all_buttons()
-
-func store_score(username: String):
-	var data = {
-		"score": score,
-		"username": username,
-	}
-	await Leaderboards.post_guest_score("color-jam-color-jam-JJaQ",score,username)
 
 func _on_help_button_pressed() -> void:
 	help.visible = true
