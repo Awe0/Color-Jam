@@ -1,7 +1,7 @@
 extends Control
 
 @onready var texture_button: TextureButton = $VBoxContainer/HBoxContainer2/TextureButton
-@onready var check_button: CheckButton = $VBoxContainer/HBoxContainer/CheckButton
+@onready var check_button: CheckButton = $VBoxContainer/RotationMode/CheckButton
 
 func _ready() -> void:
 	set_config_saved()
