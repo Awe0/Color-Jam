@@ -12,7 +12,6 @@ extends Control
 @onready var rotate_button: Button = $VBoxContainer2/Label/MarginContainer/Rotate
 @onready var change_piece_button: Button = $VBoxContainer/ChangePiece
 @onready var help: Control = $Help
-@onready var progress_bar: ProgressBar = $ProgressBar
 @onready var level_label: Label = $Level
 @onready var options: Control = $Options
 
@@ -52,7 +51,6 @@ func _ready():
 	initialize_piece_queue()
 	create_grid()
 	update_previews()
-	progress_bar.max_value = 100
 
 func initialize_piece_queue():
 	for i in range(3):
@@ -114,20 +112,6 @@ func place_color(i: int, j: int):
 		game_over_statement()
 	else:
 		return
-
-func update_progress_bar():
-	progress_bar.value = score
-	#print("max value = " + str(progress_bar.max_value))
-	#print("actual value = " + str(progress_bar.value))
-	if progress_bar.value == progress_bar.max_value:
-		progress_bar.value = 0
-		#if level != 1:
-			#progress_bar.max_value = 80 
-			#level += 1
-			#level_label.text = "Level " + str(level)
-		#else:
-			#level += 1
-
 
 func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	for n in range(size):
@@ -191,6 +175,7 @@ func check_grid(piece) -> bool:
 func score_count():
 	score += selected_color.score
 	score_label.text = str(score)
+	SignalBus.Score_changed.emit(score, level)
 
 func reset_grid():
 	for row in cells:
@@ -286,7 +271,6 @@ func update_delete():
 				game_over_statement()
 
 func game_over_statement():
-	update_progress_bar()
 	if not check_grid(selected_color):
 		if reroll <= 0 && delete <= 0:
 			game_over.visible = true

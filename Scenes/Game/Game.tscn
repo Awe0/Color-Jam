@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=24 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y1bmt"]
 [ext_resource type="Texture2D" uid="uid://c8sibm0qa84gp" path="res://Assets/BG_Game.png" id="2_vhpsh"]
 [ext_resource type="Texture2D" uid="uid://dhki3w4xoe8ek" path="res://Assets/Game_buttons/bouton_reroal_on.png" id="4_6xdhv"]
+[ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/Progress_Bar.tscn" id="4_bhfxs"]
 [ext_resource type="Texture2D" uid="uid://bfu8qykgd24kc" path="res://Assets/Game_buttons/bouton_poub_on.png" id="5_3omj5"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/Game_Over.tscn" id="5_b0imn"]
 [ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="6_1bbwq"]
@@ -121,13 +122,12 @@ theme_override_font_sizes/font_size = 30
 text = "Level 1"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" parent="." instance=ExtResource("4_bhfxs")]
 layout_mode = 0
 offset_left = 50.0
-offset_top = 189.0
+offset_top = 187.0
 offset_right = 670.0
-offset_bottom = 216.0
-show_percentage = false
+offset_bottom = 214.0
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

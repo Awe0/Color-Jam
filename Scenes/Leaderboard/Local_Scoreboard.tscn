@@ -89,7 +89,7 @@ theme_override_font_sizes/font_size = 60
 text = "Scoreboard"
 horizontal_alignment = 1
 
-[node name="Button_container" type="HBoxContainer" parent="."]
+[node name="ButtonContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -101,12 +101,12 @@ grow_horizontal = 2
 theme_override_constants/separation = 465
 alignment = 1
 
-[node name="Menu" type="Button" parent="Button_container"]
+[node name="Menu" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 theme = ExtResource("4_nyea8")
 icon = ExtResource("5_50ywv")
 
-[node name="Online" type="Button" parent="Button_container"]
+[node name="Online" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 theme = ExtResource("6_30pg8")
 text = "Online"
@@ -239,5 +239,5 @@ theme_override_fonts/font = ExtResource("3_56cc6")
 theme_override_font_sizes/font_size = 30
 text = "SCORE"
 
-[connection signal="pressed" from="Button_container/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="Button_container/Online" to="." method="_on_online_pressed"]
+[connection signal="pressed" from="ButtonContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="ButtonContainer/Online" to="." method="_on_online_pressed"]
