@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bct33vel4171k"]
+
+[ext_resource type="Script" path="res://Scripts/UI/progress_bar.gd" id="1_2g2xf"]
+
+[node name="ProgressBar" type="ProgressBar"]
+offset_left = 477.0
+offset_top = 189.0
+offset_right = 1097.0
+offset_bottom = 216.0
+show_percentage = false
+script = ExtResource("1_2g2xf")
