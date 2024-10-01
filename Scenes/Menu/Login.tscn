@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_fberh"]
 [ext_resource type="Script" path="res://Scripts/UI/login.gd" id="2_n6ldy"]
-[ext_resource type="Texture2D" uid="uid://8oil82k6al2w" path="res://Assets/BG_Menu.png" id="3_mi4s7"]
+[ext_resource type="Texture2D" uid="uid://c4g1gs1fyeyqi" path="res://Assets/Background/background_menu.png" id="3_ee0cj"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_mi4s7")
+texture = ExtResource("3_ee0cj")
 
 [node name="Messages" type="VBoxContainer" parent="."]
 layout_mode = 1
