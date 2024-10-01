@@ -4,15 +4,6 @@ extends Control
 @onready var username_column: VBoxContainer = $HBoxContainer/username_column
 @onready var score_column: VBoxContainer = $HBoxContainer/score_column
 
-var score: int
-var username: String
-
-func _ready():
-	pass
-
-func compare_scores_desc(a: Dictionary, b: Dictionary) -> bool:
-	return a["score"] > b["score"]
-
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
 
