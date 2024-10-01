@@ -18,3 +18,6 @@ func _on_quit_button_pressed() -> void:
 
 func _on_scoreboard_button_pressed() -> void:
 	LeaderboardsClient.show_all_leaderboards()
+
+func _on_achievement_button_pressed() -> void:
+	AchievementsClient.show_achievements()

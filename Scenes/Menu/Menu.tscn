@@ -220,6 +220,12 @@ theme = SubResource("Theme_olh2y")
 texture_normal = ExtResource("40_qa6em")
 texture_pressed = ExtResource("41_iedlk")
 
+[node name="achievement_button" type="TextureButton" parent="ButtonContainer"]
+layout_mode = 2
+theme = SubResource("Theme_olh2y")
+texture_normal = ExtResource("40_qa6em")
+texture_pressed = ExtResource("41_iedlk")
+
 [node name="quit_button" type="TextureButton" parent="ButtonContainer"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
@@ -228,4 +234,5 @@ texture_pressed = ExtResource("43_ictiy")
 
 [connection signal="pressed" from="ButtonContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/achievement_button" to="." method="_on_achievement_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/quit_button" to="." method="_on_quit_button_pressed"]
