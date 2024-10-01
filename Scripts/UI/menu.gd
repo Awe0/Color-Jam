@@ -2,8 +2,8 @@ extends Control
 
 @onready var menu: Control = $"."
 @onready var play_button: TextureButton = $ButtonContainer/play_button
-@onready var scoreboard_button: Button = $ButtonContainer/scoreboard_button
-@onready var quit_button: Button = $ButtonContainer/quit_button
+@onready var scoreboard_button: TextureButton = $ButtonContainer/scoreboard_button
+@onready var quit_button: TextureButton = $ButtonContainer/quit_button
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
