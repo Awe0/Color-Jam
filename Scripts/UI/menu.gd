@@ -4,10 +4,11 @@ extends Control
 @onready var play_button: TextureButton = $ButtonContainer/play_button
 @onready var scoreboard_button: Button = $ButtonContainer/scoreboard_button
 @onready var quit_button: Button = $ButtonContainer/quit_button
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
-	pass
+	animated_sprite_2d.play("default")
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/Game.tscn")
