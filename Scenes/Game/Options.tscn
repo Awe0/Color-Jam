@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6xbu1atc0fjc"]
 
-[ext_resource type="Texture2D" uid="uid://cby472y3q6onl" path="res://Assets/Game_buttons/bouton_restart_on.png" id="1_fylhx"]
 [ext_resource type="Script" path="res://Scripts/UI/options.gd" id="1_u0j3m"]
-[ext_resource type="Texture2D" uid="uid://joyc0kwdcyn5" path="res://Assets/Game_buttons/bouton_restart_off.png" id="2_de2tv"]
+[ext_resource type="Texture2D" uid="uid://dypx8in4nt8tw" path="res://Assets/Buttons/Game_buttons/restart_button_normal.png" id="2_txfe4"]
+[ext_resource type="Texture2D" uid="uid://df01qowfyb5rb" path="res://Assets/Buttons/Game_buttons/restart_button_pressed.png" id="3_41cm8"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -27,8 +27,8 @@ layout_mode = 2
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-texture_normal = ExtResource("1_fylhx")
-texture_pressed = ExtResource("2_de2tv")
+texture_normal = ExtResource("2_txfe4")
+texture_pressed = ExtResource("3_41cm8")
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
