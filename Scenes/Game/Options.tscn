@@ -38,12 +38,22 @@ text = "restart ga	me"
 visible = false
 layout_mode = 2
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer/RotationMode"]
+[node name="RotationModeButton" type="CheckButton" parent="VBoxContainer/RotationMode"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/RotationMode"]
 layout_mode = 2
 text = "save rotation"
+
+[node name="DarkMode" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DarkModeButton" type="CheckButton" parent="VBoxContainer/DarkMode"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/DarkMode"]
+layout_mode = 2
+text = "Dark mode"
 
 [node name="Border" type="Control" parent="."]
 anchors_preset = 0
@@ -75,4 +85,5 @@ offset_right = 274.0
 offset_bottom = 341.0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="toggled" from="VBoxContainer/RotationMode/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/RotationMode/RotationModeButton" to="." method="_on_rotation_mode_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/DarkMode/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
