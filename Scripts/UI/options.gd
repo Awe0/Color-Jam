@@ -4,28 +4,31 @@ extends Control
 @onready var rotation_mode_button: CheckButton = $VBoxContainer/RotationMode/RotationModeButton
 @onready var dark_mode_button: CheckButton = $VBoxContainer/DarkMode/DarkModeButton
 
+var list_check_button: Array = []
+
 const LIST_OPTIONS_STRING: Array = [
 	"rotation_mode",
 	"dark_mode"
 ]
 
-
 func _ready() -> void:
+	list_check_button = [rotation_mode_button, dark_mode_button]
 	set_config_saved()
 
 func _on_texture_button_pressed() -> void:
 	SignalBus.Restart_Game.emit()
 
 func set_config_saved():
-	var config_data: Dictionary = {}
-	for option_string in LIST_OPTIONS_STRING:
-		if SaveSystem.load_config(option_string) == null:
-			for option in Config.lis
-			Config.rotation_mode = false
+	for i in range(LIST_OPTIONS_STRING.size()):
+		var option_string = LIST_OPTIONS_STRING[i]
+		var config_data = SaveSystem.load_config(option_string)
+		
+		if config_data == null:
+			Config.list_options[i] = false
 		else:
-			config_data = SaveSystem.load_config("rotation_mode")
-			Config.rotation_mode = config_data["rotation_mode"]
-	rotation_mode_button.button_pressed = Config.rotation_mode
+			Config.list_options[i] = config_data.get(option_string, false)
+		
+		list_check_button[i].button_pressed = Config.list_options[i]
 
 func _on_rotation_mode_button_toggled(toggled_on: bool) -> void:
 	SaveSystem.save_config("game", "rotation_mode", toggled_on)
