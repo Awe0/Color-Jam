@@ -35,7 +35,6 @@ layout_mode = 2
 text = "restart ga	me"
 
 [node name="RotationMode" type="HBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="RotationModeButton" type="CheckButton" parent="VBoxContainer/RotationMode"]
