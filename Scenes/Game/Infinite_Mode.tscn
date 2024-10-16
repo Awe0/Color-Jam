@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://w7j6d2dkb4nj"]
 
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_txmpe"]
+[ext_resource type="Script" path="res://Scripts/infinite_game.gd" id="1_txmpe"]
 [ext_resource type="Texture2D" uid="uid://duhexjq7eyafa" path="res://Assets/Background/background_game.png" id="2_amcub"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_65emf"]
-[ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/Progress_Bar.tscn" id="4_16gtt"]
+[ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/UI/Progress_Bar.tscn" id="4_16gtt"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="5_huh6d"]
 [ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="6_la64v"]
 [ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="7_w41b8"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="9_2tne8"]
 [ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="10_fmf2p"]
 [ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="11_u2o2e"]
-[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/Game_Over.tscn" id="12_mfekr"]
+[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_mfekr"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="13_mpku7"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="14_os2vb"]
 [ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="15_4be8e"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="17_24xpq"]
 [ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="18_pxc6x"]
 [ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="19_h5c5p"]
-[ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/Options.tscn" id="20_tueei"]
+[ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="20_tueei"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6usu"]
 bg_color = Color(0.596078, 0.760784, 0.643137, 0.858824)
@@ -330,7 +330,6 @@ offset_bottom = 133.0
 [connection signal="pressed" from="VBoxContainer/Reroll" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="Menu_Pressed" from="GameOver" to="." method="_on_menu_pressed"]
-[connection signal="Restart_Pressed" from="GameOver" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="HeadApp/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="HeadApp/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="HeadApp/ParamButton" to="." method="_on_param_button_pressed"]
