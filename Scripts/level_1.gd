@@ -18,6 +18,7 @@ const GRID_SIZE = 10
 const BLANK_CELL = preload("res://Assets/Cells/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/Cells/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/BLANK_GRID.theme")
+const LEVEL = "level 1"
 
 var cells = []
 var selected_color = null 
@@ -155,8 +156,7 @@ func check_grid(piece) -> bool:
 				has_blank_cell = true
 				break
 	if not has_blank_cell:
-		game_win.visible = true
-		LevelStatement.level_state["level 1"] = true
+		game_win_statement()
 	for i in range(GRID_SIZE):
 		for j in range(GRID_SIZE):
 			if can_place_color(i, j, piece.size, true):
@@ -262,3 +262,8 @@ func _on_param_button_pressed() -> void:
 		options.visible = true
 	else:
 		options.visible = false
+
+func game_win_statement():
+	game_win.visible = true
+	LevelStatement.level_state[LEVEL] = true
+	SaveSystem.save_levels_data("levels_statement", LEVEL, true)
