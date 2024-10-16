@@ -20,8 +20,6 @@ config/icon="res://Assets/icon192x192.png"
 [autoload]
 
 SignalBus="*res://Scripts/Singletons/SignalBus.gd"
-Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
-PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
 GodotPlayGameServices="*res://addons/GodotPlayGameServices/autoloads/godot_play_game_services.gd"
 SignInClient="*res://addons/GodotPlayGameServices/autoloads/sign_in_client.gd"
 PlayersClient="*res://addons/GodotPlayGameServices/autoloads/players_client.gd"
@@ -31,6 +29,7 @@ SnapshotsClient="*res://addons/GodotPlayGameServices/autoloads/snapshots_client.
 EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
 SaveSystem="*res://Scripts/Singletons/SaveSystem.gd"
 Config="*res://Scripts/Singletons/Config.gd"
+LevelStatement="*res://Scripts/Singletons/LevelStatement.gd"
 
 [display]
 
