@@ -43,9 +43,9 @@ func _ready() -> void:
 		"level 15" : level_15,
 		"level 16" : level_16
 	}
-	check_level_states()
+	set_level_states()
 
-func check_level_states():
+func set_level_states():
 	for level in LEVELS:
 		if LevelStatement.level_state[level]:
 			level_buttons[level].texture_normal = load("res://Assets/Buttons/Game_buttons/help_button_pressed.png")
