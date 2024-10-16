@@ -32,7 +32,7 @@ texture_pressed = ExtResource("3_41cm8")
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "restart ga	me"
+text = "Restart game"
 
 [node name="RotationMode" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -42,7 +42,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/RotationMode"]
 layout_mode = 2
-text = "save rotation"
+text = "Save rotation"
 
 [node name="DarkMode" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
