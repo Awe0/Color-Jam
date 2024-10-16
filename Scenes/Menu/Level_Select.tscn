@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6wychfpof408"]
+
+[ext_resource type="Texture2D" uid="uid://c4g1gs1fyeyqi" path="res://Assets/Background/background_menu.png" id="1_0o2pa"]
+[ext_resource type="Script" path="res://Scripts/UI/level_select.gd" id="1_wx0fm"]
+[ext_resource type="Texture2D" uid="uid://bcapwl4qllvgs" path="res://Assets/Buttons/Menu_buttons/button_normal.png" id="2_lvgp6"]
+[ext_resource type="Texture2D" uid="uid://h56a8npgdeky" path="res://Assets/Buttons/Menu_buttons/button_pressed.png" id="3_83csf"]
+[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="4_yvddg"]
+[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="5_5shis"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wx0fm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0o2pa")
+
+[node name="InfiniteModeButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 69.0
+offset_right = 534.0
+offset_bottom = 188.0
+texture_normal = ExtResource("2_lvgp6")
+texture_pressed = ExtResource("3_83csf")
+
+[node name="Label" type="Label" parent="InfiniteModeButton"]
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0.294118, 0.992157, 0.462745, 1)
+theme_override_fonts/font = ExtResource("4_yvddg")
+theme_override_font_sizes/font_size = 50
+text = "Infinite mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 302.0
+offset_right = 513.0
+offset_bottom = 614.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="TextureButton" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton2" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton3" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton4" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton5" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton6" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton7" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton8" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton9" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton10" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton11" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton12" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton13" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton14" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton15" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[node name="TextureButton16" type="TextureButton" parent="LevelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5shis")
+
+[connection signal="pressed" from="InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]
