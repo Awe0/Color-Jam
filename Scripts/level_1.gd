@@ -156,6 +156,7 @@ func check_grid(piece) -> bool:
 				break
 	if not has_blank_cell:
 		game_win.visible = true
+		LevelStatement.level_state["level 1"] = true
 	for i in range(GRID_SIZE):
 		for j in range(GRID_SIZE):
 			if can_place_color(i, j, piece.size, true):
