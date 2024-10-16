@@ -55,69 +55,69 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 4
 
-[node name="TextureButton" type="TextureButton" parent="LevelContainer"]
+[node name="Level 1" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton2" type="TextureButton" parent="LevelContainer"]
+[node name="Level 2" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton3" type="TextureButton" parent="LevelContainer"]
+[node name="Level 3" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton4" type="TextureButton" parent="LevelContainer"]
+[node name="Level 4" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton5" type="TextureButton" parent="LevelContainer"]
+[node name="Level 5" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton6" type="TextureButton" parent="LevelContainer"]
+[node name="Level 6" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton7" type="TextureButton" parent="LevelContainer"]
+[node name="Level 7" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton8" type="TextureButton" parent="LevelContainer"]
+[node name="Level 8" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton9" type="TextureButton" parent="LevelContainer"]
+[node name="Level 9" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton10" type="TextureButton" parent="LevelContainer"]
+[node name="Level 10" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton11" type="TextureButton" parent="LevelContainer"]
+[node name="Level 11" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton12" type="TextureButton" parent="LevelContainer"]
+[node name="Level 12" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton13" type="TextureButton" parent="LevelContainer"]
+[node name="Level 13" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton14" type="TextureButton" parent="LevelContainer"]
+[node name="Level 14" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton15" type="TextureButton" parent="LevelContainer"]
+[node name="Level 15" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
-[node name="TextureButton16" type="TextureButton" parent="LevelContainer"]
+[node name="Level 16" type="TextureButton" parent="LevelContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
 [connection signal="pressed" from="InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]
-[connection signal="pressed" from="LevelContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="LevelContainer/Level 1" to="." method="_on_texture_button_pressed"]
