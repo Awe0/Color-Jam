@@ -120,3 +120,4 @@ layout_mode = 2
 texture_normal = ExtResource("5_5shis")
 
 [connection signal="pressed" from="InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]
+[connection signal="pressed" from="LevelContainer/TextureButton" to="." method="_on_texture_button_pressed"]
