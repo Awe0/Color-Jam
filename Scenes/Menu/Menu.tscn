@@ -124,22 +124,22 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn3th"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1vyv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_amqxr"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf8ua"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wougv"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ahh2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kr7lp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xv07x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0gl6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frt51"]
 
 [sub_resource type="Theme" id="Theme_olh2y"]
-Button/styles/disabled = SubResource("StyleBoxEmpty_gn3th")
-Button/styles/focus = SubResource("StyleBoxEmpty_amqxr")
-Button/styles/hover = SubResource("StyleBoxEmpty_wougv")
-Button/styles/normal = SubResource("StyleBoxEmpty_kr7lp")
-Button/styles/pressed = SubResource("StyleBoxEmpty_b0gl6")
+Button/styles/disabled = SubResource("StyleBoxEmpty_e1vyv")
+Button/styles/focus = SubResource("StyleBoxEmpty_gf8ua")
+Button/styles/hover = SubResource("StyleBoxEmpty_0ahh2")
+Button/styles/normal = SubResource("StyleBoxEmpty_xv07x")
+Button/styles/pressed = SubResource("StyleBoxEmpty_frt51")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
