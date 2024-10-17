@@ -1,88 +1,262 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6xbu1atc0fjc"]
+[gd_scene load_steps=28 format=3 uid="uid://c6xbu1atc0fjc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/options.gd" id="1_u0j3m"]
-[ext_resource type="Texture2D" uid="uid://dypx8in4nt8tw" path="res://Assets/Buttons/Game_buttons/restart_button_normal.png" id="2_txfe4"]
-[ext_resource type="Texture2D" uid="uid://df01qowfyb5rb" path="res://Assets/Buttons/Game_buttons/restart_button_pressed.png" id="3_41cm8"]
+[ext_resource type="Texture2D" uid="uid://c4ojed26t6rl1" path="res://Assets/Buttons/Option_buttons/Menu option ON.png" id="2_0oa03"]
+[ext_resource type="Texture2D" uid="uid://dm570r81p0oeu" path="res://Assets/Buttons/Option_buttons/music_button.png" id="3_5fqsy"]
+[ext_resource type="Texture2D" uid="uid://br1x7d4rgeamq" path="res://Assets/Buttons/Option_buttons/close_button_normal.png" id="3_kro43"]
+[ext_resource type="Texture2D" uid="uid://m6wruldu5gg1" path="res://Assets/Buttons/Option_buttons/slider_button_music.png" id="3_plga5"]
+[ext_resource type="Texture2D" uid="uid://c2kaj50eg0xgv" path="res://Assets/Buttons/Option_buttons/slider_button_sound.png" id="4_ppv2h"]
+[ext_resource type="Texture2D" uid="uid://bon7i6omy51wx" path="res://Assets/Buttons/Option_buttons/close_button_pressed.png" id="4_rcf7m"]
+[ext_resource type="Texture2D" uid="uid://jxa3lw4rv6ba" path="res://Assets/Buttons/Option_buttons/sound_button.png" id="4_v8mc6"]
+[ext_resource type="Texture2D" uid="uid://cdl2qal8wgkk8" path="res://Assets/Buttons/Option_buttons/save_rotation_check_button_checked.png" id="4_wa663"]
+[ext_resource type="Texture2D" uid="uid://p0imrlctei0n" path="res://Assets/Buttons/Option_buttons/save_rotation_check_button_unchecked.png" id="5_e0xs5"]
+[ext_resource type="FontFile" uid="uid://6t8gfy4g43l" path="res://Assets/Font/Jaro-font/Jaro-Regular-VariableFont_opsz.ttf" id="5_sck8b"]
+[ext_resource type="Texture2D" uid="uid://cv1ojs28i4o3a" path="res://Assets/Buttons/Option_buttons/dark_mode_check_button_checked.png" id="6_qpglp"]
+[ext_resource type="Texture2D" uid="uid://x066wq4r8dfo" path="res://Assets/Buttons/Option_buttons/dark_mode_check_button_unchecked.png" id="7_5733t"]
+[ext_resource type="Texture2D" uid="uid://beedgi2lhrhds" path="res://Assets/Buttons/Option_buttons/home_button_normal.png" id="10_qpgub"]
+[ext_resource type="Texture2D" uid="uid://ct2vj06sik43f" path="res://Assets/Buttons/Option_buttons/home_button_pressed.png" id="11_4lmwo"]
+[ext_resource type="Texture2D" uid="uid://cprfb08kixdjo" path="res://Assets/Buttons/Option_buttons/achievement_button_normal.png" id="12_ox3li"]
+[ext_resource type="Texture2D" uid="uid://bapwdesgl5bo7" path="res://Assets/Buttons/Option_buttons/achievement_button_pressed.png" id="13_v2gj0"]
+[ext_resource type="Texture2D" uid="uid://bc6wm36w6xhi3" path="res://Assets/Buttons/Option_buttons/language_button_normal.png" id="14_67ywk"]
+[ext_resource type="Texture2D" uid="uid://c7dqheb2h3dag" path="res://Assets/Buttons/Option_buttons/language_button_pressed.png" id="15_c06ts"]
+[ext_resource type="Texture2D" uid="uid://bnkukrlkcn8f4" path="res://Assets/Buttons/Option_buttons/account_button_normal.png" id="16_1t2c1"]
+[ext_resource type="Texture2D" uid="uid://ci2t6xeuti8s2" path="res://Assets/Buttons/Option_buttons/account_button_pressed.png" id="17_pdgks"]
+[ext_resource type="Texture2D" uid="uid://c1ivxbstj3old" path="res://Assets/Buttons/Option_buttons/restart_button_normal.png" id="18_e2gqm"]
+[ext_resource type="Texture2D" uid="uid://djdes7f3x70of" path="res://Assets/Buttons/Option_buttons/restart_button_pressed.png" id="19_4s34c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2sus"]
+
+[sub_resource type="Theme" id="Theme_hjxqr"]
+HSlider/icons/grabber = ExtResource("3_5fqsy")
+HSlider/icons/grabber_disabled = ExtResource("3_5fqsy")
+HSlider/icons/grabber_highlight = ExtResource("3_5fqsy")
+HSlider/styles/slider = SubResource("StyleBoxEmpty_x2sus")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgamw"]
+
+[sub_resource type="Theme" id="Theme_8fsyr"]
+HSlider/icons/grabber = ExtResource("4_v8mc6")
+HSlider/icons/grabber_disabled = ExtResource("4_v8mc6")
+HSlider/icons/grabber_highlight = ExtResource("4_v8mc6")
+HSlider/styles/slider = SubResource("StyleBoxEmpty_xgamw")
 
 [node name="Options" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_u0j3m")
+metadata/_edit_horizontal_guides_ = [185.0, 197.0, 250.0, 198.0, 214.0, 266.0]
+metadata/_edit_vertical_guides_ = [280.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="model" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 274.0
-offset_bottom = 348.0
-color = Color(0.129558, 0.129558, 0.129558, 0.360784)
+offset_right = 720.0
+offset_bottom = 1280.0
+texture = ExtResource("2_0oa03")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.701961)
+
+[node name="BlueTop" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 251.0
+offset_right = 639.0
+offset_bottom = 366.0
+color = Color(0.717647, 0.776471, 0.960784, 1)
+
+[node name="BlueBottom" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 366.0
+offset_right = 639.0
+offset_bottom = 869.0
+color = Color(0.894118, 0.968627, 1, 1)
+
+[node name="WhiteMiddle" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 406.0
+offset_right = 587.0
+offset_bottom = 747.0
+
+[node name="SliderContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 415.0
+offset_right = 587.0
+offset_bottom = 548.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="MusicContainer" type="HBoxContainer" parent="SliderContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SliderContainer/MusicContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.65098, 0.619608, 1)
+theme_override_fonts/font = ExtResource("5_sck8b")
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="SoundContainer" type="HBoxContainer" parent="SliderContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SliderContainer/SoundContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.717647, 0.776471, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_sck8b")
+theme_override_font_sizes/font_size = 30
+text = "Sound"
+
+[node name="ExitButton" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 277.0
+offset_right = 622.0
+offset_bottom = 339.0
+alignment = 1
+
+[node name="Exit" type="TextureButton" parent="ExitButton"]
+layout_mode = 2
+texture_normal = ExtResource("3_kro43")
+texture_pressed = ExtResource("4_rcf7m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 50.0
-offset_right = 191.0
-offset_bottom = 348.0
+offset_left = 132.0
+offset_top = 639.0
+offset_right = 587.0
+offset_bottom = 725.0
+alignment = 1
 
-[node name="HBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+[node name="Labels" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 110
+alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+[node name="Mode" type="Label" parent="VBoxContainer/Labels"]
 layout_mode = 2
-texture_normal = ExtResource("2_txfe4")
-texture_pressed = ExtResource("3_41cm8")
+theme_override_colors/font_color = Color(0.105882, 0.592157, 0.541176, 1)
+theme_override_fonts/font = ExtResource("5_sck8b")
+theme_override_font_sizes/font_size = 30
+text = "Mode"
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Rotation" type="Label" parent="VBoxContainer/Labels"]
 layout_mode = 2
-text = "Restart game"
+theme_override_colors/font_color = Color(0.737255, 0.592157, 0.541176, 1)
+theme_override_fonts/font = ExtResource("5_sck8b")
+theme_override_font_sizes/font_size = 30
+text = "Rotation"
 
-[node name="RotationMode" type="HBoxContainer" parent="VBoxContainer"]
+[node name="CheckButtons" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 130
+alignment = 1
 
-[node name="RotationModeButton" type="CheckButton" parent="VBoxContainer/RotationMode"]
+[node name="DarkModeButton" type="CheckButton" parent="VBoxContainer/CheckButtons"]
 layout_mode = 2
+theme_override_icons/checked = ExtResource("6_qpglp")
+theme_override_icons/unchecked = ExtResource("7_5733t")
 
-[node name="Label" type="Label" parent="VBoxContainer/RotationMode"]
+[node name="RotationModeButton" type="CheckButton" parent="VBoxContainer/CheckButtons"]
 layout_mode = 2
-text = "Save rotation"
+theme_override_icons/checked = ExtResource("4_wa663")
+theme_override_icons/unchecked = ExtResource("5_e0xs5")
 
-[node name="DarkMode" type="HBoxContainer" parent="VBoxContainer"]
+[node name="BottomButtons" type="HBoxContainer" parent="."]
 layout_mode = 2
+offset_left = 80.0
+offset_top = 774.0
+offset_right = 639.0
+offset_bottom = 836.0
+theme_override_constants/separation = 45
+alignment = 1
 
-[node name="DarkModeButton" type="CheckButton" parent="VBoxContainer/DarkMode"]
+[node name="Home" type="TextureButton" parent="BottomButtons"]
 layout_mode = 2
+texture_normal = ExtResource("10_qpgub")
+texture_pressed = ExtResource("11_4lmwo")
 
-[node name="Label" type="Label" parent="VBoxContainer/DarkMode"]
+[node name="Achievement" type="TextureButton" parent="BottomButtons"]
 layout_mode = 2
-text = "Dark mode"
+texture_normal = ExtResource("12_ox3li")
+texture_pressed = ExtResource("13_v2gj0")
 
-[node name="Border" type="Control" parent="."]
+[node name="Leaderboard" type="TextureButton" parent="BottomButtons"]
+layout_mode = 2
+texture_normal = ExtResource("14_67ywk")
+texture_pressed = ExtResource("15_c06ts")
+
+[node name="Account" type="TextureButton" parent="BottomButtons"]
+layout_mode = 2
+texture_normal = ExtResource("16_1t2c1")
+texture_pressed = ExtResource("17_pdgks")
+
+[node name="RestartButton" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 891.0
+offset_right = 639.0
+offset_bottom = 1010.0
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Restart" type="TextureButton" parent="RestartButton"]
+layout_mode = 2
+texture_normal = ExtResource("18_e2gqm")
+texture_pressed = ExtResource("19_4s34c")
+
+[node name="Sliders" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 62.0
+offset_top = 251.0
+offset_right = 102.0
+offset_bottom = 291.0
 
-[node name="Panel" type="Panel" parent="Border"]
-layout_mode = 0
-offset_right = 274.0
-offset_bottom = 7.0
+[node name="SliderTextureMusic" type="TextureRect" parent="Sliders"]
+layout_mode = 2
+offset_left = 280.0
+offset_top = 198.0
+offset_right = 496.0
+offset_bottom = 214.0
+texture = ExtResource("3_plga5")
 
-[node name="Panel2" type="Panel" parent="Border"]
-layout_mode = 0
-offset_top = 341.0
-offset_right = 274.0
-offset_bottom = 348.0
+[node name="SliderTextureSound" type="TextureRect" parent="Sliders"]
+layout_mode = 2
+offset_left = 280.0
+offset_top = 250.0
+offset_right = 496.0
+offset_bottom = 266.0
+texture = ExtResource("4_ppv2h")
 
-[node name="Panel3" type="Panel" parent="Border"]
-layout_mode = 0
-offset_top = 7.0
-offset_right = 7.0
-offset_bottom = 341.0
+[node name="MusicSlider" type="HSlider" parent="Sliders"]
+layout_mode = 2
+offset_left = 282.0
+offset_top = 187.0
+offset_right = 494.0
+offset_bottom = 223.0
+theme = SubResource("Theme_hjxqr")
+theme_override_icons/grabber = ExtResource("3_5fqsy")
 
-[node name="Panel4" type="Panel" parent="Border"]
-layout_mode = 0
-offset_left = 267.0
-offset_top = 7.0
-offset_right = 274.0
-offset_bottom = 341.0
+[node name="SoundSlider" type="HSlider" parent="Sliders"]
+layout_mode = 2
+offset_left = 282.0
+offset_top = 240.0
+offset_right = 494.0
+offset_bottom = 276.0
+theme = SubResource("Theme_8fsyr")
+theme_override_icons/grabber = ExtResource("4_v8mc6")
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="toggled" from="VBoxContainer/RotationMode/RotationModeButton" to="." method="_on_rotation_mode_button_toggled"]
-[connection signal="toggled" from="VBoxContainer/DarkMode/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/CheckButtons/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/CheckButtons/RotationModeButton" to="." method="_on_rotation_mode_button_toggled"]
