@@ -1,8 +1,7 @@
 extends Control
 
-@onready var texture_button: TextureButton = $VBoxContainer/HBoxContainer2/TextureButton
-@onready var rotation_mode_button: CheckButton = $VBoxContainer/RotationMode/RotationModeButton
-@onready var dark_mode_button: CheckButton = $VBoxContainer/DarkMode/DarkModeButton
+@onready var rotation_mode_button: CheckButton = $CheckButtonContainer/CheckButtons/RotationModeButton
+@onready var dark_mode_button: CheckButton = $CheckButtonContainer/CheckButtons/DarkModeButton
 
 var list_check_button: Array = []
 
@@ -15,7 +14,7 @@ func _ready() -> void:
 	list_check_button = [rotation_mode_button, dark_mode_button]
 	set_config_saved()
 
-func _on_texture_button_pressed() -> void:
+func restart_button_pressed() -> void:
 	SignalBus.Restart_Game.emit()
 
 func set_config_saved():
@@ -37,3 +36,18 @@ func _on_rotation_mode_button_toggled(toggled_on: bool) -> void:
 func _on_dark_mode_button_toggled(toggled_on: bool) -> void:
 	SaveSystem.save_config("game", "dark_mode", toggled_on)
 	Config.dark_mode = toggled_on
+
+func _on_exit_pressed() -> void:
+	$".".visible = false
+
+func _on_home_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
+
+func _on_achievement_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_leaderboard_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_account_pressed() -> void:
+	PlayersClient.load_current_player(true)
