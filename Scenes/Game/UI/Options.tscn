@@ -90,35 +90,6 @@ offset_top = 406.0
 offset_right = 587.0
 offset_bottom = 747.0
 
-[node name="SliderContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 203.0
-offset_top = 415.0
-offset_right = 587.0
-offset_bottom = 548.0
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="MusicContainer" type="HBoxContainer" parent="SliderContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="SliderContainer/MusicContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.65098, 0.619608, 1)
-theme_override_fonts/font = ExtResource("5_sck8b")
-theme_override_font_sizes/font_size = 30
-text = "Music"
-
-[node name="SoundContainer" type="HBoxContainer" parent="SliderContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="SliderContainer/SoundContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.717647, 0.776471, 0.960784, 1)
-theme_override_fonts/font = ExtResource("5_sck8b")
-theme_override_font_sizes/font_size = 30
-text = "Sound"
-
 [node name="ExitButton" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 560.0
@@ -132,7 +103,7 @@ layout_mode = 2
 texture_normal = ExtResource("3_kro43")
 texture_pressed = ExtResource("4_rcf7m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CheckButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 132.0
 offset_top = 639.0
@@ -140,36 +111,36 @@ offset_right = 587.0
 offset_bottom = 725.0
 alignment = 1
 
-[node name="Labels" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Labels" type="HBoxContainer" parent="CheckButtonContainer"]
 layout_mode = 2
 theme_override_constants/separation = 110
 alignment = 1
 
-[node name="Mode" type="Label" parent="VBoxContainer/Labels"]
+[node name="Mode" type="Label" parent="CheckButtonContainer/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.105882, 0.592157, 0.541176, 1)
 theme_override_fonts/font = ExtResource("5_sck8b")
 theme_override_font_sizes/font_size = 30
 text = "Mode"
 
-[node name="Rotation" type="Label" parent="VBoxContainer/Labels"]
+[node name="Rotation" type="Label" parent="CheckButtonContainer/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.737255, 0.592157, 0.541176, 1)
 theme_override_fonts/font = ExtResource("5_sck8b")
 theme_override_font_sizes/font_size = 30
 text = "Rotation"
 
-[node name="CheckButtons" type="HBoxContainer" parent="VBoxContainer"]
+[node name="CheckButtons" type="HBoxContainer" parent="CheckButtonContainer"]
 layout_mode = 2
 theme_override_constants/separation = 130
 alignment = 1
 
-[node name="DarkModeButton" type="CheckButton" parent="VBoxContainer/CheckButtons"]
+[node name="DarkModeButton" type="CheckButton" parent="CheckButtonContainer/CheckButtons"]
 layout_mode = 2
 theme_override_icons/checked = ExtResource("6_qpglp")
 theme_override_icons/unchecked = ExtResource("7_5733t")
 
-[node name="RotationModeButton" type="CheckButton" parent="VBoxContainer/CheckButtons"]
+[node name="RotationModeButton" type="CheckButton" parent="CheckButtonContainer/CheckButtons"]
 layout_mode = 2
 theme_override_icons/checked = ExtResource("4_wa663")
 theme_override_icons/unchecked = ExtResource("5_e0xs5")
@@ -224,6 +195,35 @@ offset_top = 251.0
 offset_right = 102.0
 offset_bottom = 291.0
 
+[node name="SliderContainer" type="VBoxContainer" parent="Sliders"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 164.0
+offset_right = 525.0
+offset_bottom = 297.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="MusicContainer" type="HBoxContainer" parent="Sliders/SliderContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sliders/SliderContainer/MusicContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.65098, 0.619608, 1)
+theme_override_fonts/font = ExtResource("5_sck8b")
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="SoundContainer" type="HBoxContainer" parent="Sliders/SliderContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sliders/SliderContainer/SoundContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.717647, 0.776471, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_sck8b")
+theme_override_font_sizes/font_size = 30
+text = "Sound"
+
 [node name="SliderTextureMusic" type="TextureRect" parent="Sliders"]
 layout_mode = 2
 offset_left = 280.0
@@ -258,5 +258,11 @@ offset_bottom = 276.0
 theme = SubResource("Theme_8fsyr")
 theme_override_icons/grabber = ExtResource("4_v8mc6")
 
-[connection signal="toggled" from="VBoxContainer/CheckButtons/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
-[connection signal="toggled" from="VBoxContainer/CheckButtons/RotationModeButton" to="." method="_on_rotation_mode_button_toggled"]
+[connection signal="pressed" from="ExitButton/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="CheckButtonContainer/CheckButtons/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
+[connection signal="toggled" from="CheckButtonContainer/CheckButtons/RotationModeButton" to="." method="_on_rotation_mode_button_toggled"]
+[connection signal="pressed" from="BottomButtons/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="BottomButtons/Achievement" to="." method="_on_achievement_pressed"]
+[connection signal="pressed" from="BottomButtons/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="BottomButtons/Account" to="." method="_on_account_pressed"]
+[connection signal="pressed" from="RestartButton/Restart" to="." method="restart_button_pressed"]
