@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://w7j6d2dkb4nj"]
 
-[ext_resource type="Script" path="res://Scripts/infinite_game.gd" id="1_xdhcq"]
+[ext_resource type="Script" path="res://Scripts/Levels/infinite_game.gd" id="1_xdhcq"]
 [ext_resource type="Texture2D" uid="uid://duhexjq7eyafa" path="res://Assets/Background/background_game.png" id="2_wj2lv"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_yfw10"]
 [ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/UI/Progress_Bar.tscn" id="4_g5gb6"]
