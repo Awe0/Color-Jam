@@ -1,26 +1,26 @@
 [gd_scene load_steps=23 format=3 uid="uid://cx2hqjciviy7g"]
 
-[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_07tqo"]
-[ext_resource type="Texture2D" uid="uid://duhexjq7eyafa" path="res://Assets/Background/background_game.png" id="2_nyab3"]
-[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_ngmol"]
-[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="5_o4svv"]
-[ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="6_2r5na"]
-[ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="7_vg6s6"]
-[ext_resource type="Texture2D" uid="uid://bc4gfaba7w7y5" path="res://Assets/Buttons/Game_buttons/reroll_button_normal.png" id="8_pvsp4"]
-[ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="9_sbhbr"]
-[ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="10_lkkqd"]
-[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="11_aq4eq"]
-[ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="11_cercf"]
-[ext_resource type="PackedScene" uid="uid://bc5tmv0kppebn" path="res://Scenes/Game/UI/Game_Win.tscn" id="12_fc7dt"]
-[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_wv4fr"]
-[ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="13_ne15l"]
-[ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="14_irp7h"]
-[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="15_lnq2u"]
-[ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="16_k2iam"]
-[ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="17_4esl1"]
-[ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="18_6bnju"]
-[ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="19_vdp6y"]
-[ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="20_86rk7"]
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_bpckr"]
+[ext_resource type="Texture2D" uid="uid://duhexjq7eyafa" path="res://Assets/Background/background_game.png" id="2_ch28w"]
+[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_amyow"]
+[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_80pg5"]
+[ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="5_07itv"]
+[ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="6_p1dg6"]
+[ext_resource type="Texture2D" uid="uid://bc4gfaba7w7y5" path="res://Assets/Buttons/Game_buttons/reroll_button_normal.png" id="7_1v1ax"]
+[ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="8_npiq7"]
+[ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="9_tpkrg"]
+[ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="10_w3rir"]
+[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="11_he3yu"]
+[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_j1evg"]
+[ext_resource type="PackedScene" uid="uid://bc5tmv0kppebn" path="res://Scenes/Game/UI/Game_Win.tscn" id="13_ub5gw"]
+[ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_gi67g"]
+[ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_6ksu8"]
+[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_cnnra"]
+[ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="17_gd1ji"]
+[ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="18_v0kvs"]
+[ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="19_bwk5e"]
+[ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="20_0x871"]
+[ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="21_ggndt"]
 
 [sub_resource type="Theme" id="Theme_mwabh"]
 
@@ -31,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_07tqo")
+script = ExtResource("1_bpckr")
 metadata/_edit_horizontal_guides_ = [881.0]
 metadata/_edit_vertical_guides_ = [246.0, 239.0, 50.0]
 
@@ -42,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_nyab3")
+texture = ExtResource("2_ch28w")
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 0
@@ -51,7 +51,7 @@ offset_top = 53.0
 offset_right = 441.0
 offset_bottom = 133.0
 theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
-theme_override_fonts/font = ExtResource("3_ngmol")
+theme_override_fonts/font = ExtResource("3_amyow")
 theme_override_font_sizes/font_size = 60
 text = "Level 1"
 horizontal_alignment = 1
@@ -66,17 +66,17 @@ theme_override_constants/separation = 25
 
 [node name="Delete" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("5_o4svv")
-texture_normal = ExtResource("6_2r5na")
-texture_pressed = ExtResource("7_vg6s6")
-texture_disabled = ExtResource("7_vg6s6")
+theme = ExtResource("4_80pg5")
+texture_normal = ExtResource("5_07itv")
+texture_pressed = ExtResource("6_p1dg6")
+texture_disabled = ExtResource("6_p1dg6")
 
 [node name="Reroll" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("5_o4svv")
-texture_normal = ExtResource("8_pvsp4")
-texture_pressed = ExtResource("9_sbhbr")
-texture_disabled = ExtResource("9_sbhbr")
+theme = ExtResource("4_80pg5")
+texture_normal = ExtResource("7_1v1ax")
+texture_pressed = ExtResource("8_npiq7")
+texture_disabled = ExtResource("8_npiq7")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -97,9 +97,9 @@ offset_bottom = 1137.0
 
 [node name="Rotate" type="TextureButton" parent="VBoxContainer2/Label/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("5_o4svv")
-texture_normal = ExtResource("10_lkkqd")
-texture_pressed = ExtResource("11_cercf")
+theme = ExtResource("4_80pg5")
+texture_normal = ExtResource("9_tpkrg")
+texture_pressed = ExtResource("10_w3rir")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 clip_contents = true
@@ -122,7 +122,7 @@ offset_bottom = 921.0
 [node name="BackgroundPreview" type="TextureRect" parent="PreviewZone"]
 offset_right = 620.0
 offset_bottom = 208.0
-texture = ExtResource("11_aq4eq")
+texture = ExtResource("11_he3yu")
 
 [node name="Preview" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
@@ -149,7 +149,7 @@ offset_right = 524.0
 offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 
-[node name="GameOver" parent="." instance=ExtResource("12_wv4fr")]
+[node name="GameOver" parent="." instance=ExtResource("12_j1evg")]
 visible = false
 layout_mode = 1
 offset_left = 247.0
@@ -157,7 +157,7 @@ offset_top = 430.0
 offset_right = 478.0
 offset_bottom = 495.0
 
-[node name="GameWin" parent="." instance=ExtResource("12_fc7dt")]
+[node name="GameWin" parent="." instance=ExtResource("13_ub5gw")]
 visible = false
 layout_mode = 1
 offset_left = 275.0
@@ -173,7 +173,7 @@ offset_right = 113.0
 offset_bottom = 1287.0
 theme = SubResource("Theme_mwabh")
 theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
-theme_override_fonts/font = ExtResource("3_ngmol")
+theme_override_fonts/font = ExtResource("3_amyow")
 theme_override_font_sizes/font_size = 30
 text = "x2"
 
@@ -185,7 +185,7 @@ offset_right = 242.0
 offset_bottom = 1287.0
 theme = SubResource("Theme_mwabh")
 theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
-theme_override_fonts/font = ExtResource("3_ngmol")
+theme_override_fonts/font = ExtResource("3_amyow")
 theme_override_font_sizes/font_size = 30
 text = "x2"
 
@@ -202,9 +202,9 @@ offset_left = -239.0
 offset_top = 3.0
 offset_right = -176.0
 offset_bottom = 66.0
-theme = ExtResource("5_o4svv")
-texture_normal = ExtResource("13_ne15l")
-texture_pressed = ExtResource("14_irp7h")
+theme = ExtResource("4_80pg5")
+texture_normal = ExtResource("14_gi67g")
+texture_pressed = ExtResource("15_6ksu8")
 
 [node name="HelpButton" type="TextureButton" parent="HeadApp"]
 layout_mode = 0
@@ -212,9 +212,9 @@ offset_left = -145.0
 offset_top = 3.0
 offset_right = -82.0
 offset_bottom = 66.0
-theme = ExtResource("5_o4svv")
-texture_normal = ExtResource("15_lnq2u")
-texture_pressed = ExtResource("16_k2iam")
+theme = ExtResource("4_80pg5")
+texture_normal = ExtResource("16_cnnra")
+texture_pressed = ExtResource("17_gd1ji")
 
 [node name="ParamButton" type="TextureButton" parent="HeadApp"]
 layout_mode = 0
@@ -222,14 +222,14 @@ offset_left = 318.0
 offset_top = 3.0
 offset_right = 381.0
 offset_bottom = 66.0
-theme = ExtResource("5_o4svv")
-texture_normal = ExtResource("17_4esl1")
-texture_pressed = ExtResource("18_6bnju")
+theme = ExtResource("4_80pg5")
+texture_normal = ExtResource("18_v0kvs")
+texture_pressed = ExtResource("19_bwk5e")
 
-[node name="Help" parent="." instance=ExtResource("19_vdp6y")]
+[node name="Help" parent="." instance=ExtResource("20_0x871")]
 visible = false
 
-[node name="Options" parent="." instance=ExtResource("20_86rk7")]
+[node name="Options" parent="." instance=ExtResource("21_ggndt")]
 visible = false
 layout_mode = 1
 

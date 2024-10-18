@@ -51,7 +51,7 @@ func set_level_states():
 			level_buttons[level].texture_normal = load("res://Assets/Buttons/Game_buttons/empty_100x100_button_pressed.png")
 
 func _on_infinite_mode_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Game/Infinite_Mode.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Infinite_Mode.tscn")
 
 func _on_level_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Game/Level_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Level_1.tscn")
