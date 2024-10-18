@@ -55,3 +55,6 @@ func _on_infinite_mode_button_pressed() -> void:
 
 func _on_level_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Level_1.tscn")
+
+func _on_level_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Level_2.tscn")
