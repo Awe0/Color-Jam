@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=23 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/infinite_game.gd" id="1_txmpe"]
 [ext_resource type="Texture2D" uid="uid://duhexjq7eyafa" path="res://Assets/Background/background_game.png" id="2_amcub"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="11_u2o2e"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_mfekr"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="13_mpku7"]
+[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="13_qrcw0"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="14_os2vb"]
 [ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="15_4be8e"]
 [ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="16_h4jw3"]
@@ -20,78 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="18_pxc6x"]
 [ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="19_h5c5p"]
 [ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="20_tueei"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6usu"]
-bg_color = Color(0.596078, 0.760784, 0.643137, 0.858824)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nufk"]
-bg_color = Color(0.595353, 0.76048, 0.641322, 0.858824)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="Theme" id="Theme_75vxk"]
-Button/styles/disabled = SubResource("StyleBoxFlat_o6usu")
-Button/styles/focus = SubResource("StyleBoxFlat_o6usu")
-Button/styles/hover = SubResource("StyleBoxFlat_o6usu")
-Button/styles/normal = SubResource("StyleBoxFlat_5nufk")
-Button/styles/pressed = SubResource("StyleBoxFlat_o6usu")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cl7vy"]
-bg_color = Color(0.596078, 0.760784, 0.643137, 0.858824)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j1uf"]
-bg_color = Color(0.596078, 0.760784, 0.643137, 0.858824)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5022k"]
-bg_color = Color(0.596078, 0.760784, 0.643137, 0.858824)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="Theme" id="Theme_q2mkg"]
-Button/styles/disabled = SubResource("StyleBoxFlat_o6usu")
-Button/styles/focus = SubResource("StyleBoxFlat_cl7vy")
-Button/styles/hover = SubResource("StyleBoxFlat_0j1uf")
-Button/styles/normal = SubResource("StyleBoxFlat_5022k")
-Button/styles/pressed = SubResource("StyleBoxFlat_o6usu")
 
 [sub_resource type="Theme" id="Theme_mwabh"]
 
@@ -103,8 +32,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_txmpe")
-metadata/_edit_horizontal_guides_ = [1063.0, 1220.0, 1050.0, 1249.0, 786.0, 53.0, 133.0, 1007.0, 799.0, 900.0]
-metadata/_edit_vertical_guides_ = [50.0, 670.0, 360.0, 207.0, 162.0, 144.0, 572.0, 574.0]
+metadata/_edit_vertical_guides_ = [50.0, 239.0, 246.0, 670.0]
+metadata/_edit_horizontal_guides_ = [881.0, 1089.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -168,10 +97,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/Label"]
 layout_mode = 2
-offset_left = 564.0
+offset_left = 566.0
 offset_top = 1033.0
 offset_right = 668.0
-offset_bottom = 1137.0
+offset_bottom = 1135.0
 
 [node name="Rotate" type="TextureButton" parent="VBoxContainer2/Label/MarginContainer"]
 layout_mode = 2
@@ -205,19 +134,11 @@ offset_top = 881.0
 offset_right = 90.0
 offset_bottom = 921.0
 
-[node name="PreviewContainer" type="Button" parent="PreviewZone"]
+[node name="BackgroundPreview" type="TextureRect" parent="PreviewZone"]
 layout_mode = 0
-offset_left = 196.0
 offset_right = 620.0
 offset_bottom = 208.0
-theme = SubResource("Theme_75vxk")
-
-[node name="PreviewNextPiece" type="Button" parent="PreviewZone"]
-layout_mode = 0
-offset_top = -2.0
-offset_right = 189.0
-offset_bottom = 208.0
-theme = SubResource("Theme_q2mkg")
+texture = ExtResource("13_qrcw0")
 
 [node name="Preview" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
@@ -308,7 +229,7 @@ texture_pressed = ExtResource("16_h4jw3")
 
 [node name="ParamButton" type="TextureButton" parent="HeadApp"]
 layout_mode = 0
-offset_left = 318.0
+offset_left = 319.0
 offset_top = 3.0
 offset_right = 381.0
 offset_bottom = 66.0
