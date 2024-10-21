@@ -212,15 +212,7 @@ func rotating_preview():
 		preview.rotation = 0
 
 func on_restart_pressed() -> void:
-	$Options.visible = false
-	game_over.visible = false
-	display_interface()
-	reset_grid()
-	score = 0
-	reroll = 2
-	update_rerolls()
-	delete = 2
-	update_delete()
+	get_tree().reload_current_scene()
 
 func update_rerolls():
 	$AmountOfReroll.text = "x" + str(reroll)
@@ -243,13 +235,6 @@ func hide_interface():
 	delete_button.visible = false
 	$AmountOfReroll.visible = false
 	$AmountOfDelete.visible = false
-
-func display_interface():
-	reroll_button.visible = true
-	rotate_button.visible = true
-	delete_button.visible = true
-	$AmountOfReroll.visible = true
-	$AmountOfDelete.visible = true
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
