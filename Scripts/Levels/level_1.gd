@@ -190,6 +190,7 @@ func rotating_preview():
 func on_restart_pressed() -> void:
 	game_over.visible = false
 	game_win.visible = false
+	$Options.visible = false
 	display_interface()
 	reset_grid()
 	reroll = 2

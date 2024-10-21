@@ -212,6 +212,7 @@ func rotating_preview():
 		preview.rotation = 0
 
 func on_restart_pressed() -> void:
+	$Options.visible = false
 	game_over.visible = false
 	display_interface()
 	reset_grid()
