@@ -288,6 +288,7 @@ icon = ExtResource("13_65ful")
 layout_mode = 2
 theme = ExtResource("11_76lew")
 icon = ExtResource("13_65ful")
+flat = true
 
 [node name="Button36" type="Button" parent="GridContainer"]
 layout_mode = 2
