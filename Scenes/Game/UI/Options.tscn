@@ -248,6 +248,8 @@ offset_right = 494.0
 offset_bottom = 223.0
 theme = SubResource("Theme_hjxqr")
 theme_override_icons/grabber = ExtResource("3_5fqsy")
+min_value = -75.0
+max_value = 30.0
 
 [node name="SoundSlider" type="HSlider" parent="Sliders"]
 layout_mode = 2
@@ -257,6 +259,8 @@ offset_right = 494.0
 offset_bottom = 276.0
 theme = SubResource("Theme_8fsyr")
 theme_override_icons/grabber = ExtResource("4_v8mc6")
+min_value = -75.0
+max_value = 30.0
 
 [connection signal="pressed" from="ExitButton/Exit" to="." method="_on_exit_pressed"]
 [connection signal="toggled" from="CheckButtonContainer/CheckButtons/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
@@ -266,3 +270,5 @@ theme_override_icons/grabber = ExtResource("4_v8mc6")
 [connection signal="pressed" from="BottomButtons/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="BottomButtons/Account" to="." method="_on_account_pressed"]
 [connection signal="pressed" from="RestartButton/Restart" to="." method="restart_button_pressed"]
+[connection signal="value_changed" from="Sliders/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Sliders/SoundSlider" to="." method="_on_sound_slider_value_changed"]
