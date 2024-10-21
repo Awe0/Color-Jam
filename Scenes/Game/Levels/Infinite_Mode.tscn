@@ -236,6 +236,7 @@ offset_left = -239.0
 offset_top = 3.0
 offset_right = -176.0
 offset_bottom = 66.0
+pivot_offset = Vector2(313, 1156)
 theme = ExtResource("5_uh6up")
 texture_normal = ExtResource("14_ekk7s")
 texture_pressed = ExtResource("15_0c82l")
