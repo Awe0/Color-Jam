@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bghr8dfxro6pk"]
+[gd_scene load_steps=47 format=3 uid="uid://bghr8dfxro6pk"]
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_xop0u"]
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="2_o4jl7"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://djsmm5savggff" path="res://Assets/Buttons/Menu_buttons/play_button_normal.png" id="38_reowe"]
 [ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="38_ty051"]
 [ext_resource type="Texture2D" uid="uid://ceeab8jpo8wx4" path="res://Assets/Buttons/Menu_buttons/play_button_pressed.png" id="39_2c3t8"]
+[ext_resource type="AudioStream" uid="uid://ep3f7763bh7t" path="res://Assets/Sound/Music/puzzle-game-loop-bright-casual-video-game-music-249201.mp3" id="39_gnk38"]
 [ext_resource type="Texture2D" uid="uid://c1xqsqgxvnfih" path="res://Assets/Buttons/Menu_buttons/scoreboard_button_normal.png" id="40_qa6em"]
 [ext_resource type="Texture2D" uid="uid://ciw58vmhcwk0j" path="res://Assets/Buttons/Menu_buttons/scoreboard_button_pressed.png" id="41_iedlk"]
 [ext_resource type="Texture2D" uid="uid://4v3wwmfv0htu" path="res://Assets/Buttons/Menu_buttons/achievement_button_normal.png" id="42_2bk72"]
@@ -210,6 +211,10 @@ offset_left = 206.0
 offset_top = 227.0
 offset_right = 206.0
 offset_bottom = 227.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_gnk38")
+parameters/looping = false
 
 [connection signal="pressed" from="ButtonContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]

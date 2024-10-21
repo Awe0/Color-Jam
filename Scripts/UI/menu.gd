@@ -8,6 +8,7 @@ extends Control
 
 
 func _ready() -> void:
+	AudioPlayer.play_music_game()
 	animated_sprite_2d.play("default")
 
 func _on_play_button_pressed() -> void:
