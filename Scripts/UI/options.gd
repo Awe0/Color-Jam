@@ -2,16 +2,22 @@ extends Control
 
 @onready var rotation_mode_button: CheckButton = $CheckButtonContainer/CheckButtons/RotationModeButton
 @onready var dark_mode_button: CheckButton = $CheckButtonContainer/CheckButtons/DarkModeButton
+@onready var music_slider: HSlider = $Sliders/MusicSlider
+@onready var sound_slider: HSlider = $Sliders/SoundSlider
 
 var list_check_button: Array = []
+var list_sliders: Array = []
 
 const LIST_OPTIONS_STRING: Array = [
 	"rotation_mode",
-	"dark_mode"
+	"dark_mode",
+	#"music_db",
+	#"sound_db"
 ]
 
 func _ready() -> void:
 	list_check_button = [rotation_mode_button, dark_mode_button]
+	list_sliders = [music_slider, sound_slider]
 	set_config_saved()
 
 func restart_button_pressed() -> void:
@@ -26,8 +32,9 @@ func set_config_saved():
 			Config.list_options[i] = false
 		else:
 			Config.list_options[i] = config_data.get(option_string, false)
-		
 		list_check_button[i].button_pressed = Config.list_options[i]
+		#list_sliders[i].value = Config.list_options[i]
+		
 
 func _on_rotation_mode_button_toggled(toggled_on: bool) -> void:
 	SaveSystem.save_config("game", "rotation_mode", toggled_on)
@@ -53,3 +60,11 @@ func _on_leaderboard_pressed() -> void:
 
 func _on_account_pressed() -> void:
 	PlayersClient.load_current_player(true)
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioPlayer.music_player.volume_db = value
+	SaveSystem.save_config("game", "music_db", value)
+
+func _on_sound_slider_value_changed(value: float) -> void:
+	AudioPlayer.fx_player.volume_db = value
+	SaveSystem.save_config("game", "sound_db", value)
