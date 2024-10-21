@@ -14,6 +14,8 @@ extends Control
 @onready var help: Control = $Help
 @onready var level_label: Label = $Level
 @onready var options: Control = $Options
+@onready var amount_of_delete: Label = $AmountOf/TextureAmountOfDelete/AmountOfDelete
+@onready var amount_of_reroll: Label = $AmountOf/TextureAmountOfReroll/AmountOfReroll
 
 const MODE_NAME: String = "Infinite_mode"
 const GRID_SIZE: int = 10
@@ -104,6 +106,7 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_color.color_name +".png")
 		preview.rotation = 0
+		AudioPlayer.play_random_bubble_FX()
 		score_count()
 		update_piece_queue()
 		game_over_statement()
@@ -215,7 +218,7 @@ func on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func update_rerolls():
-	$AmountOfReroll.text = "x" + str(reroll)
+	amount_of_reroll.text = str(reroll)
 	if reroll <= 0:
 		reroll_button.disabled
 		if delete <= 0:
@@ -233,8 +236,8 @@ func hide_interface():
 	reroll_button.visible = false
 	rotate_button.visible = false
 	delete_button.visible = false
-	$AmountOfReroll.visible = false
-	$AmountOfDelete.visible = false
+	amount_of_reroll.visible = false
+	amount_of_delete.visible = false
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
@@ -248,7 +251,7 @@ func _on_delete_pressed() -> void:
 		delete = 0
 
 func update_delete():
-	$AmountOfDelete.text = "x" + str(delete)
+	amount_of_delete.text = str(delete)
 	if delete <= 0:
 		delete_button.disabled
 		if reroll <= 0:

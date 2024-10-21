@@ -13,6 +13,8 @@ extends Control
 @onready var reroll_button: TextureButton = $VBoxContainer/Reroll
 @onready var help: Control = $Help
 @onready var options: Control = $Options
+@onready var amount_of_delete: Label = $AmountOf/TextureAmountOfDelete/AmountOfDelete
+@onready var amount_of_reroll: Label = $AmountOf/TextureAmountOfReroll/AmountOfReroll
 
 const MODE_NAME: String = "Level_1" 
 const GRID_SIZE: int = 10
@@ -21,6 +23,7 @@ const GRAY_CELL = preload("res://Assets/Cells/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/BLANK_GRID.theme")
 const LEVEL = "level 1"
 
+var attempt: int = 0
 var cells = []
 var selected_color = null 
 var piece_queue = []
@@ -102,6 +105,8 @@ func place_color(i: int, j: int):
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_color.color_name +".png")
 		preview.rotation = 0
+		attempt += 1
+		print(attempt)
 		update_piece_queue()
 		game_over_statement()
 	else:
@@ -191,7 +196,7 @@ func on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func update_rerolls():
-	$AmountOfReroll.text = "x" + str(reroll)
+	amount_of_reroll.text = "x" + str(reroll)
 	if reroll <= 0:
 		reroll_button.disabled
 		if delete <= 0:
@@ -209,8 +214,8 @@ func hide_interface():
 	reroll_button.visible = false
 	rotate_button.visible = false
 	delete_button.visible = false
-	$AmountOfReroll.visible = false
-	$AmountOfDelete.visible = false
+	amount_of_reroll.visible = false
+	amount_of_delete.visible = false
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
@@ -224,7 +229,7 @@ func _on_delete_pressed() -> void:
 		delete = 0
 
 func update_delete():
-	$AmountOfDelete.text = "x" + str(delete)
+	amount_of_delete.text = "x" + str(delete)
 	if delete <= 0:
 		delete_button.disabled
 		if reroll <= 0:
@@ -254,3 +259,4 @@ func game_win_statement():
 	game_win.visible = true
 	LevelStatement.level_state[LEVEL] = true
 	SaveSystem.save_levels_data("levels_statement", LEVEL, true)
+	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[MODE_NAME], attempt)
