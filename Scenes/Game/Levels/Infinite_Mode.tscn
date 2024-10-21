@@ -1,7 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/infinite_game.gd" id="1_xdhcq"]
-[ext_resource type="Texture2D" uid="uid://duhexjq7eyafa" path="res://Assets/Background/background_game.png" id="2_wj2lv"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_yfw10"]
 [ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/UI/Progress_Bar.tscn" id="4_g5gb6"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="5_uh6up"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="10_ddmfd"]
 [ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="11_0sxnt"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_u2n1t"]
+[ext_resource type="Texture2D" uid="uid://csgwid63soq0h" path="res://Assets/Buttons/Game_buttons/notif_count_texture.png" id="13_pf2sq"]
 [ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="13_s84ug"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_ekk7s"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_0c82l"]
@@ -35,14 +35,14 @@ script = ExtResource("1_xdhcq")
 metadata/_edit_vertical_guides_ = [50.0, 239.0, 246.0, 670.0]
 metadata/_edit_horizontal_guides_ = [881.0, 1089.0]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_wj2lv")
+color = Color(0.748041, 0.910293, 1, 1)
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 0
@@ -50,7 +50,7 @@ offset_left = 280.0
 offset_top = 140.0
 offset_right = 441.0
 offset_bottom = 223.0
-theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
 theme_override_fonts/font = ExtResource("3_yfw10")
 theme_override_font_sizes/font_size = 30
 text = "Level 1"
@@ -165,29 +165,52 @@ offset_right = 524.0
 offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 
-[node name="AmountOfDelete" type="Label" parent="."]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 1249.0
-offset_right = 113.0
-offset_bottom = 1287.0
-theme = SubResource("Theme_mwabh")
-theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
-theme_override_fonts/font = ExtResource("3_yfw10")
-theme_override_font_sizes/font_size = 30
-text = "x2"
+[node name="AmountOf" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="AmountOfReroll" type="Label" parent="."]
+[node name="TextureAmountOfDelete" type="TextureRect" parent="AmountOf"]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 1249.0
-offset_right = 242.0
-offset_bottom = 1287.0
+offset_left = 125.0
+offset_top = 1138.0
+offset_right = 163.0
+offset_bottom = 1176.0
+texture = ExtResource("13_pf2sq")
+
+[node name="AmountOfDelete" type="Label" parent="AmountOf/TextureAmountOfDelete"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_mwabh")
-theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
 theme_override_fonts/font = ExtResource("3_yfw10")
-theme_override_font_sizes/font_size = 30
-text = "x2"
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
+
+[node name="TextureAmountOfReroll" type="TextureRect" parent="AmountOf"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 1138.0
+offset_right = 292.0
+offset_bottom = 1178.0
+texture = ExtResource("13_pf2sq")
+
+[node name="AmountOfReroll" type="Label" parent="AmountOf/TextureAmountOfReroll"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mwabh")
+theme_override_fonts/font = ExtResource("3_yfw10")
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
 
 [node name="HeadApp" type="Control" parent="."]
 anchors_preset = 0
@@ -201,7 +224,7 @@ layout_mode = 0
 offset_left = -9.0
 offset_right = 152.0
 offset_bottom = 83.0
-theme_override_colors/font_color = Color(0.32549, 0.819608, 0.278431, 1)
+theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
 theme_override_fonts/font = ExtResource("3_yfw10")
 theme_override_font_sizes/font_size = 50
 text = "0"
