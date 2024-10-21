@@ -24,7 +24,7 @@
 
 [sub_resource type="Theme" id="Theme_mwabh"]
 
-[node name="Game" type="Control"]
+[node name="Infinite_mode" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

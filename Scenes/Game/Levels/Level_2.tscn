@@ -27,7 +27,7 @@
 
 [sub_resource type="Theme" id="Theme_mwabh"]
 
-[node name="Level2" type="Control"]
+[node name="Level_2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
