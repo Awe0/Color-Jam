@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://24ngvnnbv6li"]
 
-[ext_resource type="Texture2D" uid="uid://dsthqp24jl4n0" path="res://Assets/brown_preview.png" id="1_fw56q"]
 [ext_resource type="Script" path="res://Scripts/Pieces/preview.gd" id="1_xg3li"]
+[ext_resource type="Texture2D" uid="uid://nmaqulby0xup" path="res://Assets/Colors/Previews/brown_preview.png" id="2_12xyd"]
 
 [node name="Brown_Preview" type="Control"]
 layout_mode = 3
@@ -15,4 +15,4 @@ offset_top = -126.0
 offset_right = 35.0
 offset_bottom = 130.0
 pivot_offset = Vector2(29, 126)
-texture = ExtResource("1_fw56q")
+texture = ExtResource("2_12xyd")
