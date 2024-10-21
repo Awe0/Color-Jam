@@ -104,6 +104,7 @@ func place_color(i: int, j: int):
 			var x = i + n if selected_color.is_vertical else i
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_color.color_name +".png")
+			cells[x][y].flat = true
 		attempt += 1
 		preview.rotation = 0
 		update_piece_queue()
@@ -195,7 +196,7 @@ func on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func update_rerolls():
-	amount_of_reroll*.text = "x" + str(reroll)
+	amount_of_reroll.text = str(reroll)
 	if reroll <= 0:
 		reroll_button.disabled
 		if delete <= 0:
@@ -228,7 +229,7 @@ func _on_delete_pressed() -> void:
 		delete = 0
 
 func update_delete():
-	amount_of_delete.text = "x" + str(delete)
+	amount_of_delete.text = str(delete)
 	if delete <= 0:
 		delete_button.disabled
 		if reroll <= 0:

@@ -105,6 +105,7 @@ func place_color(i: int, j: int):
 			var x = i + n if selected_color.is_vertical else i
 			var y = j if selected_color.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_color.color_name +".png")
+			cells[x][y].flat = true
 		preview.rotation = 0
 		AudioPlayer.play_random_bubble_FX()
 		score_count()
