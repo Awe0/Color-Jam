@@ -14,7 +14,8 @@ extends Control
 @onready var help: Control = $Help
 @onready var options: Control = $Options
 
-const GRID_SIZE = 10
+const MODE_NAME: String = "Level_1" 
+const GRID_SIZE: int = 10
 const BLANK_CELL = preload("res://Assets/Cells/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/Cells/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/BLANK_GRID.theme")

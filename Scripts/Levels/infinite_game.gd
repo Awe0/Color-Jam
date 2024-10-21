@@ -15,7 +15,8 @@ extends Control
 @onready var level_label: Label = $Level
 @onready var options: Control = $Options
 
-const GRID_SIZE = 10
+const MODE_NAME: String = "Infinite_mode"
+const GRID_SIZE: int = 10
 const BLANK_CELL = preload("res://Assets/Cells/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/Cells/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/BLANK_GRID.theme")
@@ -272,7 +273,7 @@ func game_over_statement():
 		if reroll <= 0 && delete <= 0:
 			game_over.visible = true
 			SignalBus.Game_is_over.emit(score)
-			LeaderboardsClient.submit_score("CgkIw9eFzccREAIQAg", score)
+			LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[MODE_NAME], score)
 			hide_interface()
 
 func _on_help_button_pressed() -> void:
