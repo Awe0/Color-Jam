@@ -44,10 +44,12 @@ func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
 
 func _on_achievement_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 func _on_leaderboard_pressed() -> void:
-	pass # Replace with function body.
+	var current_scene_name = get_tree().current_scene.name
+	if Leaderboards.LEADERBOARDS_ID[current_scene_name]:
+		LeaderboardsClient.show_leaderboard(Leaderboards.LEADERBOARDS_ID[current_scene_name])
 
 func _on_account_pressed() -> void:
 	PlayersClient.load_current_player(true)
