@@ -30,6 +30,7 @@ EventsClient="*res://addons/GodotPlayGameServices/autoloads/events_client.gd"
 SaveSystem="*res://Scripts/Singletons/SaveSystem.gd"
 Config="*res://Scripts/Singletons/Config.gd"
 LevelStatement="*res://Scripts/Singletons/LevelStatement.gd"
+Leaderboards="*res://Scripts/Singletons/Leaderboards.gd"
 
 [display]
 
