@@ -68,6 +68,7 @@ func place_color(i: int, j: int):
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_color.color_name +".png")
 			cells[x][y].flat = true
 		#attempt += 1
+		AudioPlayer.play_random_bubble_FX()
 		preview.rotation = 0
 		update_piece_queue()
 		game_statement()
