@@ -23,6 +23,8 @@ const BLANK_CELL = preload("res://Assets/Cells/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/Cells/gray.png")
 const GRID_THEME_BUTTON = preload("res://Themes/BLANK_GRID.theme")
 
+var option_scene = preload("res://Scenes/Game/UI/Options.tscn")
+var help_scene = preload("res://Scenes/Help/Help.tscn")
 var score: int = 0
 var level: int = 1
 var cells = []
@@ -268,15 +270,12 @@ func game_over_statement():
 			hide_interface()
 
 func _on_help_button_pressed() -> void:
-	if options.visible == true:
-		options.visible = false
-	help.visible = true
+	var instance_help_scene = help_scene.instantiate()
+	get_tree().root.add_child(instance_help_scene)
 
 func _on_help_quit_pressed() -> void:
 	help.visible = false
 
 func _on_param_button_pressed() -> void:
-	if options.visible == false:
-		options.visible = true
-	else:
-		options.visible = false
+	var instance_option_scene = option_scene.instantiate()
+	get_tree().root.add_child(instance_option_scene)
