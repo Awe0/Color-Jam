@@ -84,6 +84,7 @@ func create_grid():
 			var cell_button = Button.new()
 			cell_button.set_theme(GRID_THEME_BUTTON)
 			cell_button.icon = BLANK_CELL
+			cell_button.flat = true
 			cell_button.pressed.connect(func() -> void:
 				place_on_grid(i, j)
 			)

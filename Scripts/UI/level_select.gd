@@ -21,7 +21,7 @@ var scene_ui = preload("res://Scenes/Game/UI/Game_UI.tscn")
 
 const LEVEL_INSTANCES: Dictionary = {
 	"level 1" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
-	"level 2" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 2" : preload("res://Scenes/Game/Levels/Level_2.tscn"),
 	"level 3" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
 	"level 4" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
 	"level 5" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
