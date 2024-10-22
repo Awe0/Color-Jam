@@ -45,7 +45,7 @@ func _on_dark_mode_button_toggled(toggled_on: bool) -> void:
 	Config.dark_mode = toggled_on
 
 func _on_exit_pressed() -> void:
-	$".".visible = false
+	queue_free()
 
 func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
