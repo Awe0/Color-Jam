@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://cxugcq5xvve5p"]
 
 [ext_resource type="Script" path="res://Scripts/UI/game_ui.gd" id="1_c86s7"]
-[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="2_il358"]
+[ext_resource type="Texture2D" uid="uid://d3a5xtdjaeuuc" path="res://Assets/Background/background_ui.png" id="2_j2udu"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_gcbkg"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_wt7ie"]
 [ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="5_ahobs"]
@@ -33,34 +33,18 @@ script = ExtResource("1_c86s7")
 metadata/_edit_horizontal_guides_ = [881.0]
 metadata/_edit_vertical_guides_ = [246.0, 239.0, 50.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.748041, 0.910293, 1, 1)
-
-[node name="PreviewZone" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 50.0
-offset_top = 881.0
-offset_right = 90.0
-offset_bottom = 921.0
-
-[node name="BackgroundPreview" type="TextureRect" parent="PreviewZone"]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 620.0
-offset_bottom = 208.0
-texture = ExtResource("2_il358")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_j2udu")
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 53.0
-offset_right = 441.0
-offset_bottom = 133.0
+offset_left = 276.0
+offset_top = 38.0
+offset_right = 443.0
+offset_bottom = 113.0
 theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
 theme_override_fonts/font = ExtResource("3_gcbkg")
 theme_override_font_sizes/font_size = 60
