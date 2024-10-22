@@ -1,8 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=26 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/Game/infinite_game.gd" id="1_xdhcq"]
+[ext_resource type="Texture2D" uid="uid://c4yuy0qsv3iaf" path="res://Assets/Background/background_game.png" id="2_nvg2j"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_yfw10"]
+[ext_resource type="Texture2D" uid="uid://cycmuneb5smn" path="res://Assets/Background/background_score.png" id="4_d5js6"]
 [ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/UI/Progress_Bar.tscn" id="4_g5gb6"]
+[ext_resource type="Texture2D" uid="uid://djau16pay188g" path="res://Assets/Background/background_grid.png" id="5_d5hdt"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="5_uh6up"]
 [ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="6_eycqw"]
 [ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="7_llyq5"]
@@ -12,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="11_0sxnt"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_u2n1t"]
 [ext_resource type="Texture2D" uid="uid://csgwid63soq0h" path="res://Assets/Buttons/Game_buttons/notif_count_texture.png" id="13_pf2sq"]
-[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="13_s84ug"]
+[ext_resource type="Texture2D" uid="uid://ta4om2kemqdv" path="res://Assets/Background/preview_zone.png" id="13_s84ug"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_ekk7s"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_0c82l"]
 [ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_g0a7w"]
@@ -35,14 +38,46 @@ script = ExtResource("1_xdhcq")
 metadata/_edit_vertical_guides_ = [50.0, 239.0, 246.0, 670.0]
 metadata/_edit_horizontal_guides_ = [881.0, 1089.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Backgrounds" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.748041, 0.910293, 1, 1)
+
+[node name="Background" type="TextureRect" parent="Backgrounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nvg2j")
+
+[node name="Background_Preview" type="TextureRect" parent="Backgrounds"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 862.0
+offset_right = 667.0
+offset_bottom = 1074.0
+texture = ExtResource("13_s84ug")
+
+[node name="Background_Level" type="TextureRect" parent="Backgrounds"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 47.0
+offset_right = 450.0
+offset_bottom = 107.0
+texture = ExtResource("4_d5js6")
+
+[node name="Background_Grid" type="TextureRect" parent="Backgrounds"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 225.0
+offset_right = 667.0
+offset_bottom = 845.0
+texture = ExtResource("5_d5hdt")
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 0
@@ -111,12 +146,12 @@ texture_pressed = ExtResource("11_0sxnt")
 [node name="GridContainer" type="GridContainer" parent="."]
 clip_contents = true
 layout_mode = 1
-offset_left = 50.0
-offset_top = 245.0
-offset_right = 670.0
-offset_bottom = 865.0
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
+offset_left = 60.0
+offset_top = 239.0
+offset_right = 680.0
+offset_bottom = 859.0
+theme_override_constants/h_separation = -3
+theme_override_constants/v_separation = -3
 columns = 10
 
 [node name="GameOver" parent="." instance=ExtResource("12_u2n1t")]
@@ -129,16 +164,10 @@ offset_bottom = 575.0
 
 [node name="PreviewZone" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 50.0
-offset_top = 881.0
-offset_right = 90.0
-offset_bottom = 921.0
-
-[node name="BackgroundPreview" type="TextureRect" parent="PreviewZone"]
-layout_mode = 0
-offset_right = 620.0
-offset_bottom = 208.0
-texture = ExtResource("13_s84ug")
+offset_left = 54.0
+offset_top = 867.0
+offset_right = 94.0
+offset_bottom = 907.0
 
 [node name="Preview" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
@@ -222,8 +251,9 @@ offset_bottom = 90.0
 [node name="Score" type="Label" parent="HeadApp"]
 layout_mode = 0
 offset_left = -9.0
+offset_top = -5.0
 offset_right = 152.0
-offset_bottom = 83.0
+offset_bottom = 58.0
 theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
 theme_override_fonts/font = ExtResource("3_yfw10")
 theme_override_font_sizes/font_size = 50

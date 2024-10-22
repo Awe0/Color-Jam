@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxugcq5xvve5p"]
+[gd_scene load_steps=24 format=3 uid="uid://cxugcq5xvve5p"]
 
 [ext_resource type="Script" path="res://Scripts/UI/game_ui.gd" id="1_c86s7"]
-[ext_resource type="Texture2D" uid="uid://d3a5xtdjaeuuc" path="res://Assets/Background/background_ui.png" id="2_j2udu"]
+[ext_resource type="Texture2D" uid="uid://c4yuy0qsv3iaf" path="res://Assets/Background/background_game.png" id="2_0t8ht"]
+[ext_resource type="Texture2D" uid="uid://ta4om2kemqdv" path="res://Assets/Background/preview_zone.png" id="2_il358"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_gcbkg"]
+[ext_resource type="Texture2D" uid="uid://cycmuneb5smn" path="res://Assets/Background/background_score.png" id="4_e4e1s"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_wt7ie"]
 [ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="5_ahobs"]
+[ext_resource type="Texture2D" uid="uid://djau16pay188g" path="res://Assets/Background/background_grid.png" id="5_when0"]
 [ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="6_g8hgh"]
 [ext_resource type="Texture2D" uid="uid://bc4gfaba7w7y5" path="res://Assets/Buttons/Game_buttons/reroll_button_normal.png" id="7_nxqbr"]
 [ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="8_nfatl"]
@@ -30,14 +33,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c86s7")
-metadata/_edit_horizontal_guides_ = [881.0]
-metadata/_edit_vertical_guides_ = [246.0, 239.0, 50.0]
+metadata/_edit_horizontal_guides_ = [881.0, 862.0, 1074.0, 845.0, 225.0, 107.0, 47.0]
+metadata/_edit_vertical_guides_ = [246.0, 239.0, 50.0, 47.0, 667.0, 270.0, 450.0]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Backgrounds" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Backgrounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0t8ht")
+
+[node name="Background_Preview" type="TextureRect" parent="Backgrounds"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_j2udu")
+offset_left = 47.0
+offset_top = 862.0
+offset_right = 667.0
+offset_bottom = 1074.0
+texture = ExtResource("2_il358")
+
+[node name="Background_Level" type="TextureRect" parent="Backgrounds"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 47.0
+offset_right = 450.0
+offset_bottom = 107.0
+texture = ExtResource("4_e4e1s")
+
+[node name="Background_Grid" type="TextureRect" parent="Backgrounds"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 225.0
+offset_right = 667.0
+offset_bottom = 845.0
+texture = ExtResource("5_when0")
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 0
