@@ -3,7 +3,7 @@ extends ProgressBar
 @onready var progress_bar: ProgressBar = $"."
 
 func _ready() -> void:
-	SignalBus.Restart_Game.connect(reset_progress_bar)
+	SignalBus.Restart_game.connect(reset_progress_bar)
 	SignalBus.Score_changed.connect(update_progress_bar)
 	SignalBus.Level_up.connect(change_max_value)
 	progress_bar.max_value = 100

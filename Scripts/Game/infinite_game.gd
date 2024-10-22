@@ -48,7 +48,7 @@ var color_previews = {
 }
 
 func _ready():
-	SignalBus.Restart_Game.connect(on_restart_pressed)
+	SignalBus.Restart_game.connect(on_restart_pressed)
 	initialize_piece_queue()
 	create_grid()
 	update_previews()

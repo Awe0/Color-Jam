@@ -13,9 +13,11 @@ extends Control
 @onready var amount_of_delete: Label = $AmountOf/TextureAmountOfDelete/AmountOfDelete
 @onready var label_level_name: Label = $Level
 
-const MODE_NAME: String = "Level_2"
-const LEVEL = "level 2"
 
+
+var level_name = null
+var game_win_scene = preload("res://Scenes/Game/UI/Game_Win.tscn")
+var game_over_scene = preload("res://Scenes/Game/UI/Game_Over.tscn")
 var option_scene = preload("res://Scenes/Game/UI/Options.tscn")
 var help_scene = preload("res://Scenes/Help/Help.tscn")
 var attempt: int = 0
@@ -24,15 +26,12 @@ var reroll = 2
 
 
 func _ready():
-	SignalBus.Restart_Game.connect(on_restart_pressed)
 	SignalBus.Game_is_over.connect(game_over_statement)
 	SignalBus.Level_is_selected.connect(change_level_name)
+	SignalBus.Game_is_win.connect(game_win_statement)
 
 func _on_rotate_pressed() -> void:
 	SignalBus.Rotating.emit()
-
-func on_restart_pressed() -> void:
-	get_tree().reload_current_scene()
 
 func update_rerolls():
 	amount_of_reroll.text = str(reroll)
@@ -55,6 +54,8 @@ func hide_interface():
 	delete_button.visible = false
 	amount_of_reroll.visible = false
 	amount_of_delete.visible = false
+	$AmountOf/TextureAmountOfDelete.visible = false
+	$AmountOf/TextureAmountOfReroll.visible = false
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
@@ -77,25 +78,25 @@ func update_delete():
 #Signal Game_Is_Over from Game.tscn
 func game_over_statement():
 	if reroll <= 0 && delete <= 0:
-		game_over.visible = true
+		instanciate_scenes(game_over_scene)
 		hide_interface()
 
 func _on_help_button_pressed() -> void:
-	var instance_help_scene = help_scene.instantiate()
-	get_tree().root.add_child(instance_help_scene)
-
-func _on_help_quit_pressed() -> void:
-	help.visible = false
+	instanciate_scenes(help_scene)
 
 func _on_param_button_pressed() -> void:
-	var instance_option_scene = option_scene.instantiate()
-	get_tree().root.add_child(instance_option_scene)
+	instanciate_scenes(option_scene)
 
 func game_win_statement():
-	game_win.visible = true
-	LevelStatement.level_state[LEVEL] = true
-	SaveSystem.save_levels_data("levels_statement", LEVEL, true)
-	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[MODE_NAME], attempt)
+	instanciate_scenes(game_win_scene)
+	LevelStatement.level_state[level_name] = true
+	SaveSystem.save_levels_data("levels_statement", level_name, true)
+	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
 
-func change_level_name(level_name: String):
-	label_level_name.text = level_name
+func change_level_name(actual_level_name: String):
+	label_level_name.text = actual_level_name
+	level_name = actual_level_name
+
+func instanciate_scenes(scene):
+	var scene_instance = scene.instantiate()
+	get_tree().root.add_child(scene_instance)

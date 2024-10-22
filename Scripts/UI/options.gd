@@ -21,7 +21,7 @@ func _ready() -> void:
 	set_config_saved()
 
 func restart_button_pressed() -> void:
-	SignalBus.Restart_Game.emit()
+		get_tree().change_scene_to_file("res://Scenes/Menu/Level_Select.tscn")
 
 func set_config_saved():
 	for i in range(LIST_OPTIONS_STRING.size()):

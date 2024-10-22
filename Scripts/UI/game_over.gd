@@ -1,9 +1,7 @@
 extends Label
 
-signal Menu_Pressed
-
 func _on_restart_pressed() -> void:
-	SignalBus.Restart_Game.emit()
+	get_tree().change_scene_to_file("res://Scenes/Menu/Level_Select.tscn")
 
 func _on_menu_pressed() -> void:
-	Menu_Pressed.emit()
+	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")

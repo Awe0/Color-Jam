@@ -1,7 +1,5 @@
 extends Control
 
-signal Game_Is_Win
-
 @onready var preview: TextureRect = $PreviewZone/Preview
 @onready var preview_2: TextureRect = $PreviewZone/Preview2
 @onready var preview_3: TextureRect = $PreviewZone/Preview3
@@ -108,7 +106,7 @@ func check_grid(piece) -> bool:
 				has_blank_cell = true
 				break
 	if not has_blank_cell:
-		#Game_Is_Win.emit()
+		SignalBus.Game_is_win.emit()
 		pass
 	for i in range(GRID_SIZE):
 		for j in range(GRID_SIZE):
@@ -178,4 +176,4 @@ func rotating_preview():
 
 func game_statement():
 	if not check_grid(selected_color):
-		SignalBus.Game_Is_Over.emit()
+		SignalBus.Game_is_over.emit()
