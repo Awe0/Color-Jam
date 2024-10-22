@@ -85,3 +85,7 @@ func reset_step_visibility():
 			#step_3.visible = true
 		#4:
 			#step_4.visible = true
+
+
+func _quit_pressed() -> void:
+	queue_free()

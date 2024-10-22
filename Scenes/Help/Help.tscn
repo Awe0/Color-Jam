@@ -33,12 +33,12 @@ visible = false
 layout_mode = 1
 
 [connection signal="Next_Pressed" from="Step1" to="." method="_on_step_1_next_pressed"]
-[connection signal="Quit_Pressed" from="Step1" to="." method="_on_step_1_quit_pressed"]
+[connection signal="Quit_Pressed" from="Step1" to="." method="_quit_pressed"]
 [connection signal="Back_Pressed" from="Step2" to="." method="_on_step_2_back_pressed"]
 [connection signal="Next_Pressed" from="Step2" to="." method="_on_step_2_next_pressed"]
-[connection signal="Quit_Pressed" from="Step2" to="." method="_on_step_2_quit_pressed"]
+[connection signal="Quit_Pressed" from="Step2" to="." method="_quit_pressed"]
 [connection signal="Back_Pressed" from="Step3" to="." method="_on_step_3_back_pressed"]
 [connection signal="Next_Pressed" from="Step3" to="." method="_on_step_3_next_pressed"]
-[connection signal="Quit_Pressed" from="Step3" to="." method="_on_step_3_quit_pressed"]
+[connection signal="Quit_Pressed" from="Step3" to="." method="_quit_pressed"]
 [connection signal="Back_Pressed" from="Step4" to="." method="_on_step_4_back_pressed"]
-[connection signal="Quit_Pressed" from="Step4" to="." method="_on_step_4_quit_pressed"]
+[connection signal="Quit_Pressed" from="Step4" to="." method="_quit_pressed"]
