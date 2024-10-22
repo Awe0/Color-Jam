@@ -1,129 +1,531 @@
-[gd_scene load_steps=23 format=3 uid="uid://cx2hqjciviy7g"]
+[gd_scene load_steps=4 format=3 uid="uid://q8qbubqehap6"]
 
-[ext_resource type="Script" path="res://Scripts/Levels/level_1.gd" id="1_bpckr"]
-[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_amyow"]
-[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_80pg5"]
-[ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="5_07itv"]
-[ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="6_p1dg6"]
-[ext_resource type="Texture2D" uid="uid://bc4gfaba7w7y5" path="res://Assets/Buttons/Game_buttons/reroll_button_normal.png" id="7_1v1ax"]
-[ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="8_npiq7"]
-[ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="9_tpkrg"]
-[ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="10_w3rir"]
-[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="11_he3yu"]
-[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="12_j1evg"]
-[ext_resource type="Texture2D" uid="uid://csgwid63soq0h" path="res://Assets/Buttons/Game_buttons/notif_count_texture.png" id="13_tysw0"]
-[ext_resource type="PackedScene" uid="uid://bc5tmv0kppebn" path="res://Scenes/Game/UI/Game_Win.tscn" id="13_ub5gw"]
-[ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_gi67g"]
-[ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_6ksu8"]
-[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_cnnra"]
-[ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="17_gd1ji"]
-[ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="18_v0kvs"]
-[ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="19_bwk5e"]
-[ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="20_0x871"]
-[ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="21_ggndt"]
-
-[sub_resource type="Theme" id="Theme_ko5a8"]
+[ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_gc7fg"]
+[ext_resource type="Theme" uid="uid://f51fjewexp7e" path="res://Themes/BLANK_GRID.theme" id="2_1u4if"]
+[ext_resource type="Texture2D" uid="uid://dh1sknqws38ky" path="res://Assets/Cells/cell54x54.png" id="3_idkhv"]
 
 [node name="Level_1" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_bpckr")
-metadata/_edit_horizontal_guides_ = [881.0]
-metadata/_edit_vertical_guides_ = [246.0, 239.0, 50.0]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.748041, 0.910293, 1, 1)
-
-[node name="Level" type="Label" parent="."]
-layout_mode = 0
-offset_left = 280.0
-offset_top = 53.0
-offset_right = 441.0
-offset_bottom = 133.0
-theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
-theme_override_fonts/font = ExtResource("3_amyow")
-theme_override_font_sizes/font_size = 60
-text = "Level 1"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-offset_left = 50.0
-offset_top = 1145.0
-offset_right = 468.0
-offset_bottom = 1249.0
-theme_override_constants/separation = 25
-
-[node name="Delete" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_80pg5")
-texture_normal = ExtResource("5_07itv")
-texture_pressed = ExtResource("6_p1dg6")
-texture_disabled = ExtResource("6_p1dg6")
-
-[node name="Reroll" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_80pg5")
-texture_normal = ExtResource("7_1v1ax")
-texture_pressed = ExtResource("8_npiq7")
-texture_disabled = ExtResource("8_npiq7")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 112.0
-offset_right = 42.0
-offset_bottom = 152.0
-
-[node name="Label" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/Label"]
-layout_mode = 2
-offset_left = 564.0
-offset_top = 1033.0
-offset_right = 668.0
-offset_bottom = 1137.0
-
-[node name="Rotate" type="TextureButton" parent="VBoxContainer2/Label/MarginContainer"]
-layout_mode = 2
-theme = ExtResource("4_80pg5")
-texture_normal = ExtResource("9_tpkrg")
-texture_pressed = ExtResource("10_w3rir")
+anchors_preset = 0
+script = ExtResource("1_gc7fg")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-clip_contents = true
-layout_mode = 1
+layout_mode = 0
 offset_left = 50.0
 offset_top = 245.0
-offset_right = 670.0
-offset_bottom = 865.0
+offset_right = 112.0
+offset_bottom = 307.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
 
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button7" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button9" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button10" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button11" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button12" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button13" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button14" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button15" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button16" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button17" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button18" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button19" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button20" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button21" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button22" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button23" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button24" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button25" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button26" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button27" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button28" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button29" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button30" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button31" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button32" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button33" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button34" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button35" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button36" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button37" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button38" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button39" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button40" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button41" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button42" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button43" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button44" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button45" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button46" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button47" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button48" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button49" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button50" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button51" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button52" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button53" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button54" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button55" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button56" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button57" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button58" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button59" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button60" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button61" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button62" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button63" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button64" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button65" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button66" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button67" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button68" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button69" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button70" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button71" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button72" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button73" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button74" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button75" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button76" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button77" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button78" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button79" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button80" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button81" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button82" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button83" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button84" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button85" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button86" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button87" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button88" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button89" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button90" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button91" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button92" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button93" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button94" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button95" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button96" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button97" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button98" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button99" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
+[node name="Button100" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_1u4if")
+icon = ExtResource("3_idkhv")
+
 [node name="PreviewZone" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 50.0
 offset_top = 881.0
 offset_right = 90.0
 offset_bottom = 921.0
-
-[node name="BackgroundPreview" type="TextureRect" parent="PreviewZone"]
-layout_mode = 0
-offset_right = 620.0
-offset_bottom = 208.0
-texture = ExtResource("11_he3yu")
 
 [node name="Preview" type="TextureRect" parent="PreviewZone"]
 layout_mode = 2
@@ -149,120 +551,3 @@ offset_top = 101.0
 offset_right = 524.0
 offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
-
-[node name="GameOver" parent="." instance=ExtResource("12_j1evg")]
-visible = false
-layout_mode = 1
-offset_left = 247.0
-offset_top = 430.0
-offset_right = 478.0
-offset_bottom = 495.0
-
-[node name="GameWin" parent="." instance=ExtResource("13_ub5gw")]
-visible = false
-layout_mode = 1
-offset_left = 275.0
-offset_top = 443.0
-offset_right = 449.0
-offset_bottom = 508.0
-
-[node name="AmountOf" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureAmountOfDelete" type="TextureRect" parent="AmountOf"]
-layout_mode = 0
-offset_left = 125.0
-offset_top = 1138.0
-offset_right = 163.0
-offset_bottom = 1176.0
-texture = ExtResource("13_tysw0")
-
-[node name="AmountOfDelete" type="Label" parent="AmountOf/TextureAmountOfDelete"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_ko5a8")
-theme_override_fonts/font = ExtResource("3_amyow")
-theme_override_font_sizes/font_size = 23
-text = "2"
-horizontal_alignment = 1
-
-[node name="TextureAmountOfReroll" type="TextureRect" parent="AmountOf"]
-layout_mode = 0
-offset_left = 252.0
-offset_top = 1138.0
-offset_right = 292.0
-offset_bottom = 1178.0
-texture = ExtResource("13_tysw0")
-
-[node name="AmountOfReroll" type="Label" parent="AmountOf/TextureAmountOfReroll"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_ko5a8")
-theme_override_fonts/font = ExtResource("3_amyow")
-theme_override_font_sizes/font_size = 23
-text = "2"
-horizontal_alignment = 1
-
-[node name="HeadApp" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 289.0
-offset_top = 50.0
-offset_right = 329.0
-offset_bottom = 90.0
-
-[node name="Menu" type="TextureButton" parent="HeadApp"]
-layout_mode = 0
-offset_left = -239.0
-offset_top = 3.0
-offset_right = -176.0
-offset_bottom = 66.0
-theme = ExtResource("4_80pg5")
-texture_normal = ExtResource("14_gi67g")
-texture_pressed = ExtResource("15_6ksu8")
-
-[node name="HelpButton" type="TextureButton" parent="HeadApp"]
-layout_mode = 0
-offset_left = -145.0
-offset_top = 3.0
-offset_right = -82.0
-offset_bottom = 66.0
-theme = ExtResource("4_80pg5")
-texture_normal = ExtResource("16_cnnra")
-texture_pressed = ExtResource("17_gd1ji")
-
-[node name="ParamButton" type="TextureButton" parent="HeadApp"]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 3.0
-offset_right = 381.0
-offset_bottom = 66.0
-theme = ExtResource("4_80pg5")
-texture_normal = ExtResource("18_v0kvs")
-texture_pressed = ExtResource("19_bwk5e")
-
-[node name="Help" parent="." instance=ExtResource("20_0x871")]
-visible = false
-
-[node name="Options" parent="." instance=ExtResource("21_ggndt")]
-visible = false
-layout_mode = 1
-
-[connection signal="pressed" from="VBoxContainer/Delete" to="." method="_on_delete_pressed"]
-[connection signal="pressed" from="VBoxContainer/Reroll" to="." method="_on_change_piece_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
-[connection signal="Menu_Pressed" from="GameWin" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="HeadApp/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="HeadApp/HelpButton" to="." method="_on_help_button_pressed"]
-[connection signal="pressed" from="HeadApp/ParamButton" to="." method="_on_param_button_pressed"]
-[connection signal="Quit_Pressed" from="Help" to="." method="_on_help_quit_pressed"]
