@@ -17,12 +17,32 @@ extends Control
 @onready var level_15: TextureButton = $"LevelContainer/Level 15"
 @onready var level_16: TextureButton = $"LevelContainer/Level 16"
 
-const LEVELS : Array = [
+var scene_ui = preload("res://Scenes/Game/UI/Game_UI.tscn")
+
+const LEVEL_INSTANCES: Dictionary = {
+	"level 1" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 2" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 3" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 4" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 5" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 6" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 7" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 8" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 9" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 10" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 11" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 12" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 13" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 14" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 15" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
+	"level 16" : preload("res://Scenes/Game/Levels/Level_1.tscn")
+}
+const LEVELS: Array = [
 	"level 1",
 	"level 2",
 ]
 
-var level_buttons : Dictionary = {}
+var level_buttons: Dictionary = {}
 
 func _ready() -> void:
 	level_buttons = {
@@ -54,7 +74,24 @@ func _on_infinite_mode_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Infinite_Mode.tscn")
 
 func _on_level_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Level_1.tscn")
+	var level_name = "level 1"
+	var instance_game = LEVEL_INSTANCES[level_name].instantiate()
+	create_game_level(instance_game, level_name)
 
 func _on_level_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Level_2.tscn")
+	var level_name = "level 2"
+	var instance_game = LEVEL_INSTANCES[level_name].instantiate()
+	create_game_level(instance_game, level_name)
+
+func _on_level_3_pressed() -> void:
+	var level_name = "level 3"
+	var instance_game = LEVEL_INSTANCES[level_name].instantiate()
+	create_game_level(instance_game, level_name)
+
+func create_game_level(instance_game, level_name):
+	var instance_ui = scene_ui.instantiate()
+	instance_ui.add_child(instance_game)
+	get_tree().root.add_child(instance_ui)
+	get_tree().current_scene.queue_free()
+	get_tree().current_scene = instance_ui
+	SignalBus.Level_is_selected.emit(level_name)
