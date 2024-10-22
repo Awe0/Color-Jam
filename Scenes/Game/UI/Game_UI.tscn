@@ -1,0 +1,222 @@
+[gd_scene load_steps=21 format=3 uid="uid://cxugcq5xvve5p"]
+
+[ext_resource type="Script" path="res://Scripts/UI/game_ui.gd" id="1_c86s7"]
+[ext_resource type="Texture2D" uid="uid://df4hbl0w273is" path="res://Assets/Background/preview_zone.png" id="2_il358"]
+[ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_gcbkg"]
+[ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_wt7ie"]
+[ext_resource type="Texture2D" uid="uid://c7tan1wa0bfhj" path="res://Assets/Buttons/Game_buttons/trash_button_normal.png" id="5_ahobs"]
+[ext_resource type="Texture2D" uid="uid://vwjnuq2bmhk3" path="res://Assets/Buttons/Game_buttons/trash_button_pressed.png" id="6_g8hgh"]
+[ext_resource type="Texture2D" uid="uid://bc4gfaba7w7y5" path="res://Assets/Buttons/Game_buttons/reroll_button_normal.png" id="7_nxqbr"]
+[ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="8_nfatl"]
+[ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="9_fixho"]
+[ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="10_c4fqi"]
+[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="11_q1dej"]
+[ext_resource type="PackedScene" uid="uid://bc5tmv0kppebn" path="res://Scenes/Game/UI/Game_Win.tscn" id="12_2q8vj"]
+[ext_resource type="Texture2D" uid="uid://csgwid63soq0h" path="res://Assets/Buttons/Game_buttons/notif_count_texture.png" id="13_gqb6c"]
+[ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_vbju1"]
+[ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_2714k"]
+[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_eq37t"]
+[ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="17_xkvek"]
+[ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="18_feruc"]
+[ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="19_spqbd"]
+
+[sub_resource type="Theme" id="Theme_uyy6v"]
+
+[node name="Game_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c86s7")
+metadata/_edit_horizontal_guides_ = [881.0]
+metadata/_edit_vertical_guides_ = [246.0, 239.0, 50.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.748041, 0.910293, 1, 1)
+
+[node name="PreviewZone" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 881.0
+offset_right = 90.0
+offset_bottom = 921.0
+
+[node name="BackgroundPreview" type="TextureRect" parent="PreviewZone"]
+layout_mode = 0
+offset_right = 620.0
+offset_bottom = 208.0
+texture = ExtResource("2_il358")
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 53.0
+offset_right = 441.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
+theme_override_fonts/font = ExtResource("3_gcbkg")
+theme_override_font_sizes/font_size = 60
+text = "Level 2"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 1145.0
+offset_right = 468.0
+offset_bottom = 1249.0
+theme_override_constants/separation = 25
+
+[node name="Delete" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("5_ahobs")
+texture_pressed = ExtResource("6_g8hgh")
+texture_disabled = ExtResource("6_g8hgh")
+
+[node name="Reroll" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("7_nxqbr")
+texture_pressed = ExtResource("8_nfatl")
+texture_disabled = ExtResource("8_nfatl")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 112.0
+offset_right = 42.0
+offset_bottom = 152.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/Label"]
+layout_mode = 2
+offset_left = 564.0
+offset_top = 1033.0
+offset_right = 668.0
+offset_bottom = 1137.0
+
+[node name="Rotate" type="TextureButton" parent="VBoxContainer2/Label/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("9_fixho")
+texture_pressed = ExtResource("10_c4fqi")
+
+[node name="GameOver" parent="." instance=ExtResource("11_q1dej")]
+visible = false
+layout_mode = 1
+offset_left = 247.0
+offset_top = 430.0
+offset_right = 478.0
+offset_bottom = 495.0
+
+[node name="GameWin" parent="." instance=ExtResource("12_2q8vj")]
+visible = false
+layout_mode = 1
+offset_left = 275.0
+offset_top = 443.0
+offset_right = 449.0
+offset_bottom = 508.0
+
+[node name="AmountOf" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureAmountOfDelete" type="TextureRect" parent="AmountOf"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 1138.0
+offset_right = 163.0
+offset_bottom = 1176.0
+texture = ExtResource("13_gqb6c")
+
+[node name="AmountOfDelete" type="Label" parent="AmountOf/TextureAmountOfDelete"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uyy6v")
+theme_override_fonts/font = ExtResource("3_gcbkg")
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
+
+[node name="TextureAmountOfReroll" type="TextureRect" parent="AmountOf"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 1138.0
+offset_right = 292.0
+offset_bottom = 1178.0
+texture = ExtResource("13_gqb6c")
+
+[node name="AmountOfReroll" type="Label" parent="AmountOf/TextureAmountOfReroll"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uyy6v")
+theme_override_fonts/font = ExtResource("3_gcbkg")
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
+
+[node name="HeadApp" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 289.0
+offset_top = 50.0
+offset_right = 329.0
+offset_bottom = 90.0
+
+[node name="Menu" type="TextureButton" parent="HeadApp"]
+layout_mode = 0
+offset_left = -239.0
+offset_top = 3.0
+offset_right = -176.0
+offset_bottom = 66.0
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("14_vbju1")
+texture_pressed = ExtResource("15_2714k")
+
+[node name="HelpButton" type="TextureButton" parent="HeadApp"]
+layout_mode = 0
+offset_left = -145.0
+offset_top = 3.0
+offset_right = -82.0
+offset_bottom = 66.0
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("16_eq37t")
+texture_pressed = ExtResource("17_xkvek")
+
+[node name="ParamButton" type="TextureButton" parent="HeadApp"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 3.0
+offset_right = 381.0
+offset_bottom = 66.0
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("18_feruc")
+texture_pressed = ExtResource("19_spqbd")
+
+[connection signal="pressed" from="VBoxContainer/Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
+[connection signal="Menu_Pressed" from="GameWin" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HeadApp/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HeadApp/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="HeadApp/ParamButton" to="." method="_on_param_button_pressed"]
