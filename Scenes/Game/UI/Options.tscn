@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://bapwdesgl5bo7" path="res://Assets/Buttons/Option_buttons/achievement_button_pressed.png" id="13_v2gj0"]
 [ext_resource type="Texture2D" uid="uid://bc6wm36w6xhi3" path="res://Assets/Buttons/Option_buttons/language_button_normal.png" id="14_67ywk"]
 [ext_resource type="Texture2D" uid="uid://c7dqheb2h3dag" path="res://Assets/Buttons/Option_buttons/language_button_pressed.png" id="15_c06ts"]
-[ext_resource type="Texture2D" uid="uid://bnkukrlkcn8f4" path="res://Assets/Buttons/Option_buttons/account_button_normal.png" id="16_1t2c1"]
-[ext_resource type="Texture2D" uid="uid://ci2t6xeuti8s2" path="res://Assets/Buttons/Option_buttons/account_button_pressed.png" id="17_pdgks"]
+[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_ih67p"]
+[ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="17_a5dhm"]
 [ext_resource type="Texture2D" uid="uid://c1ivxbstj3old" path="res://Assets/Buttons/Option_buttons/restart_button_normal.png" id="18_e2gqm"]
 [ext_resource type="Texture2D" uid="uid://djdes7f3x70of" path="res://Assets/Buttons/Option_buttons/restart_button_pressed.png" id="19_4s34c"]
 
@@ -169,10 +169,10 @@ layout_mode = 2
 texture_normal = ExtResource("14_67ywk")
 texture_pressed = ExtResource("15_c06ts")
 
-[node name="Account" type="TextureButton" parent="BottomButtons"]
+[node name="Help" type="TextureButton" parent="BottomButtons"]
 layout_mode = 2
-texture_normal = ExtResource("16_1t2c1")
-texture_pressed = ExtResource("17_pdgks")
+texture_normal = ExtResource("16_ih67p")
+texture_pressed = ExtResource("17_a5dhm")
 
 [node name="RestartButton" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -268,7 +268,7 @@ max_value = 30.0
 [connection signal="pressed" from="BottomButtons/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="BottomButtons/Achievement" to="." method="_on_achievement_pressed"]
 [connection signal="pressed" from="BottomButtons/Leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="pressed" from="BottomButtons/Account" to="." method="_on_account_pressed"]
+[connection signal="pressed" from="BottomButtons/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="RestartButton/Restart" to="." method="restart_button_pressed"]
 [connection signal="value_changed" from="Sliders/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Sliders/SoundSlider" to="." method="_on_sound_slider_value_changed"]

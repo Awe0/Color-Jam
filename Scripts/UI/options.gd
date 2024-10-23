@@ -7,6 +7,7 @@ extends Control
 
 var list_check_button: Array = []
 var list_sliders: Array = []
+var help_scene = preload("res://Scenes/Help/Help.tscn")
 
 const LIST_OPTIONS_STRING: Array = [
 	"rotation_mode",
@@ -58,9 +59,6 @@ func _on_leaderboard_pressed() -> void:
 	if Leaderboards.LEADERBOARDS_ID[current_scene_name]:
 		LeaderboardsClient.show_leaderboard(Leaderboards.LEADERBOARDS_ID[current_scene_name])
 
-func _on_account_pressed() -> void:
-	PlayersClient.load_current_player(true)
-
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioPlayer.music_player.volume_db = value
 	SaveSystem.save_config("game", "music_db", value)
@@ -68,3 +66,7 @@ func _on_music_slider_value_changed(value: float) -> void:
 func _on_sound_slider_value_changed(value: float) -> void:
 	AudioPlayer.fx_player.volume_db = value
 	SaveSystem.save_config("game", "sound_db", value)
+
+func _on_help_pressed() -> void:
+	var scene_instance = help_scene.instantiate()
+	get_tree().root.add_child(scene_instance)
