@@ -2,22 +2,22 @@ extends Node
 
 
 var level_state : Dictionary = {
-	"level 1" : false,
-	"level 2" : false,
-	"level 3" : false,
-	"level 4" : false,
-	"level 5" : false,
-	"level 6" : false,
-	"level 7" : false,
-	"level 8" : false,
-	"level 9" : false,
-	"level 10" : false,
-	"level 11" : false,
-	"level 12" : false,
-	"level 13" : false,
-	"level 14" : false,
-	"level 15" : false,
-	"level 16" : false,
+	"level_1" : false,
+	"level_2" : false,
+	"level_3" : false,
+	"level_4" : false,
+	"level_5" : false,
+	"level_6" : false,
+	"level_7" : false,
+	"level_8" : false,
+	"level_9" : false,
+	"level_10" : false,
+	"level_11" : false,
+	"level_12" : false,
+	"level_13" : false,
+	"level_14" : false,
+	"level_15" : false,
+	"level_16" : false,
 }
 
 func _ready() -> void:
