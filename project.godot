@@ -32,6 +32,7 @@ Config="*res://Scripts/Singletons/Config.gd"
 LevelStatement="*res://Scripts/Singletons/LevelStatement.gd"
 Leaderboards="*res://Scripts/Singletons/Leaderboards.gd"
 AudioPlayer="*res://Scripts/Singletons/AudioPlayer.gd"
+PreloadScenes="*res://Scripts/Singletons/Preload_Scenes.gd"
 
 [display]
 
