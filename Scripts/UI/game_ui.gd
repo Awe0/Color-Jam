@@ -21,14 +21,18 @@ var game_over_scene = preload("res://Scenes/Game/UI/Game_Over.tscn")
 var option_scene = preload("res://Scenes/Game/UI/Options.tscn")
 var help_scene = preload("res://Scenes/Help/Help.tscn")
 var attempt: int = 0
-var delete = 2
-var reroll = 2
+var delete: int = 2
+var reroll: int = 2
 
 
 func _ready():
 	SignalBus.Game_is_over.connect(game_over_statement)
 	SignalBus.Level_is_selected.connect(change_level_name)
 	SignalBus.Game_is_win.connect(game_win_statement)
+	SignalBus.Attempt_increased.connect(increase_attempt)
+
+func increase_attempt():
+	attempt += 1
 
 func _on_rotate_pressed() -> void:
 	SignalBus.Rotating.emit()
@@ -96,6 +100,7 @@ func game_win_statement():
 func change_level_name(actual_level_name: String):
 	label_level_name.text = actual_level_name
 	level_name = actual_level_name
+	get_tree().current_scene.name = actual_level_name
 
 func instanciate_scenes(scene):
 	var scene_instance = scene.instantiate()
