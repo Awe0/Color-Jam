@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw6kmarycx8pd"
-path="res://.godot/imported/achievement_button_pressed.png-b470881620f8a97e9dd1f0bae7ac4390.ctex"
+uid="uid://b5s5gwee1lhev"
+path="res://.godot/imported/options_button_pressed.png-43adf777360f13914930f33d4a956c6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Menu_buttons/achievement_button_pressed.png"
-dest_files=["res://.godot/imported/achievement_button_pressed.png-b470881620f8a97e9dd1f0bae7ac4390.ctex"]
+source_file="res://Assets/Buttons/Menu_buttons/options_button_pressed.png"
+dest_files=["res://.godot/imported/options_button_pressed.png-43adf777360f13914930f33d4a956c6a.ctex"]
 
 [params]
 

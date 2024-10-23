@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1xqsqgxvnfih"
-path="res://.godot/imported/scoreboard_button_normal.png-0b99ea9a0139fba966734875fd0035d2.ctex"
+uid="uid://cy8eccv0adxsl"
+path="res://.godot/imported/options_button_normal.png-29c77ec90ebe8bb25393b8376f194d8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Menu_buttons/scoreboard_button_normal.png"
-dest_files=["res://.godot/imported/scoreboard_button_normal.png-0b99ea9a0139fba966734875fd0035d2.ctex"]
+source_file="res://Assets/Buttons/Menu_buttons/options_button_normal.png"
+dest_files=["res://.godot/imported/options_button_normal.png-29c77ec90ebe8bb25393b8376f194d8d.ctex"]
 
 [params]
 
