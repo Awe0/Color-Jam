@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bghr8dfxro6pk"]
+[gd_scene load_steps=43 format=3 uid="uid://bghr8dfxro6pk"]
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_xop0u"]
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="2_o4jl7"]
@@ -24,19 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://dfddaqi5lgxo1" path="res://Assets/Animations/Animation_menu/animation_menu8.png" id="30_cvtx7"]
 [ext_resource type="Texture2D" uid="uid://dfniq8ky3vvrr" path="res://Assets/Animations/Animation_menu/animation_menu7.png" id="31_cxmvs"]
 [ext_resource type="Texture2D" uid="uid://di6gnjaq7dnce" path="res://Assets/Animations/Animation_menu/animation_menu6.png" id="32_a6ro4"]
+[ext_resource type="Texture2D" uid="uid://cy8eccv0adxsl" path="res://Assets/Buttons/Menu_buttons/options_button_normal.png" id="32_jv3h7"]
 [ext_resource type="Texture2D" uid="uid://b08qnfc6fgqdi" path="res://Assets/Animations/Animation_menu/animation_menu5.png" id="33_1ccsr"]
+[ext_resource type="Texture2D" uid="uid://b5s5gwee1lhev" path="res://Assets/Buttons/Menu_buttons/options_button_pressed.png" id="33_tkjk6"]
 [ext_resource type="Texture2D" uid="uid://b4rt1j3xinyxc" path="res://Assets/Animations/Animation_menu/animation_menu4.png" id="34_xlvg6"]
 [ext_resource type="Texture2D" uid="uid://b1cucicpmf7ma" path="res://Assets/Animations/Animation_menu/animation_menu3.png" id="35_aacu7"]
 [ext_resource type="Texture2D" uid="uid://bexgvb71egqqe" path="res://Assets/Animations/Animation_menu/animation_menu2.png" id="36_w0mjl"]
 [ext_resource type="Texture2D" uid="uid://da8o2xh1g2ibc" path="res://Assets/Animations/Animation_menu/animation_menu1.png" id="37_1o55b"]
 [ext_resource type="Texture2D" uid="uid://djsmm5savggff" path="res://Assets/Buttons/Menu_buttons/play_button_normal.png" id="38_reowe"]
-[ext_resource type="PackedScene" uid="uid://c6xbu1atc0fjc" path="res://Scenes/Game/UI/Options.tscn" id="38_ty051"]
 [ext_resource type="Texture2D" uid="uid://ceeab8jpo8wx4" path="res://Assets/Buttons/Menu_buttons/play_button_pressed.png" id="39_2c3t8"]
-[ext_resource type="Texture2D" uid="uid://c1xqsqgxvnfih" path="res://Assets/Buttons/Menu_buttons/scoreboard_button_normal.png" id="40_qa6em"]
-[ext_resource type="Texture2D" uid="uid://ciw58vmhcwk0j" path="res://Assets/Buttons/Menu_buttons/scoreboard_button_pressed.png" id="41_iedlk"]
-[ext_resource type="Texture2D" uid="uid://4v3wwmfv0htu" path="res://Assets/Buttons/Menu_buttons/achievement_button_normal.png" id="42_2bk72"]
 [ext_resource type="Texture2D" uid="uid://ckdy6wvyp0eot" path="res://Assets/Buttons/Menu_buttons/quit_button_normal.png" id="42_utkeq"]
-[ext_resource type="Texture2D" uid="uid://cw6kmarycx8pd" path="res://Assets/Buttons/Menu_buttons/achievement_button_pressed.png" id="43_am4i1"]
 [ext_resource type="Texture2D" uid="uid://d4i26m5ola5if" path="res://Assets/Buttons/Menu_buttons/quit_button_pressed.png" id="43_ictiy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jrxxg"]
@@ -185,17 +182,11 @@ theme = SubResource("Theme_olh2y")
 texture_normal = ExtResource("38_reowe")
 texture_pressed = ExtResource("39_2c3t8")
 
-[node name="scoreboard_button" type="TextureButton" parent="ButtonContainer"]
+[node name="option_button" type="TextureButton" parent="ButtonContainer"]
 layout_mode = 2
 theme = SubResource("Theme_olh2y")
-texture_normal = ExtResource("40_qa6em")
-texture_pressed = ExtResource("41_iedlk")
-
-[node name="achievement_button" type="TextureButton" parent="ButtonContainer"]
-layout_mode = 2
-theme = SubResource("Theme_olh2y")
-texture_normal = ExtResource("42_2bk72")
-texture_pressed = ExtResource("43_am4i1")
+texture_normal = ExtResource("32_jv3h7")
+texture_pressed = ExtResource("33_tkjk6")
 
 [node name="quit_button" type="TextureButton" parent="ButtonContainer"]
 layout_mode = 2
@@ -203,15 +194,6 @@ theme = SubResource("Theme_olh2y")
 texture_normal = ExtResource("42_utkeq")
 texture_pressed = ExtResource("43_ictiy")
 
-[node name="Options" parent="." instance=ExtResource("38_ty051")]
-visible = false
-layout_mode = 1
-offset_left = 206.0
-offset_top = 227.0
-offset_right = 206.0
-offset_bottom = 227.0
-
 [connection signal="pressed" from="ButtonContainer/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="ButtonContainer/scoreboard_button" to="." method="_on_scoreboard_button_pressed"]
-[connection signal="pressed" from="ButtonContainer/achievement_button" to="." method="_on_achievement_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/option_button" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/quit_button" to="." method="_on_quit_button_pressed"]
