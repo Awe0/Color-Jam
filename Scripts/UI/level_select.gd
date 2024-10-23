@@ -40,7 +40,7 @@ const LEVELS: Array = [
 ]
 const BUTTON_NORMAL_TEXTURE = preload("res://Assets/Buttons/Game_buttons/empty_100x100_button_normal.png")
 const BUTTON_PRESSED_TEXTURE = preload("res://Assets/Buttons/Game_buttons/empty_100x100_button_pressed.png")
-
+const LABEL_THEME = preload("res://Themes/Level_number.theme")
 var scene_ui = preload("res://Scenes/Game/UI/Game_UI.tscn")
 var level_buttons: Dictionary = {}
 
