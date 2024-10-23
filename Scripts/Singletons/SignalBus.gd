@@ -11,5 +11,6 @@ signal Rerolling
 signal Deleting
 signal Check_Grid
 signal Game_is_win
+signal Attempt_increased
 
 signal Level_is_selected(level_name: String)
