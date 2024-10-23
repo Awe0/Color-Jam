@@ -14,6 +14,24 @@ extends Control
 @onready var label_level_name: Label = $Level
 
 
+var level_name_without_underscore: Dictionary = {
+	"level_1" : "level 1",
+	"level_2" : "level 2",
+	"level_3" : "level 3",
+	"level_4" : "level 4",
+	"level_5" : "level 5",
+	"level_6" : "level 6",
+	"level_7" : "level 7",
+	"level_8" : "level 8",
+	"level_9" : "level 9",
+	"level_10" : "level 10",
+	"level_11" : "level 11",
+	"level_12" : "level 12",
+	"level_13" : "level 13",
+	"level_14" : "level 14",
+	"level_15" : "level 15",
+	"level_16" : "level 16",
+}
 
 var level_name = null
 var attempt: int = 0
@@ -91,7 +109,7 @@ func game_win_statement():
 	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
 
 func change_level_name(actual_level_name: String):
-	label_level_name.text = actual_level_name
+	label_level_name.text = level_name_without_underscore[actual_level_name]
 	level_name = actual_level_name
 	get_tree().current_scene.name = actual_level_name
 
