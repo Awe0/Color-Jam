@@ -19,7 +19,6 @@ var level_name = null
 var game_win_scene = preload("res://Scenes/Game/UI/Game_Win.tscn")
 var game_over_scene = preload("res://Scenes/Game/UI/Game_Over.tscn")
 var option_scene = preload("res://Scenes/Game/UI/Options.tscn")
-var help_scene = preload("res://Scenes/Help/Help.tscn")
 var attempt: int = 0
 var delete: int = 2
 var reroll: int = 2
@@ -84,9 +83,6 @@ func game_over_statement():
 	if reroll <= 0 && delete <= 0:
 		instanciate_scenes(game_over_scene)
 		hide_interface()
-
-func _on_help_button_pressed() -> void:
-	instanciate_scenes(help_scene)
 
 func _on_param_button_pressed() -> void:
 	instanciate_scenes(option_scene)

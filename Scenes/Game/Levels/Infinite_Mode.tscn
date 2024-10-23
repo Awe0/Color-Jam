@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=24 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/Game/infinite_game.gd" id="1_xdhcq"]
 [ext_resource type="Texture2D" uid="uid://c4yuy0qsv3iaf" path="res://Assets/Background/background_game.png" id="2_nvg2j"]
@@ -18,8 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://ta4om2kemqdv" path="res://Assets/Background/preview_zone.png" id="13_s84ug"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_ekk7s"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_0c82l"]
-[ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_g0a7w"]
-[ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="17_i1tk8"]
 [ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="18_mg4o2"]
 [ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="19_4spei"]
 [ext_resource type="PackedScene" uid="uid://df1j1s2aa4kir" path="res://Scenes/Help/Help.tscn" id="20_i0p6p"]
@@ -271,16 +269,6 @@ theme = ExtResource("5_uh6up")
 texture_normal = ExtResource("14_ekk7s")
 texture_pressed = ExtResource("15_0c82l")
 
-[node name="HelpButton" type="TextureButton" parent="HeadApp"]
-layout_mode = 0
-offset_left = -145.0
-offset_top = 3.0
-offset_right = -82.0
-offset_bottom = 66.0
-theme = ExtResource("5_uh6up")
-texture_normal = ExtResource("16_g0a7w")
-texture_pressed = ExtResource("17_i1tk8")
-
 [node name="ParamButton" type="TextureButton" parent="HeadApp"]
 layout_mode = 0
 offset_left = 319.0
@@ -302,6 +290,5 @@ layout_mode = 1
 [connection signal="pressed" from="VBoxContainer/Reroll" to="." method="_on_change_piece_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="pressed" from="HeadApp/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="HeadApp/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="HeadApp/ParamButton" to="." method="_on_param_button_pressed"]
 [connection signal="Quit_Pressed" from="Help" to="." method="_on_help_quit_pressed"]

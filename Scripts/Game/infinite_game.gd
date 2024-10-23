@@ -269,10 +269,6 @@ func game_over_statement():
 			LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[MODE_NAME], score)
 			hide_interface()
 
-func _on_help_button_pressed() -> void:
-	var instance_help_scene = help_scene.instantiate()
-	get_tree().root.add_child(instance_help_scene)
-
 func _on_help_quit_pressed() -> void:
 	help.visible = false
 
