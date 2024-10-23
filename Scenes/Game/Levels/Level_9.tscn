@@ -1,0 +1,654 @@
+[gd_scene load_steps=5 format=3 uid="uid://se4pd3uvgvwl"]
+
+[ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_qtbuc"]
+[ext_resource type="Theme" uid="uid://f51fjewexp7e" path="res://Themes/BLANK_GRID.theme" id="2_xgn1i"]
+[ext_resource type="Texture2D" uid="uid://dh1sknqws38ky" path="res://Assets/Cells/cell54x54.png" id="3_g4tem"]
+[ext_resource type="Texture2D" uid="uid://c1a1a7gh4b5f3" path="res://Assets/Cells/gray.png" id="4_age30"]
+
+[node name="Level_3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qtbuc")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 239.0
+offset_right = 653.0
+offset_bottom = 832.0
+theme_override_constants/h_separation = -3
+theme_override_constants/v_separation = -3
+columns = 10
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button7" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button9" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button10" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button11" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button12" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button13" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button14" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button15" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button16" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button17" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button18" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button19" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button20" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button21" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button22" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button23" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button24" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button25" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button26" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button27" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button28" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button29" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button30" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button31" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button32" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button33" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button34" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button35" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button36" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button37" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button38" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button39" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button40" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button41" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button42" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button43" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button44" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button45" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button46" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button47" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button48" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button49" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button50" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button51" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button52" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button53" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button54" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button55" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button56" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button57" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button58" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button59" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button60" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button61" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button62" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button63" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button64" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button65" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button66" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button67" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button68" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button69" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button70" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button71" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button72" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button73" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button74" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button75" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button76" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button77" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button78" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("4_age30")
+flat = true
+
+[node name="Button79" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button80" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button81" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button82" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button83" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button84" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button85" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button86" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button87" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button88" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button89" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button90" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button91" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button92" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button93" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button94" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button95" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button96" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button97" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button98" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button99" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="Button100" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xgn1i")
+icon = ExtResource("3_g4tem")
+flat = true
+
+[node name="PreviewZone" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 54.0
+offset_top = 867.0
+offset_right = 94.0
+offset_bottom = 907.0
+
+[node name="Preview" type="TextureRect" parent="PreviewZone"]
+layout_mode = 2
+offset_left = 106.0
+offset_top = 98.0
+offset_right = 106.0
+offset_bottom = 98.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, 1)
+
+[node name="Preview2" type="TextureRect" parent="PreviewZone"]
+layout_mode = 2
+offset_left = 323.0
+offset_top = 101.0
+offset_right = 323.0
+offset_bottom = 101.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Preview3" type="TextureRect" parent="PreviewZone"]
+layout_mode = 2
+offset_left = 537.0
+offset_top = 101.0
+offset_right = 537.0
+offset_bottom = 101.0
+scale = Vector2(0.5, 0.5)
