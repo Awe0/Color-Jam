@@ -84,15 +84,14 @@ offset_bottom = 113.0
 theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
 theme_override_fonts/font = ExtResource("3_gcbkg")
 theme_override_font_sizes/font_size = 60
-text = "Level 2"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 50.0
-offset_top = 1145.0
+offset_top = 1281.0
 offset_right = 468.0
-offset_bottom = 1249.0
+offset_bottom = 1385.0
 theme_override_constants/separation = 25
 
 [node name="Delete" type="TextureButton" parent="VBoxContainer"]
@@ -122,9 +121,9 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/Label"]
 layout_mode = 2
 offset_left = 564.0
-offset_top = 1033.0
+offset_top = 1169.0
 offset_right = 668.0
-offset_bottom = 1137.0
+offset_bottom = 1273.0
 
 [node name="Rotate" type="TextureButton" parent="VBoxContainer2/Label/MarginContainer"]
 layout_mode = 2
@@ -157,9 +156,9 @@ offset_bottom = 40.0
 [node name="TextureAmountOfDelete" type="TextureRect" parent="AmountOf"]
 layout_mode = 0
 offset_left = 125.0
-offset_top = 1138.0
+offset_top = 1274.0
 offset_right = 163.0
-offset_bottom = 1176.0
+offset_bottom = 1312.0
 texture = ExtResource("13_gqb6c")
 
 [node name="AmountOfDelete" type="Label" parent="AmountOf/TextureAmountOfDelete"]
@@ -178,9 +177,9 @@ horizontal_alignment = 1
 [node name="TextureAmountOfReroll" type="TextureRect" parent="AmountOf"]
 layout_mode = 0
 offset_left = 252.0
-offset_top = 1138.0
+offset_top = 1274.0
 offset_right = 292.0
-offset_bottom = 1178.0
+offset_bottom = 1314.0
 texture = ExtResource("13_gqb6c")
 
 [node name="AmountOfReroll" type="Label" parent="AmountOf/TextureAmountOfReroll"]
