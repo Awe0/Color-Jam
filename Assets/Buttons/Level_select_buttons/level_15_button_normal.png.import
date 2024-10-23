@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0msoaslkey8g"
-path="res://.godot/imported/full_star_50x50.png-98fc3bbd4eef056d71145ed4a4ae98eb.ctex"
+uid="uid://d20yfn24jc327"
+path="res://.godot/imported/level_15_button_normal.png-d5c553360858d4c5b5b2b0b369a21eae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Stars/full_star_50x50.png"
-dest_files=["res://.godot/imported/full_star_50x50.png-98fc3bbd4eef056d71145ed4a4ae98eb.ctex"]
+source_file="res://Assets/Buttons/Level_select_buttons/level_15_button_normal.png"
+dest_files=["res://.godot/imported/level_15_button_normal.png-d5c553360858d4c5b5b2b0b369a21eae.ctex"]
 
 [params]
 

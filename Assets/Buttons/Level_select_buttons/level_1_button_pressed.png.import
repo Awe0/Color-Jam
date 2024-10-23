@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deqegde47t7um"
-path="res://.godot/imported/gold_star_50x50.png-35d437ed788dfb9e70264022e33aabcc.ctex"
+uid="uid://b5lpgcvaja8ue"
+path="res://.godot/imported/level_1_button_pressed.png-937e970d8549ea9722d950da0ff2c30e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Stars/gold_star_50x50.png"
-dest_files=["res://.godot/imported/gold_star_50x50.png-35d437ed788dfb9e70264022e33aabcc.ctex"]
+source_file="res://Assets/Buttons/Level_select_buttons/level_1_button_pressed.png"
+dest_files=["res://.godot/imported/level_1_button_pressed.png-937e970d8549ea9722d950da0ff2c30e.ctex"]
 
 [params]
 

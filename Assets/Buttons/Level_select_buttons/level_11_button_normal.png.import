@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqiahyfdrajqo"
-path="res://.godot/imported/iron_star_50x50.png-7d2a85291c3b5465c2c532cf7037455e.ctex"
+uid="uid://f6drstw86u4q"
+path="res://.godot/imported/level_11_button_normal.png-f3b251d6a2aa1d9554eac23337fabfa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Stars/iron_star_50x50.png"
-dest_files=["res://.godot/imported/iron_star_50x50.png-7d2a85291c3b5465c2c532cf7037455e.ctex"]
+source_file="res://Assets/Buttons/Level_select_buttons/level_11_button_normal.png"
+dest_files=["res://.godot/imported/level_11_button_normal.png-f3b251d6a2aa1d9554eac23337fabfa0.ctex"]
 
 [params]
 
