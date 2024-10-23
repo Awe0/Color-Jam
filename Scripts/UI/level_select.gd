@@ -46,6 +46,7 @@ var level_buttons: Dictionary = {}
 
 func _ready() -> void:
 	create_level_button()
+	#create_button_label()
 	set_level_states()
 
 func set_level_states():
@@ -63,6 +64,14 @@ func create_level_button():
 		)
 		level_buttons[level] = button
 		level_container.add_child(button)
+
+#func create_button_label():
+	#var level_number = 0
+	#for level in LEVELS:
+		#level_number += 1
+		#var label = Label.new()
+		#label.text = str(level_number)
+		#label.set_theme(LABEL_THEME)
 
 func create_instance(level):
 	var instance_game = LEVEL_INSTANCES[level].instantiate()
