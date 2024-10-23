@@ -22,3 +22,7 @@ func _on_scoreboard_button_pressed() -> void:
 
 func _on_achievement_button_pressed() -> void:
 	AchievementsClient.show_achievements()
+
+func _on_option_button_pressed() -> void:
+	var scene_instance = PreloadScenes.option_scene.instantiate()
+	get_tree().root.add_child(scene_instance)

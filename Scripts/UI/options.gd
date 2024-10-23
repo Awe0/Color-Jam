@@ -7,7 +7,6 @@ extends Control
 
 var list_check_button: Array = []
 var list_sliders: Array = []
-var help_scene = preload("res://Scenes/Help/Help.tscn")
 
 const LIST_OPTIONS_STRING: Array = [
 	"rotation_mode",
@@ -68,5 +67,5 @@ func _on_sound_slider_value_changed(value: float) -> void:
 	SaveSystem.save_config("game", "sound_db", value)
 
 func _on_help_pressed() -> void:
-	var scene_instance = help_scene.instantiate()
+	var scene_instance = PreloadScenes.help_scene.instantiate()
 	get_tree().root.add_child(scene_instance)

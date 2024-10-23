@@ -16,9 +16,6 @@ extends Control
 
 
 var level_name = null
-var game_win_scene = preload("res://Scenes/Game/UI/Game_Win.tscn")
-var game_over_scene = preload("res://Scenes/Game/UI/Game_Over.tscn")
-var option_scene = preload("res://Scenes/Game/UI/Options.tscn")
 var attempt: int = 0
 var delete: int = 2
 var reroll: int = 2
@@ -81,14 +78,14 @@ func update_delete():
 #Signal Game_Is_Over from Game.tscn
 func game_over_statement():
 	if reroll <= 0 && delete <= 0:
-		instanciate_scenes(game_over_scene)
+		instanciate_scenes(PreloadScenes.game_over_scene)
 		hide_interface()
 
 func _on_param_button_pressed() -> void:
-	instanciate_scenes(option_scene)
+	instanciate_scenes(PreloadScenes.option_scene)
 
 func game_win_statement():
-	instanciate_scenes(game_win_scene)
+	instanciate_scenes(PreloadScenes.game_win_scene)
 	LevelStatement.level_state[level_name] = true
 	SaveSystem.save_levels_data("levels_statement", level_name, true)
 	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
