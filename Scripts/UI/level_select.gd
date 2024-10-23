@@ -66,12 +66,12 @@ func create_level_button():
 
 func create_instance(level):
 	var instance_game = LEVEL_INSTANCES[level].instantiate()
-	create_game_level(instance_game, level)
+	create_level(instance_game, level)
 
 func _on_infinite_mode_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Infinite_Mode.tscn")
 
-func create_game_level(instance_game, level_name):
+func create_level(instance_game, level_name):
 	var instance_ui = scene_ui.instantiate()
 	instance_ui.add_child(instance_game)
 	get_tree().root.add_child(instance_ui)
