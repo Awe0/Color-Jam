@@ -1,22 +1,24 @@
 extends Control
 
 @onready var level_container: GridContainer = $LevelContainer
-@onready var level_1: TextureRect = $"Level 1"
-@onready var level_2: TextureRect = $"Level 2"
-@onready var level_3: TextureRect = $"Level 3"
-@onready var level_4: TextureRect = $"Level 4"
-@onready var level_5: TextureRect = $"Level 5"
-@onready var level_6: TextureRect = $"Level 6"
-@onready var level_7: TextureRect = $"Level 7"
-@onready var level_8: TextureRect = $"Level 8"
-@onready var level_9: TextureRect = $"Level 9"
-@onready var level_10: TextureRect = $"Level 10"
-@onready var level_11: TextureRect = $"Level 11"
-@onready var level_12: TextureRect = $"Level 12"
-@onready var level_13: TextureRect = $"Level 13"
-@onready var level_14: TextureRect = $"Level 14"
-@onready var level_15: TextureRect = $"Level 15"
-@onready var level_16: TextureRect = $"Level 16"
+@onready var level_1: TextureRect = $level_1
+@onready var level_2: TextureRect = $level_2
+@onready var level_3: TextureRect = $level_3
+@onready var level_4: TextureRect = $level_4
+@onready var level_5: TextureRect = $level_5
+@onready var level_6: TextureRect = $level_6
+@onready var level_7: TextureRect = $level_7
+@onready var level_8: TextureRect = $level_8
+@onready var level_9: TextureRect = $level_9
+@onready var level_10: TextureRect = $level_10
+@onready var level_11: TextureRect = $level_11
+@onready var level_12: TextureRect = $level_12
+@onready var level_13: TextureRect = $level_13
+@onready var level_14: TextureRect = $level_14
+@onready var level_15: TextureRect = $level_15
+@onready var level_16: TextureRect = $level_16
+
+
 
 const LEVEL_INSTANCES: Dictionary = {
 	"level_1" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
@@ -55,32 +57,30 @@ const LEVELS: Array = [
 	"level_15",
 	"level_16",
 ]
-const BUTTON_NORMAL_TEXTURE = preload("res://Assets/Buttons/Game_buttons/empty_100x100_button_normal.png")
-const BUTTON_PRESSED_TEXTURE = preload("res://Assets/Buttons/Game_buttons/empty_100x100_button_pressed.png")
 const LABEL_THEME = preload("res://Themes/Level_number.theme")
-#const GOLD_STAR = preload("res://Assets/Buttons/Stars/gold_star.png")
+const GOLD_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/gold_star_50x50.png")
 
 var scene_ui = preload("res://Scenes/Game/UI/Game_UI.tscn")
 var level_buttons: Dictionary = {}
 var level_stars_texture: Dictionary = {}
 func _ready() -> void:
 	level_stars_texture = {
-		"level 1" : level_1,
-		"level 2" : level_2,
-		"level 3" : level_3,
-		"level 4" : level_4,
-		"level 5" : level_5,
-		"level 6" : level_6,
-		"level 7" : level_7,
-		"level 8" : level_8,
-		"level 9" : level_9,
-		"level 10" : level_10,
-		"level 11" : level_11,
-		"level 12" : level_12,
-		"level 13" : level_13,
-		"level 14" : level_14,
-		"level 15" : level_15,
-		"level 16" : level_16,
+		"level_1" : level_1,
+		"level_2" : level_2,
+		"level_3" : level_3,
+		"level_4" : level_4,
+		"level_5" : level_5,
+		"level_6" : level_6,
+		"level_7" : level_7,
+		"level_8" : level_8,
+		"level_9" : level_9,
+		"level_10" : level_10,
+		"level_11" : level_11,
+		"level_12" : level_12,
+		"level_13" : level_13,
+		"level_14" : level_14,
+		"level_15" : level_15,
+		"level_16" : level_16,
 }
 	create_level_button()
 	#create_button_label()
@@ -89,14 +89,13 @@ func _ready() -> void:
 func set_level_states():
 	for level in LEVELS:
 		if LevelStatement.level_state[level]:
-			pass
-			#level_stars_texture[level].texture = GOLD_STAR
+			level_stars_texture[level].texture = GOLD_STAR
 
 func create_level_button():
 	for level in LEVELS:
 		var button = TextureButton.new()
-		button.texture_normal = BUTTON_NORMAL_TEXTURE
-		button.texture_pressed = BUTTON_PRESSED_TEXTURE
+		button.texture_normal = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_normal.png")
+		button.texture_pressed = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_pressed.png")
 		button.pressed.connect(func() -> void:
 			create_instance(level)
 		)
