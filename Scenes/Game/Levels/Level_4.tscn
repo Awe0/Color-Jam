@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dh1sknqws38ky" path="res://Assets/Cells/cell54x54.png" id="3_qnreo"]
 [ext_resource type="Texture2D" uid="uid://c1a1a7gh4b5f3" path="res://Assets/Cells/gray.png" id="4_ogu0j"]
 
-[node name="Level_3" type="Control"]
+[node name="Level_4" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_8hey8")
