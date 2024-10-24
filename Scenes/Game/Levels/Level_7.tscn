@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://olxq54u0a2gw"]
+[gd_scene load_steps=9 format=3 uid="uid://olxq54u0a2gw"]
 
 [ext_resource type="Script" path="res://Scripts/Game/game.gd" id="1_6ixkk"]
 [ext_resource type="Theme" uid="uid://f51fjewexp7e" path="res://Themes/BLANK_GRID.theme" id="2_luem2"]
 [ext_resource type="Texture2D" uid="uid://dh1sknqws38ky" path="res://Assets/Cells/cell54x54.png" id="3_fpeps"]
 [ext_resource type="Texture2D" uid="uid://c1a1a7gh4b5f3" path="res://Assets/Cells/gray.png" id="4_ttgxb"]
+[ext_resource type="Texture2D" uid="uid://d3eh37osjre45" path="res://Assets/Background/preview_zone_next.png" id="5_hc0ni"]
+[ext_resource type="Texture2D" uid="uid://716ylmlpe068" path="res://Assets/Background/preview_zone_selected.png" id="6_c58mc"]
+[ext_resource type="Theme" uid="uid://dq485jefe4xhh" path="res://Themes/Empty_Button.theme" id="7_ryt1v"]
+[ext_resource type="Texture2D" uid="uid://jntsxptpxvoc" path="res://Assets/Background/preview_zone_not_selected.png" id="8_w4v0r"]
 
 [node name="Level_7" type="Control"]
 layout_mode = 3
@@ -620,6 +624,55 @@ theme = ExtResource("2_luem2")
 icon = ExtResource("3_fpeps")
 flat = true
 
+[node name="BackgroundPreview" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background_Next_Right" type="TextureRect" parent="BackgroundPreview"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 861.0
+offset_right = 667.0
+offset_bottom = 1073.0
+texture = ExtResource("5_hc0ni")
+
+[node name="Background_Next" type="TextureRect" parent="BackgroundPreview"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 862.0
+offset_right = 271.0
+offset_bottom = 1074.0
+texture = ExtResource("6_c58mc")
+
+[node name="Next" type="Button" parent="BackgroundPreview/Background_Next"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_ryt1v")
+
+[node name="Background_Stock" type="TextureRect" parent="BackgroundPreview"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 1084.0
+offset_right = 305.0
+offset_bottom = 1296.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_w4v0r")
+
+[node name="Stock" type="Button" parent="BackgroundPreview/Background_Stock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_ryt1v")
+
 [node name="PreviewZone" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -652,3 +705,13 @@ offset_top = 101.0
 offset_right = 537.0
 offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
+
+[node name="Preview4" type="TextureRect" parent="PreviewZone"]
+offset_left = -2.0
+offset_top = -1446.0
+offset_right = -2.0
+offset_bottom = -1446.0
+scale = Vector2(0.3, 0.3)
+
+[connection signal="pressed" from="BackgroundPreview/Background_Next/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="BackgroundPreview/Background_Stock/Stock" to="." method="_on_stock_pressed"]
