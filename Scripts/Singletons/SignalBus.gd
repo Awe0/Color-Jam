@@ -9,6 +9,7 @@ signal Game_is_over
 signal Rotating
 signal Rerolling
 signal Deleting
+signal Stocking
 signal Check_Grid
 signal Game_is_win
 signal Attempt_increased

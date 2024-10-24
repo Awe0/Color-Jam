@@ -3,14 +3,22 @@ extends Control
 @onready var preview: TextureRect = $PreviewZone/Preview
 @onready var preview_2: TextureRect = $PreviewZone/Preview2
 @onready var preview_3: TextureRect = $PreviewZone/Preview3
+@onready var preview_4: TextureRect = $PreviewZone/Preview4
 @onready var grid_container: GridContainer = $GridContainer
+@onready var background_stock: TextureRect = $BackgroundPreview/Background_Stock
+@onready var background_next: TextureRect = $BackgroundPreview/Background_Next
+
 
 const GRID_SIZE: int = 10
 const BLANK_CELL = preload("res://Assets/Cells/cell54x54.png")
 const GRAY_CELL = preload("res://Assets/Cells/gray.png")
+const BACKGROUND_SELECTED_TEXTURE = preload("res://Assets/Background/preview_zone_selected.png")
+const BACKGROUND_NOT_SELECTED_TEXTURE = preload("res://Assets/Background/preview_zone_not_selected.png")
 
 var cells: Array = []
-var selected_color = null 
+var selected_piece = null 
+var stocked_piece = null
+var waiting_piece = null
 var piece_queue: Array = []
 var color_scenes = [
 	preload("res://Scenes/Colors/Red.tscn"),
@@ -28,10 +36,11 @@ var color_previews = {
 }
 
 func _ready() -> void:
-	SignalBus.Rotating.connect(rotate_selected_color)
+	SignalBus.Rotating.connect(rotate_selected_piece)
 	SignalBus.Rerolling.connect(reroll_piece)
 	SignalBus.Deleting.connect(update_piece_queue)
 	SignalBus.Check_Grid.connect(game_statement)
+	SignalBus.Stocking.connect(stock_piece)
 	get_cells_grid()
 	initialize_piece_queue()
 	update_previews()
@@ -51,19 +60,19 @@ func get_cells_grid():
 		cells.append(row)
 
 func place_on_grid(i: int, j: int) -> void:
-	if selected_color:
+	if selected_piece:
 		place_color(i, j)
 		game_statement()
 	else:
 		return
 
 func place_color(i: int, j: int):
-	if can_place_color(i, j, selected_color.size, selected_color.is_vertical):
-		selected_color.start_position = Vector2(i, j)
-		for n in range(selected_color.size):
-			var x = i + n if selected_color.is_vertical else i
-			var y = j if selected_color.is_vertical else j + n
-			cells[x][y].icon = load("res://Assets/Colors/"+ selected_color.color_name +".png")
+	if can_place_color(i, j, selected_piece.size, selected_piece.is_vertical):
+		selected_piece.start_position = Vector2(i, j)
+		for n in range(selected_piece.size):
+			var x = i + n if selected_piece.is_vertical else i
+			var y = j if selected_piece.is_vertical else j + n
+			cells[x][y].icon = load("res://Assets/Colors/"+ selected_piece.color_name +".png")
 			cells[x][y].flat = true
 		SignalBus.Attempt_increased.emit()
 		AudioPlayer.play_random_bubble_FX()
@@ -88,14 +97,14 @@ func initialize_piece_queue():
 		var random_index = randi() % color_scenes.size()
 		var new_piece = color_scenes[random_index]
 		piece_queue.append(new_piece)
-		selected_color = piece_queue[0].instantiate()
+		selected_piece = piece_queue[0].instantiate()
 
 func update_piece_queue():
 	piece_queue.pop_front()
 	var random_index = randi() % color_scenes.size()
 	var new_piece = color_scenes[random_index]
 	piece_queue.append(new_piece)
-	selected_color = piece_queue[0].instantiate()
+	selected_piece = piece_queue[0].instantiate()
 	update_previews()
 
 func check_grid(piece) -> bool:
@@ -124,12 +133,12 @@ func reroll_piece():
 			var random_index = randi() % color_scenes.size()
 			new_piece = color_scenes[random_index]
 		piece_queue[i] = new_piece
-	selected_color = piece_queue[0].instantiate()
+	selected_piece = piece_queue[0].instantiate()
 	update_previews()
 
 func update_previews():
 	# Met à jour la première pièce (celle sélectionnée actuellement)
-	var color_name = selected_color.color_name
+	var color_name = selected_piece.color_name
 	if color_previews.has(color_name):
 		var preview_instance = color_previews[color_name].instantiate()
 		if preview.get_child_count() > 0:
@@ -159,13 +168,13 @@ func update_previews():
 				last_preview_3.queue_free()
 			preview_3.add_child(preview_instance_3)
 
-func rotate_selected_color():
-	if selected_color != null:
-		if selected_color.is_vertical == true:
-			selected_color.is_vertical = false
+func rotate_selected_piece():
+	if selected_piece != null:
+		if selected_piece.is_vertical == true:
+			selected_piece.is_vertical = false
 			rotating_preview()
 		else:
-			selected_color.is_vertical = true
+			selected_piece.is_vertical = true
 			rotating_preview()
 
 func rotating_preview():
@@ -175,5 +184,26 @@ func rotating_preview():
 		preview.rotation = 0
 
 func game_statement():
-	if not check_grid(selected_color):
+	if not check_grid(selected_piece):
 		SignalBus.Game_is_over.emit()
+
+func stock_piece():
+	stocked_piece = selected_piece
+	update_piece_queue()
+	var color_name = stocked_piece.color_name
+	if color_previews.has(color_name):
+		var preview_instance = color_previews[color_name].instantiate()
+		preview_4.add_child(preview_instance)
+
+func _on_next_pressed() -> void:
+	background_next.texture = BACKGROUND_SELECTED_TEXTURE
+	background_stock.texture = BACKGROUND_NOT_SELECTED_TEXTURE
+	selected_piece = waiting_piece
+	waiting_piece = stocked_piece
+
+
+func _on_stock_pressed() -> void:
+	background_stock.texture = BACKGROUND_SELECTED_TEXTURE
+	background_next.texture = BACKGROUND_NOT_SELECTED_TEXTURE
+	waiting_piece = selected_piece
+	selected_piece = stocked_piece

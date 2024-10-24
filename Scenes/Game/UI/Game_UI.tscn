@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxugcq5xvve5p"]
+[gd_scene load_steps=23 format=3 uid="uid://cxugcq5xvve5p"]
 
 [ext_resource type="Script" path="res://Scripts/UI/game_ui.gd" id="1_c86s7"]
 [ext_resource type="Texture2D" uid="uid://c4yuy0qsv3iaf" path="res://Assets/Background/background_game.png" id="2_0t8ht"]
-[ext_resource type="Texture2D" uid="uid://ta4om2kemqdv" path="res://Assets/Background/preview_zone.png" id="2_il358"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_gcbkg"]
 [ext_resource type="Texture2D" uid="uid://cycmuneb5smn" path="res://Assets/Background/background_score.png" id="4_e4e1s"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_wt7ie"]
@@ -15,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="10_c4fqi"]
 [ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="11_q1dej"]
 [ext_resource type="PackedScene" uid="uid://bc5tmv0kppebn" path="res://Scenes/Game/UI/Game_Win.tscn" id="12_2q8vj"]
+[ext_resource type="Texture2D" uid="uid://cuqe0m3fpi41f" path="res://Assets/Buttons/Game_buttons/empty_100x100_button_normal.png" id="12_6oga5"]
+[ext_resource type="Texture2D" uid="uid://skk3raeoguly" path="res://Assets/Buttons/Game_buttons/empty_100x100_button_pressed.png" id="13_ek530"]
 [ext_resource type="Texture2D" uid="uid://csgwid63soq0h" path="res://Assets/Buttons/Game_buttons/notif_count_texture.png" id="13_gqb6c"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_vbju1"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_2714k"]
@@ -50,14 +51,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0t8ht")
-
-[node name="Background_Preview" type="TextureRect" parent="Backgrounds"]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 862.0
-offset_right = 667.0
-offset_bottom = 1074.0
-texture = ExtResource("2_il358")
 
 [node name="Background_Level" type="TextureRect" parent="Backgrounds"]
 layout_mode = 0
@@ -107,6 +100,12 @@ theme = ExtResource("4_wt7ie")
 texture_normal = ExtResource("7_nxqbr")
 texture_pressed = ExtResource("8_nfatl")
 texture_disabled = ExtResource("8_nfatl")
+
+[node name="Stock" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_wt7ie")
+texture_normal = ExtResource("12_6oga5")
+texture_pressed = ExtResource("13_ek530")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -234,6 +233,7 @@ text = "ATTEMPT = "
 
 [connection signal="pressed" from="VBoxContainer/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="VBoxContainer/Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="VBoxContainer/Stock" to="." method="_on_stock_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Label/MarginContainer/Rotate" to="." method="_on_rotate_pressed"]
 [connection signal="pressed" from="HeadApp/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="HeadApp/ParamButton" to="." method="_on_param_button_pressed"]

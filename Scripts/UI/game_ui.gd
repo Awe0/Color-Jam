@@ -120,3 +120,6 @@ func change_level_name(actual_level_name: String):
 func instanciate_scenes(scene):
 	var scene_instance = scene.instantiate()
 	get_tree().root.add_child(scene_instance)
+
+func _on_stock_pressed() -> void:
+	SignalBus.Stocking.emit()
