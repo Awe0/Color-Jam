@@ -21,4 +21,4 @@ var level_state : Dictionary = {
 
 func _ready() -> void:
 	for level in level_state:
-		level_state[level] = SaveSystem.load_levels_data(level)
+		level_state = SaveSystem.load_levels_data()

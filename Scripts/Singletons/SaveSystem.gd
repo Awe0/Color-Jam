@@ -46,18 +46,22 @@ func save_levels_data(section: String, key: String, value: Variant):
 	if err != OK:
 		print("Erreur lors de la sauvegarde du fichier de configuration")
 
-func load_levels_data(key: String):
+func load_levels_data():
 	var config_data: Dictionary = {}
 	var config_file = ConfigFile.new()
 	var err: Error = config_file.load(SAVE_LEVELS_DIRECTION)
 	
 	if err != OK:
+		print("Erreur lors du chargement du fichier:", err)
 		return
 	
+	# Parcourt chaque section (ex: "level_1", "level_2", etc.)
 	for section in config_file.get_sections():
-		var config_saved = config_file.get_value(section, key)
-		if config_saved != null:
-			config_data[key] = config_saved
+		config_data[section] = {}
+		
+		# Parcourt chaque clé dans la section (ex: "state", "attempt", etc.)
+		for key in config_file.get_section_keys(section):
+			config_data[section][key] = config_file.get_value(section, key)
 	
 	return config_data
 

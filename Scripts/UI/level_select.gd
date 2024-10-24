@@ -83,12 +83,12 @@ func _ready() -> void:
 		"level_16" : level_16,
 }
 	create_level_button()
-	set_level_states()
+	set_level_stars()
 
-func set_level_states():
+func set_level_stars():
+	print(LevelStatement.level_state)
 	for level in LEVELS:
-		print(LevelStatement.level_state[level])
-		if LevelStatement.level_state[level]:
+		if LevelStatement.level_state[level]["state"]:
 			level_stars_texture[level].texture = GOLD_STAR
 
 func create_level_button():

@@ -105,7 +105,8 @@ func _on_param_button_pressed() -> void:
 func game_win_statement():
 	instanciate_scenes(PreloadScenes.game_win_scene)
 	LevelStatement.level_state[level_name] = true
-	SaveSystem.save_levels_data("levels_statement", level_name, true)
+	SaveSystem.save_levels_data(level_name, "state", true)
+	SaveSystem.save_levels_data(level_name, "attempt", attempt)
 	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
 
 func change_level_name(actual_level_name: String):
