@@ -30,6 +30,7 @@ func load_config(key: String):
 		if config_saved != null:
 			config_data[key] = config_saved
 	
+	print(config_data)
 	return config_data
 
 func save_levels_data(section: String, key: String, value: Variant):
