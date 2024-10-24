@@ -1,6 +1,5 @@
 extends Node
 
-
 var level_state : Dictionary = {
 	"level_1" : false,
 	"level_2" : false,
