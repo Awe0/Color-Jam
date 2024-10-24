@@ -30,7 +30,6 @@ func load_config(key: String):
 		if config_saved != null:
 			config_data[key] = config_saved
 	
-	print(config_data)
 	return config_data
 
 func save_levels_data(section: String, key: String, value: Variant):
@@ -62,16 +61,44 @@ func load_levels_data(key: String):
 	
 	return config_data
 
-#func reset_levels_data():
-	#var config_file = ConfigFile.new()
-	#var err = config_file.load(SAVE_LEVELS_DIRECTION)
-	#if err != OK and err != ERR_FILE_NOT_FOUND:
-		#print("Erreur lors du chargement du fichier de configuration")
-		#return
-	#for section in config_file.get_sections():
-		#config_file.erase_section(section)
-	#err = config_file.save(SAVE_LEVELS_DIRECTION)
-	#if err != OK:
-		#print("Erreur lors de la réinitialisation du fichier de configuration")
-	#else:
-		#print("Fichier de configuration réinitialisé avec succès")
+func reset_levels_data():
+	var config_file = ConfigFile.new()
+	var err = config_file.load(SAVE_LEVELS_DIRECTION)
+	if err != OK and err != ERR_FILE_NOT_FOUND:
+		print("Erreur lors du chargement du fichier de configuration")
+		return
+	for section in config_file.get_sections():
+		config_file.erase_section(section)
+	err = config_file.save(SAVE_LEVELS_DIRECTION)
+	if err != OK:
+		print("Erreur lors de la réinitialisation du fichier de configuration")
+	else:
+		print("Fichier de configuration réinitialisé avec succès")
+
+func initialize_levels():
+	var config_file = ConfigFile.new()
+	var err = config_file.load(SAVE_LEVELS_DIRECTION)
+	
+	if err != OK and err != ERR_FILE_NOT_FOUND:
+		print("Erreur lors du chargement du fichier de configuration")
+		return
+	
+	# Vérifie si les niveaux ont déjà été initialisés
+	var levels_initialized = config_file.get_value("settings", "levels_initialized", false)
+	
+	if not levels_initialized:
+		# Si les niveaux n'ont pas été initialisés, sauvegarde l'état des niveaux
+		for level in LevelStatement.level_state.keys():
+			config_file.set_value(level, "state", false)
+		
+		# Marque les niveaux comme initialisés pour ne pas réécrire les données
+		config_file.set_value("settings", "levels_initialized", true)
+		
+		# Sauvegarde les changements dans le fichier
+		err = config_file.save(SAVE_LEVELS_DIRECTION)
+		if err != OK:
+			print("Erreur lors de la sauvegarde du fichier de configuration")
+		else:
+			print("États des niveaux initialisés et sauvegardés.")
+	else:
+		print("Les niveaux ont déjà été initialisés.")
