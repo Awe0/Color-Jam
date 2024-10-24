@@ -14,3 +14,5 @@ signal Game_is_win
 signal Attempt_increased
 
 signal Level_is_selected(level_name: String)
+
+signal Level_state_change
