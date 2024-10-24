@@ -5,36 +5,37 @@ extends Control
 @onready var music_slider: HSlider = $Sliders/MusicSlider
 @onready var sound_slider: HSlider = $Sliders/SoundSlider
 
-var list_check_button: Array = []
-var list_sliders: Array = []
-
-const LIST_OPTIONS_STRING: Array = [
-	"rotation_mode",
-	"dark_mode",
-	#"music_db",
-	#"sound_db"
-]
+var options: Dictionary = {}
 
 func _ready() -> void:
-	list_check_button = [rotation_mode_button, dark_mode_button]
-	list_sliders = [music_slider, sound_slider]
+	options = {
+	"rotation_mode" : rotation_mode_button,
+	"dark_mode" : dark_mode_button,
+	"music_db" : music_slider,
+	"sound_db" : sound_slider,
+	}
 	set_config_saved()
 
 func restart_button_pressed() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Menu/Level_Select.tscn")
 
 func set_config_saved():
-	for i in range(LIST_OPTIONS_STRING.size()):
-		var option_string = LIST_OPTIONS_STRING[i]
+	for option_string in options.keys():
+		var option_object = options[option_string]
 		var config_data = SaveSystem.load_config(option_string)
 		
-		if config_data == null:
-			Config.list_options[i] = false
+		if config_data != null:
+			if option_object is CheckButton:
+				option_object.button_pressed = config_data.get(option_string, false)
+			
+			elif option_object is HSlider or option_object is VSlider:
+				option_object.value = config_data.get(option_string, 0.0)
 		else:
-			Config.list_options[i] = config_data.get(option_string, false)
-		list_check_button[i].button_pressed = Config.list_options[i]
-		#list_sliders[i].value = Config.list_options[i]
-		
+			if option_object is CheckButton:
+				option_object.button_pressed = false
+			elif option_object is HSlider or option_object is VSlider:
+				option_object.value = 0.0
+
 
 func _on_rotation_mode_button_toggled(toggled_on: bool) -> void:
 	SaveSystem.save_config("game", "rotation_mode", toggled_on)
