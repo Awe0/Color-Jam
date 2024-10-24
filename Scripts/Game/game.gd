@@ -15,6 +15,7 @@ const GRAY_CELL = preload("res://Assets/Cells/gray.png")
 const BACKGROUND_SELECTED_TEXTURE = preload("res://Assets/Background/preview_zone_selected.png")
 const BACKGROUND_NOT_SELECTED_TEXTURE = preload("res://Assets/Background/preview_zone_not_selected.png")
 
+var which_piece_is_ready_to_play = false
 var cells: Array = []
 var selected_piece = null 
 var stocked_piece = null
@@ -74,13 +75,23 @@ func place_color(i: int, j: int):
 			var y = j if selected_piece.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_piece.color_name +".png")
 			cells[x][y].flat = true
-		SignalBus.Attempt_increased.emit()
-		AudioPlayer.play_random_bubble_FX()
-		preview.rotation = 0
-		update_piece_queue()
-		game_statement()
+		action_when_piece_is_placed()
 	else:
 		return
+
+func action_when_piece_is_placed():
+	SignalBus.Attempt_increased.emit()
+	AudioPlayer.play_random_bubble_FX()
+	preview.rotation = 0
+	background_next.texture = BACKGROUND_SELECTED_TEXTURE
+	background_stock.texture = BACKGROUND_NOT_SELECTED_TEXTURE
+	if which_piece_is_ready_to_play == true:
+		stocked_piece = null
+		which_piece_is_ready_to_play = false
+		if stocked_piece == null:
+			remove_to_stock_preview()
+	update_piece_queue()
+	game_statement()
 
 func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	for n in range(size):
@@ -189,21 +200,32 @@ func game_statement():
 
 func stock_piece():
 	stocked_piece = selected_piece
+	waiting_piece = selected_piece
 	update_piece_queue()
+	add_to_stock_preview()
+
+func add_to_stock_preview():
 	var color_name = stocked_piece.color_name
 	if color_previews.has(color_name):
 		var preview_instance = color_previews[color_name].instantiate()
 		preview_4.add_child(preview_instance)
 
+func remove_to_stock_preview():
+	if preview_4.get_child_count() > 0:
+		var last_preview_4 = preview_4.get_child(0)
+		last_preview_4.queue_free()
+
 func _on_next_pressed() -> void:
+	which_piece_is_ready_to_play = false
 	background_next.texture = BACKGROUND_SELECTED_TEXTURE
 	background_stock.texture = BACKGROUND_NOT_SELECTED_TEXTURE
-	selected_piece = waiting_piece
-	waiting_piece = stocked_piece
-
+	selected_piece = stocked_piece
 
 func _on_stock_pressed() -> void:
-	background_stock.texture = BACKGROUND_SELECTED_TEXTURE
-	background_next.texture = BACKGROUND_NOT_SELECTED_TEXTURE
-	waiting_piece = selected_piece
-	selected_piece = stocked_piece
+	if stocked_piece == null:
+		pass
+	else:
+		which_piece_is_ready_to_play = true
+		background_stock.texture = BACKGROUND_SELECTED_TEXTURE
+		background_next.texture = BACKGROUND_NOT_SELECTED_TEXTURE
+		selected_piece = stocked_piece
