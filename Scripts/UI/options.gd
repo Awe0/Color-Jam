@@ -51,7 +51,7 @@ func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Menu.tscn")
 
 func _on_achievement_pressed() -> void:
-	pass
+	AchievementsClient.show_achievements()
 
 func _on_leaderboard_pressed() -> void:
 	var current_scene_name = get_tree().current_scene.name
