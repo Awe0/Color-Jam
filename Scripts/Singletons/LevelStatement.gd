@@ -39,6 +39,7 @@ var level_attempt: Dictionary = {
 }
 
 func _ready() -> void:
-	for level in level_state:
-		level_state = SaveSystem.load_levels_data()
-	print(level_state)
+	SignalBus.Level_state_change.connect(update_level_state)
+
+func update_level_state():
+	level_state = SaveSystem.load_levels_data()

@@ -88,14 +88,37 @@ func initialize_levels():
 		return
 	
 	# Vérifie si les niveaux ont déjà été initialisés
-	var levels_initialized = config_file.get_value("settings", "levels_initialized", false)
+	var levels_initialized = config_file.get_value("settings", "levels_initialized")
 	
 	if not levels_initialized:
+		var level_state: Dictionary = {
+			"level_1" : {"state" : false, "attempt" : 999},
+			"level_2" : {"state" : false, "attempt" : 999},
+			"level_3" : {"state" : false, "attempt" : 999},
+			"level_4" : {"state" : false, "attempt" : 999},
+			"level_5" : {"state" : false, "attempt" : 999},
+			"level_6" : {"state" : false, "attempt" : 999},
+			"level_7" : {"state" : false, "attempt" : 999},
+			"level_8" : {"state" : false, "attempt" : 999},
+			"level_9" : {"state" : false, "attempt" : 999},
+			"level_10" : {"state" : false, "attempt" : 999},
+			"level_11" : {"state" : false, "attempt" : 999},
+			"level_12" : {"state" : false, "attempt" : 999},
+			"level_13" : {"state" : false, "attempt" : 999},
+			"level_14" : {"state" : false, "attempt" : 999},
+			"level_15" : {"state" : false, "attempt" : 999},
+			"level_16" : {"state" : false, "attempt" : 999},
+	}
 		# Si les niveaux n'ont pas été initialisés, sauvegarde l'état des niveaux
-		for level in LevelStatement.level_state.keys():
-			config_file.set_value(level, "state", false)
+		for level in level_state.keys():
+			# Vérifie que la clé n'est pas "settings"
+			if level != "settings":
+				# Crée une section pour chaque niveau
+				config_file.set_value(level, "state", level_state[level]["state"])
+				var attempt = level_state[level]["attempt"]
+				config_file.set_value(level, "attempt", attempt)
 		
-		# Marque les niveaux comme initialisés pour ne pas réécrire les données
+		# Marque les niveaux comme initialisés pour ène pas réécrire les données
 		config_file.set_value("settings", "levels_initialized", true)
 		
 		# Sauvegarde les changements dans le fichier
@@ -104,5 +127,6 @@ func initialize_levels():
 			print("Erreur lors de la sauvegarde du fichier de configuration")
 		else:
 			print("États des niveaux initialisés et sauvegardés.")
+			SignalBus.Level_state_change.emit()
 	else:
 		print("Les niveaux ont déjà été initialisés.")
