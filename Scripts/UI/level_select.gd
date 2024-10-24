@@ -83,11 +83,11 @@ func _ready() -> void:
 		"level_16" : level_16,
 }
 	create_level_button()
-	#create_button_label()
 	set_level_states()
 
 func set_level_states():
 	for level in LEVELS:
+		print(LevelStatement.level_state[level])
 		if LevelStatement.level_state[level]:
 			level_stars_texture[level].texture = GOLD_STAR
 
@@ -100,14 +100,6 @@ func create_level_button():
 			create_instance(level)
 		)
 		level_container.add_child(button)
-
-#func create_button_label():
-	#var level_number = 0
-	#for level in LEVELS:
-		#level_number += 1
-		#var label = Label.new()
-		#label.text = str(level_number)
-		#label.set_theme(LABEL_THEME)
 
 func create_instance(level):
 	var instance_game = LEVEL_INSTANCES[level].instantiate()
