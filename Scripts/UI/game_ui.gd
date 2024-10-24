@@ -13,6 +13,8 @@ extends Control
 @onready var amount_of_delete: Label = $AmountOf/TextureAmountOfDelete/AmountOfDelete
 @onready var label_level_name: Label = $Level
 
+@onready var attempt_label: Label = $Label
+
 
 var level_name_without_underscore: Dictionary = {
 	"level_1" : "level 1",
@@ -38,7 +40,6 @@ var attempt: int = 0
 var delete: int = 2
 var reroll: int = 2
 
-
 func _ready():
 	SignalBus.Game_is_over.connect(game_over_statement)
 	SignalBus.Level_is_selected.connect(change_level_name)
@@ -47,6 +48,7 @@ func _ready():
 
 func increase_attempt():
 	attempt += 1
+	attempt_label.text = "ATTEMPT = " + str(attempt)
 
 func _on_rotate_pressed() -> void:
 	SignalBus.Rotating.emit()
@@ -104,9 +106,9 @@ func _on_param_button_pressed() -> void:
 
 func game_win_statement():
 	instanciate_scenes(PreloadScenes.game_win_scene)
-	LevelStatement.level_state[level_name] = true
 	SaveSystem.save_levels_data(level_name, "state", true)
-	SaveSystem.save_levels_data(level_name, "attempt", attempt)
+	if attempt < LevelStatement.level_state[level_name]["attempt"]:
+		SaveSystem.save_levels_data(level_name, "attempt", attempt)
 	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
 
 func change_level_name(actual_level_name: String):

@@ -59,6 +59,9 @@ const LEVELS: Array = [
 ]
 const LABEL_THEME = preload("res://Themes/Level_number.theme")
 const GOLD_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/gold_star_50x50.png")
+const SILVER_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/silver_star_50x50.png")
+const BRONZE_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/bronze_star_50x50.png")
+const NO_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/empty_star_50x50.png")
 
 var scene_ui = preload("res://Scenes/Game/UI/Game_UI.tscn")
 var level_buttons: Dictionary = {}
@@ -86,10 +89,21 @@ func _ready() -> void:
 	set_level_stars()
 
 func set_level_stars():
-	print(LevelStatement.level_state)
 	for level in LEVELS:
 		if LevelStatement.level_state[level]["state"]:
-			level_stars_texture[level].texture = GOLD_STAR
+			var attempt = LevelStatement.level_state[level]["attempt"]
+			var gold_threshold = LevelStatement.level_attempt[level][0]
+			var silver_threshold = LevelStatement.level_attempt[level][1]
+			var bronze_threshold = LevelStatement.level_attempt[level][2]
+
+			if attempt <= gold_threshold:
+				level_stars_texture[level].texture = GOLD_STAR
+			elif attempt <= silver_threshold:
+				level_stars_texture[level].texture = SILVER_STAR
+			elif attempt <= bronze_threshold:
+				level_stars_texture[level].texture = BRONZE_STAR
+			else:
+				level_stars_texture[level].texture = NO_STAR
 
 func create_level_button():
 	for level in LEVELS:
