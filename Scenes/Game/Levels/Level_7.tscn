@@ -137,7 +137,7 @@ flat = true
 [node name="Button20" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_luem2")
-icon = ExtResource("3_fpeps")
+icon = ExtResource("4_ttgxb")
 flat = true
 
 [node name="Button21" type="Button" parent="GridContainer"]
@@ -257,7 +257,7 @@ flat = true
 [node name="Button40" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_luem2")
-icon = ExtResource("3_fpeps")
+icon = ExtResource("4_ttgxb")
 flat = true
 
 [node name="Button41" type="Button" parent="GridContainer"]
@@ -383,7 +383,7 @@ flat = true
 [node name="Button61" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_luem2")
-icon = ExtResource("3_fpeps")
+icon = ExtResource("4_ttgxb")
 flat = true
 
 [node name="Button62" type="Button" parent="GridContainer"]
@@ -503,7 +503,7 @@ flat = true
 [node name="Button81" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_luem2")
-icon = ExtResource("3_fpeps")
+icon = ExtResource("4_ttgxb")
 flat = true
 
 [node name="Button82" type="Button" parent="GridContainer"]
