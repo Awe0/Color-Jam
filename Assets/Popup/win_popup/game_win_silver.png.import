@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc6wm36w6xhi3"
-path="res://.godot/imported/language_button_normal.png-51e47d73f2d5cbfdfb6f54dd894a8670.ctex"
+uid="uid://ctxj516ed01dp"
+path="res://.godot/imported/game_win_silver.png-cffb92bf6cfe9d3fc9d8c30df321c07c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Option_buttons/language_button_normal.png"
-dest_files=["res://.godot/imported/language_button_normal.png-51e47d73f2d5cbfdfb6f54dd894a8670.ctex"]
+source_file="res://Assets/Popup/win_popup/game_win_silver.png"
+dest_files=["res://.godot/imported/game_win_silver.png-cffb92bf6cfe9d3fc9d8c30df321c07c.ctex"]
 
 [params]
 

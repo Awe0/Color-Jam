@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds1iipmla1oie"
-path="res://.godot/imported/game_win_bronze.png-71e497030497e49f4288b234785e72c5.ctex"
+uid="uid://dgpnt28c1u6ia"
+path="res://.godot/imported/background_options_white.png-2901d62b3efe5f2fbe0ec30d6378d2dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Popup/game_win_bronze.png"
-dest_files=["res://.godot/imported/game_win_bronze.png-71e497030497e49f4288b234785e72c5.ctex"]
+source_file="res://Assets/Background/Options/background_options_white.png"
+dest_files=["res://.godot/imported/background_options_white.png-2901d62b3efe5f2fbe0ec30d6378d2dd.ctex"]
 
 [params]
 

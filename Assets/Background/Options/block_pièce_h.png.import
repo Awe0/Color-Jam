@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dde2a07nr421m"
-path="res://.godot/imported/game_win_gold.png-64d30e811056dbbfd8d2b2fe59167326.ctex"
+uid="uid://dw1eyt87eww8v"
+path="res://.godot/imported/block_pièce_h.png-0cc7dbd983e5dcc86f0b231560e5fe27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Popup/game_win_gold.png"
-dest_files=["res://.godot/imported/game_win_gold.png-64d30e811056dbbfd8d2b2fe59167326.ctex"]
+source_file="res://Assets/Background/Options/block_pièce_h.png"
+dest_files=["res://.godot/imported/block_pièce_h.png-0cc7dbd983e5dcc86f0b231560e5fe27.ctex"]
 
 [params]
 
