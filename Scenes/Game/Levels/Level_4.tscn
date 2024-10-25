@@ -707,10 +707,10 @@ offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 
 [node name="Preview4" type="TextureRect" parent="PreviewZone"]
-offset_left = 52.0
-offset_top = -579.0
-offset_right = 52.0
-offset_bottom = -579.0
+offset_left = 106.0
+offset_top = 288.0
+offset_right = 106.0
+offset_bottom = 288.0
 scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="BackgroundPreview/Background_Next/Next" to="." method="_on_next_pressed"]
