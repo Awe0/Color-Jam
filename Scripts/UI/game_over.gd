@@ -29,3 +29,6 @@ func check_attempt_for_stars_texture(level_name, attempt):
 	else:
 		_0_star.visible = true
 		background.visible = true
+
+func _on_restart_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Menu/Level_Select.tscn")

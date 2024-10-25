@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bc5tmv0kppebn"]
+[gd_scene load_steps=11 format=3 uid="uid://bc5tmv0kppebn"]
 
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_rm11m"]
 [ext_resource type="Texture2D" uid="uid://dde2a07nr421m" path="res://Assets/Popup/win_popup/game_win_gold.png" id="2_j0vl7"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ctxj516ed01dp" path="res://Assets/Popup/win_popup/game_win_silver.png" id="4_k8m2j"]
 [ext_resource type="Texture2D" uid="uid://ds1iipmla1oie" path="res://Assets/Popup/win_popup/game_win_bronze.png" id="5_3hqfh"]
 [ext_resource type="Texture2D" uid="uid://wqu3ndwiifxr" path="res://Assets/Popup/win_popup/game_win_no_star.png" id="6_h1fsw"]
+[ext_resource type="Texture2D" uid="uid://bs0skltwplpbf" path="res://Assets/Buttons/Game_over_buttons/restart_180x80_button_normal.png" id="7_llrx2"]
+[ext_resource type="Texture2D" uid="uid://dvga1llaeddb2" path="res://Assets/Buttons/Game_over_buttons/restart_180x80_button_pressed.png" id="8_e3kuc"]
+[ext_resource type="Texture2D" uid="uid://cq3ek012gosf5" path="res://Assets/Buttons/Game_over_buttons/next_180x80_button_normal.png" id="9_uyhee"]
+[ext_resource type="Texture2D" uid="uid://b5o2crki06ky2" path="res://Assets/Buttons/Game_over_buttons/next_180x80_button_pressed.png" id="10_ivclf"]
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -62,3 +66,23 @@ offset_top = 256.0
 offset_right = 666.0
 offset_bottom = 804.0
 texture = ExtResource("6_h1fsw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 760.0
+offset_right = 559.0
+offset_bottom = 842.0
+theme_override_constants/separation = 35
+
+[node name="RestartButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_llrx2")
+texture_pressed = ExtResource("8_e3kuc")
+
+[node name="NextButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_uyhee")
+texture_pressed = ExtResource("10_ivclf")
+
+[connection signal="pressed" from="HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
