@@ -75,9 +75,24 @@ func place_color(i: int, j: int):
 			var y = j if selected_piece.is_vertical else j + n
 			cells[x][y].icon = load("res://Assets/Colors/"+ selected_piece.color_name +".png")
 			cells[x][y].flat = true
-		action_when_piece_is_placed()
+		if which_piece_is_ready_to_play:
+			action_when_stocked_piece_is_placed()
+		else:
+			action_when_piece_is_placed()
 	else:
 		return
+
+func action_when_stocked_piece_is_placed():
+	SignalBus.Attempt_increased.emit()
+	AudioPlayer.play_random_bubble_FX()
+	preview_4.rotation = 0
+	background_next.texture = BACKGROUND_SELECTED_TEXTURE
+	background_stock.texture = BACKGROUND_NOT_SELECTED_TEXTURE
+	stocked_piece = null
+	which_piece_is_ready_to_play = false
+	remove_to_stock_preview()
+	game_statement()
+	selected_piece = waiting_piece
 
 func action_when_piece_is_placed():
 	SignalBus.Attempt_increased.emit()
@@ -85,13 +100,14 @@ func action_when_piece_is_placed():
 	preview.rotation = 0
 	background_next.texture = BACKGROUND_SELECTED_TEXTURE
 	background_stock.texture = BACKGROUND_NOT_SELECTED_TEXTURE
-	if which_piece_is_ready_to_play == true:
-		stocked_piece = null
-		which_piece_is_ready_to_play = false
-		if stocked_piece == null:
-			remove_to_stock_preview()
-	update_piece_queue()
+	#if which_piece_is_ready_to_play == true:
+		#stocked_piece = null
+		#which_piece_is_ready_to_play = false
+		#if stocked_piece == null:
+			#remove_to_stock_preview()
+	
 	game_statement()
+	update_piece_queue()
 
 func can_place_color(i: int, j: int, size: int, is_vertical: bool) -> bool:
 	for n in range(size):
@@ -116,6 +132,7 @@ func update_piece_queue():
 	var new_piece = color_scenes[random_index]
 	piece_queue.append(new_piece)
 	selected_piece = piece_queue[0].instantiate()
+	waiting_piece = selected_piece
 	update_previews()
 
 func check_grid(piece) -> bool:
@@ -189,20 +206,31 @@ func rotate_selected_piece():
 			rotating_preview()
 
 func rotating_preview():
-	if preview.rotation == 0:
-		preview.rotation = -1.57079994678497
-	elif preview.rotation != 0:
-		preview.rotation = 0
+	if which_piece_is_ready_to_play:
+		if preview_4.rotation == 0:
+			preview_4.rotation = -1.57079994678497
+		elif preview_4.rotation != 0:
+			preview_4.rotation = 0
+	else:
+		if preview.rotation == 0:
+			preview.rotation = -1.57079994678497
+		elif preview.rotation != 0:
+			preview.rotation = 0
 
 func game_statement():
 	if not check_grid(selected_piece):
+		if stocked_piece != null:
+			if not check_grid(stocked_piece):
+				SignalBus.Game_is_over.emit()
 		SignalBus.Game_is_over.emit()
 
 func stock_piece():
-	stocked_piece = selected_piece
-	waiting_piece = selected_piece
-	update_piece_queue()
-	add_to_stock_preview()
+	if stocked_piece == null:
+		stocked_piece = selected_piece
+		update_piece_queue()
+		add_to_stock_preview()
+	else:
+		pass
 
 func add_to_stock_preview():
 	var color_name = stocked_piece.color_name

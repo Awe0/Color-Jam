@@ -3,6 +3,7 @@ extends Control
 @onready var restart_button: TextureButton = $VBoxContainer/Restart
 @onready var delete_button: TextureButton = $VBoxContainer/Delete
 @onready var param_button: TextureButton = $HeadApp/ParamButton
+@onready var stock_button: TextureButton = $VBoxContainer/Stock
 @onready var game_over: Label = $GameOver
 @onready var game_win: Label = $GameWin
 @onready var rotate_button: TextureButton = $VBoxContainer2/Label/MarginContainer/Rotate
@@ -12,7 +13,6 @@ extends Control
 @onready var amount_of_reroll: Label = $AmountOf/TextureAmountOfReroll/AmountOfReroll
 @onready var amount_of_delete: Label = $AmountOf/TextureAmountOfDelete/AmountOfDelete
 @onready var label_level_name: Label = $Level
-
 @onready var attempt_label: Label = $Label
 
 
@@ -72,6 +72,7 @@ func hide_interface():
 	reroll_button.visible = false
 	rotate_button.visible = false
 	delete_button.visible = false
+	stock_button.visible = false
 	amount_of_reroll.visible = false
 	amount_of_delete.visible = false
 	$AmountOf/TextureAmountOfDelete.visible = false
