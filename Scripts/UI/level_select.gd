@@ -87,6 +87,7 @@ func _ready() -> void:
 }
 	create_level_button()
 	set_level_stars()
+	set_level_locked()
 
 func set_level_stars():
 	for level in LEVELS:
@@ -105,17 +106,24 @@ func set_level_stars():
 			else:
 				level_stars_texture[level].texture = NO_STAR
 
+func set_level_locked():
+	for level in LEVELS:
+		if not LevelStatement.level_state[level]["locked"]:
+			level_buttons[level].disabled = false
+			level_buttons[level].texture_normal = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_normal.png")
+			level_buttons[level].texture_pressed = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_pressed.png")
+
 func create_level_button():
 	for level in LEVELS:
 		var button = TextureButton.new()
+		button.texture_disabled = load("res://Assets/Buttons/Level_select_buttons/level_locked_button_normal.png")
 		button.texture_normal = load("res://Assets/Buttons/Level_select_buttons/level_locked_button_normal.png")
-		button.texture_pressed = load("res://Assets/Buttons/Level_select_buttons/level_locked_button_pressed.png")
-		#button.texture_normal = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_normal.png")
-		#button.texture_pressed = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_pressed.png")
+		button.disabled = true
 		button.pressed.connect(func() -> void:
 			create_instance(level)
 		)
 		level_container.add_child(button)
+		level_buttons[level] = button
 
 func create_instance(level):
 	var instance_game = LEVEL_INSTANCES[level].instantiate()

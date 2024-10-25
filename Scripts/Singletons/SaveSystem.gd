@@ -1,5 +1,24 @@
 extends Node
 
+var level_state: Dictionary = {
+	"level_1" : {"locked" : false, "state" : false, "attempt" : 999},
+	"level_2" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_3" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_4" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_5" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_6" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_7" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_8" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_9" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_10" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_11" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_12" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_13" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_14" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_15" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_16" : {"locked" : true, "state" : false, "attempt" : 999},
+}
+
 const SAVE_CONFIG_DIRECTION: String = "user://save_config.cfg"
 const SAVE_LEVELS_DIRECTION: String = "user://save_levels_data.cfg"
 
@@ -91,24 +110,6 @@ func initialize_levels():
 	var levels_initialized = config_file.get_value("settings", "levels_initialized")
 	
 	if not levels_initialized:
-		var level_state: Dictionary = {
-			"level_1" : {"state" : false, "attempt" : 999},
-			"level_2" : {"state" : false, "attempt" : 999},
-			"level_3" : {"state" : false, "attempt" : 999},
-			"level_4" : {"state" : false, "attempt" : 999},
-			"level_5" : {"state" : false, "attempt" : 999},
-			"level_6" : {"state" : false, "attempt" : 999},
-			"level_7" : {"state" : false, "attempt" : 999},
-			"level_8" : {"state" : false, "attempt" : 999},
-			"level_9" : {"state" : false, "attempt" : 999},
-			"level_10" : {"state" : false, "attempt" : 999},
-			"level_11" : {"state" : false, "attempt" : 999},
-			"level_12" : {"state" : false, "attempt" : 999},
-			"level_13" : {"state" : false, "attempt" : 999},
-			"level_14" : {"state" : false, "attempt" : 999},
-			"level_15" : {"state" : false, "attempt" : 999},
-			"level_16" : {"state" : false, "attempt" : 999},
-	}
 		# Si les niveaux n'ont pas été initialisés, sauvegarde l'état des niveaux
 		for level in level_state.keys():
 			# Vérifie que la clé n'est pas "settings"
@@ -130,3 +131,33 @@ func initialize_levels():
 			SignalBus.Level_state_change.emit()
 	else:
 		print("Les niveaux ont déjà été initialisés.")
+
+func update_levels_data():
+	var config_file = ConfigFile.new()
+	var err = config_file.load(SAVE_LEVELS_DIRECTION)
+	
+	if err != OK and err != ERR_FILE_NOT_FOUND:
+		print("Erreur lors du chargement du fichier de configuration")
+		return
+
+	# Parcourt chaque niveau dans le dictionnaire en mémoire
+	for level in level_state.keys():
+		# Crée la section de niveau si elle n'existe pas
+		if not config_file.has_section(level):
+			config_file.set_value(level, "locked", level_state[level]["locked"])
+			config_file.set_value(level, "state", level_state[level]["state"])
+			config_file.set_value(level, "attempt", level_state[level]["attempt"])
+			print("Nouvelle section ajoutée pour :", level)
+		else:
+			# Vérifie et ajoute les clés manquantes
+			for key in level_state[level].keys():
+				if not config_file.has_section_key(level, key):
+					config_file.set_value(level, key, level_state[level][key])
+					print("Clé ajoutée pour", level, ":", key)
+
+	# Sauvegarde les changements dans le fichier
+	err = config_file.save(SAVE_LEVELS_DIRECTION)
+	if err != OK:
+		print("Erreur lors de la mise à jour du fichier de configuration")
+	else:
+		print("Fichier de configuration mis à jour avec succès pour les nouveaux niveaux.")

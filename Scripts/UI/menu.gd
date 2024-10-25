@@ -11,6 +11,7 @@ func _ready() -> void:
 	AudioPlayer.play_music_game()
 	animated_sprite_2d.play("default")
 	SaveSystem.initialize_levels()
+	SaveSystem.update_levels_data()
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Level_Select.tscn")

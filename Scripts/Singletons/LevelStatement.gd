@@ -1,22 +1,22 @@
 extends Node
 
 var level_state: Dictionary = {
-	"level_1" : {"state" : false, "attempt" : 999},
-	"level_2" : {"state" : false, "attempt" : 999},
-	"level_3" : {"state" : false, "attempt" : 999},
-	"level_4" : {"state" : false, "attempt" : 999},
-	"level_5" : {"state" : false, "attempt" : 999},
-	"level_6" : {"state" : false, "attempt" : 999},
-	"level_7" : {"state" : false, "attempt" : 999},
-	"level_8" : {"state" : false, "attempt" : 999},
-	"level_9" : {"state" : false, "attempt" : 999},
-	"level_10" : {"state" : false, "attempt" : 999},
-	"level_11" : {"state" : false, "attempt" : 999},
-	"level_12" : {"state" : false, "attempt" : 999},
-	"level_13" : {"state" : false, "attempt" : 999},
-	"level_14" : {"state" : false, "attempt" : 999},
-	"level_15" : {"state" : false, "attempt" : 999},
-	"level_16" : {"state" : false, "attempt" : 999},
+	"level_1" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_2" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_3" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_4" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_5" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_6" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_7" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_8" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_9" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_10" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_11" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_12" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_13" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_14" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_15" : {"locked" : true, "state" : false, "attempt" : 999},
+	"level_16" : {"locked" : true, "state" : false, "attempt" : 999},
 }
 
 var level_attempt: Dictionary = {
@@ -40,6 +40,7 @@ var level_attempt: Dictionary = {
 
 func _ready() -> void:
 	SignalBus.Level_state_change.connect(update_level_state)
+	update_level_state()
 
 func update_level_state():
 	level_state = SaveSystem.load_levels_data()

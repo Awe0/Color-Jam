@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6wychfpof408"]
+[gd_scene load_steps=5 format=3 uid="uid://c6wychfpof408"]
 
 [ext_resource type="Script" path="res://Scripts/UI/level_select.gd" id="1_wx0fm"]
 [ext_resource type="Texture2D" uid="uid://bcapwl4qllvgs" path="res://Assets/Buttons/Menu_buttons/button_normal.png" id="2_lvgp6"]
 [ext_resource type="Texture2D" uid="uid://h56a8npgdeky" path="res://Assets/Buttons/Menu_buttons/button_pressed.png" id="3_83csf"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="4_yvddg"]
-[ext_resource type="Texture2D" uid="uid://csairc4sfmakk" path="res://Assets/Buttons/Level_select_buttons/Stars/empty_star_50x50.png" id="6_leplj"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -60,7 +59,6 @@ offset_left = 65.0
 offset_top = 273.0
 offset_right = 202.0
 offset_bottom = 353.0
-texture = ExtResource("6_leplj")
 
 [node name="level_2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -68,7 +66,6 @@ offset_left = 217.0
 offset_top = 273.0
 offset_right = 354.0
 offset_bottom = 353.0
-texture = ExtResource("6_leplj")
 
 [node name="level_3" type="TextureRect" parent="."]
 layout_mode = 0
@@ -76,7 +73,6 @@ offset_left = 369.0
 offset_top = 273.0
 offset_right = 506.0
 offset_bottom = 353.0
-texture = ExtResource("6_leplj")
 
 [node name="level_4" type="TextureRect" parent="."]
 layout_mode = 0
@@ -84,7 +80,6 @@ offset_left = 521.0
 offset_top = 273.0
 offset_right = 658.0
 offset_bottom = 353.0
-texture = ExtResource("6_leplj")
 
 [node name="level_5" type="TextureRect" parent="."]
 layout_mode = 0
@@ -92,7 +87,6 @@ offset_left = 65.0
 offset_top = 425.0
 offset_right = 202.0
 offset_bottom = 505.0
-texture = ExtResource("6_leplj")
 
 [node name="level_6" type="TextureRect" parent="."]
 layout_mode = 0
@@ -100,7 +94,6 @@ offset_left = 217.0
 offset_top = 425.0
 offset_right = 354.0
 offset_bottom = 505.0
-texture = ExtResource("6_leplj")
 
 [node name="level_7" type="TextureRect" parent="."]
 layout_mode = 0
@@ -108,7 +101,6 @@ offset_left = 369.0
 offset_top = 425.0
 offset_right = 506.0
 offset_bottom = 505.0
-texture = ExtResource("6_leplj")
 
 [node name="level_8" type="TextureRect" parent="."]
 layout_mode = 0
@@ -116,7 +108,6 @@ offset_left = 521.0
 offset_top = 425.0
 offset_right = 658.0
 offset_bottom = 505.0
-texture = ExtResource("6_leplj")
 
 [node name="level_9" type="TextureRect" parent="."]
 layout_mode = 0
@@ -124,7 +115,6 @@ offset_left = 65.0
 offset_top = 577.0
 offset_right = 202.0
 offset_bottom = 657.0
-texture = ExtResource("6_leplj")
 
 [node name="level_10" type="TextureRect" parent="."]
 layout_mode = 0
@@ -132,7 +122,6 @@ offset_left = 217.0
 offset_top = 577.0
 offset_right = 354.0
 offset_bottom = 657.0
-texture = ExtResource("6_leplj")
 
 [node name="level_11" type="TextureRect" parent="."]
 layout_mode = 0
@@ -140,7 +129,6 @@ offset_left = 369.0
 offset_top = 577.0
 offset_right = 506.0
 offset_bottom = 657.0
-texture = ExtResource("6_leplj")
 
 [node name="level_12" type="TextureRect" parent="."]
 layout_mode = 0
@@ -148,7 +136,6 @@ offset_left = 521.0
 offset_top = 577.0
 offset_right = 658.0
 offset_bottom = 657.0
-texture = ExtResource("6_leplj")
 
 [node name="level_13" type="TextureRect" parent="."]
 layout_mode = 0
@@ -156,7 +143,6 @@ offset_left = 65.0
 offset_top = 729.0
 offset_right = 202.0
 offset_bottom = 809.0
-texture = ExtResource("6_leplj")
 
 [node name="level_14" type="TextureRect" parent="."]
 layout_mode = 0
@@ -164,7 +150,6 @@ offset_left = 217.0
 offset_top = 729.0
 offset_right = 354.0
 offset_bottom = 809.0
-texture = ExtResource("6_leplj")
 
 [node name="level_15" type="TextureRect" parent="."]
 layout_mode = 0
@@ -172,7 +157,6 @@ offset_left = 369.0
 offset_top = 729.0
 offset_right = 506.0
 offset_bottom = 809.0
-texture = ExtResource("6_leplj")
 
 [node name="level_16" type="TextureRect" parent="."]
 layout_mode = 0
@@ -180,6 +164,5 @@ offset_left = 521.0
 offset_top = 729.0
 offset_right = 658.0
 offset_bottom = 809.0
-texture = ExtResource("6_leplj")
 
 [connection signal="pressed" from="InfiniteModeButton" to="." method="_on_infinite_mode_button_pressed"]

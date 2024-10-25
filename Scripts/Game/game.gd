@@ -100,12 +100,6 @@ func action_when_piece_is_placed():
 	preview.rotation = 0
 	background_next.texture = BACKGROUND_SELECTED_TEXTURE
 	background_stock.texture = BACKGROUND_NOT_SELECTED_TEXTURE
-	#if which_piece_is_ready_to_play == true:
-		#stocked_piece = null
-		#which_piece_is_ready_to_play = false
-		#if stocked_piece == null:
-			#remove_to_stock_preview()
-	
 	game_statement()
 	update_piece_queue()
 
