@@ -18,13 +18,14 @@ theme = ExtResource("1_rm11m")
 script = ExtResource("2_j02un")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.588235)
+color = Color(1, 1, 1, 0.607843)
 
 [node name="3Stars" type="TextureRect" parent="."]
 visible = false
@@ -54,6 +55,7 @@ offset_bottom = 804.0
 texture = ExtResource("5_3hqfh")
 
 [node name="0Star" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 55.0
 offset_top = 256.0
