@@ -107,6 +107,7 @@ func set_level_stars():
 				level_stars_texture[level].texture = NO_STAR
 
 func set_level_locked():
+	unlock_button()
 	for level in LEVELS:
 		if not LevelStatement.level_state[level]["locked"]:
 			level_buttons[level].disabled = false
@@ -139,3 +140,13 @@ func create_level(instance_game, level_name):
 	get_tree().current_scene.queue_free()
 	get_tree().current_scene = instance_ui
 	SignalBus.Level_is_selected.emit(level_name)
+
+func unlock_button():
+	var levels = LEVELS.size()
+	
+	for i in range(levels - 1):
+		var current_level = LEVELS[i]
+		var next_level = LEVELS[i + 1]
+		
+		if LevelStatement.level_state[current_level]["state"]:
+			LevelStatement.level_state[next_level]["locked"] = false
