@@ -1,15 +1,18 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6xbu1atc0fjc"]
+[gd_scene load_steps=31 format=3 uid="uid://c6xbu1atc0fjc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/options.gd" id="1_u0j3m"]
-[ext_resource type="Texture2D" uid="uid://c4ojed26t6rl1" path="res://Assets/Buttons/Option_buttons/Menu option ON.png" id="2_0oa03"]
+[ext_resource type="Texture2D" uid="uid://c03lyn2dooh3o" path="res://Assets/Background/Options/Menu option ON.png" id="2_1negi"]
 [ext_resource type="Texture2D" uid="uid://dm570r81p0oeu" path="res://Assets/Buttons/Option_buttons/music_button.png" id="3_5fqsy"]
+[ext_resource type="Texture2D" uid="uid://dw1eyt87eww8v" path="res://Assets/Background/Options/block_pièce_h.png" id="3_c5nfs"]
 [ext_resource type="Texture2D" uid="uid://br1x7d4rgeamq" path="res://Assets/Buttons/Option_buttons/close_button_normal.png" id="3_kro43"]
 [ext_resource type="Texture2D" uid="uid://m6wruldu5gg1" path="res://Assets/Buttons/Option_buttons/slider_button_music.png" id="3_plga5"]
+[ext_resource type="Texture2D" uid="uid://bgea6l6g0cty4" path="res://Assets/Background/Options/background_options.png" id="3_svywh"]
 [ext_resource type="Texture2D" uid="uid://c2kaj50eg0xgv" path="res://Assets/Buttons/Option_buttons/slider_button_sound.png" id="4_ppv2h"]
 [ext_resource type="Texture2D" uid="uid://bon7i6omy51wx" path="res://Assets/Buttons/Option_buttons/close_button_pressed.png" id="4_rcf7m"]
 [ext_resource type="Texture2D" uid="uid://jxa3lw4rv6ba" path="res://Assets/Buttons/Option_buttons/sound_button.png" id="4_v8mc6"]
 [ext_resource type="Texture2D" uid="uid://cdl2qal8wgkk8" path="res://Assets/Buttons/Option_buttons/save_rotation_check_button_checked.png" id="4_wa663"]
 [ext_resource type="Texture2D" uid="uid://p0imrlctei0n" path="res://Assets/Buttons/Option_buttons/save_rotation_check_button_unchecked.png" id="5_e0xs5"]
+[ext_resource type="Texture2D" uid="uid://dgpnt28c1u6ia" path="res://Assets/Background/Options/background_options_white.png" id="5_lx4em"]
 [ext_resource type="FontFile" uid="uid://6t8gfy4g43l" path="res://Assets/Font/Jaro-font/Jaro-Regular-VariableFont_opsz.ttf" id="5_sck8b"]
 [ext_resource type="Texture2D" uid="uid://cv1ojs28i4o3a" path="res://Assets/Buttons/Option_buttons/dark_mode_check_button_checked.png" id="6_qpglp"]
 [ext_resource type="Texture2D" uid="uid://x066wq4r8dfo" path="res://Assets/Buttons/Option_buttons/dark_mode_check_button_unchecked.png" id="7_5733t"]
@@ -17,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://ct2vj06sik43f" path="res://Assets/Buttons/Option_buttons/home_button_pressed.png" id="11_4lmwo"]
 [ext_resource type="Texture2D" uid="uid://cprfb08kixdjo" path="res://Assets/Buttons/Option_buttons/achievement_button_normal.png" id="12_ox3li"]
 [ext_resource type="Texture2D" uid="uid://bapwdesgl5bo7" path="res://Assets/Buttons/Option_buttons/achievement_button_pressed.png" id="13_v2gj0"]
-[ext_resource type="Texture2D" uid="uid://bc6wm36w6xhi3" path="res://Assets/Buttons/Option_buttons/language_button_normal.png" id="14_67ywk"]
-[ext_resource type="Texture2D" uid="uid://c7dqheb2h3dag" path="res://Assets/Buttons/Option_buttons/language_button_pressed.png" id="15_c06ts"]
+[ext_resource type="Texture2D" uid="uid://gshiyvwsvxfs" path="res://Assets/Buttons/Option_buttons/scoreboard_button_normal.png" id="14_bwaq6"]
+[ext_resource type="Texture2D" uid="uid://i8p1v3nok4tl" path="res://Assets/Buttons/Option_buttons/scoreboard_button_pressed.png" id="15_etd6n"]
 [ext_resource type="Texture2D" uid="uid://0bstxxpah5pm" path="res://Assets/Buttons/Game_buttons/help_button_normal.png" id="16_ih67p"]
 [ext_resource type="Texture2D" uid="uid://do7wrn7gjnee7" path="res://Assets/Buttons/Game_buttons/help_button_pressed.png" id="17_a5dhm"]
 [ext_resource type="Texture2D" uid="uid://c1ivxbstj3old" path="res://Assets/Buttons/Option_buttons/restart_button_normal.png" id="18_e2gqm"]
@@ -49,14 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u0j3m")
 metadata/_edit_horizontal_guides_ = [185.0, 197.0, 250.0, 198.0, 214.0, 266.0]
-metadata/_edit_vertical_guides_ = [280.0]
-
-[node name="model" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 720.0
-offset_bottom = 1280.0
-texture = ExtResource("2_0oa03")
+metadata/_edit_vertical_guides_ = [280.0, 589.0, 129.0]
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -65,37 +61,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.32549)
+color = Color(0, 0, 0, 0.470588)
 
-[node name="BlueTop" type="ColorRect" parent="."]
+[node name="model" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 80.0
-offset_top = 251.0
-offset_right = 639.0
-offset_bottom = 366.0
-color = Color(0.717647, 0.776471, 0.960784, 1)
+offset_right = 720.0
+offset_bottom = 1280.0
+texture = ExtResource("2_1negi")
 
-[node name="BlueBottom" type="ColorRect" parent="."]
+[node name="BackgroundBlue" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 366.0
-offset_right = 639.0
-offset_bottom = 869.0
-color = Color(0.894118, 0.968627, 1, 1)
+offset_left = 61.0
+offset_top = 235.0
+offset_right = 658.0
+offset_bottom = 942.0
+texture = ExtResource("3_svywh")
 
-[node name="WhiteMiddle" type="ColorRect" parent="."]
+[node name="BackgroundWhite" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 406.0
-offset_right = 587.0
-offset_bottom = 747.0
+offset_left = 131.0
+offset_top = 412.0
+offset_right = 588.0
+offset_bottom = 757.0
+texture = ExtResource("5_lx4em")
+
+[node name="Bar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 572.0
+offset_right = 549.0
+offset_bottom = 594.0
+texture = ExtResource("3_c5nfs")
 
 [node name="ExitButton" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 560.0
-offset_top = 277.0
-offset_right = 622.0
-offset_bottom = 339.0
+offset_left = 527.0
+offset_top = 275.0
+offset_right = 589.0
+offset_bottom = 337.0
 alignment = 1
 
 [node name="Exit" type="TextureButton" parent="ExitButton"]
@@ -103,36 +107,49 @@ layout_mode = 2
 texture_normal = ExtResource("3_kro43")
 texture_pressed = ExtResource("4_rcf7m")
 
-[node name="CheckButtonContainer" type="VBoxContainer" parent="."]
+[node name="HomeButton" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 639.0
-offset_right = 587.0
-offset_bottom = 725.0
+offset_left = 130.0
+offset_top = 275.0
+offset_right = 192.0
+offset_bottom = 337.0
+alignment = 1
+
+[node name="Home" type="TextureButton" parent="HomeButton"]
+layout_mode = 2
+texture_normal = ExtResource("10_qpgub")
+texture_pressed = ExtResource("11_4lmwo")
+
+[node name="CheckButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 217.0
+offset_top = 637.0
+offset_right = 503.0
+offset_bottom = 723.0
 alignment = 1
 
 [node name="Labels" type="HBoxContainer" parent="CheckButtonContainer"]
 layout_mode = 2
-theme_override_constants/separation = 110
+theme_override_constants/separation = 104
 alignment = 1
 
 [node name="Mode" type="Label" parent="CheckButtonContainer/Labels"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.105882, 0.592157, 0.541176, 1)
+theme_override_colors/font_color = Color(0.756863, 0.984314, 0.643137, 1)
 theme_override_fonts/font = ExtResource("5_sck8b")
 theme_override_font_sizes/font_size = 30
 text = "Mode"
 
 [node name="Rotation" type="Label" parent="CheckButtonContainer/Labels"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.737255, 0.592157, 0.541176, 1)
+theme_override_colors/font_color = Color(1, 0.839216, 0.878431, 1)
 theme_override_fonts/font = ExtResource("5_sck8b")
 theme_override_font_sizes/font_size = 30
 text = "Rotation"
 
 [node name="CheckButtons" type="HBoxContainer" parent="CheckButtonContainer"]
 layout_mode = 2
-theme_override_constants/separation = 130
+theme_override_constants/separation = 112
 alignment = 1
 
 [node name="DarkModeButton" type="CheckButton" parent="CheckButtonContainer/CheckButtons"]
@@ -148,16 +165,11 @@ theme_override_icons/unchecked = ExtResource("5_e0xs5")
 [node name="BottomButtons" type="HBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 80.0
-offset_top = 774.0
+offset_top = 786.0
 offset_right = 639.0
-offset_bottom = 836.0
-theme_override_constants/separation = 45
+offset_bottom = 888.0
+theme_override_constants/separation = 77
 alignment = 1
-
-[node name="Home" type="TextureButton" parent="BottomButtons"]
-layout_mode = 2
-texture_normal = ExtResource("10_qpgub")
-texture_pressed = ExtResource("11_4lmwo")
 
 [node name="Achievement" type="TextureButton" parent="BottomButtons"]
 layout_mode = 2
@@ -166,8 +178,8 @@ texture_pressed = ExtResource("13_v2gj0")
 
 [node name="Leaderboard" type="TextureButton" parent="BottomButtons"]
 layout_mode = 2
-texture_normal = ExtResource("14_67ywk")
-texture_pressed = ExtResource("15_c06ts")
+texture_normal = ExtResource("14_bwaq6")
+texture_pressed = ExtResource("15_etd6n")
 
 [node name="Help" type="TextureButton" parent="BottomButtons"]
 layout_mode = 2
@@ -176,10 +188,12 @@ texture_pressed = ExtResource("17_a5dhm")
 
 [node name="RestartButton" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 80.0
-offset_top = 891.0
-offset_right = 639.0
-offset_bottom = 1010.0
+offset_left = 188.0
+offset_top = 968.0
+offset_right = 528.0
+offset_bottom = 1087.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 45
 alignment = 1
 
@@ -190,36 +204,38 @@ texture_pressed = ExtResource("19_4s34c")
 
 [node name="Sliders" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 62.0
-offset_top = 251.0
-offset_right = 102.0
-offset_bottom = 291.0
+offset_left = 53.0
+offset_top = 266.0
+offset_right = 93.0
+offset_bottom = 306.0
 
 [node name="SliderContainer" type="VBoxContainer" parent="Sliders"]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 164.0
-offset_right = 525.0
-offset_bottom = 297.0
-theme_override_constants/separation = 15
+offset_left = 170.0
+offset_top = 160.0
+offset_right = 245.0
+offset_bottom = 293.0
+theme_override_constants/separation = 7
 alignment = 1
 
 [node name="MusicContainer" type="HBoxContainer" parent="Sliders/SliderContainer"]
 layout_mode = 2
+alignment = 2
 
 [node name="Label" type="Label" parent="Sliders/SliderContainer/MusicContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.65098, 0.619608, 1)
+theme_override_colors/font_color = Color(1, 0.752941, 0.623529, 1)
 theme_override_fonts/font = ExtResource("5_sck8b")
 theme_override_font_sizes/font_size = 30
 text = "Music"
 
 [node name="SoundContainer" type="HBoxContainer" parent="Sliders/SliderContainer"]
 layout_mode = 2
+alignment = 2
 
 [node name="Label" type="Label" parent="Sliders/SliderContainer/SoundContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.717647, 0.776471, 0.960784, 1)
+theme_override_colors/font_color = Color(0.47451, 0.678431, 0.862745, 1)
 theme_override_fonts/font = ExtResource("5_sck8b")
 theme_override_font_sizes/font_size = 30
 text = "Sound"
@@ -235,9 +251,9 @@ texture = ExtResource("3_plga5")
 [node name="SliderTextureSound" type="TextureRect" parent="Sliders"]
 layout_mode = 2
 offset_left = 280.0
-offset_top = 250.0
+offset_top = 240.0
 offset_right = 496.0
-offset_bottom = 266.0
+offset_bottom = 256.0
 texture = ExtResource("4_ppv2h")
 
 [node name="MusicSlider" type="HSlider" parent="Sliders"]
@@ -254,18 +270,18 @@ max_value = 30.0
 [node name="SoundSlider" type="HSlider" parent="Sliders"]
 layout_mode = 2
 offset_left = 282.0
-offset_top = 240.0
+offset_top = 230.0
 offset_right = 494.0
-offset_bottom = 276.0
+offset_bottom = 266.0
 theme = SubResource("Theme_8fsyr")
 theme_override_icons/grabber = ExtResource("4_v8mc6")
 min_value = -75.0
 max_value = 30.0
 
 [connection signal="pressed" from="ExitButton/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="HomeButton/Home" to="." method="_on_home_pressed"]
 [connection signal="toggled" from="CheckButtonContainer/CheckButtons/DarkModeButton" to="." method="_on_dark_mode_button_toggled"]
 [connection signal="toggled" from="CheckButtonContainer/CheckButtons/RotationModeButton" to="." method="_on_rotation_mode_button_toggled"]
-[connection signal="pressed" from="BottomButtons/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="BottomButtons/Achievement" to="." method="_on_achievement_pressed"]
 [connection signal="pressed" from="BottomButtons/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="BottomButtons/Help" to="." method="_on_help_pressed"]

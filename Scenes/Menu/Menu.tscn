@@ -1,8 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://bghr8dfxro6pk"]
+[gd_scene load_steps=42 format=3 uid="uid://bghr8dfxro6pk"]
 
 [ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="1_xop0u"]
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="2_o4jl7"]
-[ext_resource type="Texture2D" uid="uid://sv5bovj36l43" path="res://Assets/Background/background_menu.png" id="3_5qbbh"]
 [ext_resource type="Texture2D" uid="uid://yqehn3pd1p81" path="res://Assets/Animations/Animation_menu/animation_menu26.png" id="12_qnvnw"]
 [ext_resource type="Texture2D" uid="uid://s31mhvrna142" path="res://Assets/Animations/Animation_menu/animation_menu25.png" id="13_5p2oy"]
 [ext_resource type="Texture2D" uid="uid://dglp7gi28xf1n" path="res://Assets/Animations/Animation_menu/animation_menu24.png" id="14_j37yk"]
@@ -149,14 +148,14 @@ grow_vertical = 2
 theme = ExtResource("1_xop0u")
 script = ExtResource("2_o4jl7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_5qbbh")
+color = Color(0.890196, 0.988235, 0.901961, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(362, 746)

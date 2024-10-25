@@ -22,7 +22,7 @@ var level_state: Dictionary = {
 var level_attempt: Dictionary = {
 	"level_1" : [33,37,41],
 	"level_2" : [27,31,35],
-	"level_3" : [27,31,35],
+	"level_3" : [23,37,32],
 	"level_4" : [27,31,35],
 	"level_5" : [27,31,35],
 	"level_6" : [27,31,35],

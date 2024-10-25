@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://cxugcq5xvve5p"]
+[gd_scene load_steps=21 format=3 uid="uid://cxugcq5xvve5p"]
 
 [ext_resource type="Script" path="res://Scripts/UI/game_ui.gd" id="1_c86s7"]
-[ext_resource type="Texture2D" uid="uid://c4yuy0qsv3iaf" path="res://Assets/Background/background_game.png" id="2_0t8ht"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_gcbkg"]
 [ext_resource type="Texture2D" uid="uid://cycmuneb5smn" path="res://Assets/Background/background_score.png" id="4_e4e1s"]
 [ext_resource type="Theme" uid="uid://bo63kkmto5g8t" path="res://Themes/Empty_button.tres" id="4_wt7ie"]
@@ -12,14 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://cjovv0jxdiq76" path="res://Assets/Buttons/Game_buttons/reroll_button_pressed.png" id="8_nfatl"]
 [ext_resource type="Texture2D" uid="uid://c7wwdalx2hd86" path="res://Assets/Buttons/Game_buttons/rotate_button_normal.png" id="9_fixho"]
 [ext_resource type="Texture2D" uid="uid://46b45yd1xkth" path="res://Assets/Buttons/Game_buttons/rotate_button_pressed.png" id="10_c4fqi"]
-[ext_resource type="PackedScene" uid="uid://dgpjbpq0305dx" path="res://Scenes/Game/UI/Game_Over.tscn" id="11_q1dej"]
-[ext_resource type="PackedScene" uid="uid://bc5tmv0kppebn" path="res://Scenes/Game/UI/Game_Win.tscn" id="12_2q8vj"]
 [ext_resource type="Texture2D" uid="uid://cuqe0m3fpi41f" path="res://Assets/Buttons/Game_buttons/empty_100x100_button_normal.png" id="12_6oga5"]
 [ext_resource type="Texture2D" uid="uid://skk3raeoguly" path="res://Assets/Buttons/Game_buttons/empty_100x100_button_pressed.png" id="13_ek530"]
 [ext_resource type="Texture2D" uid="uid://csgwid63soq0h" path="res://Assets/Buttons/Game_buttons/notif_count_texture.png" id="13_gqb6c"]
 [ext_resource type="Texture2D" uid="uid://dlxuj0krvxm6t" path="res://Assets/Buttons/Game_buttons/back_button_normal.png" id="14_vbju1"]
 [ext_resource type="Texture2D" uid="uid://b3ag2tcjcos13" path="res://Assets/Buttons/Game_buttons/back_button_pressed.png" id="15_2714k"]
 [ext_resource type="Texture2D" uid="uid://dcsuyo5e544h7" path="res://Assets/Buttons/Game_buttons/param_button_normal.png" id="18_feruc"]
+[ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/UI/Progress_Bar.tscn" id="19_j4nvr"]
 [ext_resource type="Texture2D" uid="uid://4nqwucu0fv5b" path="res://Assets/Buttons/Game_buttons/param_button_pressed.png" id="19_spqbd"]
 
 [sub_resource type="Theme" id="Theme_uyy6v"]
@@ -43,14 +41,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="Backgrounds"]
+[node name="Background" type="ColorRect" parent="Backgrounds"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0t8ht")
+color = Color(0.933333, 0.972549, 0.992157, 1)
 
 [node name="Background_Level" type="TextureRect" parent="Backgrounds"]
 layout_mode = 0
@@ -130,22 +128,6 @@ theme = ExtResource("4_wt7ie")
 texture_normal = ExtResource("9_fixho")
 texture_pressed = ExtResource("10_c4fqi")
 
-[node name="GameOver" parent="." instance=ExtResource("11_q1dej")]
-visible = false
-layout_mode = 1
-offset_left = 247.0
-offset_top = 430.0
-offset_right = 478.0
-offset_bottom = 495.0
-
-[node name="GameWin" parent="." instance=ExtResource("12_2q8vj")]
-visible = false
-layout_mode = 1
-offset_left = 275.0
-offset_top = 443.0
-offset_right = 449.0
-offset_bottom = 508.0
-
 [node name="AmountOf" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -223,13 +205,20 @@ texture_pressed = ExtResource("19_spqbd")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 159.0
-offset_right = 256.0
-offset_bottom = 216.0
+offset_left = 249.0
+offset_top = 111.0
+offset_right = 476.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(0.294118, 0.996078, 0.462745, 1)
 theme_override_font_sizes/font_size = 41
 text = "ATTEMPT = "
+
+[node name="ProgressBar" parent="." instance=ExtResource("19_j4nvr")]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 213.0
+offset_right = 1287.0
+offset_bottom = 240.0
 
 [connection signal="pressed" from="VBoxContainer/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="VBoxContainer/Reroll" to="." method="_on_reroll_pressed"]

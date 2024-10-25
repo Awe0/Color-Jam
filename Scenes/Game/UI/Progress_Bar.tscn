@@ -1,11 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://bct33vel4171k"]
+[gd_scene load_steps=5 format=3 uid="uid://bct33vel4171k"]
 
 [ext_resource type="Script" path="res://Scripts/UI/progress_bar.gd" id="1_2g2xf"]
+[ext_resource type="Theme" uid="uid://d3tdn2fci0vkj" path="res://Themes/Progress_nar.theme" id="1_4ft8f"]
+[ext_resource type="Texture2D" uid="uid://drwgdgdmtlhvi" path="res://Assets/Buttons/Level_select_buttons/Stars/null_star_50x50.png" id="2_2oaeh"]
+[ext_resource type="Texture2D" uid="uid://0msoaslkey8g" path="res://Assets/Buttons/Level_select_buttons/Stars/full_star_50x50.png" id="2_arbo5"]
 
 [node name="ProgressBar" type="ProgressBar"]
-offset_left = 477.0
+offset_left = 1048.0
 offset_top = 189.0
-offset_right = 1097.0
+offset_right = 1668.0
 offset_bottom = 216.0
+rotation = -3.14159
+theme = ExtResource("1_4ft8f")
 show_percentage = false
 script = ExtResource("1_2g2xf")
+
+[node name="3ndStarEmpty" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 46.0
+offset_right = 209.0
+offset_bottom = 96.0
+rotation = -3.14159
+texture = ExtResource("2_2oaeh")
+
+[node name="2ndStarEmpty" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 46.0
+offset_right = 146.0
+offset_bottom = 96.0
+rotation = -3.14159
+texture = ExtResource("2_2oaeh")
+
+[node name="1stStarEmpty" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 45.9999
+offset_right = 88.0
+offset_bottom = 95.9999
+rotation = -3.14159
+texture = ExtResource("2_2oaeh")
+
+[node name="3ndStar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 46.0
+offset_right = 209.0
+offset_bottom = 96.0
+rotation = -3.14159
+texture = ExtResource("2_arbo5")
+
+[node name="2ndStar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 46.0
+offset_right = 146.0
+offset_bottom = 96.0
+rotation = -3.14159
+texture = ExtResource("2_arbo5")
+
+[node name="1stStar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 45.9999
+offset_right = 88.0
+offset_bottom = 95.9999
+rotation = -3.14159
+texture = ExtResource("2_arbo5")

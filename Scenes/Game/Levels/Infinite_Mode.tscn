@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://w7j6d2dkb4nj"]
+[gd_scene load_steps=23 format=3 uid="uid://w7j6d2dkb4nj"]
 
 [ext_resource type="Script" path="res://Scripts/Game/infinite_game.gd" id="1_xdhcq"]
-[ext_resource type="Texture2D" uid="uid://c4yuy0qsv3iaf" path="res://Assets/Background/background_game.png" id="2_nvg2j"]
 [ext_resource type="FontFile" uid="uid://lcesxi7ufvqq" path="res://Assets/Font/Jaro-font/static/Jaro-Regular.ttf" id="3_yfw10"]
 [ext_resource type="Texture2D" uid="uid://cycmuneb5smn" path="res://Assets/Background/background_score.png" id="4_d5js6"]
 [ext_resource type="PackedScene" uid="uid://bct33vel4171k" path="res://Scenes/Game/UI/Progress_Bar.tscn" id="4_g5gb6"]
@@ -44,14 +43,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="Backgrounds"]
+[node name="Background" type="ColorRect" parent="Backgrounds"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_nvg2j")
+color = Color(0.933333, 0.972549, 0.992157, 1)
 
 [node name="Background_Preview" type="TextureRect" parent="Backgrounds"]
 layout_mode = 0
@@ -91,10 +90,10 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" parent="." instance=ExtResource("4_g5gb6")]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 187.0
-offset_right = 670.0
-offset_bottom = 214.0
+offset_left = 670.0
+offset_top = 208.0
+offset_right = 1290.0
+offset_bottom = 235.0
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

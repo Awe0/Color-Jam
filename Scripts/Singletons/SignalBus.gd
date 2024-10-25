@@ -1,8 +1,6 @@
 extends Node
 
 signal Restart_game
-signal Score_changed(score: int)
-signal Level_up(level: int)
 
 #Signaux pour l'UI IG
 signal Game_is_over
@@ -15,5 +13,7 @@ signal Game_is_win
 signal Attempt_increased
 
 signal Level_is_selected(level_name: String)
-
 signal Level_state_change
+signal Level_completed(level_name: String, attempt: int)
+
+signal Attempt_changed(attempt: int)

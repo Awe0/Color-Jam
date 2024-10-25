@@ -108,8 +108,10 @@ func set_level_stars():
 func create_level_button():
 	for level in LEVELS:
 		var button = TextureButton.new()
-		button.texture_normal = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_normal.png")
-		button.texture_pressed = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_pressed.png")
+		button.texture_normal = load("res://Assets/Buttons/Level_select_buttons/level_locked_button_normal.png")
+		button.texture_pressed = load("res://Assets/Buttons/Level_select_buttons/level_locked_button_pressed.png")
+		#button.texture_normal = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_normal.png")
+		#button.texture_pressed = load("res://Assets/Buttons/Level_select_buttons/"+level+"_button_pressed.png")
 		button.pressed.connect(func() -> void:
 			create_instance(level)
 		)

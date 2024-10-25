@@ -4,8 +4,6 @@ extends Control
 @onready var delete_button: TextureButton = $VBoxContainer/Delete
 @onready var param_button: TextureButton = $HeadApp/ParamButton
 @onready var stock_button: TextureButton = $VBoxContainer/Stock
-@onready var game_over: Label = $GameOver
-@onready var game_win: Label = $GameWin
 @onready var rotate_button: TextureButton = $VBoxContainer2/Label/MarginContainer/Rotate
 @onready var reroll_button: TextureButton = $VBoxContainer/Reroll
 @onready var help: Control = $Help
@@ -48,6 +46,7 @@ func _ready():
 
 func increase_attempt():
 	attempt += 1
+	SignalBus.Attempt_changed.emit(attempt)
 	attempt_label.text = "ATTEMPT = " + str(attempt)
 
 func _on_rotate_pressed() -> void:
@@ -106,12 +105,13 @@ func _on_param_button_pressed() -> void:
 	instanciate_scenes(PreloadScenes.option_scene)
 
 func game_win_statement():
-	instanciate_scenes(PreloadScenes.game_win_scene)
+	SignalBus.Level_completed.emit(level_name, attempt)
 	SaveSystem.save_levels_data(level_name, "state", true)
 	if attempt < LevelStatement.level_state[level_name]["attempt"]:
 		SaveSystem.save_levels_data(level_name, "attempt", attempt)
 	SignalBus.Level_state_change.emit()
 	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
+	instanciate_scenes(PreloadScenes.game_win_scene)
 
 func change_level_name(actual_level_name: String):
 	label_level_name.text = level_name_without_underscore[actual_level_name]

@@ -179,7 +179,6 @@ func check_grid(piece) -> bool:
 func score_count():
 	score += selected_color.score
 	score_label.text = str(score)
-	SignalBus.Score_changed.emit(selected_color.score)
 
 func reset_grid():
 	for row in cells:
@@ -189,7 +188,6 @@ func reset_grid():
 
 func upgrade_grid():
 	level += 1
-	SignalBus.Level_up.emit(level)
 	level_label.text = "Level " + str(level)
 	reroll += 2
 	delete += 2
