@@ -18,27 +18,6 @@ extends Control
 @onready var level_15: TextureRect = $level_15
 @onready var level_16: TextureRect = $level_16
 
-
-
-const LEVEL_INSTANCES: Dictionary = {
-	"level_1" : preload("res://Scenes/Game/Levels/Level_1.tscn"),
-	"level_2" : preload("res://Scenes/Game/Levels/Level_2.tscn"),
-	"level_3" : preload("res://Scenes/Game/Levels/Level_3.tscn"),
-	"level_4" : preload("res://Scenes/Game/Levels/Level_4.tscn"),
-	"level_5" : preload("res://Scenes/Game/Levels/Level_5.tscn"),
-	"level_6" : preload("res://Scenes/Game/Levels/Level_6.tscn"),
-	"level_7" : preload("res://Scenes/Game/Levels/Level_7.tscn"),
-	"level_8" : preload("res://Scenes/Game/Levels/Level_8.tscn"),
-	"level_9" : preload("res://Scenes/Game/Levels/Level_9.tscn"),
-	"level_10" : preload("res://Scenes/Game/Levels/Level_10.tscn"),
-	"level_11" : preload("res://Scenes/Game/Levels/Level_11.tscn"),
-	"level_12" : preload("res://Scenes/Game/Levels/Level_12.tscn"),
-	"level_13" : preload("res://Scenes/Game/Levels/Level_13.tscn"),
-	"level_14" : preload("res://Scenes/Game/Levels/Level_14.tscn"),
-	"level_15" : preload("res://Scenes/Game/Levels/Level_15.tscn"),
-	"level_16" : preload("res://Scenes/Game/Levels/Level_16.tscn")
-}
-
 const LEVELS: Array = [
 	"level_1",
 	"level_2",
@@ -63,7 +42,7 @@ const SILVER_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/sil
 const BRONZE_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/bronze_star_50x50.png")
 const NO_STAR = preload("res://Assets/Buttons/Level_select_buttons/Stars/empty_star_50x50.png")
 
-var scene_ui = preload("res://Scenes/Game/UI/Game_UI.tscn")
+
 var level_buttons: Dictionary = {}
 var level_stars_texture: Dictionary = {}
 func _ready() -> void:
@@ -127,17 +106,17 @@ func create_level_button():
 		level_buttons[level] = button
 
 func create_instance(level):
-	var instance_game = LEVEL_INSTANCES[level].instantiate()
+	var instance_game = PreloadScenes.LEVEL_INSTANCES[level].instantiate()
 	create_level(instance_game, level)
 
 func _on_infinite_mode_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/Levels/Infinite_Mode.tscn")
 
 func create_level(instance_game, level_name):
-	var instance_ui = scene_ui.instantiate()
+	var instance_ui = PreloadScenes.scene_ui.instantiate()
 	instance_ui.add_child(instance_game)
-	get_tree().root.add_child(instance_ui)
 	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(instance_ui)
 	get_tree().current_scene = instance_ui
 	SignalBus.Level_is_selected.emit(level_name)
 
