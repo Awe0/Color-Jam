@@ -20,13 +20,11 @@ func set_max_value(level_name):
 	progress_bar.value = value_steps[2]
 
 func update_progress_bar(attempt: int):
-	print("Value bar : " + str(progress_bar.value))
-	print("attempt : " + str(attempt))
 	progress_bar.value -= 1
 	
 	if attempt == value_steps[0]:
-		_1_st_star.visible = false
+		_3_nd_star.visible = false
 	elif attempt == value_steps[1]:
 		_2_nd_star.visible = false
 	elif attempt == value_steps[2]:
-		_3_nd_star.visible = false
+		_1_st_star.visible = false
