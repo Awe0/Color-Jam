@@ -1,35 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgpjbpq0305dx"]
+[gd_scene load_steps=6 format=3 uid="uid://dgpjbpq0305dx"]
 
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_uggji"]
 [ext_resource type="Script" path="res://Scripts/UI/game_over.gd" id="2_ooolw"]
-[ext_resource type="Theme" uid="uid://dek1pe5nypotq" path="res://Themes/Buttons.tres" id="2_skpmk"]
+[ext_resource type="Texture2D" uid="uid://cqrtwl8ngtu1p" path="res://Assets/Popup/lose_popup/game_lose.png" id="3_ejyox"]
+[ext_resource type="Texture2D" uid="uid://bs0skltwplpbf" path="res://Assets/Buttons/Game_over_buttons/restart_180x80_button_normal.png" id="4_d310s"]
+[ext_resource type="Texture2D" uid="uid://dvga1llaeddb2" path="res://Assets/Buttons/Game_over_buttons/restart_180x80_button_pressed.png" id="5_g8s2x"]
 
-[node name="GameOver" type="Label"]
-offset_left = 245.0
-offset_top = 339.0
-offset_right = 476.0
-offset_bottom = 404.0
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_uggji")
-text = "Game over!"
 script = ExtResource("2_ooolw")
 
-[node name="Restart" type="Button" parent="."]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 71.0
-offset_right = 131.0
-offset_bottom = 138.0
-theme = ExtResource("2_skpmk")
-text = "Restart"
+[node name="0Star" type="TextureRect" parent="."]
+offset_left = 55.0
+offset_top = 256.0
+offset_right = 666.0
+offset_bottom = 804.0
+texture = ExtResource("3_ejyox")
 
-[node name="Menu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 71.0
-offset_right = 213.0
-offset_bottom = 138.0
-theme = ExtResource("2_skpmk")
-text = "Menu"
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 160.0
+offset_top = 760.0
+offset_right = 559.0
+offset_bottom = 842.0
+theme_override_constants/separation = 35
+alignment = 1
 
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[node name="RestartButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_d310s")
+texture_pressed = ExtResource("5_g8s2x")
+
+[connection signal="pressed" from="HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
