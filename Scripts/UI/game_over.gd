@@ -28,10 +28,10 @@ const LEVELS: Array = [
 var actual_level_name: String
 
 func _ready() -> void:
+	get_actual_level_name()
 	SignalBus.Level_completed.connect(check_attempt_for_stars_texture)
 
 func check_attempt_for_stars_texture(level_name, attempt):
-	actual_level_name = get_level_name(level_name)
 	var gold_threshold = LevelStatement.level_attempt[level_name][0]
 	var silver_threshold = LevelStatement.level_attempt[level_name][1]
 	var bronze_threshold = LevelStatement.level_attempt[level_name][2]
@@ -49,8 +49,16 @@ func check_attempt_for_stars_texture(level_name, attempt):
 		_0_star.visible = true
 		background.visible = true
 
-func get_level_name(level_name: String):
-	return level_name
+func get_actual_level_name() -> void:
+	for i in range(get_tree().root.get_child_count()):
+		var child = get_tree().root.get_child(i)
+		# Vérifie si le nom de l'enfant existe dans la liste LEVELS
+		if LEVELS.find(child.name) != -1:
+			actual_level_name = child.name
+			print("Nom du niveau actuel :", actual_level_name)  # Debug
+			return
+	print("Aucun niveau actuel trouvé")
+
 
 func _on_restart_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Level_Select.tscn")
@@ -70,3 +78,4 @@ func create_level(instance_game, level_name):
 	get_tree().current_scene.queue_free()
 	get_tree().root.add_child(instance_ui)
 	get_tree().current_scene = instance_ui
+	SignalBus.Level_is_selected.emit(level_name)

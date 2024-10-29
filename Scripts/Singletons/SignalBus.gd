@@ -11,6 +11,7 @@ signal Stocking
 signal Check_Grid
 signal Game_is_win
 signal Attempt_increased
+signal Send_the_actual_level_name(level_name: String)
 
 signal Level_is_selected(level_name: String)
 signal Level_state_change

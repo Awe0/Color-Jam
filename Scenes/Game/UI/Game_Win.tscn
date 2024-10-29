@@ -86,3 +86,4 @@ texture_normal = ExtResource("9_uyhee")
 texture_pressed = ExtResource("10_ivclf")
 
 [connection signal="pressed" from="HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

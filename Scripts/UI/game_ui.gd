@@ -110,6 +110,7 @@ func game_win_statement():
 	if attempt < LevelStatement.level_state[level_name]["attempt"]:
 		SaveSystem.save_levels_data(level_name, "attempt", attempt)
 	SignalBus.Level_state_change.emit()
+	SignalBus.Send_the_actual_level_name.emit(level_name)
 	LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[level_name], attempt)
 	instanciate_scenes(PreloadScenes.game_win_scene)
 
