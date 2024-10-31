@@ -89,6 +89,7 @@ text = "Level 1"
 horizontal_alignment = 1
 
 [node name="ProgressBar" parent="." instance=ExtResource("4_g5gb6")]
+visible = false
 layout_mode = 0
 offset_left = 670.0
 offset_top = 208.0
