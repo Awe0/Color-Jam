@@ -8,7 +8,7 @@ extends Control
 @onready var restart_button: TextureButton = $VBoxContainer/Restart
 @onready var delete_button: TextureButton = $VBoxContainer/Delete
 @onready var param_button: TextureButton = $HeadApp/ParamButton
-@onready var game_over: Label = $GameOver
+@onready var game_over: Control = $GameOver
 @onready var rotate_button: TextureButton = $VBoxContainer2/Label/MarginContainer/Rotate
 @onready var reroll_button: TextureButton = $VBoxContainer/Reroll
 @onready var help: Control = $Help
@@ -189,8 +189,8 @@ func reset_grid():
 func upgrade_grid():
 	level += 1
 	level_label.text = "Level " + str(level)
-	reroll += 2
-	delete += 2
+	reroll += 1
+	delete += 1
 	update_rerolls()
 	update_delete()
 	var probability_of_impossible = 0.2
