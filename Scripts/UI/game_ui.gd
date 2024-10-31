@@ -47,7 +47,7 @@ func _ready():
 func increase_attempt():
 	attempt += 1
 	SignalBus.Attempt_changed.emit(attempt)
-	attempt_label.text = "ATTEMPT = " + str(attempt)
+	attempt_label.text = str(attempt)
 
 func _on_rotate_pressed() -> void:
 	SignalBus.Rotating.emit()
