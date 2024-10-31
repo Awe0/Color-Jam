@@ -17,6 +17,7 @@ theme = ExtResource("1_uggji")
 script = ExtResource("2_ooolw")
 
 [node name="0Star" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 55.0
 offset_top = 256.0
 offset_right = 666.0
@@ -24,6 +25,7 @@ offset_bottom = 804.0
 texture = ExtResource("3_ejyox")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 760.0
 offset_right = 559.0

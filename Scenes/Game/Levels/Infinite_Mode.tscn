@@ -154,10 +154,15 @@ columns = 10
 [node name="GameOver" parent="." instance=ExtResource("12_u2n1t")]
 visible = false
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 246.0
 offset_top = 432.0
 offset_right = 477.0
 offset_bottom = 575.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="PreviewZone" type="Control" parent="."]
 anchors_preset = 0

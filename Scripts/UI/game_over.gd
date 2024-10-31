@@ -52,10 +52,9 @@ func check_attempt_for_stars_texture(level_name, attempt):
 func get_actual_level_name() -> void:
 	for i in range(get_tree().root.get_child_count()):
 		var child = get_tree().root.get_child(i)
-		# Vérifie si le nom de l'enfant existe dans la liste LEVELS
 		if LEVELS.find(child.name) != -1:
 			actual_level_name = child.name
-			print("Nom du niveau actuel :", actual_level_name)  # Debug
+			print("Nom du niveau actuel :", actual_level_name)
 			return
 	print("Aucun niveau actuel trouvé")
 
