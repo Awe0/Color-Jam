@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgpjbpq0305dx"]
 
 [ext_resource type="Theme" uid="uid://byxv1brsahxxk" path="res://Themes/Warning_Label.theme" id="1_uggji"]
-[ext_resource type="Script" path="res://Scripts/UI/game_over.gd" id="2_ooolw"]
+[ext_resource type="Script" path="res://Scripts/UI/game_lose.gd" id="2_qisbd"]
 [ext_resource type="Texture2D" uid="uid://cqrtwl8ngtu1p" path="res://Assets/Popup/lose_popup/game_lose.png" id="3_ejyox"]
 [ext_resource type="Texture2D" uid="uid://bs0skltwplpbf" path="res://Assets/Buttons/Game_over_buttons/restart_180x80_button_normal.png" id="4_d310s"]
 [ext_resource type="Texture2D" uid="uid://dvga1llaeddb2" path="res://Assets/Buttons/Game_over_buttons/restart_180x80_button_pressed.png" id="5_g8s2x"]
@@ -14,13 +14,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uggji")
-script = ExtResource("2_ooolw")
+script = ExtResource("2_qisbd")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.607843)
 
 [node name="0Star" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 55.0
+offset_left = 49.0
 offset_top = 256.0
-offset_right = 666.0
+offset_right = 672.0
 offset_bottom = 804.0
 texture = ExtResource("3_ejyox")
 
