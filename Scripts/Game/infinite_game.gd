@@ -265,6 +265,8 @@ func game_over_statement():
 			game_over.visible = true
 			SignalBus.Game_is_over.emit(score)
 			LeaderboardsClient.submit_score(Leaderboards.LEADERBOARDS_ID[MODE_NAME], score)
+			if score > 7339:
+				AchievementsClient.unlock_achievement("CgkIw9eFzccREAIQFg")
 			hide_interface()
 
 func _on_help_quit_pressed() -> void:
